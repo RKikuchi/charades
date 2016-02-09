@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Charades</string>
+    <string name="action_sync_online_categories">Sync online categories</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_game_round">GameRoundActivity</string>
+    <string name="get_ready">Get ready</string>
+    <string name="skip">Skip</string>
+    <string name="timer">Timer</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="syncing_online_categories">Syncing online categories...</string>
+    <string name="error_loading_online_data">Error while loading online data</string>
+</resources>
