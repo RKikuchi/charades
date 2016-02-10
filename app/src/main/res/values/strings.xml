@@ -5,9 +5,10 @@
 
     <string name="title_activity_game_round">GameRoundActivity</string>
     <string name="get_ready">Get ready</string>
+    <string name="play_again">Play again</string>
     <string name="skip">Skip</string>
+    <string name="back">Back</string>
     <string name="timer">Timer</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="syncing_online_categories">Syncing online categories...</string>
     <string name="error_loading_online_data">Error while loading online data</string>
 </resources>

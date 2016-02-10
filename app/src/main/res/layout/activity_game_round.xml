@@ -50,7 +50,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Back"
+                android:text="@string/back"
                 android:id="@+id/back_button_text" />
         </LinearLayout>
 
@@ -94,7 +94,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Replay"
+                android:text="@string/play_again"
                 android:id="@+id/replay_button_text" />
         </LinearLayout>
 
