@@ -12,7 +12,6 @@ import retrofit2.http.Path;
  * Created by rsaki on 2/7/2016.
  */
 public interface OnlineCategoriesService {
-    //@Headers({"Content-type: application/json"})
     @GET("categories")
     Call<List<String>> listCategories();
 

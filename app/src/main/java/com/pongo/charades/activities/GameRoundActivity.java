@@ -12,6 +12,7 @@ import com.pongo.charades.R;
 import com.pongo.charades.models.CategoryItemModel;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.modules.FontAwesomeProvider;
+import com.pongo.charades.services.TiltSensorService;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -21,7 +22,7 @@ import javax.inject.Inject;
 
 import io.realm.Realm;
 
-public class GameRoundActivity extends BaseActivity {
+public class GameRoundActivity extends BaseActivity implements TiltSensorService.TiltEventListener {
     public static final String CATEGORY_TITLE = "CATEGORY_TITLE";
 
     private enum State {
@@ -43,6 +44,7 @@ public class GameRoundActivity extends BaseActivity {
     private LinearLayout mBackButton;
     private LinearLayout mReplayButton;
     private Bundle mExtras;
+    private TiltSensorService mTiltSensor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class GameRoundActivity extends BaseActivity {
         mState = State.COUNTDOWN;
         Intent intent = getIntent();
         mExtras = intent.getExtras();
+        mTiltSensor = new TiltSensorService(this, this);
 
         mMainText = (TextView) findViewById(R.id.main_text);
         mTopText = (TextView) findViewById(R.id.top_text);
@@ -97,6 +100,32 @@ public class GameRoundActivity extends BaseActivity {
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         start();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mTiltSensor.resume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mTiltSensor.pause();
+    }
+
+    @Override
+    public void onTiltChanged(TiltSensorService.State oldState, TiltSensorService.State newState) {
+        if (mState != State.PLAYING) return;
+
+        switch (newState) {
+            case UPWARDS:
+                changeWord(true);
+                break;
+            case DOWNWARDS:
+                changeWord(false);
+                break;
+        }
     }
 
     private void loadCategory() {
