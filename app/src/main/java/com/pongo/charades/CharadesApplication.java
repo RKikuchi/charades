@@ -5,8 +5,6 @@ import android.app.Application;
 import com.pongo.charades.modules.AndroidModule;
 import com.pongo.charades.modules.FontAwesomeModule;
 
-import java.util.Arrays;
-
 import dagger.ObjectGraph;
 
 /**
