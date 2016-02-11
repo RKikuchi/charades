@@ -1,6 +1,7 @@
 package com.pongo.charades.activities;
 
 import android.content.Intent;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBar;
@@ -12,6 +13,7 @@ import com.pongo.charades.R;
 import com.pongo.charades.models.CategoryItemModel;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.modules.FontAwesomeProvider;
+import com.pongo.charades.services.SoundService;
 import com.pongo.charades.services.TiltSensorService;
 
 import java.util.ArrayList;
@@ -45,6 +47,8 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private LinearLayout mReplayButton;
     private Bundle mExtras;
     private TiltSensorService mTiltSensor;
+    private SoundService mSoundService;
+    private SoundPool mSoundPool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         Intent intent = getIntent();
         mExtras = intent.getExtras();
         mTiltSensor = new TiltSensorService(this, this);
+        mSoundService = new SoundService(this);
 
         mMainText = (TextView) findViewById(R.id.main_text);
         mTopText = (TextView) findViewById(R.id.top_text);
@@ -170,7 +175,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     }
 
     private void setupRoundTimer() {
-        new CountDownTimer(10000 + 500, 1000) {
+        new CountDownTimer(60000 + 500, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 long secondsLeft = millisUntilFinished / 1000;
@@ -186,6 +191,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
                 mReplayButton.setVisibility(View.VISIBLE);
                 mTopText.setText("GAME OVER");
                 mMainText.setText("Score: " + mScore);
+                mSoundService.playFinish();
             }
         }.start();
     }
@@ -193,7 +199,12 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private void changeWord(Boolean score) {
         if (mState != State.PLAYING) return;
 
-        if (score) mScore++;
+        if (score) {
+            mSoundService.playSuccess();
+            mScore++;
+        } else {
+            mSoundService.playSkip();
+        }
 
         mCurrentItemIndex = (mCurrentItemIndex + 1) % mItems.size();
         CategoryItemModel currentItem = mItems.get(mCurrentItemIndex);
@@ -210,6 +221,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
             @Override
             public void onTick(long millisUntilFinished) {
                 mMainText.setText(String.valueOf(millisUntilFinished / 1000));
+                mSoundService.playTick();
             }
 
             @Override
@@ -219,6 +231,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
                 mSkipButton.setVisibility(View.VISIBLE);
                 setupRoundTimer();
                 changeWord(false);
+                mSoundService.playStart();
             }
         }.start();
     }
