@@ -72,7 +72,6 @@ public class TiltSensorService implements SensorEventListener {
         SensorManager.getOrientation(R, orientation);  // azimuth, pitch and roll
 
         float pitch = orientation[1];
-        float roll = orientation[2];
         float[] inclineGravity = mGravity.clone();
 
         // Normalize the accelerometer vector
@@ -95,8 +94,8 @@ public class TiltSensorService implements SensorEventListener {
         int objPitchZeroPointTwoResult = objZeroPointTwo.compareTo(objPitch);
         int objPitchZeroPointTwoNegativeResult = objPitch.compareTo(objZeroPointTwoNegative);
 
-        if (roll < 0 && ((objPitchZeroResult > 0 && objPitchZeroPointTwoResult > 0) ||
-                (objPitchZeroResult < 0 && objPitchZeroPointTwoNegativeResult > 0))) {
+        if ((objPitchZeroResult > 0 && objPitchZeroPointTwoResult > 0) ||
+            (objPitchZeroResult < 0 && objPitchZeroPointTwoNegativeResult > 0)) {
             switch (mState) {
                 case NEUTRAL:
                     if (inclination < 40) changeState(State.UPWARDS);
@@ -111,7 +110,6 @@ public class TiltSensorService implements SensorEventListener {
                     else if (inclination > 140) changeState(State.DOWNWARDS);
                     break;
             }
-            Log.d("test", "inclination: " + inclination);
         }
     }
 
