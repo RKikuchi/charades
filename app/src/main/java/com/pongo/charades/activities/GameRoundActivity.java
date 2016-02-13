@@ -5,11 +5,15 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.pongo.charades.R;
+import com.pongo.charades.adapters.CharadesRecyclerViewAdapter;
+import com.pongo.charades.adapters.ScoreTrackRecylerViewAdapter;
 import com.pongo.charades.models.CategoryItemModel;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.modules.FontAwesomeProvider;
@@ -31,24 +35,31 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         COUNTDOWN,
         PLAYING,
         GAME_OVER
-    };
+    }
 
     @Inject
     FontAwesomeProvider mFontAwesome;
     private CategoryModel mCategory;
     private ArrayList<CategoryItemModel> mItems;
     private int mCurrentItemIndex;
+    private CategoryItemModel mCurrentItem;
     private State mState;
-    private int mScore;
+
     private TextView mMainText;
     private TextView mTopText;
     private LinearLayout mSkipButton;
     private LinearLayout mBackButton;
     private LinearLayout mReplayButton;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.LayoutManager mLayoutManager;
+
     private Bundle mExtras;
     private TiltSensorService mTiltSensor;
     private SoundService mSoundService;
     private SoundPool mSoundPool;
+
+    private int mScore;
+    private ScoreTrackRecylerViewAdapter mScoreTrack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,12 +70,20 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         mExtras = intent.getExtras();
         mTiltSensor = new TiltSensorService(this, this);
         mSoundService = new SoundService(this);
+        mScoreTrack = new ScoreTrackRecylerViewAdapter(this);
 
         mMainText = (TextView) findViewById(R.id.main_text);
         mTopText = (TextView) findViewById(R.id.top_text);
         mSkipButton = (LinearLayout) findViewById(R.id.skip_button);
         mBackButton = (LinearLayout) findViewById(R.id.back_button);
         mReplayButton = (LinearLayout) findViewById(R.id.replay_button);
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.score_track_recycler_view);
+
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setAdapter(mScoreTrack);
 
         ((TextView)findViewById(R.id.skip_icon)).setTypeface(mFontAwesome.getTypeface());
         ((TextView)findViewById(R.id.back_icon)).setTypeface(mFontAwesome.getTypeface());
@@ -175,7 +194,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     }
 
     private void setupRoundTimer() {
-        new CountDownTimer(60000 + 500, 1000) {
+        new CountDownTimer(10000 + 500, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 long secondsLeft = millisUntilFinished / 1000;
@@ -184,13 +203,16 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
 
             @Override
             public void onFinish() {
+                mScoreTrack.add(mCurrentItem.getValue(), false);
                 mState = State.GAME_OVER;
 
                 mSkipButton.setVisibility(View.INVISIBLE);
                 mBackButton.setVisibility(View.VISIBLE);
                 mReplayButton.setVisibility(View.VISIBLE);
-                mTopText.setText("GAME OVER");
-                mMainText.setText("Score: " + mScore);
+                mRecyclerView.setVisibility(View.VISIBLE);
+                mMainText.setVisibility(View.GONE);
+                mScoreTrack.notifyDataSetChanged();
+                mTopText.setText("Score: " + mScore);
                 mSoundService.playFinish();
             }
         }.start();
@@ -206,9 +228,13 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
             mSoundService.playSkip();
         }
 
+        if (mCurrentItem != null) {
+            mScoreTrack.add(mCurrentItem.getValue(), score);
+        }
+
         mCurrentItemIndex = (mCurrentItemIndex + 1) % mItems.size();
-        CategoryItemModel currentItem = mItems.get(mCurrentItemIndex);
-        mMainText.setText(currentItem.getValue());
+        mCurrentItem = mItems.get(mCurrentItemIndex);
+        mMainText.setText(mCurrentItem.getValue());
     }
 
     private void start() {
@@ -216,6 +242,8 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         mSkipButton.setVisibility(View.INVISIBLE);
         mBackButton.setVisibility(View.INVISIBLE);
         mReplayButton.setVisibility(View.INVISIBLE);
+        mRecyclerView.setVisibility(View.GONE);
+        mMainText.setVisibility(View.VISIBLE);
         hide();
         new CountDownTimer(3500, 1000) {
             @Override
@@ -228,6 +256,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
             public void onFinish() {
                 mState = State.PLAYING;
                 mScore = 0;
+                mScoreTrack.clear();
                 mSkipButton.setVisibility(View.VISIBLE);
                 setupRoundTimer();
                 changeWord(false);
