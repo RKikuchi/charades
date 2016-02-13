@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -45,6 +46,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private CategoryItemModel mCurrentItem;
     private State mState;
 
+    private View mLayout;
     private TextView mMainText;
     private TextView mTopText;
     private LinearLayout mSkipButton;
@@ -72,6 +74,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         mSoundService = new SoundService(this);
         mScoreTrack = new ScoreTrackRecylerViewAdapter(this);
 
+        mLayout = findViewById(R.id.game_round_layout);
         mMainText = (TextView) findViewById(R.id.main_text);
         mTopText = (TextView) findViewById(R.id.top_text);
         mSkipButton = (LinearLayout) findViewById(R.id.skip_button);
@@ -92,14 +95,16 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         mMainText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeWord(true);
+                skipOrScore(true);
+                changeWord();
             }
         });
 
         mSkipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeWord(false);
+                skipOrScore(false);
+                changeWord();
             }
         });
 
@@ -144,10 +149,16 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
 
         switch (newState) {
             case UPWARDS:
-                changeWord(true);
+                skipOrScore(true);
+                mLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorRightBg));
                 break;
             case DOWNWARDS:
-                changeWord(false);
+                skipOrScore(false);
+                mLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorWrongBg));
+                break;
+            case NEUTRAL:
+                changeWord();
+                mLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorNeutralBg));
                 break;
         }
     }
@@ -203,7 +214,8 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
 
             @Override
             public void onFinish() {
-                mScoreTrack.add(mCurrentItem.getValue(), false);
+                if (mTiltSensor.getState() == TiltSensorService.State.NEUTRAL)
+                    mScoreTrack.add(mCurrentItem.getValue(), false);
                 mState = State.GAME_OVER;
 
                 mSkipButton.setVisibility(View.INVISIBLE);
@@ -211,6 +223,8 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
                 mReplayButton.setVisibility(View.VISIBLE);
                 mRecyclerView.setVisibility(View.VISIBLE);
                 mMainText.setVisibility(View.GONE);
+                mLayout.setBackgroundColor(
+                        ContextCompat.getColor(mLayout.getContext(), R.color.colorNeutralBg));
                 mScoreTrack.notifyDataSetChanged();
                 mTopText.setText("Score: " + mScore);
                 mSoundService.playFinish();
@@ -218,9 +232,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         }.start();
     }
 
-    private void changeWord(Boolean score) {
-        if (mState != State.PLAYING) return;
-
+    private void skipOrScore(Boolean score) {
         if (score) {
             mSoundService.playSuccess();
             mScore++;
@@ -231,6 +243,10 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         if (mCurrentItem != null) {
             mScoreTrack.add(mCurrentItem.getValue(), score);
         }
+    }
+
+    private void changeWord() {
+        if (mState != State.PLAYING) return;
 
         mCurrentItemIndex = (mCurrentItemIndex + 1) % mItems.size();
         mCurrentItem = mItems.get(mCurrentItemIndex);
@@ -259,7 +275,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
                 mScoreTrack.clear();
                 mSkipButton.setVisibility(View.VISIBLE);
                 setupRoundTimer();
-                changeWord(false);
+                changeWord();
                 mSoundService.playStart();
             }
         }.start();

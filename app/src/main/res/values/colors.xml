@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorWarning">#FFA500</color>
+    <color name="colorNeutralBg">#0099CC</color>
     <color name="colorRight">#FFFFFF</color>
     <color name="colorRightBg">#5CC600</color>
     <color name="colorWrong">#C0C0C0</color>

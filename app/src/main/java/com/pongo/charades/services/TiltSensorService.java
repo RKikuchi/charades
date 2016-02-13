@@ -51,6 +51,10 @@ public class TiltSensorService implements SensorEventListener {
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
     }
 
+    public State getState() {
+        return mState;
+    }
+
     public void resume() {
         mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_FASTEST);
         mSensorManager.registerListener(this, mMagnetometer, SensorManager.SENSOR_DELAY_FASTEST);
@@ -101,12 +105,10 @@ public class TiltSensorService implements SensorEventListener {
                     else if (inclination > 140) changeState(State.DOWNWARDS);
                     break;
                 case DOWNWARDS:
-                    if (inclination < 40) changeState(State.UPWARDS);
-                    else if (inclination < 110) changeState(State.NEUTRAL);
+                    if (inclination < 110) changeState(State.NEUTRAL);
                     break;
                 case UPWARDS:
                     if (inclination > 70) changeState(State.NEUTRAL);
-                    else if (inclination > 140) changeState(State.DOWNWARDS);
                     break;
             }
         }
