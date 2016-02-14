@@ -26,6 +26,7 @@
         </activity>
         <activity
             android:name=".activities.GameRoundActivity"
+            android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_game_round"
             android:theme="@style/FullscreenTheme"></activity>
