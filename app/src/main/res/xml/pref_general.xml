@@ -1,0 +1,10 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="60"
+        android:entries="@array/pref_round_time_list_titles"
+        android:entryValues="@array/pref_round_time_list_values"
+        android:key="round_time_preference"
+        android:title="@string/pref_title_select_round_time" />
+
+</PreferenceScreen>

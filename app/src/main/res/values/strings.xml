@@ -11,4 +11,22 @@
     <string name="timer">Timer</string>
     <string name="syncing_online_categories">Syncing online categories...</string>
     <string name="error_loading_online_data">Error while loading online data</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+    <string name="pref_title_select_round_time">Round time</string>
+    <string-array name="pref_round_time_list_titles">
+        <item>00:10</item>
+        <item>00:30</item>
+        <item>01:00</item>
+        <item>01:30</item>
+        <item>02:00</item>
+    </string-array>
+    <string-array name="pref_round_time_list_values">
+        <item>10</item>
+        <item>30</item>
+        <item>60</item>
+        <item>90</item>
+        <item>120</item>
+    </string-array>
 </resources>

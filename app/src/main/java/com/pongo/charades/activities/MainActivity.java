@@ -1,5 +1,6 @@
 package com.pongo.charades.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements OnlineCategoriesL
         mAdapter = new CharadesRecyclerViewAdapter(this);
         mRecyclerView.setAdapter(mAdapter);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -71,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements OnlineCategoriesL
         int id = item.getItemId();
         switch (id) {
             case R.id.action_settings:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.action_sync_online_categories:
                 syncOnlineCategories();

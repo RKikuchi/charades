@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,8 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.pongo.charades.R;
-import com.pongo.charades.adapters.CharadesRecyclerViewAdapter;
-import com.pongo.charades.adapters.ScoreTrackRecylerViewAdapter;
+import com.pongo.charades.adapters.ScoreTrackRecyclerViewAdapter;
 import com.pongo.charades.models.CategoryItemModel;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.modules.FontAwesomeProvider;
@@ -45,6 +45,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private int mCurrentItemIndex;
     private CategoryItemModel mCurrentItem;
     private State mState;
+    private int mTotalRoundTime;
 
     private View mLayout;
     private TextView mMainText;
@@ -58,21 +59,22 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private Bundle mExtras;
     private TiltSensorService mTiltSensor;
     private SoundService mSoundService;
-    private SoundPool mSoundPool;
 
     private int mScore;
-    private ScoreTrackRecylerViewAdapter mScoreTrack;
+    private ScoreTrackRecyclerViewAdapter mScoreTrack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_round);
         mState = State.COUNTDOWN;
+        mTotalRoundTime = Integer.parseInt(PreferenceManager
+                .getDefaultSharedPreferences(this).getString("round_time_preference", "60"));
         Intent intent = getIntent();
         mExtras = intent.getExtras();
         mTiltSensor = new TiltSensorService(this, this);
         mSoundService = new SoundService(this);
-        mScoreTrack = new ScoreTrackRecylerViewAdapter(this);
+        mScoreTrack = new ScoreTrackRecyclerViewAdapter(this);
 
         mLayout = findViewById(R.id.game_round_layout);
         mMainText = (TextView) findViewById(R.id.main_text);
@@ -205,7 +207,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     }
 
     private void setupRoundTimer() {
-        new CountDownTimer(10000 + 500, 1000) {
+        new CountDownTimer(mTotalRoundTime * 1000 + 500, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 long secondsLeft = millisUntilFinished / 1000;
@@ -261,7 +263,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         mRecyclerView.setVisibility(View.GONE);
         mMainText.setVisibility(View.VISIBLE);
         hide();
-        new CountDownTimer(3500, 1000) {
+        new CountDownTimer(5500, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 mMainText.setText(String.valueOf(millisUntilFinished / 1000));

@@ -15,12 +15,12 @@ import java.util.ArrayList;
 /**
  * Created by rsaki on 2/12/2016.
  */
-public class ScoreTrackRecylerViewAdapter extends RecyclerView.Adapter {
+public class ScoreTrackRecyclerViewAdapter extends RecyclerView.Adapter {
     final private Context mContext;
     final private ArrayList<ScoreTrackItem> mItems = new ArrayList<>();
     final private LayoutInflater mLayoutInflater;
 
-    public ScoreTrackRecylerViewAdapter(Context context) {
+    public ScoreTrackRecyclerViewAdapter(Context context) {
         mContext = context;
         mLayoutInflater = LayoutInflater.from(context);
     }
