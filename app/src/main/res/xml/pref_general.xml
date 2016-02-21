@@ -4,7 +4,8 @@
         android:defaultValue="60"
         android:entries="@array/pref_round_time_list_titles"
         android:entryValues="@array/pref_round_time_list_values"
-        android:key="round_time_preference"
-        android:title="@string/pref_title_select_round_time" />
+        android:key="@string/pref_key_round_time"
+        android:title="@string/pref_title_select_round_time"
+        android:icon="@drawable/ic_notifications_black_24dp" />
 
 </PreferenceScreen>
