@@ -1,0 +1,758 @@
+[
+    {
+        "language": "en_US",
+        "title": "Popular characters and people",
+        "items": [
+            {
+                "value": "Gandhi",
+                "definition": "null"
+            },
+            {
+                "value": "Superman",
+                "definition": "null"
+            },
+            {
+                "value": "Mozart",
+                "definition": "null"
+            },
+            {
+                "value": "Puss in Boots",
+                "definition": "null"
+            },
+            {
+                "value": "Papa Smurf",
+                "definition": "null"
+            },
+            {
+                "value": "Harry Houdini",
+                "definition": "null"
+            },
+            {
+                "value": "The Hulk",
+                "definition": "null"
+            },
+            {
+                "value": "Thomas Jefferson",
+                "definition": "null"
+            },
+            {
+                "value": "Andy Griffith",
+                "definition": "null"
+            },
+            {
+                "value": "Billy the Kid",
+                "definition": "null"
+            },
+            {
+                "value": "Santa Claus",
+                "definition": "null"
+            },
+            {
+                "value": "Henry Ford",
+                "definition": "null"
+            },
+            {
+                "value": "Vincent Van Gogh",
+                "definition": "null"
+            },
+            {
+                "value": "Iron Man",
+                "definition": "null"
+            },
+            {
+                "value": "Barbie",
+                "definition": "null"
+            },
+            {
+                "value": "Darth Vader",
+                "definition": "null"
+            },
+            {
+                "value": "Pablo Picasso",
+                "definition": "null"
+            },
+            {
+                "value": "Dr. Seuss",
+                "definition": "null"
+            },
+            {
+                "value": "Achilles",
+                "definition": "null"
+            },
+            {
+                "value": "Elvis Presley",
+                "definition": "null"
+            },
+            {
+                "value": "Sigmund Freud",
+                "definition": "null"
+            },
+            {
+                "value": "King Arthur",
+                "definition": "null"
+            },
+            {
+                "value": "Voldemort",
+                "definition": "null"
+            },
+            {
+                "value": "Scooby Doo",
+                "definition": "null"
+            },
+            {
+                "value": "Isaac Newton",
+                "definition": "null"
+            },
+            {
+                "value": "The Beatles",
+                "definition": "null"
+            },
+            {
+                "value": "Abraham Lincoln",
+                "definition": "null"
+            },
+            {
+                "value": "Christopher Columbus ",
+                "definition": "null"
+            },
+            {
+                "value": "Kermit the Frog",
+                "definition": "null"
+            },
+            {
+                "value": "Snoopy",
+                "definition": "null"
+            },
+            {
+                "value": "Shakespeare",
+                "definition": "null"
+            },
+            {
+                "value": "Winnie the Pooh",
+                "definition": "null"
+            },
+            {
+                "value": "Albert Einstein",
+                "definition": "null"
+            },
+            {
+                "value": "Sherlock Holmes",
+                "definition": "null"
+            },
+            {
+                "value": "Spider Man",
+                "definition": "null"
+            },
+            {
+                "value": "Indiana Jones",
+                "definition": "null"
+            },
+            {
+                "value": "Neil Armstrong",
+                "definition": "null"
+            },
+            {
+                "value": "Satan",
+                "definition": "null"
+            },
+            {
+                "value": "Socrates",
+                "definition": "null"
+            },
+            {
+                "value": "Leonardo DiCaprio",
+                "definition": "null"
+            },
+            {
+                "value": "Thomas Edison",
+                "definition": "null"
+            },
+            {
+                "value": "Yoda",
+                "definition": "null"
+            },
+            {
+                "value": "Stephen Hawking",
+                "definition": "null"
+            },
+            {
+                "value": "Popeye",
+                "definition": "null"
+            },
+            {
+                "value": "Stewie Griffin",
+                "definition": "null"
+            },
+            {
+                "value": "Easter Bunny",
+                "definition": "null"
+            },
+            {
+                "value": "Robin Williams",
+                "definition": "null"
+            },
+            {
+                "value": "Mohammad Ali",
+                "definition": "null"
+            },
+            {
+                "value": "Captain Jack Sparrow",
+                "definition": "null"
+            },
+            {
+                "value": "Michael Jackson",
+                "definition": "null"
+            },
+            {
+                "value": "Bill Gates",
+                "definition": "null"
+            },
+            {
+                "value": "Catwoman",
+                "definition": "null"
+            },
+            {
+                "value": "Britney Spears",
+                "definition": "null"
+            },
+            {
+                "value": "Nancy Drew",
+                "definition": "null"
+            },
+            {
+                "value": "Wonder Woman",
+                "definition": "null"
+            },
+            {
+                "value": "Paris Hilton",
+                "definition": "null"
+            },
+            {
+                "value": "Peter Rabbit",
+                "definition": "null"
+            },
+            {
+                "value": "Rebecca Black",
+                "definition": "null"
+            },
+            {
+                "value": "Justin Bieber",
+                "definition": "null"
+            },
+            {
+                "value": "George Washington",
+                "definition": "null"
+            },
+            {
+                "value": "The Incredible Hulk",
+                "definition": "null"
+            },
+            {
+                "value": "Homer Simpson",
+                "definition": "null"
+            },
+            {
+                "value": "Spiderman",
+                "definition": "null"
+            },
+            {
+                "value": "Chandler Bing",
+                "definition": "null"
+            },
+            {
+                "value": "Frankenstein",
+                "definition": "null"
+            }
+        ]
+    },
+    {
+        "language": "en_US",
+        "title": "Movies",
+        "items": [
+            {
+                "value": "Spiderman",
+                "definition": "null"
+            },
+            {
+                "value": "Valentine's Day",
+                "definition": "null"
+            },
+            {
+                "value": "Batman and Robin",
+                "definition": "null"
+            },
+            {
+                "value": "The Shawshank Redemption",
+                "definition": "null"
+            },
+            {
+                "value": "Little Miss Sunshine",
+                "definition": "null"
+            },
+            {
+                "value": "Forrest Gump",
+                "definition": "null"
+            },
+            {
+                "value": "Amelie",
+                "definition": "null"
+            },
+            {
+                "value": "Black Hawk Down",
+                "definition": "null"
+            },
+            {
+                "value": "The Sixth Sense",
+                "definition": "null"
+            },
+            {
+                "value": "Pulp Fiction",
+                "definition": "null"
+            },
+            {
+                "value": "Sweeney Todd",
+                "definition": "null"
+            },
+            {
+                "value": "Kick-Ass",
+                "definition": "null"
+            },
+            {
+                "value": "Schindler's List",
+                "definition": "null"
+            },
+            {
+                "value": "Howl's Moving Castle",
+                "definition": "null"
+            },
+            {
+                "value": "Batman Begins",
+                "definition": "null"
+            },
+            {
+                "value": "Slumdog Millionaire",
+                "definition": "null"
+            },
+            {
+                "value": "The Hangover",
+                "definition": "null"
+            },
+            {
+                "value": "Shrek",
+                "definition": "null"
+            },
+            {
+                "value": "The Exorcist",
+                "definition": "null"
+            },
+            {
+                "value": "Monster's, Inc.",
+                "definition": "null"
+            },
+            {
+                "value": "The Bourne Identity",
+                "definition": "null"
+            },
+            {
+                "value": "War of the Worlds",
+                "definition": "null"
+            },
+            {
+                "value": "The Departed",
+                "definition": "null"
+            },
+            {
+                "value": "Anastasia",
+                "definition": "null"
+            },
+            {
+                "value": "American Pie",
+                "definition": "null"
+            },
+            {
+                "value": "A Beautiful Mind",
+                "definition": "null"
+            },
+            {
+                "value": "The Usual Suspects",
+                "definition": "null"
+            },
+            {
+                "value": "The Matrix",
+                "definition": "null"
+            },
+            {
+                "value": "American Beauty",
+                "definition": "null"
+            },
+            {
+                "value": "Mr. and Mrs. Smith",
+                "definition": "null"
+            },
+            {
+                "value": "Rosemary's Baby",
+                "definition": "null"
+            },
+            {
+                "value": "The Dark Knight",
+                "definition": "null"
+            },
+            {
+                "value": "Ice Age",
+                "definition": "null"
+            },
+            {
+                "value": "Star Wars Episode V: The Empire Strikes Back",
+                "definition": "null"
+            },
+            {
+                "value": "Castaway",
+                "definition": "null"
+            },
+            {
+                "value": "The Hunger Games",
+                "definition": "null"
+            },
+            {
+                "value": "Inception",
+                "definition": "null"
+            },
+            {
+                "value": "Apocalypse Now",
+                "definition": "null"
+            },
+            {
+                "value": "Back to the Future",
+                "definition": "null"
+            },
+            {
+                "value": "Ted",
+                "definition": "null"
+            },
+            {
+                "value": "Black Swan",
+                "definition": "null"
+            },
+            {
+                "value": "The Apartment",
+                "definition": "null"
+            },
+            {
+                "value": "The Lion King",
+                "definition": "null"
+            },
+            {
+                "value": "Saw",
+                "definition": "null"
+            },
+            {
+                "value": "Taxi Driver",
+                "definition": "null"
+            },
+            {
+                "value": "Gone With the Wind",
+                "definition": "null"
+            },
+            {
+                "value": "Psycho",
+                "definition": "null"
+            },
+            {
+                "value": "Chicago",
+                "definition": "null"
+            },
+            {
+                "value": "Catwoman",
+                "definition": "null"
+            },
+            {
+                "value": "Superbad",
+                "definition": "null"
+            },
+            {
+                "value": "The Pianist",
+                "definition": "null"
+            },
+            {
+                "value": "The Incredibles",
+                "definition": "null"
+            },
+            {
+                "value": "The Boy in the Striped Pajamas",
+                "definition": "null"
+            },
+            {
+                "value": "Mamma Mia",
+                "definition": "null"
+            },
+            {
+                "value": "Scary Movie",
+                "definition": "null"
+            },
+            {
+                "value": "Interview With the Vampire",
+                "definition": "null"
+            },
+            {
+                "value": "Ben-Hur",
+                "definition": "null"
+            },
+            {
+                "value": "The Dark Knight",
+                "definition": "null"
+            },
+            {
+                "value": "Citizen Kane",
+                "definition": "null"
+            },
+            {
+                "value": "The Shining",
+                "definition": "null"
+            },
+            {
+                "value": "Die Hard",
+                "definition": "null"
+            },
+            {
+                "value": "King Kong",
+                "definition": "null"
+            },
+            {
+                "value": "Star Wars Episode V: The Empire Strikes Back",
+                "definition": "null"
+            },
+            {
+                "value": "The Curious Case of Benjamin Button",
+                "definition": "null"
+            },
+            {
+                "value": "50/50",
+                "definition": "null"
+            },
+            {
+                "value": "Hancock",
+                "definition": "null"
+            },
+            {
+                "value": "The Blair Witch Project",
+                "definition": "null"
+            },
+            {
+                "value": "Edward Scissorhands",
+                "definition": "null"
+            },
+            {
+                "value": "Sin City",
+                "definition": "null"
+            },
+            {
+                "value": "Troy",
+                "definition": "null"
+            },
+            {
+                "value": "The Hurt Locker",
+                "definition": "null"
+            },
+            {
+                "value": "Casablanca",
+                "definition": "null"
+            },
+            {
+                "value": "Memoirs of a Geisha",
+                "definition": "null"
+            },
+            {
+                "value": "Carrie",
+                "definition": "null"
+            },
+            {
+                "value": "Alien",
+                "definition": "null"
+            },
+            {
+                "value": "City of God",
+                "definition": "null"
+            },
+            {
+                "value": "Se7en",
+                "definition": "null"
+            },
+            {
+                "value": "Saving Private Ryan",
+                "definition": "null"
+            },
+            {
+                "value": "Donnie Darko",
+                "definition": "null"
+            },
+            {
+                "value": "Beauty and the Beast",
+                "definition": "null"
+            },
+            {
+                "value": "Despicable Me",
+                "definition": "null"
+            },
+            {
+                "value": "Catch Me If You Can",
+                "definition": "null"
+            },
+            {
+                "value": "The Godfather",
+                "definition": "null"
+            },
+            {
+                "value": "P.S. I Love You",
+                "definition": "null"
+            },
+            {
+                "value": "Fargo",
+                "definition": "null"
+            },
+            {
+                "value": "Juno",
+                "definition": "null"
+            },
+            {
+                "value": "The Time Traveler's Wife",
+                "definition": "null"
+            },
+            {
+                "value": "Memento",
+                "definition": "null"
+            },
+            {
+                "value": "Pitch Perfect",
+                "definition": "null"
+            },
+            {
+                "value": "The Devil Wears Prada",
+                "definition": "null"
+            },
+            {
+                "value": "Love Actually",
+                "definition": "null"
+            },
+            {
+                "value": "Skyfall",
+                "definition": "null"
+            },
+            {
+                "value": "Mean Girls",
+                "definition": "null"
+            },
+            {
+                "value": "The Grinch",
+                "definition": "null"
+            },
+            {
+                "value": "Leon: The Professional",
+                "definition": "null"
+            },
+            {
+                "value": "Freaky Friday",
+                "definition": "null"
+            },
+            {
+                "value": "Life of Pi",
+                "definition": "null"
+            },
+            {
+                "value": "Up",
+                "definition": "null"
+            },
+            {
+                "value": "The Da Vinci Code",
+                "definition": "null"
+            },
+            {
+                "value": "The Amityville Horror",
+                "definition": "null"
+            },
+            {
+                "value": "Jaws",
+                "definition": "null"
+            },
+            {
+                "value": "District 9",
+                "definition": "null"
+            },
+            {
+                "value": "The Truman Show",
+                "definition": "null"
+            },
+            {
+                "value": "Toy Story",
+                "definition": "null"
+            },
+            {
+                "value": "Titanic",
+                "definition": "null"
+            },
+            {
+                "value": "Goodfellas",
+                "definition": "null"
+            },
+            {
+                "value": "Inglorious Bastards",
+                "definition": "null"
+            },
+            {
+                "value": "Finding Nemo",
+                "definition": "null"
+            },
+            {
+                "value": "Madagascar",
+                "definition": "null"
+            },
+            {
+                "value": "Star Trek",
+                "definition": "null"
+            },
+            {
+                "value": "Chocolat",
+                "definition": "null"
+            },
+            {
+                "value": "Daredevil",
+                "definition": "null"
+            },
+            {
+                "value": "Bridesmaids",
+                "definition": "null"
+            },
+            {
+                "value": "I Know What You Did Last Summer",
+                "definition": "null"
+            },
+            {
+                "value": "Thank you for Smoking",
+                "definition": "null"
+            },
+            {
+                "value": "Gladiator",
+                "definition": "null"
+            },
+            {
+                "value": "Buffy the Vampire Slayer",
+                "definition": "null"
+            },
+            {
+                "value": "Avatar",
+                "definition": "null"
+            },
+            {
+                "value": "Shutter Island",
+                "definition": "null"
+            },
+            {
+                "value": "The Silence of the Lambs",
+                "definition": "null"
+            },
+            {
+                "value": "Zombieland",
+                "definition": "null"
+            }
+        ]
+    }
+]

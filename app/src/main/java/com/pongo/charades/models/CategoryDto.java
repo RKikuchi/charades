@@ -7,6 +7,7 @@ import java.util.List;
  */
 public class CategoryDto {
     public String icon;
+    public String language;
     public String title;
     public List<CategoryItemDto> items;
 }

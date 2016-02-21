@@ -11,9 +11,22 @@ public class CategoryModel extends RealmObject {
     @Required
     private String title;
     @Required
+    private String language;
+    @Required
     private Boolean isCustom;
     private String icon;
     private RealmList<CategoryItemModel> items = new RealmList<>();
+
+    public static CategoryModel loadDto(CategoryDto dto) {
+        CategoryModel model = new CategoryModel();
+        model.setIsCustom(false);
+        model.setTitle(dto.title);
+        model.setLanguage(dto.language);
+        for (CategoryItemDto itemDto : dto.items) {
+            model.getItems().add(new CategoryItemModel(itemDto.value, itemDto.definition));
+        }
+        return model;
+    }
 
     public String getTitle() {
         return title;
@@ -45,5 +58,13 @@ public class CategoryModel extends RealmObject {
 
     public void setIcon(String icon) {
         this.icon = icon;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 }

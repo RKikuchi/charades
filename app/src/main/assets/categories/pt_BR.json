@@ -1,0 +1,938 @@
+[
+    {
+        "language": "pt_BR",
+        "title": "Animais",
+        "items": [
+            {
+                "value": "Tartaruga",
+                "definition": "null"
+            },
+            {
+                "value": "Elefante",
+                "definition": "null"
+            },
+            {
+                "value": "Girafa",
+                "definition": "null"
+            },
+            {
+                "value": "Cavalo",
+                "definition": "null"
+            },
+            {
+                "value": "Leão",
+                "definition": "null"
+            },
+            {
+                "value": "Rato",
+                "definition": "null"
+            },
+            {
+                "value": "Cervo",
+                "definition": "null"
+            },
+            {
+                "value": "Águia",
+                "definition": "null"
+            },
+            {
+                "value": "Galo",
+                "definition": "null"
+            },
+            {
+                "value": "Serpente",
+                "definition": "null"
+            },
+            {
+                "value": "Vaca",
+                "definition": "null"
+            },
+            {
+                "value": "Raposa",
+                "definition": "null"
+            },
+            {
+                "value": "Tucano",
+                "definition": "null"
+            },
+            {
+                "value": "Ema",
+                "definition": "null"
+            },
+            {
+                "value": "Panda",
+                "definition": "null"
+            },
+            {
+                "value": "Avestruz",
+                "definition": "null"
+            },
+            {
+                "value": "Zebra",
+                "definition": "null"
+            },
+            {
+                "value": "Lobo",
+                "definition": "null"
+            },
+            {
+                "value": "Urso polar",
+                "definition": "null"
+            },
+            {
+                "value": "Ouriço",
+                "definition": "null"
+            },
+            {
+                "value": "Porco-espinho",
+                "definition": "null"
+            },
+            {
+                "value": "Ganso",
+                "definition": "null"
+            },
+            {
+                "value": "Guepardo",
+                "definition": "null"
+            },
+            {
+                "value": "Javali",
+                "definition": "null"
+            },
+            {
+                "value": "Papagaio",
+                "definition": "null"
+            },
+            {
+                "value": "Pelicano",
+                "definition": "null"
+            },
+            {
+                "value": "Tigre preto",
+                "definition": "null"
+            },
+            {
+                "value": "Crocodilo",
+                "definition": "null"
+            },
+            {
+                "value": "Jacaré",
+                "definition": "null"
+            },
+            {
+                "value": "Foca",
+                "definition": "null"
+            },
+            {
+                "value": "Pinguim",
+                "definition": "null"
+            },
+            {
+                "value": "Baleia Azul",
+                "definition": "null"
+            },
+            {
+                "value": "Esquilo",
+                "definition": "null"
+            },
+            {
+                "value": "Camelo",
+                "definition": "null"
+            },
+            {
+                "value": "Lagarto",
+                "definition": "null"
+            },
+            {
+                "value": "Asno",
+                "definition": "null"
+            },
+            {
+                "value": "Touro",
+                "definition": "null"
+            },
+            {
+                "value": "Cegonha",
+                "definition": "null"
+            },
+            {
+                "value": "Abutre",
+                "definition": "null"
+            },
+            {
+                "value": "Rinoceronte",
+                "definition": "null"
+            },
+            {
+                "value": "Leopardo",
+                "definition": "null"
+            },
+            {
+                "value": "Pássaro",
+                "definition": "null"
+            },
+            {
+                "value": "Gorila",
+                "definition": "null"
+            },
+            {
+                "value": "Antílope",
+                "definition": "null"
+            },
+            {
+                "value": "Pantera",
+                "definition": "null"
+            },
+            {
+                "value": "Búfalo",
+                "definition": "null"
+            },
+            {
+                "value": "Morsa",
+                "definition": "null"
+            },
+            {
+                "value": "Vespa",
+                "definition": "null"
+            },
+            {
+                "value": "Rouxinol",
+                "definition": "null"
+            },
+            {
+                "value": "Pato",
+                "definition": "null"
+            },
+            {
+                "value": "Porco",
+                "definition": "null"
+            },
+            {
+                "value": "Tentilhão",
+                "definition": "null"
+            },
+            {
+                "value": "Lebre",
+                "definition": "null"
+            },
+            {
+                "value": "Perdiz",
+                "definition": "null"
+            },
+            {
+                "value": "Rena",
+                "definition": "null"
+            },
+            {
+                "value": "Garça-real",
+                "definition": "null"
+            },
+            {
+                "value": "Coiote",
+                "definition": "null"
+            },
+            {
+                "value": "Guanaco",
+                "definition": "null"
+            },
+            {
+                "value": "Cobra",
+                "definition": "null"
+            },
+            {
+                "value": "Lagosta",
+                "definition": "null"
+            },
+            {
+                "value": "Estrela do Mar",
+                "definition": "null"
+            },
+            {
+                "value": "Peixe-boi",
+                "definition": "null"
+            },
+            {
+                "value": "Mosquito",
+                "definition": "null"
+            },
+            {
+                "value": "Caranguejo",
+                "definition": "null"
+            },
+            {
+                "value": "Dragão",
+                "definition": "null"
+            },
+            {
+                "value": "Puma",
+                "definition": "null"
+            },
+            {
+                "value": "Lontra",
+                "definition": "null"
+            },
+            {
+                "value": "Corvo",
+                "definition": "null"
+            },
+            {
+                "value": "Coruja",
+                "definition": "null"
+            },
+            {
+                "value": "Cisne",
+                "definition": "null"
+            },
+            {
+                "value": "Castor",
+                "definition": "null"
+            },
+            {
+                "value": "Minhoca",
+                "definition": "null"
+            },
+            {
+                "value": "Toupeira",
+                "definition": "null"
+            },
+            {
+                "value": "Anta",
+                "definition": "null"
+            },
+            {
+                "value": "Chimpanzé",
+                "definition": "null"
+            },
+            {
+                "value": "Humano",
+                "definition": "null"
+            }
+        ]
+    },
+    {
+        "language": "pt_BR",
+        "title": "Expressões Idiomáticas (Brasil)",
+        "items": [
+            {
+                "value": "Abandonar o barco",
+                "definition": "desistir de uma situação difícil que se repete cotidianamente."
+            },
+            {
+                "value": "Abotoar o paletó",
+                "definition": "morrer"
+            },
+            {
+                "value": "Abrir mão de alguma coisa",
+                "definition": "renunciar alguma coisa"
+            },
+            {
+                "value": "Acabar em pizza",
+                "definition": "quando uma situação não resolvida acaba encerrada (especialmente em casos de corrupção, quando ninguém é punido)"
+            },
+            {
+                "value": "Acertar na lata",
+                "definition": "acertar com precisão, adivinhar de primeira"
+            },
+            {
+                "value": "Acertar na mosca",
+                "definition": "acertar precisamente, acertar de primeira"
+            },
+            {
+                "value": "A céu aberto",
+                "definition": "ao ar livre"
+            },
+            {
+                "value": "Achar (procurar) chifre em cabeça de cavalo",
+                "definition": "procurar problemas onde não existem."
+            },
+            {
+                "value": "Achar (procurar) pêlo em ovo",
+                "definition": "buscar coisas impossíveis"
+            },
+            {
+                "value": "A dar com pau",
+                "definition": "em grande quantidade"
+            },
+            {
+                "value": "Adoçar a boca",
+                "definition": "procurar atrair um favor, uma graça de alguém com elogios, dádivas etc."
+            },
+            {
+                "value": "Agarrar com unhas e dentes",
+                "definition": "agir de forma extrema para não perder algo ou alguém"
+            },
+            {
+                "value": "Agora é que são elas",
+                "definition": "aqui começa a dificuldade"
+            },
+            {
+                "value": "Água que passarinho não bebe",
+                "definition": "pinga, bebida alcoólica"
+            },
+            {
+                "value": "Amarrar o burro",
+                "definition": "ficar em descanso (folgado); Se comprometer (normalmente em relação a relacionamentos)"
+            },
+            {
+                "value": "Amigo da onça",
+                "definition": "falso amigo, amigo interesseiro ou traidor"
+            },
+            {
+                "value": "Andar na linha",
+                "definition": "estar elegante ou agir corretamente"
+            },
+            {
+                "value": "Andar nas nuvens",
+                "definition": "estar desatento(a)"
+            },
+            {
+                "value": "Ao deus dará",
+                "definition": "abandonado, sem rumo"
+            },
+            {
+                "value": "Ao pé da letra",
+                "definition": "literalmente"
+            },
+            {
+                "value": "Aos trancos e barrancos",
+                "definition": "de forma atabalhoada, desajeitada"
+            },
+            {
+                "value": "Aquentar água para o mate dos outros",
+                "definition": "trabalhar para proveito alheio"
+            },
+            {
+                "value": "Armado até os dentes",
+                "definition": "exageradamente armado, preparado para uma situação"
+            },
+            {
+                "value": "Armar um barraco",
+                "definition": "criar confusão em público, discutindo ou brigando com alguém"
+            },
+            {
+                "value": "Arrancar os cabelos",
+                "definition": "entrar em desespero"
+            },
+            {
+                "value": "Arrastar as asas (para alguém)",
+                "definition": "enamorar-se, insinuar-se romanticamente para alguém"
+            },
+            {
+                "value": "Arregaçar as mangas",
+                "definition": "dar início a um trabalho ou atividade com afinco"
+            },
+            {
+                "value": "Arrumar sarna para se coçar",
+                "definition": "procurar por problemas"
+            },
+            {
+                "value": "Até debaixo d'água",
+                "definition": "em todas as circunstâncias"
+            },
+            {
+                "value": "Babar ovo",
+                "definition": "puxar o saco, idolatrar incondicionalmente"
+            },
+            {
+                "value": "Banhar-se em água-de-rosas",
+                "definition": "ter grande satisfação, deleite, alegria"
+            },
+            {
+                "value": "Banho de água fria",
+                "definition": "romper as expectativas de alguém, decepcionar, desiludir."
+            },
+            {
+                "value": "Banho de gato",
+                "definition": "lavar superficialmente as partes do corpo"
+            },
+            {
+                "value": "Barata tonta",
+                "definition": "perdido, desorientado, sem saber o que fazer"
+            },
+            {
+                "value": "Barra pesada",
+                "definition": "situação difícil, ou pessoa grosseira e violenta"
+            },
+            {
+                "value": "Bate e volta",
+                "definition": "ir e voltar a algum evento ou lugar rapidamente"
+            },
+            {
+                "value": "Bater as botas",
+                "definition": "morrer"
+            },
+            {
+                "value": "Bater com as dez",
+                "definition": "morrer"
+            },
+            {
+                "value": "Bater na mesma tecla",
+                "definition": "insistir demais no mesmo assunto"
+            },
+            {
+                "value": "Bater papo",
+                "definition": "conversar (informalmente)"
+            },
+            {
+                "value": "Beber água nas orelhas dos outros",
+                "definition": "viver sempre a cochichar, a fazer intrigas"
+            },
+            {
+                "value": "Boca do inferno",
+                "definition": "entrando em problemas sérios"
+            },
+            {
+                "value": "Bode expiatório",
+                "definition": "aquele que leva a culpa no lugar de outro"
+            },
+            {
+                "value": "Bola pra frente",
+                "definition": "expressão de encorajamento, para se seguir em frente mesmo frente a adversidades"
+            },
+            {
+                "value": "Bom de bico",
+                "definition": "galanteador, que tenta convencer os outros na conversa"
+            },
+            {
+                "value": "Borracho",
+                "definition": "bêbado (ver Portugal)"
+            },
+            {
+                "value": "Botar a boca no trombone",
+                "definition": "revelar um segredo, tornar algo público"
+            },
+            {
+                "value": "Botar o carro na frente dos bois",
+                "definition": "pular ou queimar etapas de forma inapropriada, geralmente atrapalhando o andamento ou resolução de uma situação"
+            },
+            {
+                "value": "Botar pra quebrar",
+                "definition": "fazer algo com extrema intensidade, em geral em sentido positivo"
+            },
+            {
+                "value": "Briga de cachorro grande",
+                "definition": "embate entre forças as quais se julga superiores."
+            },
+            {
+                "value": "Briga de foice (no escuro)",
+                "definition": "mulher feia"
+            },
+            {
+                "value": "Cair a ficha",
+                "definition": "entender um assunto tardiamente, dar-se conta de algo"
+            },
+            {
+                "value": "Cara de pau",
+                "definition": "Descarado, sem-vergonha"
+            },
+            {
+                "value": "Carregar nas tintas",
+                "definition": "mostrar-se exagerado ao descrever ou relatar"
+            },
+            {
+                "value": "Chutar alto",
+                "definition": "contar vantagens; jactar-se, vangloriar-se"
+            },
+            {
+                "value": "Chutar o balde / Chutar o pau da barraca",
+                "definition": "agir irresponsavelmente em relação a um problema"
+            },
+            {
+                "value": "Colocar melancia na cabeça",
+                "definition": "querer aparecer, se exibir"
+            },
+            {
+                "value": "Comer água",
+                "definition": "Ato de sair para consumir bebida alcoólica (em grande quantidade)"
+            },
+            {
+                "value": "Comer cru e quente",
+                "definition": "Ser apressado e pouco perfeccionista"
+            },
+            {
+                "value": "Confundir alhos com bugalhos",
+                "definition": "confundir ou misturar conceitos ou fatos"
+            },
+            {
+                "value": "Conversa com a minha mão",
+                "definition": "quando alguém fala sobre um assunto chato e não se deseja continuar a conversa."
+            },
+            {
+                "value": "Cutucar a onça com vara curta",
+                "definition": "arrumar problema, provocar"
+            },
+            {
+                "value": "Dar bola (para alguém)",
+                "definition": "insinuar-se romanticamente para alguém"
+            },
+            {
+                "value": "Dar a volta por cima",
+                "definition": "se recuperar"
+            },
+            {
+                "value": "Dar com a cara na porta",
+                "definition": "levar um fora, decepcionar-se, procurar e não encontrar"
+            },
+            {
+                "value": "Dar mancada",
+                "definition": "descumprir promessa, relaxo, deslize"
+            },
+            {
+                "value": "Dar pau na máquina",
+                "definition": "dar urgência"
+            },
+            {
+                "value": "Dar (um) galho",
+                "definition": "ocasionar dificuldades, complicações, aborrecimentos"
+            },
+            {
+                "value": "Dar uma de João sem braço",
+                "definition": "fazer-se de desentendido"
+            },
+            {
+                "value": "Dar uma mãozinha",
+                "definition": "dar uma pequena ajuda"
+            },
+            {
+                "value": "De uma Forma ou de outra",
+                "definition": "quando tem certeza que algo irá ocorrer"
+            },
+            {
+                "value": "Deitar o cabelo",
+                "definition": "correr muito"
+            },
+            {
+                "value": "Deixar na mão",
+                "definition": "não colaborar, abandonar"
+            },
+            {
+                "value": "Descascar o abacaxi",
+                "definition": "resolver problema complicado/desvencilhar-se de uma incumbência ou situação desagradável"
+            },
+            {
+                "value": "Dormir de toca ou Dormir na touca",
+                "definition": "bobear"
+            },
+            {
+                "value": "Dormir no ponto",
+                "definition": "bobear, perder uma oportunidade"
+            },
+            {
+                "value": "Estar com dor de cotovelo",
+                "definition": "estar despeitado devido a uma decepção amorosa"
+            },
+            {
+                "value": "Encher/entortar o caneco",
+                "definition": "beber até cair"
+            },
+            {
+                "value": "Enfiar o pé na jaca",
+                "definition": "embriagar-se, cometer excessos, cometer um erro"
+            },
+            {
+                "value": "Encher linguiça",
+                "definition": "enrolar, preencher espaço com embromação"
+            },
+            {
+                "value": "Ensacar fumaça",
+                "definition": "fazer trabalho inútil"
+            },
+            {
+                "value": "Entrar pelo cano",
+                "definition": "se dar mal, ficar encrencado"
+            },
+            {
+                "value": "Estar com a bola murcha",
+                "definition": "estar sem ânimo"
+            },
+            {
+                "value": "Estar com a corda toda",
+                "definition": "estar animado, empolgado"
+            },
+            {
+                "value": "Estar dando sopa",
+                "definition": "estar inadvertidamente vulnerável"
+            },
+            {
+                "value": "Estar/ficar nas tintas",
+                "definition": "assumir uma atitude de despreocupação, indiferença ou irresponsabilidade"
+            },
+            {
+                "value": "Estar na aba de alguém",
+                "definition": "usar emprestado ou de graça (algo pertencente a outro), para não comprar; filar"
+            },
+            {
+                "value": "Estar no bico do corvo",
+                "definition": "estar para morrer"
+            },
+            {
+                "value": "Enxugar gelo",
+                "definition": "insistir em um trabalho inútil"
+            },
+            {
+                "value": "Fazer boca de siri",
+                "definition": "manter segredo sobre algum assunto"
+            },
+            {
+                "value": "Fazer nas coxas",
+                "definition": "fazer sem cuidado"
+            },
+            {
+                "value": "Feito cego em tiroteio",
+                "definition": "Desorientado, perdido"
+            },
+            {
+                "value": "Ficar a ver navios",
+                "definition": "ficar sem nada ou sem coisa alguma"
+            },
+            {
+                "value": "Galinha que acompanha pato, morre afogada",
+                "definition": "querer fazer o que outro faz"
+            },
+            {
+                "value": "Ir catar coquinho, Ir tomar banho",
+                "definition": "ir fazer outra coisa"
+            },
+            {
+                "value": "Ir para o espaço, ir pra cucuia",
+                "definition": "não funcionar, falhar, dar errado, morrer"
+            },
+            {
+                "value": "Ir para o saco",
+                "definition": "não funcionar, falhar, dar errado, morrer"
+            },
+            {
+                "value": "Ir pentear macaco",
+                "definition": "mandar alguém ir procurar o que fazer, pedir alguém para não se intrometer"
+            },
+            {
+                "value": "Jogado para escanteio",
+                "definition": "Posto de lado; descartado; ignorado"
+            },
+            {
+                "value": "Lascar o pudim",
+                "definition": "acelerar, se apressar"
+            },
+            {
+                "value": "Lavar as mãos",
+                "definition": "não se envolver"
+            },
+            {
+                "value": "Lavar a égua",
+                "definition": "Ir à forra"
+            },
+            {
+                "value": "Lavar a roupa suja",
+                "definition": "acertar as diferenças com alguém"
+            },
+            {
+                "value": "Levantar com o pé esquerdo",
+                "definition": "ter um dia ruim"
+            },
+            {
+                "value": "Levar chumbo/ferro/pau",
+                "definition": "fracassar ou dar-se mal; sofrer violência"
+            },
+            {
+                "value": "Levar toco",
+                "definition": "ser dispensado(a) pela namorada(o)"
+            },
+            {
+                "value": "Levar um fora",
+                "definition": "ser descartado, desprezado, bloqueado ou impedido por alguém (sentimental)"
+            },
+            {
+                "value": "Levar tudo por trás",
+                "definition": "entender tudo de maneira pejorativa ou oposta"
+            },
+            {
+                "value": "Malhar",
+                "definition": "meter pau"
+            },
+            {
+                "value": "Matar a cobra e mostrar o pau",
+                "definition": "Assumir seus atos com fervor"
+            },
+            {
+                "value": "Marcar touca",
+                "definition": "distrair-se e perder uma oportunidade"
+            },
+            {
+                "value": "Meter o dedo na ferida",
+                "definition": "Insistir em situação problemática"
+            },
+            {
+                "value": "Molhar o biscoito",
+                "definition": "fazer sexo (homem)"
+            },
+            {
+                "value": "Mudar da água para o vinho",
+                "definition": "mudar totalmente, mudar radicalmente"
+            },
+            {
+                "value": "Mudar do saco para a mala",
+                "definition": "mudar totalmente de assunto"
+            },
+            {
+                "value": "Na mão do palhaço",
+                "definition": "ver-se numa situação fora de controle"
+            },
+            {
+                "value": "Não fazer bom cabelo",
+                "definition": "não ouvir, não servir, não combinar bem"
+            },
+            {
+                "value": "Onde Judas perdeu as botas",
+                "definition": "lugar muito distante"
+            },
+            {
+                "value": "O que vem debaixo não me atinge",
+                "definition": "expressão usada para menosprezar alguém ou estabelecer diferença de nível entre os interlocutores"
+            },
+            {
+                "value": "Pagar o pato",
+                "definition": "ser responsabilizado por algo que não cometeu"
+            },
+            {
+                "value": "Pendurar as chuteiras",
+                "definition": "aposentar-se, desistir"
+            },
+            {
+                "value": "Pensar na morte da bezerra",
+                "definition": "distrair-se"
+            },
+            {
+                "value": "Perder a linha",
+                "definition": "perder a educação, perder a elegância"
+            },
+            {
+                "value": "Pirar na batatinha",
+                "definition": "pensar/imaginar ou propor coisa improvável ou impossível de acontecer"
+            },
+            {
+                "value": "Pisar na bola/no tomate",
+                "definition": "cometer deslize"
+            },
+            {
+                "value": "Plantar bananeira",
+                "definition": "colocar-se de cabeça para baixo"
+            },
+            {
+                "value": "Pôr minhoca na cabeça",
+                "definition": "criar ou refletir sobre problemas inexistentes"
+            },
+            {
+                "value": "Procurar chifre em cabeça de cavalo/pêlo em ovo",
+                "definition": "procurar significados ou imaginar problemas que não existem"
+            },
+            {
+                "value": "Procurar sarna para se coçar",
+                "definition": "Se envolver em problemas sem necessidade"
+            },
+            {
+                "value": "Quebrar o galho",
+                "definition": "dar solução precária, improvisar"
+            },
+            {
+                "value": "Sair da aba",
+                "definition": "parar de filar algo (cigarro, bebida, jornal etc.); parar de ler o jornal por cima do ombro de outra pessoa"
+            },
+            {
+                "value": "Segurar vela",
+                "definition": "atrapalhar namoro, acompanhar um casal ou ser o único solteiro numa roda de casais"
+            },
+            {
+                "value": "Sem pé nem cabeça",
+                "definition": "confuso, sem sentido"
+            },
+            {
+                "value": "Sem eira nem beira",
+                "definition": "destituído de tudo"
+            },
+            {
+                "value": "Ser um barbeiro",
+                "definition": "motorista ou qualquer profissional descuidado, imperito ou incompetente na realização do seu trabalho"
+            },
+            {
+                "value": "Ser de bom comer",
+                "definition": "ter boa boca/consentir na infidelidade da própria mulher"
+            },
+            {
+                "value": "Ser um joão-ninguém",
+                "definition": "indivíduo sem importância, que não tem peso social e destituído de qualquer poder econômico"
+            },
+            {
+                "value": "Ser uma mala sem alça",
+                "definition": "ser muito chato e difícil de ser tolerado"
+            },
+            {
+                "value": "Ser uma mão na roda",
+                "definition": "ajudar muito, ser prestativo"
+            },
+            {
+                "value": "Ser um/uma maria-vai-com-as-outras",
+                "definition": "não ter própria personalidade, que se deixa facilmente influenciar ou levar pelos outros"
+            },
+            {
+                "value": "Ser uma pedra no sapato/no caminho",
+                "definition": "ser um estorvo, atrapalhar"
+            },
+            {
+                "value": "Sovar a corda",
+                "definition": "se masturbar"
+            },
+            {
+                "value": "Soltar a franga",
+                "definition": "desinibir-se (geralmente assumindo um lado feminino/alegre)"
+            },
+            {
+                "value": "Tempestade em copo d'agua",
+                "definition": "dar importância muito grande a uma coisa muito pequena"
+            },
+            {
+                "value": "Tirar de letra",
+                "definition": "fazer algo com muita facilidade"
+            },
+            {
+                "value": "Tirar o cavalo da chuva",
+                "definition": "desistir de algo ou alguém"
+            },
+            {
+                "value": "Tirar onda",
+                "definition": "brincar, sacanear"
+            },
+            {
+                "value": "Tomar um chega para lá",
+                "definition": "ser descartado"
+            },
+            {
+                "value": "Trocar as bolas",
+                "definition": "atrapalhar-se"
+            },
+            {
+                "value": "Trocar os pés pelas mãos",
+                "definition": "agir desajeitadamente, com pressa"
+            },
+            {
+                "value": "Trocar seis por meia dúzia",
+                "definition": "trocar uma coisa por outra que não vai fazer a menor diferença"
+            },
+            {
+                "value": "Vendo a vó pela greta",
+                "definition": "estar quase morrendo"
+            },
+            {
+                "value": "Viajar na maionese",
+                "definition": "não entender alguma coisa ou dizer um absurdo, bobeira, ou coisa sem sentido"
+            },
+            {
+                "value": "Virar alcanfor",
+                "definition": "sumir (como ocorre na volatização da cânfora); desaparecer, fugir"
+            },
+            {
+                "value": "Voltar à vaca fria",
+                "definition": "retornar a um assunto inicial/principal numa discussão, após divagação"
+            }
+        ]
+    }
+]

@@ -14,11 +14,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.pongo.charades.R;
 import com.pongo.charades.adapters.CharadesRecyclerViewAdapter;
 import com.pongo.charades.async.OnlineCategoriesLoader;
+import com.pongo.charades.models.CategoryDto;
 import com.pongo.charades.models.CategoryModel;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 
 import io.realm.Realm;
@@ -83,15 +91,38 @@ public class MainActivity extends AppCompatActivity implements OnlineCategoriesL
         return super.onOptionsItemSelected(item);
     }
 
+    private void setup() {
+        if (mRealm.where(CategoryModel.class).count() == 0) {
+            loadHardcodedCategories();
+            //syncOnlineCategories();
+        }
+    }
+
     private void syncOnlineCategories() {
         Snackbar.make(mLayout, R.string.syncing_online_categories, Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
         new OnlineCategoriesLoader().load(this);
     }
 
-    private void setup() {
-        if (mRealm.where(CategoryModel.class).count() == 0)
-            syncOnlineCategories();
+    private void loadHardcodedCategories() {
+        ArrayList<CategoryModel> categories = new ArrayList<CategoryModel>();
+        try {
+            String[] files = getAssets().list("categories");
+            for (String file : files) {
+                InputStream is = getAssets().open("categories/" + file);
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                Gson gson = new Gson();
+
+                List<CategoryDto> dtos =
+                        gson.fromJson(reader, new TypeToken<List<CategoryDto>>(){}.getType());
+                for (CategoryDto dto : dtos) {
+                    categories.add(CategoryModel.loadDto(dto));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        loadCategories(categories);
     }
 
     @Override
@@ -104,6 +135,10 @@ public class MainActivity extends AppCompatActivity implements OnlineCategoriesL
             return;
         }
 
+        loadCategories(categories);
+    }
+
+    private void loadCategories(List<CategoryModel> categories) {
         mRealm.beginTransaction();
         mRealm.where(CategoryModel.class)
                 .equalTo("isCustom", false)

@@ -4,8 +4,6 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.pongo.charades.models.CategoryDto;
-import com.pongo.charades.models.CategoryItemDto;
-import com.pongo.charades.models.CategoryItemModel;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.services.OnlineCategoriesService;
 
@@ -69,13 +67,7 @@ public class OnlineCategoriesLoader {
                 Log.i("CategoriesLoader", "Fetching category " + categorySlug);
                 try {
                     CategoryDto dto = svc.getCategory(categorySlug).execute().body();
-                    CategoryModel model = new CategoryModel();
-                    model.setIsCustom(false);
-                    model.setTitle(dto.title);
-                    for (CategoryItemDto itemDto : dto.items) {
-                        model.getItems().add(new CategoryItemModel(itemDto.value, itemDto.definition));
-                    }
-                    result.add(model);
+                    result.add(CategoryModel.loadDto(dto));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
