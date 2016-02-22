@@ -69,7 +69,8 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         setContentView(R.layout.activity_game_round);
         mState = State.COUNTDOWN;
         mTotalRoundTime = Integer.parseInt(PreferenceManager
-                .getDefaultSharedPreferences(this).getString("round_time_preference", "60"));
+                .getDefaultSharedPreferences(this)
+                .getString(getString(R.string.pref_key_round_time), "60"));
         Intent intent = getIntent();
         mExtras = intent.getExtras();
         mTiltSensor = new TiltSensorService(this, this);
