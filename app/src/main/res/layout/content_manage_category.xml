@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.pongo.charades.activities.ManageCategoryActivity"
+    tools:showIn="@layout/activity_manage_category"
+    android:backgroundTint="@android:color/darker_gray">
+
+    <EditText
+        android:id="@+id/manage_category_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:singleLine="true"
+        android:lines="1"
+        android:scrollHorizontally="true"
+        android:ellipsize="end"
+        android:hint="@string/name"
+        android:inputType="textCapWords"
+        android:background="@drawable/shape_input_bg"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:layout_marginBottom="10dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/manage_category_recycler_view"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/manage_category_name"
+        android:layout_above="@+id/manage_category_new_item_button"
+        android:background="@drawable/shape_input_bg" />
+
+    <Button
+        android:id="@+id/manage_category_new_item_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/add_new_item"
+        android:background="@drawable/shape_input_bg"
+        android:padding="6dp"/>
+
+</RelativeLayout>

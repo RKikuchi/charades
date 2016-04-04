@@ -9,9 +9,14 @@
     <string name="skip">Skip</string>
     <string name="back">Back</string>
     <string name="timer">Timer</string>
+    <string name="name">Name</string>
     <string name="syncing_online_categories">Syncing online categories...</string>
     <string name="error_loading_online_data">Error while loading online data</string>
     <string name="title_activity_settings">Settings</string>
+
+    <string name="title_activity_manage_category">Category</string>
+    <string name="action_save">Save</string>
+    <string name="add_new_item">+ New Item</string>
 
     <!-- Strings related to Settings -->
     <string name="pref_title_select_round_time">Round time</string>
