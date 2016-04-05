@@ -43,7 +43,9 @@ public class CategoryItemsRecyclerViewAdapter extends RecyclerView.Adapter {
         removeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO
+                int pos = holder.getAdapterPosition();
+                mItems.remove(pos);
+                notifyItemRemoved(pos);
             }
         });
         return holder;
