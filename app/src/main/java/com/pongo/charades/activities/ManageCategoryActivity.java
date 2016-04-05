@@ -21,7 +21,7 @@ public class ManageCategoryActivity extends AppCompatActivity {
     public static final String CATEGORY_TITLE = "CATEGORY_TITLE";
 
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private CategoryItemsRecyclerViewAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private CategoryModel mCategory;
 
@@ -36,7 +36,7 @@ public class ManageCategoryActivity extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.manage_category_recycler_view);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new CategoryItemsRecyclerViewAdapter(this, mCategory);
+        mAdapter = new CategoryItemsRecyclerViewAdapter(this, mRecyclerView, mCategory);
         mRecyclerView.setAdapter(mAdapter);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.manage_category_toolbar);
@@ -47,8 +47,16 @@ public class ManageCategoryActivity extends AppCompatActivity {
         newItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final int lastPos = mCategory.getItems().size();
                 mCategory.getItems().add(new CategoryItemModel("", null));
-                mAdapter.notifyItemInserted(mCategory.getItems().size() - 1);
+                mAdapter.notifyItemInserted(lastPos);
+                mRecyclerView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        mAdapter.focusItem(lastPos);
+                        mRecyclerView.smoothScrollToPosition(lastPos);
+                    }
+                });
             }
         });
     }
