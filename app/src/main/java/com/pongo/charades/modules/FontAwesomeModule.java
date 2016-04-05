@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 
 import com.pongo.charades.activities.GameRoundActivity;
+import com.pongo.charades.activities.ManageCategoryActivity;
 
 import javax.inject.Singleton;
 
@@ -13,7 +14,7 @@ import dagger.Provides;
 /**
  * Created by rsaki on 2/8/2016.
  */
-@Module(injects = GameRoundActivity.class)
+@Module(injects = {GameRoundActivity.class, ManageCategoryActivity.class})
 public class FontAwesomeModule {
     Context mContext;
 

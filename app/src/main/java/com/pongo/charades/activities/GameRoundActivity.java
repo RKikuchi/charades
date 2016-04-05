@@ -1,7 +1,6 @@
 package com.pongo.charades.activities;
 
 import android.content.Intent;
-import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;

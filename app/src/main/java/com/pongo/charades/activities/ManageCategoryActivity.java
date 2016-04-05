@@ -2,41 +2,48 @@ package com.pongo.charades.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import com.pongo.charades.R;
 import com.pongo.charades.adapters.CategoryItemsRecyclerViewAdapter;
 import com.pongo.charades.models.CategoryItemModel;
 import com.pongo.charades.models.CategoryModel;
+import com.pongo.charades.modules.FontAwesomeProvider;
+
+import javax.inject.Inject;
 
 import io.realm.Realm;
 
-public class ManageCategoryActivity extends AppCompatActivity {
+public class ManageCategoryActivity extends BaseActivity {
     public static final String CATEGORY_TITLE = "CATEGORY_TITLE";
 
+    @Inject
+    FontAwesomeProvider mFontAwesome;
     private RecyclerView mRecyclerView;
     private CategoryItemsRecyclerViewAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private CategoryModel mCategory;
+    private EditText mNameEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_category);
 
-        loadCategory();
+        boolean isNew = !loadCategory();
 
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView = (RecyclerView) findViewById(R.id.manage_category_recycler_view);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new CategoryItemsRecyclerViewAdapter(this, mRecyclerView, mCategory);
+        mAdapter = new CategoryItemsRecyclerViewAdapter(this,
+                mFontAwesome, mRecyclerView, mCategory);
         mRecyclerView.setAdapter(mAdapter);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.manage_category_toolbar);
@@ -59,18 +66,21 @@ public class ManageCategoryActivity extends AppCompatActivity {
                 });
             }
         });
+
+        mNameEditText = (EditText) findViewById(R.id.manage_category_name);
+        if (isNew) {
+            mNameEditText.requestFocus();
+        }
     }
 
-    private void loadCategory() {
+    private boolean loadCategory() {
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         String categoryTitle = extras == null ? null : extras.getString(CATEGORY_TITLE);
         if (categoryTitle == null) {
             mCategory = new CategoryModel();
-            mCategory.getItems().add(new CategoryItemModel("Test 1", null));
-            mCategory.getItems().add(new CategoryItemModel("Test 2", null));
-            mCategory.getItems().add(new CategoryItemModel("Test 3", null));
-            return;
+            mCategory.getItems().add(new CategoryItemModel("", null));
+            return false;
         }
 
         Realm realm = Realm.getInstance(getApplicationContext());
@@ -81,6 +91,7 @@ public class ManageCategoryActivity extends AppCompatActivity {
         } finally {
             realm.close();
         }
+        return true;
     }
 
     @Override

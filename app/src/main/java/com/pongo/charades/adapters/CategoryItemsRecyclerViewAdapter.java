@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.pongo.charades.R;
 import com.pongo.charades.models.CategoryItemModel;
 import com.pongo.charades.models.CategoryModel;
+import com.pongo.charades.modules.FontAwesomeProvider;
 import com.pongo.charades.viewholders.CategoryItemViewHolder;
 
 import io.realm.RealmList;
@@ -20,15 +21,18 @@ public class CategoryItemsRecyclerViewAdapter extends RecyclerView.Adapter {
     private static final int NO_FOCUS = -1;
 
     final private Context mContext;
+    final private FontAwesomeProvider mFontAwesome;
     final private LayoutInflater mLayoutInflater;
     final private RealmList<CategoryItemModel> mItems;
     final private RecyclerView mRecyclerView;
     private int mFocusPosition;
 
     public CategoryItemsRecyclerViewAdapter(Context context,
+                                            FontAwesomeProvider fontAwesome,
                                             RecyclerView recyclerView,
                                             CategoryModel category) {
         mContext = context;
+        mFontAwesome = fontAwesome;
         mRecyclerView = recyclerView;
         mItems = category.getItems();
         mLayoutInflater = LayoutInflater.from(context);
@@ -38,7 +42,7 @@ public class CategoryItemsRecyclerViewAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View cell = mLayoutInflater.inflate(R.layout.cell_category_item, parent, false);
-        final CategoryItemViewHolder holder = new CategoryItemViewHolder(cell);
+        final CategoryItemViewHolder holder = new CategoryItemViewHolder(mFontAwesome, cell);
         View removeButton = cell.findViewById(R.id.cell_category_item_remove_button);
         removeButton.setOnClickListener(new View.OnClickListener() {
             @Override

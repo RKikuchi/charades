@@ -12,30 +12,36 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.pongo.charades.activities.ManageCategoryActivity"
     tools:showIn="@layout/activity_manage_category"
-    android:backgroundTint="@android:color/darker_gray">
+    android:backgroundTint="@android:color/darker_gray"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
-    <EditText
-        android:id="@+id/manage_category_name"
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/manage_category_layout_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:singleLine="true"
-        android:lines="1"
-        android:scrollHorizontally="true"
-        android:ellipsize="end"
-        android:hint="@string/name"
-        android:inputType="textCapWords"
-        android:background="@drawable/shape_input_bg"
-        android:padding="10dp"
-        android:textAlignment="center"
-        android:layout_marginBottom="10dp"/>
+        android:layout_alignParentTop="true">
+        <EditText
+            android:id="@+id/manage_category_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:singleLine="true"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:hint="@string/category_name"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"/>
+    </android.support.design.widget.TextInputLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/manage_category_recycler_view"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/manage_category_name"
+        android:layout_below="@+id/manage_category_layout_name"
         android:layout_above="@+id/manage_category_new_item_button"
         android:background="@drawable/shape_input_bg" />
 

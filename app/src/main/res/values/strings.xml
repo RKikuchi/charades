@@ -10,6 +10,9 @@
     <string name="back">Back</string>
     <string name="timer">Timer</string>
     <string name="name">Name</string>
+    <string name="category_name">Category Name</string>
+    <string name="item_name">Item Name</string>
+
     <string name="syncing_online_categories">Syncing online categories...</string>
     <string name="error_loading_online_data">Error while loading online data</string>
     <string name="title_activity_settings">Settings</string>
