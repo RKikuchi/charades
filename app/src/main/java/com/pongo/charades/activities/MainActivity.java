@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements OnlineCategoriesL
     private Realm mRealm;
     private CoordinatorLayout mLayout;
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private CharadesRecyclerViewAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,15 @@ public class MainActivity extends AppCompatActivity implements OnlineCategoriesL
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            mAdapter.reload();
+            mAdapter.notifyDataSetChanged();
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -99,14 +108,19 @@ public class MainActivity extends AppCompatActivity implements OnlineCategoriesL
     }
 
     private void syncOnlineCategories() {
-        Snackbar.make(mLayout, R.string.syncing_online_categories, Snackbar.LENGTH_LONG)
+        Snackbar.make(mLayout, R.string.online_categories_not_available, Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
-        new OnlineCategoriesLoader().load(this);
+        return;
+//        Snackbar.make(mLayout, R.string.syncing_online_categories, Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show();
+//        new OnlineCategoriesLoader().load(this);
     }
 
     private void loadHardcodedCategories() {
         ArrayList<CategoryModel> categories = new ArrayList<CategoryModel>();
         try {
+            Number lastId = mRealm.where(CategoryModel.class).max("id");
+            int prevId = lastId != null ? lastId.intValue() : 0;
             String[] files = getAssets().list("categories");
             for (String file : files) {
                 InputStream is = getAssets().open("categories/" + file);
@@ -116,6 +130,7 @@ public class MainActivity extends AppCompatActivity implements OnlineCategoriesL
                 List<CategoryDto> dtos =
                         gson.fromJson(reader, new TypeToken<List<CategoryDto>>(){}.getType());
                 for (CategoryDto dto : dtos) {
+                    dto.id = ++prevId;
                     categories.add(CategoryModel.loadDto(dto));
                 }
             }

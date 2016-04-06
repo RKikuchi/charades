@@ -67,6 +67,7 @@ public class OnlineCategoriesLoader {
                 Log.i("CategoriesLoader", "Fetching category " + categorySlug);
                 try {
                     CategoryDto dto = svc.getCategory(categorySlug).execute().body();
+                    // TODO: dto.id = ++lastId;
                     result.add(CategoryModel.loadDto(dto));
                 } catch (IOException e) {
                     e.printStackTrace();

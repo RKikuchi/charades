@@ -2,15 +2,17 @@ package com.pongo.charades.models;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.Required;
 
 /**
  * Created by rsaki on 1/3/2016.
  */
 public class CategoryModel extends RealmObject {
+    @PrimaryKey
+    private int id;
     @Required
     private String title;
-    @Required
     private String language;
     @Required
     private Boolean isCustom;
@@ -20,12 +22,21 @@ public class CategoryModel extends RealmObject {
     public static CategoryModel loadDto(CategoryDto dto) {
         CategoryModel model = new CategoryModel();
         model.setIsCustom(false);
+        model.setId(dto.id);
         model.setTitle(dto.title);
         model.setLanguage(dto.language);
         for (CategoryItemDto itemDto : dto.items) {
             model.getItems().add(new CategoryItemModel(itemDto.value, itemDto.definition));
         }
         return model;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {

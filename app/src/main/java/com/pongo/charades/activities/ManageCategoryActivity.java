@@ -30,13 +30,14 @@ public class ManageCategoryActivity extends BaseActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private CategoryModel mCategory;
     private EditText mNameEditText;
+    private boolean mIsNew;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_category);
 
-        boolean isNew = !loadCategory();
+        mIsNew = !loadCategory();
 
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView = (RecyclerView) findViewById(R.id.manage_category_recycler_view);
@@ -68,7 +69,7 @@ public class ManageCategoryActivity extends BaseActivity {
         });
 
         mNameEditText = (EditText) findViewById(R.id.manage_category_name);
-        if (isNew) {
+        if (mIsNew) {
             mNameEditText.requestFocus();
         }
     }
@@ -79,6 +80,7 @@ public class ManageCategoryActivity extends BaseActivity {
         String categoryTitle = extras == null ? null : extras.getString(CATEGORY_TITLE);
         if (categoryTitle == null) {
             mCategory = new CategoryModel();
+            mCategory.setIsCustom(true);
             mCategory.getItems().add(new CategoryItemModel("", null));
             return false;
         }
@@ -107,9 +109,33 @@ public class ManageCategoryActivity extends BaseActivity {
                 onBackPressed();
                 return true;
             case R.id.action_menu_save:
-                // TODO
+                save();
+                setResult(RESULT_OK, getSuccessIntent());
+                finish();
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void save() {
+        Realm realm = Realm.getInstance(getApplicationContext());
+        mCategory.setTitle(mNameEditText.getText().toString());
+
+        if (mCategory.getId() == 0) {
+            Number lastId = realm.where(CategoryModel.class).max("id");
+            int nextId = lastId != null ? lastId.intValue() + 1 : 1;
+            mCategory.setId(nextId);
+        }
+
+        realm.beginTransaction();
+        realm.copyToRealmOrUpdate(mCategory);
+        realm.commitTransaction();
+    }
+
+    private Intent getSuccessIntent() {
+        Intent intent = new Intent();
+        intent.putExtra("IS_NEW", mIsNew);
+        intent.putExtra("ID", mCategory.getId());
+        return intent;
     }
 }

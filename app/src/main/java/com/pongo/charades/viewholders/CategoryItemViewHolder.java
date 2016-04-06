@@ -1,6 +1,8 @@
 package com.pongo.charades.viewholders;
 
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,13 +16,25 @@ import com.pongo.charades.modules.FontAwesomeProvider;
  */
 public class CategoryItemViewHolder extends RecyclerView.ViewHolder  {
     private FontAwesomeProvider mFontAwesome;
-    private EditText mTitleLabel;
+    private EditText mLabel;
     private CategoryItemModel mItem;
 
     public CategoryItemViewHolder(FontAwesomeProvider fontAwesome, View itemView) {
         super(itemView);
         mFontAwesome = fontAwesome;
-        mTitleLabel = (EditText) itemView.findViewById(R.id.cell_category_item_value);
+        mLabel = (EditText) itemView.findViewById(R.id.cell_category_item_value);
+        mLabel.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mItem.setValue(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
         TextView xButton = (TextView) itemView.findViewById(R.id.cell_category_item_remove_button);
         xButton.setTypeface(mFontAwesome.getTypeface());
     }
@@ -29,10 +43,10 @@ public class CategoryItemViewHolder extends RecyclerView.ViewHolder  {
 
     public void setData(CategoryItemModel value) {
         mItem = value;
-        mTitleLabel.setText(value.getValue());
+        mLabel.setText(value.getValue());
     }
 
     public void focus() {
-        mTitleLabel.requestFocus();
+        mLabel.requestFocus();
     }
 }

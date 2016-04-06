@@ -22,7 +22,7 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
     final private Context mContext;
     final private Realm mRealm;
     final private LayoutInflater mLayoutInflater;
-    final private RealmResults<CategoryModel> mItems;
+    private RealmResults<CategoryModel> mItems;
 
     public CharadesRecyclerViewAdapter(Context context) {
         mContext = context;
@@ -55,5 +55,9 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
     @Override
     public int getItemCount() {
         return mItems.size();
+    }
+
+    public void reload() {
+        mItems = mRealm.where(CategoryModel.class).findAll();
     }
 }
