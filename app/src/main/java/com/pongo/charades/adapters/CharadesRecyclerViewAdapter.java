@@ -10,10 +10,12 @@ import android.view.ViewGroup;
 import com.pongo.charades.R;
 import com.pongo.charades.activities.GameRoundActivity;
 import com.pongo.charades.models.CategoryModel;
+import com.pongo.charades.models.CategoryModelHolder;
 import com.pongo.charades.viewholders.CharadesCellViewHolder;
 
+import java.util.ArrayList;
+
 import io.realm.Realm;
-import io.realm.RealmResults;
 
 /**
  * Created by rsaki on 1/3/2016.
@@ -22,12 +24,14 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
     final private Context mContext;
     final private Realm mRealm;
     final private LayoutInflater mLayoutInflater;
-    private RealmResults<CategoryModel> mItems;
+    private ArrayList<CategoryModelHolder> mItems;
+    private CategoryModelHolder mSelectedItem;
+    private CharadesCellViewHolder mSelectedItemHolder;
 
     public CharadesRecyclerViewAdapter(Context context) {
         mContext = context;
         mRealm = Realm.getInstance(context);
-        mItems = mRealm.where(CategoryModel.class).findAll();
+        reload();
         mLayoutInflater = LayoutInflater.from(context);
     }
 
@@ -38,9 +42,40 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
         cell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, GameRoundActivity.class);
-                intent.putExtra(GameRoundActivity.CATEGORY_TITLE, holder.getCategory().getTitle());
-                mContext.startActivity(intent);
+                if (mSelectedItem == null) {
+                    Intent intent = new Intent(mContext, GameRoundActivity.class);
+                    intent.putExtra(GameRoundActivity.CATEGORY_TITLE, holder.getCategory().getTitle());
+                    mContext.startActivity(intent);
+                } else if (mSelectedItem.getModel() == holder.getCategory()) {
+                    holder.unselect();
+                    mSelectedItem = null;
+                } else {
+                    mSelectedItem.isSelected(false);
+                    if (mSelectedItemHolder != null)
+                        mSelectedItemHolder.unselect();
+                    holder.select();
+                    mSelectedItem = holder.getModelHolder();
+                    mSelectedItemHolder = holder;
+                }
+            }
+        });
+        cell.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (mSelectedItem != null && mSelectedItem.getModel() == holder.getCategory()) {
+                    holder.unselect();
+                    mSelectedItem = null;
+                } else {
+                    if (mSelectedItem != null) {
+                        mSelectedItem.isSelected(false);
+                        if (mSelectedItemHolder != null)
+                            mSelectedItemHolder.unselect();
+                    }
+                    holder.select();
+                    mSelectedItem = holder.getModelHolder();
+                    mSelectedItemHolder = holder;
+                }
+                return true;
             }
         });
         return holder;
@@ -48,8 +83,14 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        if (holder == mSelectedItemHolder)
+            mSelectedItemHolder = null;
+
+        CategoryModelHolder item = mItems.get(position);
         CharadesCellViewHolder charadesHolder = (CharadesCellViewHolder)holder;
-        charadesHolder.setData(mItems.get(position));
+        charadesHolder.setData(item);
+        if (item.isSelected())
+            mSelectedItemHolder = charadesHolder;
     }
 
     @Override
@@ -58,6 +99,9 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
     }
 
     public void reload() {
-        mItems = mRealm.where(CategoryModel.class).findAll();
+        mItems = new ArrayList<>();
+        for (CategoryModel model : mRealm.where(CategoryModel.class).findAll()) {
+            mItems.add(new CategoryModelHolder(model));
+        }
     }
 }

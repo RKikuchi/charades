@@ -22,6 +22,15 @@
             android:gravity="center"
             android:textSize="20dp"
             android:padding="8dp" />
+
+        <LinearLayout
+            android:id="@+id/cell_charades_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_cell_selected_bg">
+
+        </LinearLayout>
     </android.support.v7.widget.CardView>
 
 </LinearLayout>
