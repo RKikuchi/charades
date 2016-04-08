@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.pongo.charades.R;
 import com.pongo.charades.activities.GameRoundActivity;
+import com.pongo.charades.activities.MainActivity;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.models.CategoryModelHolder;
 import com.pongo.charades.viewholders.CharadesCellViewHolder;
@@ -21,14 +22,14 @@ import io.realm.Realm;
  * Created by rsaki on 1/3/2016.
  */
 public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
-    final private Context mContext;
+    final private MainActivity mContext;
     final private Realm mRealm;
     final private LayoutInflater mLayoutInflater;
     private ArrayList<CategoryModelHolder> mItems;
     private CategoryModelHolder mSelectedItem;
     private CharadesCellViewHolder mSelectedItemHolder;
 
-    public CharadesRecyclerViewAdapter(Context context) {
+    public CharadesRecyclerViewAdapter(MainActivity context) {
         mContext = context;
         mRealm = Realm.getInstance(context);
         reload();
@@ -38,7 +39,7 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View cell = mLayoutInflater.inflate(R.layout.cell_charades, parent, false);
-        final CharadesCellViewHolder holder = new CharadesCellViewHolder(cell);
+        final CharadesCellViewHolder holder = new CharadesCellViewHolder(mContext, cell);
         cell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

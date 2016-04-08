@@ -6,7 +6,6 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -21,6 +20,7 @@ import com.pongo.charades.adapters.CharadesRecyclerViewAdapter;
 import com.pongo.charades.async.OnlineCategoriesLoader;
 import com.pongo.charades.models.CategoryDto;
 import com.pongo.charades.models.CategoryModel;
+import com.pongo.charades.modules.FontAwesomeProvider;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,9 +29,14 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import io.realm.Realm;
 
-public class MainActivity extends AppCompatActivity implements OnlineCategoriesLoader.OnlineCategoriesLoaderCallback {
+public class MainActivity extends BaseActivity implements OnlineCategoriesLoader.OnlineCategoriesLoaderCallback {
+    @Inject
+    FontAwesomeProvider mFontAwesome;
+
     private Realm mRealm;
     private CoordinatorLayout mLayout;
     private RecyclerView mRecyclerView;
@@ -164,5 +169,9 @@ public class MainActivity extends AppCompatActivity implements OnlineCategoriesL
         }
         mRealm.commitTransaction();
         mAdapter.notifyDataSetChanged();
+    }
+
+    public FontAwesomeProvider getFontAwesome() {
+        return mFontAwesome;
     }
 }

@@ -8,6 +8,8 @@
     <string name="play_again">Play again</string>
     <string name="skip">Skip</string>
     <string name="back">Back</string>
+    <string name="edit">Edit</string>
+    <string name="remove">Remove</string>
     <string name="timer">Timer</string>
     <string name="name">Name</string>
     <string name="category_name">Category Name</string>
