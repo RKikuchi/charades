@@ -2,6 +2,7 @@ package com.pongo.charades.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,6 +10,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,6 +36,9 @@ import javax.inject.Inject;
 import io.realm.Realm;
 
 public class MainActivity extends BaseActivity implements OnlineCategoriesLoader.OnlineCategoriesLoaderCallback {
+    private static final int REQUEST_CODE_MANAGE_CATEGORY = 1;
+    public static final String EXTRA_CATEGORY_POSITION = "CATEGORY_POSITION";
+
     @Inject
     FontAwesomeProvider mFontAwesome;
 
@@ -65,8 +70,7 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ManageCategoryActivity.class);
-                startActivity(intent);
+                createCategory();
             }
         });
 
@@ -75,9 +79,37 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK) {
-            mAdapter.reload();
-            mAdapter.notifyDataSetChanged();
+        switch (requestCode) {
+            case REQUEST_CODE_MANAGE_CATEGORY:
+                if (resultCode != RESULT_OK) break;
+
+                String msg;
+                String title = data.getStringExtra(ManageCategoryActivity.EXTRA_ITEM_TITLE);
+                if (data.getBooleanExtra(ManageCategoryActivity.EXTRA_IS_NEW, true)) {
+                    msg = "Category \"" + title + "\" created.";
+                    final int lastPos = mAdapter.getItemCount();
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mAdapter.reload();
+                            mAdapter.notifyItemInserted(lastPos);
+                            mRecyclerView.smoothScrollToPosition(lastPos);
+                        }
+                    }, 500);
+                } else {
+                    msg = "Category \"" + title + "\" saved.";
+                    int pos = data.getIntExtra(EXTRA_CATEGORY_POSITION, -1);
+                    if (pos != -1 && pos < mAdapter.getItemCount()) {
+                        mAdapter.notifyItemChanged(pos);
+                    } else {
+                        mAdapter.reload();
+                        mAdapter.notifyDataSetChanged();
+                    }
+                }
+                Snackbar.make(mLayout, msg, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                break;
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -173,5 +205,33 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
 
     public FontAwesomeProvider getFontAwesome() {
         return mFontAwesome;
+    }
+
+    public void createCategory() {
+        Intent intent = new Intent(getBaseContext(), ManageCategoryActivity.class);
+        startActivityForResult(intent, REQUEST_CODE_MANAGE_CATEGORY);
+    }
+
+    public void manageCategory(int position, CategoryModel category) {
+        Intent intent = new Intent(getBaseContext(), ManageCategoryActivity.class);
+        intent.putExtra(MainActivity.EXTRA_CATEGORY_POSITION, position);
+        intent.putExtra(ManageCategoryActivity.CATEGORY_ID, category.getId());
+        startActivityForResult(intent, REQUEST_CODE_MANAGE_CATEGORY);
+    }
+
+    public void deleteCategory(CategoryModel category) {
+        String title = category.getTitle();
+        mRealm.beginTransaction();
+        mRealm.where(CategoryModel.class)
+                .equalTo("id", category.getId())
+                .findAll()
+                .clear();
+        mRealm.commitTransaction();
+
+        // TODO: Undo
+        Snackbar.make(mLayout, "Category \"" + title + "\" removed.", Snackbar.LENGTH_LONG)
+                .setAction("Action", null)
+                .setActionTextColor(ContextCompat.getColor(this, R.color.colorWarning))
+                .show();
     }
 }

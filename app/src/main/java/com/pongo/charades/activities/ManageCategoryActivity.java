@@ -12,23 +12,29 @@ import android.widget.EditText;
 
 import com.pongo.charades.R;
 import com.pongo.charades.adapters.CategoryItemsRecyclerViewAdapter;
-import com.pongo.charades.models.CategoryItemModel;
+import com.pongo.charades.models.CategoryDto;
+import com.pongo.charades.models.CategoryItemDto;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.modules.FontAwesomeProvider;
+
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 
 import io.realm.Realm;
 
 public class ManageCategoryActivity extends BaseActivity {
-    public static final String CATEGORY_TITLE = "CATEGORY_TITLE";
+    public static final String CATEGORY_ID = "CATEGORY_ID";
+    public static final String EXTRA_IS_NEW = "IS_NEW";
+    public static final String EXTRA_ITEM_ID = "ITEM_ID";
+    public static final String EXTRA_ITEM_TITLE = "ITEM_TITLE";
 
     @Inject
     FontAwesomeProvider mFontAwesome;
     private RecyclerView mRecyclerView;
     private CategoryItemsRecyclerViewAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private CategoryModel mCategory;
+    private CategoryDto mCategory;
     private EditText mNameEditText;
     private boolean mIsNew;
 
@@ -55,9 +61,11 @@ public class ManageCategoryActivity extends BaseActivity {
         newItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final int lastPos = mCategory.getItems().size();
-                mCategory.getItems().add(new CategoryItemModel("", null));
+                final int lastPos = mCategory.items.size();
+                CategoryItemDto newItem = new CategoryItemDto();
+                mCategory.items.add(newItem);
                 mAdapter.notifyItemInserted(lastPos);
+
                 mRecyclerView.post(new Runnable() {
                     @Override
                     public void run() {
@@ -71,25 +79,29 @@ public class ManageCategoryActivity extends BaseActivity {
         mNameEditText = (EditText) findViewById(R.id.manage_category_name);
         if (mIsNew) {
             mNameEditText.requestFocus();
+        } else {
+            mNameEditText.setText(mCategory.title);
         }
     }
 
     private boolean loadCategory() {
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        String categoryTitle = extras == null ? null : extras.getString(CATEGORY_TITLE);
-        if (categoryTitle == null) {
-            mCategory = new CategoryModel();
-            mCategory.setIsCustom(true);
-            mCategory.getItems().add(new CategoryItemModel("", null));
+        int categoryId = intent.getIntExtra(CATEGORY_ID, -1);
+        if (categoryId == -1) {
+            mCategory = new CategoryDto();
+            mCategory.items = new ArrayList<>();
+            mCategory.items.add(new CategoryItemDto());
             return false;
         }
 
         Realm realm = Realm.getInstance(getApplicationContext());
         try {
-            mCategory = realm.where(CategoryModel.class)
-                    .equalTo("title", categoryTitle)
+            CategoryModel model = realm
+                    .where(CategoryModel.class)
+                    .equalTo("id", categoryId)
                     .findFirst();
+            mCategory = CategoryDto.fromModel(model);
         } finally {
             realm.close();
         }
@@ -119,23 +131,28 @@ public class ManageCategoryActivity extends BaseActivity {
 
     private void save() {
         Realm realm = Realm.getInstance(getApplicationContext());
-        mCategory.setTitle(mNameEditText.getText().toString());
+        mCategory.title = mNameEditText.getText().toString();
 
-        if (mCategory.getId() == 0) {
+        if (mCategory.id == 0) {
             Number lastId = realm.where(CategoryModel.class).max("id");
             int nextId = lastId != null ? lastId.intValue() + 1 : 1;
-            mCategory.setId(nextId);
+            mCategory.id = nextId;
         }
 
         realm.beginTransaction();
-        realm.copyToRealmOrUpdate(mCategory);
+        realm.copyToRealmOrUpdate(CategoryModel.loadDto(mCategory));
         realm.commitTransaction();
     }
 
     private Intent getSuccessIntent() {
         Intent intent = new Intent();
-        intent.putExtra("IS_NEW", mIsNew);
-        intent.putExtra("ID", mCategory.getId());
+        intent.putExtra(EXTRA_IS_NEW, mIsNew);
+        intent.putExtra(EXTRA_ITEM_ID, mCategory.id);
+        intent.putExtra(EXTRA_ITEM_TITLE, mCategory.title);
+        int adapterPosition = getIntent().getIntExtra(MainActivity.EXTRA_CATEGORY_POSITION, -1);
+        if (adapterPosition != -1) {
+            intent.putExtra(MainActivity.EXTRA_CATEGORY_POSITION, adapterPosition);
+        }
         return intent;
     }
 }

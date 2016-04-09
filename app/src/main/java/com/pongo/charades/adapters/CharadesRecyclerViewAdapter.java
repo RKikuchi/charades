@@ -1,6 +1,5 @@
 package com.pongo.charades.adapters;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -79,6 +78,19 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
                 return true;
             }
         });
+        holder.getEditButton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mContext.manageCategory(holder.getAdapterPosition(), holder.getCategory());
+            }
+        });
+        holder.getDeleteButton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                remove(holder.getAdapterPosition());
+                mContext.deleteCategory(holder.getCategory());
+            }
+        });
         return holder;
     }
 
@@ -104,5 +116,10 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
         for (CategoryModel model : mRealm.where(CategoryModel.class).findAll()) {
             mItems.add(new CategoryModelHolder(model));
         }
+    }
+
+    public void remove(int position) {
+        mItems.remove(position);
+        notifyItemRemoved(position);
     }
 }

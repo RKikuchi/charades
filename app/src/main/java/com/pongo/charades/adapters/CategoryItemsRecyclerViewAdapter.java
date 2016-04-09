@@ -7,12 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.pongo.charades.R;
-import com.pongo.charades.models.CategoryItemModel;
-import com.pongo.charades.models.CategoryModel;
+import com.pongo.charades.models.CategoryDto;
+import com.pongo.charades.models.CategoryItemDto;
 import com.pongo.charades.modules.FontAwesomeProvider;
 import com.pongo.charades.viewholders.CategoryItemViewHolder;
 
-import io.realm.RealmList;
+import java.util.List;
 
 /**
  * Created by rsaki on 4/3/2016.
@@ -23,18 +23,18 @@ public class CategoryItemsRecyclerViewAdapter extends RecyclerView.Adapter {
     final private Context mContext;
     final private FontAwesomeProvider mFontAwesome;
     final private LayoutInflater mLayoutInflater;
-    final private RealmList<CategoryItemModel> mItems;
+    final private List<CategoryItemDto> mItems;
     final private RecyclerView mRecyclerView;
     private int mFocusPosition;
 
     public CategoryItemsRecyclerViewAdapter(Context context,
                                             FontAwesomeProvider fontAwesome,
                                             RecyclerView recyclerView,
-                                            CategoryModel category) {
+                                            CategoryDto category) {
         mContext = context;
         mFontAwesome = fontAwesome;
         mRecyclerView = recyclerView;
-        mItems = category.getItems();
+        mItems = category.items;
         mLayoutInflater = LayoutInflater.from(context);
         mFocusPosition = NO_FOCUS;
     }

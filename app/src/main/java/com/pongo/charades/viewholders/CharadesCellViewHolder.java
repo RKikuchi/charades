@@ -16,6 +16,8 @@ import com.pongo.charades.models.CategoryModelHolder;
 public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
     private final TextView mTitleLabel;
     private final View mOverlay;
+    private final View mEditButton;
+    private final View mDeleteButton;
     private final MainActivity mContext;
     private CategoryModelHolder mCategory;
 
@@ -23,6 +25,8 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         mContext = context;
         mTitleLabel = (TextView) itemView.findViewById(R.id.cell_charades_title_label);
+        mEditButton = itemView.findViewById(R.id.edit_button);
+        mDeleteButton = itemView.findViewById(R.id.delete_button);
         mOverlay = itemView.findViewById(R.id.cell_charades_overlay);
         mOverlay.setVisibility(View.INVISIBLE);
 
@@ -52,5 +56,13 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
     public void unselect() {
         mCategory.isSelected(false);
         mOverlay.setVisibility(View.INVISIBLE);
+    }
+
+    public View getEditButton() {
+        return mEditButton;
+    }
+
+    public View getDeleteButton() {
+        return mDeleteButton;
     }
 }

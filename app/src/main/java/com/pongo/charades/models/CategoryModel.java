@@ -26,6 +26,7 @@ public class CategoryModel extends RealmObject {
         model.setTitle(dto.title);
         model.setLanguage(dto.language);
         for (CategoryItemDto itemDto : dto.items) {
+            if (itemDto.value == null || itemDto.value.trim() == "") continue;
             model.getItems().add(new CategoryItemModel(itemDto.value, itemDto.definition));
         }
         return model;
