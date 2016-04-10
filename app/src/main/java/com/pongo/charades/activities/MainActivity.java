@@ -10,7 +10,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -199,10 +198,6 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         }
         mRealm.commitTransaction();
         mAdapter.notifyDataSetChanged();
-    }
-
-    public FontAwesomeProvider getFontAwesome() {
-        return mFontAwesome;
     }
 
     public void createCategory() {

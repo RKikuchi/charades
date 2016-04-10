@@ -11,17 +11,70 @@
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="5dp">
+        android:layout_height="200dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="2dp">
 
-        <TextView
-            android:id="@+id/cell_charades_title_label"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textSize="20dp"
-            android:padding="8dp" />
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/cell_action_group">
+
+                <ImageView
+                    android:id="@+id/card_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:alpha="1"
+                    android:scaleType="centerCrop"/>
+
+                <TextView
+                    android:id="@+id/cell_charades_title_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="24sp"
+                    android:padding="16dp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/black_overlay" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/cell_action_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/edit_button"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="0dp"
+                    android:text="@string/edit"
+                    android:textColor="@color/colorDarkGray" />
+
+                <Button
+                    android:id="@+id/play_button"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="0dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/play"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/cell_charades_overlay"
@@ -33,85 +86,24 @@
             android:background="@drawable/shape_cell_selected_bg">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:layout_marginRight="5dp"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@color/colorSoftOverlay">
-
-                <TextView
-                    android:id="@+id/cell_charades_icon_back"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorWhite"
-                    android:text="&#xf112;"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorWhite"
-                    android:text="@string/back" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/edit_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@color/colorSoftOverlay">
-
-                <TextView
-                    android:id="@+id/cell_charades_icon_edit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorWhite"
-                    android:text="&#xf040;"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorWhite"
-                    android:text="@string/edit" />
-
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/delete_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
                 android:padding="10dp"
                 android:orientation="vertical"
                 android:background="@color/colorSoftOverlay">
 
-                <TextView
-                    android:id="@+id/cell_charades_icon_delete"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorWhite"
-                    android:text="&#xf014;"
-                    android:textSize="20dp" />
+                <!--<TextView-->
+                    <!--android:id="@+id/cell_charades_icon_delete"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:padding="10dp"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textColor="@color/colorWhite"-->
+                    <!--android:text="&#xf014;"-->
+                    <!--android:textSize="20dp" />-->
 
                 <TextView
                     android:layout_width="match_parent"
