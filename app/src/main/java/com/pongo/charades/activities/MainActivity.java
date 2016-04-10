@@ -83,10 +83,8 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
             case REQUEST_CODE_MANAGE_CATEGORY:
                 if (resultCode != RESULT_OK) break;
 
-                String msg;
                 String title = data.getStringExtra(ManageCategoryActivity.EXTRA_ITEM_TITLE);
                 if (data.getBooleanExtra(ManageCategoryActivity.EXTRA_IS_NEW, true)) {
-                    msg = "Category \"" + title + "\" created.";
                     final int lastPos = mAdapter.getItemCount();
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
@@ -98,7 +96,6 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
                         }
                     }, 500);
                 } else {
-                    msg = "Category \"" + title + "\" saved.";
                     int pos = data.getIntExtra(EXTRA_CATEGORY_POSITION, -1);
                     if (pos != -1 && pos < mAdapter.getItemCount()) {
                         mAdapter.notifyItemChanged(pos);
@@ -106,9 +103,10 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
                         mAdapter.reload();
                         mAdapter.notifyDataSetChanged();
                     }
+                    String msg = "Category \"" + title + "\" saved.";
+                    Snackbar.make(mLayout, msg, Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
                 }
-                Snackbar.make(mLayout, msg, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
                 break;
         }
         super.onActivityResult(requestCode, resultCode, data);
