@@ -10,6 +10,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.pongo.charades.async.OnlineCategoriesLoader;
 import com.pongo.charades.models.CategoryDto;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.modules.FontAwesomeProvider;
+import com.pongo.charades.viewholders.CharadesCellViewHolder;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -61,6 +63,24 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
 
         mAdapter = new CharadesRecyclerViewAdapter(this);
         mRecyclerView.setAdapter(mAdapter);
+
+        ItemTouchHelper touchHelper = new ItemTouchHelper(
+                new ItemTouchHelper.SimpleCallback(
+                        0, ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
+                    @Override
+                    public boolean onMove(RecyclerView recyclerView,
+                                          RecyclerView.ViewHolder viewHolder,
+                                          RecyclerView.ViewHolder target) {
+                        return false;
+                    }
+
+                    @Override
+                    public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                        CharadesCellViewHolder charadesHolder = (CharadesCellViewHolder) viewHolder;
+                        hideCategory(charadesHolder);
+                    }
+                });
+        touchHelper.attachToRecyclerView(mRecyclerView);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
@@ -212,19 +232,25 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         startActivityForResult(intent, REQUEST_CODE_MANAGE_CATEGORY);
     }
 
-    public void deleteCategory(CategoryModel category) {
+    public void hideCategory(CharadesCellViewHolder holder) {
+        mAdapter.remove(holder.getAdapterPosition());
+
+        CategoryModel category = holder.getCategory();
         String title = category.getTitle();
+
+        // TODO: Undo
+        Snackbar.make(mLayout, "Category \"" + title + "\" hidden.", Snackbar.LENGTH_LONG)
+                .setAction("Action", null)
+                .setActionTextColor(ContextCompat.getColor(this, R.color.colorWarning))
+                .show();
+    }
+
+    public void deleteCategory(CategoryModel category) {
         mRealm.beginTransaction();
         mRealm.where(CategoryModel.class)
                 .equalTo("id", category.getId())
                 .findAll()
                 .clear();
         mRealm.commitTransaction();
-
-        // TODO: Undo
-        Snackbar.make(mLayout, "Category \"" + title + "\" removed.", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .setActionTextColor(ContextCompat.getColor(this, R.color.colorWarning))
-                .show();
     }
 }

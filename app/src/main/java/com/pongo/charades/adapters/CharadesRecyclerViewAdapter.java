@@ -56,8 +56,7 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
         holder.getDeleteButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                remove(holder.getAdapterPosition());
-                mContext.deleteCategory(holder.getCategory());
+                mContext.hideCategory(holder);
             }
         });
         return holder;
