@@ -29,7 +29,7 @@ import javax.inject.Inject;
 import io.realm.Realm;
 
 public class GameRoundActivity extends BaseActivity implements TiltSensorService.TiltEventListener {
-    public static final String CATEGORY_TITLE = "CATEGORY_TITLE";
+    public static final String CATEGORY_ID = "CATEGORY_ID";
 
     private enum State {
         COUNTDOWN,
@@ -166,11 +166,11 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     }
 
     private void loadCategory() {
-        String categoryTitle = mExtras.getString(CATEGORY_TITLE);
+        int categoryId = mExtras.getInt(CATEGORY_ID);
         Realm realm = Realm.getInstance(getApplicationContext());
         try {
             mCategory = realm.where(CategoryModel.class)
-                                          .equalTo("title", categoryTitle)
+                                          .equalTo("id", categoryId)
                                           .findFirst();
 
             mItems = new ArrayList<>(mCategory.getItems());

@@ -44,7 +44,7 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
             public void onClick(View v) {
                 if (mSelectedItem == null) {
                     Intent intent = new Intent(mContext, GameRoundActivity.class);
-                    intent.putExtra(GameRoundActivity.CATEGORY_TITLE, holder.getCategory().getTitle());
+                    intent.putExtra(GameRoundActivity.CATEGORY_ID, holder.getCategory().getId());
                     mContext.startActivity(intent);
                 } else if (mSelectedItem.getModel() == holder.getCategory()) {
                     holder.unselect();
