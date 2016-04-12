@@ -16,12 +16,15 @@ public class CategoryModel extends RealmObject {
     private String language;
     @Required
     private Boolean isCustom;
+    @Required
+    private Boolean isHidden;
     private String icon;
     private RealmList<CategoryItemModel> items = new RealmList<>();
 
     public static CategoryModel loadDto(CategoryDto dto) {
         CategoryModel model = new CategoryModel();
         model.setIsCustom(false);
+        model.setIsHidden(false);
         model.setId(dto.id);
         model.setTitle(dto.title);
         model.setLanguage(dto.language);
@@ -62,6 +65,14 @@ public class CategoryModel extends RealmObject {
 
     public void setIsCustom(Boolean isCustom) {
         this.isCustom = isCustom;
+    }
+
+    public Boolean getIsHidden() {
+        return isHidden;
+    }
+
+    public void setIsHidden(Boolean hidden) {
+        isHidden = hidden;
     }
 
     public String getIcon() {

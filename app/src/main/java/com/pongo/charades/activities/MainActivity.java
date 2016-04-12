@@ -233,10 +233,15 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
     }
 
     public void hideCategory(CharadesCellViewHolder holder) {
-        mAdapter.remove(holder.getAdapterPosition());
-
         CategoryModel category = holder.getCategory();
         String title = category.getTitle();
+
+        mRealm.beginTransaction();
+        category.setIsHidden(true);
+        mRealm.copyToRealmOrUpdate(category);
+        mRealm.commitTransaction();
+
+        mAdapter.remove(holder.getAdapterPosition());
 
         // TODO: Undo
         Snackbar.make(mLayout, "Category \"" + title + "\" hidden.", Snackbar.LENGTH_LONG)

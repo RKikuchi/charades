@@ -16,6 +16,7 @@ import com.pongo.charades.viewholders.CharadesCellViewHolder;
 import java.util.ArrayList;
 
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 /**
  * Created by rsaki on 1/3/2016.
@@ -76,7 +77,11 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
 
     public void reload() {
         mItems = new ArrayList<>();
-        for (CategoryModel model : mRealm.where(CategoryModel.class).findAll()) {
+        RealmResults<CategoryModel> categories = mRealm
+                .where(CategoryModel.class)
+                .equalTo("isHidden", false)
+                .findAll();
+        for (CategoryModel model : categories) {
             mItems.add(new CategoryModelHolder(model));
         }
     }
