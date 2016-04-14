@@ -1,6 +1,7 @@
 package com.pongo.charades.activities;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.CoordinatorLayout;
@@ -9,6 +10,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -224,21 +226,33 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
     }
 
     public void createCategory() {
-        //Intent intent = new Intent(getBaseContext(), ManageCategoryActivity.class);
-        //startActivityForResult(intent, REQUEST_CODE_MANAGE_CATEGORY);
         Intent intent = new Intent(getBaseContext(), ManageCategoryActivity.class);
-        String transitionName = getString(R.string.transition_manage_category);
-        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
-                this, mFab, transitionName);
-        ActivityCompat.startActivityForResult(this, intent,
-                REQUEST_CODE_MANAGE_CATEGORY, options.toBundle());
+        startActivityForResult(intent, REQUEST_CODE_MANAGE_CATEGORY);
     }
 
-    public void manageCategory(int position, CategoryModel category) {
+    public void manageCategory(CharadesCellViewHolder holder) {
+        int position = holder.getAdapterPosition();
+        CategoryModel category = holder.getCategory();
+
         Intent intent = new Intent(getBaseContext(), ManageCategoryActivity.class);
         intent.putExtra(MainActivity.EXTRA_CATEGORY_POSITION, position);
         intent.putExtra(ManageCategoryActivity.CATEGORY_ID, category.getId());
-        startActivityForResult(intent, REQUEST_CODE_MANAGE_CATEGORY);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            String screenTransitionName = getString(R.string.transition_manage_category);
+            String titleTransitionName = getString(R.string.transition_category_name);
+            holder.itemView.setTransitionName(screenTransitionName);
+            holder.getTitleLabel().setTransitionName(titleTransitionName);
+            Pair<View, String> p1 = Pair.create(holder.itemView, screenTransitionName);
+            Pair<View, String> p2 = Pair.create(holder.getTitleLabel(), titleTransitionName);
+
+            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                    this, p1, p2);
+            ActivityCompat.startActivityForResult(this, intent,
+                    REQUEST_CODE_MANAGE_CATEGORY, options.toBundle());
+        } else {
+            startActivityForResult(intent, REQUEST_CODE_MANAGE_CATEGORY);
+        }
     }
 
     public void hideCategory(CharadesCellViewHolder holder) {

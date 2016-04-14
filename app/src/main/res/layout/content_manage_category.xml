@@ -9,11 +9,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:transitionName="@string/transition_manage_category"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.pongo.charades.activities.ManageCategoryActivity"
     tools:showIn="@layout/activity_manage_category"
-    android:backgroundTint="@android:color/darker_gray"
+    android:transitionName="@string/transition_manage_category"
+    android:background="@color/colorGhostGray"
     android:focusable="true"
     android:focusableInTouchMode="true">
 
@@ -21,6 +21,7 @@
         android:id="@+id/manage_category_layout_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:transitionName="@string/transition_category_name"
         android:layout_alignParentTop="true">
         <EditText
             android:id="@+id/manage_category_name"

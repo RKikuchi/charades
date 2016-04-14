@@ -30,6 +30,7 @@
     <string name="pref_title_select_round_time">Round time</string>
     <string name="pref_key_round_time">pref_round_time</string>
     <string name="transition_manage_category">TRANSITION_MANAGE_CATEGORY</string>
+    <string name="transition_category_name">TRANSITION_CATEGORY_NAME</string>
     <string-array name="pref_round_time_list_titles">
         <item>00:10</item>
         <item>00:30</item>
