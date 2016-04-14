@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -44,6 +46,7 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
     FontAwesomeProvider mFontAwesome;
 
     private Realm mRealm;
+    private FloatingActionButton mFab;
     private CoordinatorLayout mLayout;
     private RecyclerView mRecyclerView;
     private CharadesRecyclerViewAdapter mAdapter;
@@ -85,8 +88,8 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        mFab = (FloatingActionButton) findViewById(R.id.fab);
+        mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 createCategory();
@@ -221,8 +224,14 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
     }
 
     public void createCategory() {
+        //Intent intent = new Intent(getBaseContext(), ManageCategoryActivity.class);
+        //startActivityForResult(intent, REQUEST_CODE_MANAGE_CATEGORY);
         Intent intent = new Intent(getBaseContext(), ManageCategoryActivity.class);
-        startActivityForResult(intent, REQUEST_CODE_MANAGE_CATEGORY);
+        String transitionName = getString(R.string.transition_manage_category);
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                this, mFab, transitionName);
+        ActivityCompat.startActivityForResult(this, intent,
+                REQUEST_CODE_MANAGE_CATEGORY, options.toBundle());
     }
 
     public void manageCategory(int position, CategoryModel category) {
