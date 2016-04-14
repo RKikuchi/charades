@@ -86,7 +86,6 @@ public class ManageCategoryActivity extends BaseActivity {
 
     private boolean loadCategory() {
         Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
         int categoryId = intent.getIntExtra(CATEGORY_ID, -1);
         if (categoryId == -1) {
             mCategory = new CategoryDto();
