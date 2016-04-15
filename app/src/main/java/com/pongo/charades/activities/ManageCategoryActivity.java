@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.pongo.charades.R;
 import com.pongo.charades.adapters.CategoryItemsRecyclerViewAdapter;
@@ -16,6 +17,7 @@ import com.pongo.charades.models.CategoryDto;
 import com.pongo.charades.models.CategoryItemDto;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.modules.FontAwesomeProvider;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -37,13 +39,20 @@ public class ManageCategoryActivity extends BaseActivity {
     private CategoryDto mCategory;
     private EditText mNameEditText;
     private boolean mIsNew;
+    private ImageView mImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_category);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.manage_category_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mIsNew = !loadCategory();
+        mImage = (ImageView) findViewById(R.id.category_image);
+        loadImage();
 
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView = (RecyclerView) findViewById(R.id.manage_category_recycler_view);
@@ -52,10 +61,6 @@ public class ManageCategoryActivity extends BaseActivity {
         mAdapter = new CategoryItemsRecyclerViewAdapter(this,
                 mFontAwesome, mRecyclerView, mCategory);
         mRecyclerView.setAdapter(mAdapter);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.manage_category_toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         View newItemButton = findViewById(R.id.manage_category_new_item_button);
         newItemButton.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +89,18 @@ public class ManageCategoryActivity extends BaseActivity {
         }
     }
 
+    private void loadImage() {
+        Picasso
+                .with(this)
+                .load("http://lorempixel.com/400/200/?rnd=" + mCategory.id)
+                .placeholder(R.drawable.category_cell_placeholder)
+                //.transform(new BlurTransform(mContext, 10))
+                //.transform(new ContrastTransform(mContext, 0.33f, 1))
+                //.networkPolicy(NetworkPolicy.NO_CACHE)
+                //.memoryPolicy(MemoryPolicy.NO_CACHE)
+                .into(mImage);
+    }
+
     private boolean loadCategory() {
         Intent intent = getIntent();
         int categoryId = intent.getIntExtra(CATEGORY_ID, -1);
@@ -104,7 +121,15 @@ public class ManageCategoryActivity extends BaseActivity {
         } finally {
             realm.close();
         }
+        //getSupportActionBar().setTitle(mCategory.title);
         return true;
+    }
+
+    @Override
+    public void onEnterAnimationComplete() {
+        super.onEnterAnimationComplete();
+        if (mCategory.title != null && !mCategory.title.isEmpty())
+            getSupportActionBar().setTitle(mCategory.title);
     }
 
     @Override

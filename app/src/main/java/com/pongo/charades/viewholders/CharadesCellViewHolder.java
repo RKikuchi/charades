@@ -75,6 +75,10 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
         return mTitleLabel;
     }
 
+    public View getImage() {
+        return mImage;
+    }
+
     public View getPlayButton() {
         return mPlayButton;
     }
