@@ -86,6 +86,11 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
         }
     }
 
+    public void add(int position, CategoryModelHolder categoryHolder) {
+        mItems.add(position, categoryHolder);
+        notifyItemInserted(position);
+    }
+
     public void remove(int position) {
         mItems.remove(position);
         notifyItemRemoved(position);

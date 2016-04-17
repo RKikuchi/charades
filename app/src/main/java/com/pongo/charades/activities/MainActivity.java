@@ -26,6 +26,7 @@ import com.pongo.charades.adapters.CharadesRecyclerViewAdapter;
 import com.pongo.charades.async.OnlineCategoriesLoader;
 import com.pongo.charades.models.CategoryDto;
 import com.pongo.charades.models.CategoryModel;
+import com.pongo.charades.models.CategoryModelHolder;
 import com.pongo.charades.modules.FontAwesomeProvider;
 import com.pongo.charades.viewholders.CharadesCellViewHolder;
 
@@ -253,8 +254,9 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         }
     }
 
-    public void hideCategory(CharadesCellViewHolder holder) {
-        CategoryModel category = holder.getCategory();
+    public void hideCategory(final CharadesCellViewHolder holder) {
+        final CategoryModel category = holder.getCategory();
+        final int position = holder.getAdapterPosition();
         String title = category.getTitle();
 
         mRealm.beginTransaction();
@@ -262,13 +264,27 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         mRealm.copyToRealmOrUpdate(category);
         mRealm.commitTransaction();
 
-        mAdapter.remove(holder.getAdapterPosition());
+        mAdapter.remove(position);
 
-        // TODO: Undo
         Snackbar.make(mLayout, "Category \"" + title + "\" hidden.", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
+                .setAction("Undo", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        unhideCategory(position, holder.getModelHolder());
+                    }
+                })
                 .setActionTextColor(ContextCompat.getColor(this, R.color.colorWarning))
                 .show();
+    }
+
+    private void unhideCategory(int position, CategoryModelHolder categoryHolder) {
+        CategoryModel category = categoryHolder.getModel();
+        mRealm.beginTransaction();
+        category.setIsHidden(false);
+        mRealm.copyToRealmOrUpdate(category);
+        mRealm.commitTransaction();
+
+        mAdapter.add(position, categoryHolder);
     }
 
     public void deleteCategory(CategoryModel category) {
