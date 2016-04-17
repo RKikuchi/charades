@@ -287,6 +287,18 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         }
     }
 
+    public void unhideCategory(final CharadesCellViewHolder holder) {
+        final CategoryModel category = holder.getCategory();
+        final int position = holder.getAdapterPosition();
+
+        mRealm.beginTransaction();
+        category.setIsHidden(false);
+        mRealm.copyToRealmOrUpdate(category);
+        mRealm.commitTransaction();
+
+        mAdapter.notifyItemChanged(position);
+    }
+
     public void deleteCategory(CategoryModel category) {
         mRealm.beginTransaction();
         mRealm.where(CategoryModel.class)

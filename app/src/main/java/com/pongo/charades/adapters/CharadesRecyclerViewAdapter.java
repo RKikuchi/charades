@@ -59,10 +59,10 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
                 mContext.manageCategory(holder);
             }
         });
-        holder.getDeleteButton().setOnClickListener(new View.OnClickListener() {
+        holder.getUnhideButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mContext.hideCategory(holder);
+                mContext.unhideCategory(holder);
             }
         });
         return holder;
@@ -81,7 +81,6 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
     }
 
     public void setMode(int mode) {
-        if (mode == mMode) return;
         mMode = mode;
         reload();
         notifyDataSetChanged();

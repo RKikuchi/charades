@@ -17,10 +17,9 @@ import com.squareup.picasso.Picasso;
 public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
     private final ImageView mImage;
     private final TextView mTitleLabel;
-    private final View mOverlay;
     private final View mPlayButton;
     private final View mEditButton;
-    private final View mDeleteButton;
+    private final View mUnhideButton;
     private final MainActivity mContext;
     private CategoryModelHolder mCategory;
 
@@ -31,9 +30,7 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
         mTitleLabel = (TextView) itemView.findViewById(R.id.cell_charades_title_label);
         mPlayButton = itemView.findViewById(R.id.play_button);
         mEditButton = itemView.findViewById(R.id.edit_button);
-        mDeleteButton = itemView.findViewById(R.id.delete_button);
-        mOverlay = itemView.findViewById(R.id.cell_charades_overlay);
-        mOverlay.setVisibility(View.INVISIBLE);
+        mUnhideButton = itemView.findViewById(R.id.unhide_button);
     }
 
     private void loadImage() {
@@ -55,20 +52,17 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
     public CategoryModel getCategory() { return mCategory.getModel(); }
 
     public void setData(CategoryModelHolder value) {
+        CategoryModel model = value.getModel();
         mCategory = value;
-        mTitleLabel.setText(value.getModel().getTitle());
-        mOverlay.setVisibility(value.isSelected() ? View.VISIBLE : View.INVISIBLE);
+        mTitleLabel.setText(model.getTitle());
+        if (model.getIsHidden()) {
+            mImage.setAlpha(0.5f);
+            mUnhideButton.setVisibility(View.VISIBLE);
+        } else {
+            mImage.setAlpha(1.0f);
+            mUnhideButton.setVisibility(View.INVISIBLE);
+        }
         loadImage();
-    }
-
-    public void select() {
-        mCategory.isSelected(true);
-        mOverlay.setVisibility(View.VISIBLE);
-    }
-
-    public void unselect() {
-        mCategory.isSelected(false);
-        mOverlay.setVisibility(View.INVISIBLE);
     }
 
     public View getTitleLabel() {
@@ -87,7 +81,7 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
         return mEditButton;
     }
 
-    public View getDeleteButton() {
-        return mDeleteButton;
+    public View getUnhideButton() {
+        return mUnhideButton;
     }
 }

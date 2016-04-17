@@ -55,6 +55,15 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/unhide_button"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="0dp"
+                    android:text="@string/unhide"
+                    android:textColor="@color/colorDarkGray" />
+
+                <Button
                     android:id="@+id/edit_button"
                     style="?android:borderlessButtonStyle"
                     android:layout_width="wrap_content"
@@ -78,46 +87,6 @@
 
         </RelativeLayout>
 
-        <LinearLayout
-            android:id="@+id/cell_charades_overlay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            android:padding="20dp"
-            android:background="@drawable/shape_cell_selected_bg">
-
-            <LinearLayout
-                android:id="@+id/delete_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@color/colorSoftOverlay">
-
-                <!--<TextView-->
-                    <!--android:id="@+id/cell_charades_icon_delete"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:padding="10dp"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:textColor="@color/colorWhite"-->
-                    <!--android:text="&#xf014;"-->
-                    <!--android:textSize="20dp" />-->
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorWhite"
-                    android:text="@string/remove" />
-
-            </LinearLayout>
-
-        </LinearLayout>
     </android.support.v7.widget.CardView>
 
 </LinearLayout>
