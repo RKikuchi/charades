@@ -285,6 +285,9 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         mRealm.commitTransaction();
 
         mAdapter.add(position, categoryHolder);
+        if (position == mAdapter.getItemCount() - 1) {
+            mRecyclerView.smoothScrollToPosition(position);
+        }
     }
 
     public void deleteCategory(CategoryModel category) {
