@@ -1,15 +1,20 @@
 package com.pongo.charades.activities;
 
 import android.content.Intent;
+import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.pongo.charades.R;
 import com.pongo.charades.adapters.CategoryItemsRecyclerViewAdapter;
@@ -25,33 +30,54 @@ import javax.inject.Inject;
 
 import io.realm.Realm;
 
-public class ManageCategoryActivity extends BaseActivity {
+public class ManageCategoryActivity
+        extends BaseActivity
+        implements AppBarLayout.OnOffsetChangedListener {
     public static final String CATEGORY_ID = "CATEGORY_ID";
     public static final String EXTRA_IS_NEW = "IS_NEW";
     public static final String EXTRA_ITEM_ID = "ITEM_ID";
     public static final String EXTRA_ITEM_TITLE = "ITEM_TITLE";
+    private static final int ALPHA_ANIMATIONS_DURATION = 250;
 
     @Inject
     FontAwesomeProvider mFontAwesome;
+
+    private AppBarLayout mAppBarLayout;
+    private Toolbar mToolbar;
+    private TextView mTitle;
+    private LinearLayout mTitleContainer;
+
     private RecyclerView mRecyclerView;
     private CategoryItemsRecyclerViewAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private CategoryDto mCategory;
     private EditText mNameEditText;
     private boolean mIsNew;
+    private TextView mCategoryName;
     private ImageView mImage;
+
+    private boolean mIsTheTitleVisible = false;
+    private boolean mIsTheTitleContainerVisible = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_category);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.manage_category_toolbar);
-        setSupportActionBar(toolbar);
+        mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
+        mAppBarLayout.addOnOffsetChangedListener(this);
+
+        mTitle = (TextView) findViewById(R.id.title);
+        mTitleContainer = (LinearLayout) findViewById(R.id.title_container);
+
+        mToolbar = (Toolbar) findViewById(R.id.manage_category_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mIsNew = !loadCategory();
+        mCategoryName = (TextView) findViewById(R.id.category_name);
         mImage = (ImageView) findViewById(R.id.category_image);
+        mIsNew = !loadCategory();
         loadImage();
 
         mLayoutManager = new LinearLayoutManager(this);
@@ -87,6 +113,26 @@ public class ManageCategoryActivity extends BaseActivity {
         } else {
             mNameEditText.setText(mCategory.title);
         }
+
+        startAlphaAnimation(mTitle, 0, View.INVISIBLE);
+    }
+
+    private void startAlphaAnimation(View v, long duration, int visibility) {
+        AlphaAnimation alphaAnimation = (visibility == View.VISIBLE)
+                ? new AlphaAnimation(0f, 1f)
+                : new AlphaAnimation(1f, 0f);
+
+        alphaAnimation.setDuration(duration);
+        alphaAnimation.setFillAfter(true);
+        v.startAnimation(alphaAnimation);
+    }
+
+    private void startBackgroundAnimation(View v, int duration, int visibility) {
+        TransitionDrawable transition = (TransitionDrawable) v.getBackground();
+        if (visibility == View.VISIBLE)
+            transition.startTransition(duration);
+        else
+            transition.reverseTransition(duration);
     }
 
     private void loadImage() {
@@ -121,15 +167,9 @@ public class ManageCategoryActivity extends BaseActivity {
         } finally {
             realm.close();
         }
-        //getSupportActionBar().setTitle(mCategory.title);
+        mCategoryName.setText(mCategory.title);
+        mTitle.setText(mCategory.title);
         return true;
-    }
-
-    @Override
-    public void onEnterAnimationComplete() {
-        super.onEnterAnimationComplete();
-        if (mCategory.title != null && !mCategory.title.isEmpty())
-            getSupportActionBar().setTitle(mCategory.title);
     }
 
     @Override
@@ -178,5 +218,44 @@ public class ManageCategoryActivity extends BaseActivity {
             intent.putExtra(MainActivity.EXTRA_CATEGORY_POSITION, adapterPosition);
         }
         return intent;
+    }
+
+    @Override
+    public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+        int maxScroll = appBarLayout.getTotalScrollRange();
+        float percentage = (float) Math.abs(verticalOffset) / (float) maxScroll;
+
+        handleAlphaOnTitle(percentage);
+        handleToolbarTitleVisibility(percentage);
+    }
+
+    private void handleToolbarTitleVisibility(float percentage) {
+        if (percentage >= 0.6f) {
+            if (!mIsTheTitleVisible) {
+                startAlphaAnimation(mTitle, ALPHA_ANIMATIONS_DURATION, View.VISIBLE);
+                startBackgroundAnimation(mToolbar, ALPHA_ANIMATIONS_DURATION, View.VISIBLE);
+                mIsTheTitleVisible = true;
+            }
+        } else {
+            if (mIsTheTitleVisible) {
+                startAlphaAnimation(mTitle, ALPHA_ANIMATIONS_DURATION, View.INVISIBLE);
+                startBackgroundAnimation(mToolbar, ALPHA_ANIMATIONS_DURATION, View.INVISIBLE);
+                mIsTheTitleVisible = false;
+            }
+        }
+    }
+
+    private void handleAlphaOnTitle(float percentage) {
+        if (percentage >= 0.3f) {
+            if (mIsTheTitleContainerVisible) {
+                startAlphaAnimation(mTitleContainer, ALPHA_ANIMATIONS_DURATION, View.INVISIBLE);
+                mIsTheTitleContainerVisible = false;
+            }
+        } else {
+            if (!mIsTheTitleContainerVisible) {
+                startAlphaAnimation(mTitleContainer, ALPHA_ANIMATIONS_DURATION, View.VISIBLE);
+                mIsTheTitleContainerVisible = true;
+            }
+        }
     }
 }

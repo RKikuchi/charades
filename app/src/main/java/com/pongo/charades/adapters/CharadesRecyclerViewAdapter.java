@@ -46,7 +46,7 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
                 mContext.startActivity(intent);
             }
         };
-        holder.getTitleLabel().setOnClickListener(playListener);
+        holder.getImage().setOnClickListener(playListener);
         holder.getPlayButton().setOnClickListener(playListener);
         holder.getEditButton().setOnClickListener(new View.OnClickListener() {
             @Override

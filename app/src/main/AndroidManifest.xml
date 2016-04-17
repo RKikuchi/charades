@@ -37,7 +37,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.ManageCategoryActivity"
-            android:label="@string/title_activity_manage_category"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden"></activity>
     </application>

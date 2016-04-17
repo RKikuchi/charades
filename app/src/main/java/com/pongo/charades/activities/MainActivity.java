@@ -138,7 +138,6 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -239,17 +238,15 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         intent.putExtra(ManageCategoryActivity.CATEGORY_ID, category.getId());
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            String screenTransitionName = getString(R.string.transition_manage_category);
             String titleTransitionName = getString(R.string.transition_category_name);
             String imageTransitionName = getString(R.string.transition_category_image);
             String overlayTransitionName = getString(R.string.transition_category_image_overlay);
-            Pair<View, String> p1 = Pair.create(holder.itemView, screenTransitionName);
             Pair<View, String> p2 = Pair.create(holder.getTitleLabel(), titleTransitionName);
             Pair<View, String> p3 = Pair.create(holder.getImage(), imageTransitionName);
 
-            //ActivityOptionsCompat.makeScaleUpAnimation(holder.getTitleLabel())
             ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                     this, p2, p3);
+
             ActivityCompat.startActivityForResult(this, intent,
                     REQUEST_CODE_MANAGE_CATEGORY, options.toBundle());
         } else {
