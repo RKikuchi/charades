@@ -16,16 +16,21 @@ import com.pongo.charades.viewholders.CharadesCellViewHolder;
 import java.util.ArrayList;
 
 import io.realm.Realm;
+import io.realm.RealmQuery;
 import io.realm.RealmResults;
 
 /**
  * Created by rsaki on 1/3/2016.
  */
 public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
+    public static final int MODE_DEFAULT = 0;
+    public static final int MODE_SHOW_ALL = 1;
+
     final private MainActivity mContext;
     final private Realm mRealm;
     final private LayoutInflater mLayoutInflater;
     private ArrayList<CategoryModelHolder> mItems;
+    private int mMode = MODE_DEFAULT;
 
     public CharadesRecyclerViewAdapter(MainActivity context) {
         mContext = context;
@@ -75,12 +80,25 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
         return mItems.size();
     }
 
+    public void setMode(int mode) {
+        if (mode == mMode) return;
+        mMode = mode;
+        reload();
+        notifyDataSetChanged();
+    }
+
     public void reload() {
         mItems = new ArrayList<>();
-        RealmResults<CategoryModel> categories = mRealm
-                .where(CategoryModel.class)
-                .equalTo("isHidden", false)
-                .findAll();
+        RealmQuery<CategoryModel> query = mRealm.where(CategoryModel.class);
+        switch (mMode) {
+            case MODE_DEFAULT:
+                query = query.equalTo("isHidden", false);
+                break;
+            case MODE_SHOW_ALL:
+                break;
+        }
+
+        RealmResults<CategoryModel> categories = query.findAll();
         for (CategoryModel model : categories) {
             mItems.add(new CategoryModelHolder(model));
         }

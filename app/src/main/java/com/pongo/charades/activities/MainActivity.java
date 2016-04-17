@@ -27,7 +27,6 @@ import com.pongo.charades.async.OnlineCategoriesLoader;
 import com.pongo.charades.models.CategoryDto;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.models.CategoryModelHolder;
-import com.pongo.charades.modules.FontAwesomeProvider;
 import com.pongo.charades.viewholders.CharadesCellViewHolder;
 
 import java.io.BufferedReader;
@@ -37,16 +36,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
-
 import io.realm.Realm;
 
 public class MainActivity extends BaseActivity implements OnlineCategoriesLoader.OnlineCategoriesLoaderCallback {
     private static final int REQUEST_CODE_MANAGE_CATEGORY = 1;
     public static final String EXTRA_CATEGORY_POSITION = "CATEGORY_POSITION";
-
-    @Inject
-    FontAwesomeProvider mFontAwesome;
 
     private Realm mRealm;
     private FloatingActionButton mFab;
@@ -147,6 +141,9 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
+            case R.id.action_show_all_items:
+                mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_SHOW_ALL);
+                return true;
             case R.id.action_settings:
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
