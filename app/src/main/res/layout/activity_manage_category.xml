@@ -23,7 +23,7 @@
             <ImageView
                 android:id="@+id/category_image"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:fitsSystemWindows="true"
                 android:transitionName="@string/transition_category_image"
                 android:tint="@color/black_overlay"
@@ -35,10 +35,10 @@
             <FrameLayout
                 android:id="@+id/layout_title"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_gravity="bottom|center_horizontal"
+                android:layout_height="130dp"
+                android:layout_gravity="top|center_horizontal"
                 app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.3">
+                app:layout_collapseParallaxMultiplier="0.6">
 
                 <LinearLayout
                     android:id="@+id/title_container"

@@ -240,7 +240,6 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             String titleTransitionName = getString(R.string.transition_category_name);
             String imageTransitionName = getString(R.string.transition_category_image);
-            String overlayTransitionName = getString(R.string.transition_category_image_overlay);
             Pair<View, String> p2 = Pair.create(holder.getTitleLabel(), titleTransitionName);
             Pair<View, String> p3 = Pair.create(holder.getImage(), imageTransitionName);
 
