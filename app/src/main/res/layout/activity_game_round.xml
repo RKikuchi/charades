@@ -6,6 +6,15 @@
     android:background="@color/colorNeutralBg"
     tools:context="com.pongo.charades.activities.GameRoundActivity">
 
+    <ImageView
+        android:id="@+id/category_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_centerInParent="true"
+        />
+
     <TextView
         android:id="@+id/top_text"
         android:layout_width="match_parent"

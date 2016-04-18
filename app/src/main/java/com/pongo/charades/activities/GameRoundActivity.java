@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,6 +20,8 @@ import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.modules.FontAwesomeProvider;
 import com.pongo.charades.services.SoundService;
 import com.pongo.charades.services.TiltSensorService;
+import com.pongo.charades.transforms.BlurTransform;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -47,6 +50,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private int mTotalRoundTime;
 
     private View mLayout;
+    private ImageView mImage;
     private TextView mMainText;
     private TextView mTopText;
     private LinearLayout mSkipButton;
@@ -77,6 +81,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         mScoreTrack = new ScoreTrackRecyclerViewAdapter(this);
 
         mLayout = findViewById(R.id.game_round_layout);
+        mImage = (ImageView) findViewById(R.id.category_image);
         mMainText = (TextView) findViewById(R.id.main_text);
         mTopText = (TextView) findViewById(R.id.top_text);
         mSkipButton = (LinearLayout) findViewById(R.id.skip_button);
@@ -191,6 +196,19 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         } finally {
             realm.close();
         }
+        loadImage();
+    }
+
+    private void loadImage() {
+        Picasso
+                .with(this)
+                .load("http://lorempixel.com/400/200/?rnd=" + mCategory.getId())
+                .placeholder(R.drawable.category_cell_placeholder)
+                .transform(new BlurTransform(this, 10))
+                //.transform(new ContrastTransform(mContext, 0.33f, 1))
+                //.networkPolicy(NetworkPolicy.NO_CACHE)
+                //.memoryPolicy(MemoryPolicy.NO_CACHE)
+                .into(mImage);
     }
 
     private void hide() {
