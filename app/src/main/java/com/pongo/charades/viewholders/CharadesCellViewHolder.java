@@ -2,6 +2,7 @@ package com.pongo.charades.viewholders;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,21 +17,23 @@ import com.squareup.picasso.Picasso;
  */
 public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
     private final ImageView mImage;
+    private final View mCard;
     private final TextView mTitleLabel;
-    private final View mPlayButton;
-    private final View mEditButton;
-    private final View mUnhideButton;
+    private final Button mPlayButton;
+    private final Button mEditButton;
+    private final Button mUnhideButton;
     private final MainActivity mContext;
     private CategoryModelHolder mCategory;
 
     public CharadesCellViewHolder(MainActivity context, View itemView) {
         super(itemView);
         mContext = context;
+        mCard = itemView.findViewById(R.id.card);
         mImage = (ImageView) itemView.findViewById(R.id.card_image);
         mTitleLabel = (TextView) itemView.findViewById(R.id.cell_charades_title_label);
-        mPlayButton = itemView.findViewById(R.id.play_button);
-        mEditButton = itemView.findViewById(R.id.edit_button);
-        mUnhideButton = itemView.findViewById(R.id.unhide_button);
+        mPlayButton = (Button) itemView.findViewById(R.id.play_button);
+        mEditButton = (Button) itemView.findViewById(R.id.edit_button);
+        mUnhideButton = (Button) itemView.findViewById(R.id.unhide_button);
     }
 
     private void loadImage() {

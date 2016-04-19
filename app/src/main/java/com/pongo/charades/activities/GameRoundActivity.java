@@ -1,11 +1,16 @@
 package com.pongo.charades.activities;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -50,6 +55,8 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private int mTotalRoundTime;
 
     private View mLayout;
+    private CardView mCard;
+    private View mCardLayout;
     private ImageView mImage;
     private TextView mMainText;
     private TextView mTopText;
@@ -58,6 +65,9 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private LinearLayout mReplayButton;
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
+
+    private AnimatorSet mAnimationOut;
+    private AnimatorSet mAnimationIn;
 
     private Bundle mExtras;
     private TiltSensorService mTiltSensor;
@@ -81,6 +91,8 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         mScoreTrack = new ScoreTrackRecyclerViewAdapter(this);
 
         mLayout = findViewById(R.id.game_round_layout);
+        mCard = (CardView) findViewById(R.id.card);
+        mCardLayout = findViewById(R.id.card_layout);
         mImage = (ImageView) findViewById(R.id.category_image);
         mMainText = (TextView) findViewById(R.id.main_text);
         mTopText = (TextView) findViewById(R.id.top_text);
@@ -98,6 +110,21 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         ((TextView)findViewById(R.id.skip_icon)).setTypeface(mFontAwesome.getTypeface());
         ((TextView)findViewById(R.id.back_icon)).setTypeface(mFontAwesome.getTypeface());
         ((TextView)findViewById(R.id.replay_icon)).setTypeface(mFontAwesome.getTypeface());
+
+        mAnimationOut = (AnimatorSet) AnimatorInflater.loadAnimator(
+                getApplicationContext(),
+                R.animator.card_out);
+        mAnimationIn = (AnimatorSet) AnimatorInflater.loadAnimator(
+                getApplicationContext(),
+                R.animator.card_in);
+        mAnimationOut.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                mAnimationIn.setTarget(mCard);
+                mAnimationIn.start();
+            }
+        });
 
         mMainText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,15 +184,15 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         switch (newState) {
             case UPWARDS:
                 skipOrScore(true);
-                mLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorRightBg));
+                mCardLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorRightBg));
                 break;
             case DOWNWARDS:
                 skipOrScore(false);
-                mLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorWrongBg));
+                mCardLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorWrongBg));
                 break;
             case NEUTRAL:
                 changeWord();
-                mLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorNeutralBg));
+                mCardLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorNeutralBg));
                 break;
         }
     }
@@ -243,7 +270,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
                 mReplayButton.setVisibility(View.VISIBLE);
                 mRecyclerView.setVisibility(View.VISIBLE);
                 mMainText.setVisibility(View.GONE);
-                mLayout.setBackgroundColor(
+                mCardLayout.setBackgroundColor(
                         ContextCompat.getColor(mLayout.getContext(), R.color.colorNeutralBg));
                 mScoreTrack.notifyDataSetChanged();
                 mTopText.setText("Score: " + mScore);
@@ -253,6 +280,8 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     }
 
     private void skipOrScore(Boolean score) {
+        mAnimationOut.setTarget(mCard);
+        mAnimationOut.start();
         if (score) {
             mSoundService.playSuccess();
             mScore++;
