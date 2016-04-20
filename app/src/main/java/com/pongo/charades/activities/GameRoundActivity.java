@@ -66,8 +66,10 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    private AnimatorSet mAnimationOut;
-    private AnimatorSet mAnimationIn;
+    private AnimatorSet mAnimatorOutDown;
+    private AnimatorSet mAnimatorOutUp;
+    private AnimatorSet mAnimatorInDown;
+    private AnimatorSet mAnimatorInUp;
 
     private Bundle mExtras;
     private TiltSensorService mTiltSensor;
@@ -111,20 +113,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         ((TextView)findViewById(R.id.back_icon)).setTypeface(mFontAwesome.getTypeface());
         ((TextView)findViewById(R.id.replay_icon)).setTypeface(mFontAwesome.getTypeface());
 
-        mAnimationOut = (AnimatorSet) AnimatorInflater.loadAnimator(
-                getApplicationContext(),
-                R.animator.card_out);
-        mAnimationIn = (AnimatorSet) AnimatorInflater.loadAnimator(
-                getApplicationContext(),
-                R.animator.card_in);
-        mAnimationOut.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-                mAnimationIn.setTarget(mCard);
-                mAnimationIn.start();
-            }
-        });
+        loadAnimators();
 
         mMainText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,6 +146,38 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         });
 
         loadCategory();
+    }
+
+    private void loadAnimators() {
+        mAnimatorOutDown = (AnimatorSet) AnimatorInflater.loadAnimator(
+                getApplicationContext(),
+                R.animator.card_out_down);
+        mAnimatorOutUp = (AnimatorSet) AnimatorInflater.loadAnimator(
+                getApplicationContext(),
+                R.animator.card_out_up);
+        mAnimatorInDown = (AnimatorSet) AnimatorInflater.loadAnimator(
+                getApplicationContext(),
+                R.animator.card_in_down);
+        mAnimatorInUp = (AnimatorSet) AnimatorInflater.loadAnimator(
+                getApplicationContext(),
+                R.animator.card_in_up);
+
+        mAnimatorOutDown.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                mAnimatorInUp.setTarget(mCard);
+                mAnimatorInUp.start();
+            }
+        });
+        mAnimatorOutUp.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                mAnimatorInDown.setTarget(mCard);
+                mAnimatorInDown.start();
+            }
+        });
     }
 
     @Override
@@ -280,8 +301,14 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     }
 
     private void skipOrScore(Boolean score) {
-        mAnimationOut.setTarget(mCard);
-        mAnimationOut.start();
+        if (score) {
+            mAnimatorOutUp.setTarget(mCard);
+            mAnimatorOutUp.start();
+        } else {
+            mAnimatorOutDown.setTarget(mCard);
+            mAnimatorOutDown.start();
+        }
+
         if (score) {
             mSoundService.playSuccess();
             mScore++;
