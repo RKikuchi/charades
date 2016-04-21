@@ -14,6 +14,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -345,6 +346,15 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
             @Override
             public void onTick(long millisUntilFinished) {
                 mCountdownText.setText(String.valueOf(millisUntilFinished / 1000));
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    int cx = mCountdownText.getWidth() / 2;
+                    int cy = mCountdownText.getHeight() / 2;
+                    float finalRadius = (float) Math.max(cx, cy);
+                    Animator anim = ViewAnimationUtils.createCircularReveal(
+                            mCountdownText, cx, cy, 0, finalRadius);
+                    anim.setDuration(250);
+                    anim.start();
+                }
                 mSoundService.playTick();
             }
 
