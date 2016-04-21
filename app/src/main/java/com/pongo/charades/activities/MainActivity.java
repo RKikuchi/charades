@@ -15,6 +15,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.transition.Explode;
+import android.transition.Transition;
+import android.transition.TransitionManager;
+import android.transition.TransitionSet;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -238,11 +242,11 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             String titleTransitionName = getString(R.string.transition_category_name);
             String imageTransitionName = getString(R.string.transition_category_image);
-            Pair<View, String> p2 = Pair.create(holder.getTitleLabel(), titleTransitionName);
-            Pair<View, String> p3 = Pair.create(holder.getImage(), imageTransitionName);
+            Pair<View, String> p1 = Pair.create(holder.getTitleLabel(), titleTransitionName);
+            Pair<View, String> p2 = Pair.create(holder.getImage(), imageTransitionName);
 
             ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
-                    this, p2, p3);
+                    this, p1, p2);
 
             ActivityCompat.startActivityForResult(this, intent,
                     REQUEST_CODE_MANAGE_CATEGORY, options.toBundle());
@@ -306,5 +310,31 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
                 .findAll()
                 .clear();
         mRealm.commitTransaction();
+    }
+
+    public void playCategory(CharadesCellViewHolder holder) {
+        Intent intent = new Intent(this, GameRoundActivity.class);
+        intent.putExtra(GameRoundActivity.CATEGORY_ID, holder.getCategory().getId());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            String imageTransitionName = getString(R.string.transition_category_image);
+            Pair<View, String> p2 = Pair.create(holder.getImage(), imageTransitionName);
+
+            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                    this, p2);
+
+            //Explode explode = new Explode();
+            //explode.setDuration(1000);
+            //TransitionSet ts = new TransitionSet();
+            //ts.setOrdering(TransitionSet.ORDERING_SEQUENTIAL);
+            //ts.addTransition(explode);
+            //TransitionManager.go(getContentScene(), ts);
+            //getWindow().setExitTransition(ts);
+
+            //ActivityCompat.startActivity(this, intent, options.toBundle());
+            startActivity(intent);
+        } else {
+            startActivity(intent);
+        }
     }
 }

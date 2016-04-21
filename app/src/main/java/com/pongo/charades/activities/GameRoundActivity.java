@@ -59,6 +59,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private View mCardLayout;
     private ImageView mImage;
     private TextView mMainText;
+    private TextView mCountdownText;
     private TextView mTopText;
     private LinearLayout mSkipButton;
     private LinearLayout mBackButton;
@@ -82,6 +83,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_round);
+
         mState = State.COUNTDOWN;
         mTotalRoundTime = Integer.parseInt(PreferenceManager
                 .getDefaultSharedPreferences(this)
@@ -97,6 +99,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         mCardLayout = findViewById(R.id.card_layout);
         mImage = (ImageView) findViewById(R.id.category_image);
         mMainText = (TextView) findViewById(R.id.main_text);
+        mCountdownText = (TextView) findViewById(R.id.countdown_text);
         mTopText = (TextView) findViewById(R.id.top_text);
         mSkipButton = (LinearLayout) findViewById(R.id.skip_button);
         mBackButton = (LinearLayout) findViewById(R.id.back_button);
@@ -183,6 +186,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
+        hideUi();
         start();
     }
 
@@ -252,19 +256,19 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
                 .with(this)
                 .load("http://lorempixel.com/400/200/?rnd=" + mCategory.getId())
                 .placeholder(R.drawable.category_cell_placeholder)
-                .transform(new BlurTransform(this, 10))
+                //.transform(new BlurTransform(this, 10))
                 //.transform(new ContrastTransform(mContext, 0.33f, 1))
                 //.networkPolicy(NetworkPolicy.NO_CACHE)
                 //.memoryPolicy(MemoryPolicy.NO_CACHE)
                 .into(mImage);
     }
 
-    private void hide() {
+    private void hideUi() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();
         }
-        mMainText.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
+        mLayout.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
                 | View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -331,16 +335,16 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
 
     private void start() {
         mTopText.setText(mCategory.getTitle());
+        mCard.setVisibility(View.GONE);
         mSkipButton.setVisibility(View.INVISIBLE);
         mBackButton.setVisibility(View.INVISIBLE);
         mReplayButton.setVisibility(View.INVISIBLE);
         mRecyclerView.setVisibility(View.GONE);
-        mMainText.setVisibility(View.VISIBLE);
-        hide();
+        mCountdownText.setVisibility(View.VISIBLE);
         new CountDownTimer(5500, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                mMainText.setText(String.valueOf(millisUntilFinished / 1000));
+                mCountdownText.setText(String.valueOf(millisUntilFinished / 1000));
                 mSoundService.playTick();
             }
 
@@ -349,6 +353,11 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
                 mState = State.PLAYING;
                 mScore = 0;
                 mScoreTrack.clear();
+                mCountdownText.setVisibility(View.GONE);
+                mCard.setVisibility(View.VISIBLE);
+                mAnimatorInUp.setTarget(mCard);
+                mAnimatorInUp.start();
+                mMainText.setVisibility(View.VISIBLE);
                 mSkipButton.setVisibility(View.VISIBLE);
                 setupRoundTimer();
                 changeWord();

@@ -1,13 +1,11 @@
 package com.pongo.charades.adapters;
 
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.pongo.charades.R;
-import com.pongo.charades.activities.GameRoundActivity;
 import com.pongo.charades.activities.MainActivity;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.models.CategoryModelHolder;
@@ -46,9 +44,7 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
         View.OnClickListener playListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, GameRoundActivity.class);
-                intent.putExtra(GameRoundActivity.CATEGORY_ID, holder.getCategory().getId());
-                mContext.startActivity(intent);
+                mContext.playCategory(holder);
             }
         };
         holder.getImage().setOnClickListener(playListener);
