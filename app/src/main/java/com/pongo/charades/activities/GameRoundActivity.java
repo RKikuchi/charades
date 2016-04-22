@@ -255,10 +255,8 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
                 .with(this)
                 .load("http://lorempixel.com/400/200/?rnd=" + mCategory.getId())
                 .placeholder(R.drawable.category_cell_placeholder)
-                //.transform(new BlurTransform(this, 10))
+                .transform(new BlurTransform(this, 10))
                 //.transform(new ContrastTransform(mContext, 0.33f, 1))
-                //.networkPolicy(NetworkPolicy.NO_CACHE)
-                //.memoryPolicy(MemoryPolicy.NO_CACHE)
                 .into(mImage);
     }
 
