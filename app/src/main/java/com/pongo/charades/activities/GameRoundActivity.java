@@ -346,7 +346,8 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
             @Override
             public void onTick(long millisUntilFinished) {
                 mCountdownText.setText(String.valueOf(millisUntilFinished / 1000));
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP &&
+                        mCountdownText.isAttachedToWindow()) {
                     int cx = mCountdownText.getWidth() / 2;
                     int cy = mCountdownText.getHeight() / 2;
                     float finalRadius = (float) Math.max(cx, cy);
