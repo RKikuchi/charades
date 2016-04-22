@@ -32,7 +32,8 @@
                     android:transitionName="@string/transition_category_image"
                     android:tint="@color/black_overlay"
                     android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"/>
+                    android:scaleType="centerCrop"
+                    />
 
                 <TextView
                     android:id="@+id/cell_charades_title_label"
