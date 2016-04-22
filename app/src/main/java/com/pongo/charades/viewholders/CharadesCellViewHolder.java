@@ -1,5 +1,9 @@
 package com.pongo.charades.viewholders;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +14,8 @@ import com.pongo.charades.R;
 import com.pongo.charades.activities.MainActivity;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.models.CategoryModelHolder;
+import com.pongo.charades.transforms.PaletteTransform;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -19,6 +25,7 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
     private final ImageView mImage;
     private final View mCard;
     private final TextView mTitleLabel;
+    private final View mActionGroup;
     private final Button mPlayButton;
     private final Button mEditButton;
     private final Button mUnhideButton;
@@ -31,6 +38,7 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
         mCard = itemView.findViewById(R.id.card);
         mImage = (ImageView) itemView.findViewById(R.id.card_image);
         mTitleLabel = (TextView) itemView.findViewById(R.id.cell_charades_title_label);
+        mActionGroup = itemView.findViewById(R.id.cell_action_group);
         mPlayButton = (Button) itemView.findViewById(R.id.play_button);
         mEditButton = (Button) itemView.findViewById(R.id.edit_button);
         mUnhideButton = (Button) itemView.findViewById(R.id.unhide_button);
@@ -41,11 +49,33 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
                 .with(mContext)
                 .load("http://lorempixel.com/400/200/?rnd=" + mCategory.getModel().getId())
                 .placeholder(R.drawable.category_cell_placeholder)
+                .transform(PaletteTransform.instance())
                 //.transform(new BlurTransform(mContext, 10))
                 //.transform(new ContrastTransform(mContext, 0.33f, 1))
-                //.networkPolicy(NetworkPolicy.NO_CACHE)
-                //.memoryPolicy(MemoryPolicy.NO_CACHE)
-                .into(mImage);
+                .into(mImage, new Callback() {
+                    @Override
+                    public void onSuccess() {
+                        Bitmap bitmap = ((BitmapDrawable) mImage.getDrawable()).getBitmap();
+                        Palette palette = PaletteTransform.getPalette(bitmap);
+                        Palette.Swatch swatch = palette.getLightMutedSwatch();
+                        if (swatch == null)
+                            swatch = palette.getMutedSwatch();
+                        if (swatch == null)
+                            swatch = palette.getLightVibrantSwatch();
+                        if (swatch == null && palette.getSwatches().size() > 0)
+                            swatch = palette.getSwatches().get(0);
+
+                        if (swatch != null) {
+                            mActionGroup.setBackgroundColor(swatch.getRgb());
+                            mPlayButton.setTextColor(swatch.getTitleTextColor());
+                            mEditButton.setTextColor(swatch.getBodyTextColor());
+                            mUnhideButton.setTextColor(swatch.getBodyTextColor());
+                        }
+                    }
+
+                    @Override
+                    public void onError() {}
+                });
     }
 
     public CategoryModelHolder getModelHolder() {
@@ -65,6 +95,14 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
             mImage.setAlpha(1.0f);
             mUnhideButton.setVisibility(View.INVISIBLE);
         }
+        mActionGroup.setBackgroundColor(
+                ContextCompat.getColor(mContext, R.color.colorWhite));
+        mPlayButton.setTextColor(
+                ContextCompat.getColor(mContext, R.color.colorAccent));
+        mEditButton.setTextColor(
+                ContextCompat.getColor(mContext, R.color.colorDarkGray));
+        mUnhideButton.setTextColor(
+                ContextCompat.getColor(mContext, R.color.colorDarkGray));
         loadImage();
     }
 
