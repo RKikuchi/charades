@@ -123,7 +123,6 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
             @Override
             public void onClick(View view) {
                 skipOrScore(true);
-                changeWord();
             }
         });
 
@@ -131,7 +130,6 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
             @Override
             public void onClick(View v) {
                 skipOrScore(false);
-                changeWord();
             }
         });
 
@@ -170,6 +168,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
+                changeWord();
                 mAnimatorInUp.setTarget(mCard);
                 mAnimatorInUp.start();
             }
@@ -178,6 +177,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
+                changeWord();
                 mAnimatorInDown.setTarget(mCard);
                 mAnimatorInDown.start();
             }
@@ -217,8 +217,6 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
                 mCardLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorWrongBg));
                 break;
             case NEUTRAL:
-                changeWord();
-                mCardLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorNeutralBg));
                 break;
         }
     }
@@ -329,6 +327,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private void changeWord() {
         if (mState != State.PLAYING) return;
 
+        mCardLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorNeutralBg));
         mCurrentItemIndex = (mCurrentItemIndex + 1) % mItems.size();
         mCurrentItem = mItems.get(mCurrentItemIndex);
         mMainText.setText(mCurrentItem.getValue());
