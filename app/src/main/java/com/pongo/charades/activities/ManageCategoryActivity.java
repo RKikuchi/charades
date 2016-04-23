@@ -2,11 +2,14 @@ package com.pongo.charades.activities;
 
 import android.content.Intent;
 import android.graphics.drawable.TransitionDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.transition.Transition;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,6 +49,7 @@ public class ManageCategoryActivity
     private Toolbar mToolbar;
     private TextView mTitle;
     private LinearLayout mTitleContainer;
+    private FloatingActionButton mFab;
 
     private RecyclerView mRecyclerView;
     private CategoryItemsRecyclerViewAdapter mAdapter;
@@ -112,6 +116,32 @@ public class ManageCategoryActivity
             mNameEditText.requestFocus();
         } else {
             mNameEditText.setText(mCategory.title);
+        }
+
+        mFab = (FloatingActionButton) findViewById(R.id.fab);
+        mFab.hide();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Transition enterTransition = getWindow().getSharedElementEnterTransition();
+            enterTransition.addListener(new Transition.TransitionListener() {
+                @Override
+                public void onTransitionStart(Transition transition) {
+                    mFab.hide();
+                }
+
+                @Override
+                public void onTransitionEnd(Transition transition) {
+                    mFab.show();
+                }
+
+                @Override
+                public void onTransitionCancel(Transition transition) {}
+
+                @Override
+                public void onTransitionPause(Transition transition) {}
+
+                @Override
+                public void onTransitionResume(Transition transition) {}
+            });
         }
 
         startAlphaAnimation(mTitle, 0, View.INVISIBLE);
