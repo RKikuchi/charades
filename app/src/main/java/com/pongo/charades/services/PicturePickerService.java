@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -16,7 +15,6 @@ import android.support.v4.content.ContextCompat;
 
 import com.pongo.charades.R;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,11 +25,13 @@ public class PicturePickerService {
     private static final int MODE_CAMERA = 1;
     private static final int MODE_GALLERY = 2;
 
+    final private PictureCompressorService mCompressor;
     private Activity mActivity;
     private int mMode;
     private Uri mSelectedImage;
 
     public PicturePickerService(Activity activity) {
+        mCompressor = new PictureCompressorService(activity);
         mActivity = activity;
     }
 
@@ -68,7 +68,7 @@ public class PicturePickerService {
         return list;
     }
 
-    public Bitmap getResult(Intent data, int requestCode) {
+    public Uri getResult(Intent data, int requestCode) {
         Bundle extras = data.getExtras();
         Bitmap bitmap = null;
 
@@ -77,7 +77,8 @@ public class PicturePickerService {
             bitmap = (Bitmap) extras.get("data");
             if (bitmap != null) {
                 mMode = MODE_CAMERA;
-                return bitmap;
+                mSelectedImage = mCompressor.compress(bitmap);
+                return mSelectedImage;
             }
         }
 
@@ -90,62 +91,44 @@ public class PicturePickerService {
         return getResultAfterPermission();
     }
 
-    public Bitmap getResultAfterPermission() {
+    public Uri getResultAfterPermission() {
         switch (mMode) {
+            case MODE_CAMERA:
             case MODE_GALLERY:
-                try {
-                    return decodeSelectedUri();
-                } catch (FileNotFoundException e) {
-                    return null;
-                }
+                mSelectedImage = mCompressor.compress(mSelectedImage);
+                return mSelectedImage;
         }
         return null;
     }
 
-    private Bitmap decodeSelectedUri() throws FileNotFoundException {
-        // Decode image size
-        BitmapFactory.Options o = new BitmapFactory.Options();
-        o.inJustDecodeBounds = true;
-        BitmapFactory.decodeStream(
-                mActivity.getContentResolver().openInputStream(mSelectedImage), null, o);
-
-        // The new size we want to scale to
-        final int REQUIRED_SIZE = 200;
-
-        // Find the correct scale value. It should be the power of 2.
-        int width_tmp = o.outWidth, height_tmp = o.outHeight;
-        int scale = 1;
-        while (true) {
-            if (width_tmp / 2 < REQUIRED_SIZE || height_tmp / 2 < REQUIRED_SIZE) {
-                break;
-            }
-            width_tmp /= 2;
-            height_tmp /= 2;
-            scale *= 2;
-        }
-
-        // Decode with inSampleSize
-        BitmapFactory.Options o2 = new BitmapFactory.Options();
-        o2.inSampleSize = scale;
-        return BitmapFactory.decodeStream(
-                mActivity.getContentResolver().openInputStream(mSelectedImage), null, o2);
-
-    }
-
     private boolean checkModePermissions(int requestCode) {
         switch (mMode) {
+            case MODE_CAMERA:
+                return checkPermission(requestCode,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE);
             case MODE_GALLERY:
-                return checkPermission(requestCode, Manifest.permission.READ_EXTERNAL_STORAGE);
+                return checkPermission(requestCode,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE);
         }
         return true;
     }
 
-    private boolean checkPermission(int requestCode, String permission) {
-        if (ContextCompat.checkSelfPermission(mActivity, permission)
-                == PackageManager.PERMISSION_GRANTED)
+    private boolean checkPermission(int requestCode, String... permissions) {
+        List<String> permissionsNeeded = new ArrayList<>();
+        for (String permission : permissions) {
+            if (ContextCompat.checkSelfPermission(mActivity, permission)
+                    != PackageManager.PERMISSION_GRANTED)
+                permissionsNeeded.add(permission);
+        }
+
+        if (permissionsNeeded.size() == 0)
             return true;
 
-        ActivityCompat.requestPermissions(mActivity, new String[]{permission}, requestCode);
+        ActivityCompat.requestPermissions(
+                mActivity,
+                permissionsNeeded.toArray(new String[]{}),
+                requestCode);
         return false;
     }
 }

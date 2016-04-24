@@ -19,6 +19,7 @@ public class CategoryModel extends RealmObject {
     @Required
     private Boolean isHidden;
     private String icon;
+    private String imagePath;
     private RealmList<CategoryItemModel> items = new RealmList<>();
 
     public static CategoryModel loadDto(CategoryDto dto) {
@@ -28,6 +29,7 @@ public class CategoryModel extends RealmObject {
         model.setId(dto.id);
         model.setTitle(dto.title);
         model.setLanguage(dto.language);
+        model.setImagePath(dto.imagePath);
         for (CategoryItemDto itemDto : dto.items) {
             if (itemDto.value == null || itemDto.value.trim() == "") continue;
             model.getItems().add(new CategoryItemModel(itemDto.value, itemDto.definition));
@@ -89,5 +91,13 @@ public class CategoryModel extends RealmObject {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }

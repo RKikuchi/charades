@@ -11,6 +11,7 @@ public class CategoryDto {
     public String icon;
     public String language;
     public String title;
+    public String imagePath;
     public List<CategoryItemDto> items;
 
     public static CategoryDto fromModel(CategoryModel model) {
@@ -20,6 +21,7 @@ public class CategoryDto {
         dto.id = model.getId();
         dto.icon = model.getIcon();
         dto.language = model.getLanguage();
+        dto.imagePath = model.getImagePath();
         dto.title = model.getTitle();
         dto.items = items;
 

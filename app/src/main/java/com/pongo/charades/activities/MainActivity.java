@@ -15,10 +15,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.transition.Explode;
-import android.transition.Transition;
-import android.transition.TransitionManager;
-import android.transition.TransitionSet;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -223,6 +219,7 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
             mRealm.copyToRealm(category);
         }
         mRealm.commitTransaction();
+        mAdapter.reload();
         mAdapter.notifyDataSetChanged();
     }
 

@@ -253,7 +253,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private void loadImage() {
         Picasso
                 .with(this)
-                .load("http://lorempixel.com/400/200/?rnd=" + mCategory.getId())
+                .load(mCategory.getImagePath())
                 .placeholder(R.drawable.category_cell_placeholder)
                 .transform(new BlurTransform(this, 10))
                 //.transform(new ContrastTransform(mContext, 0.33f, 1))

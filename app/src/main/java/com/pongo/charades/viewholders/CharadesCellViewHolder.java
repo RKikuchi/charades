@@ -47,7 +47,7 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
     private void loadImage() {
         Picasso
                 .with(mContext)
-                .load("http://lorempixel.com/400/200/?rnd=" + mCategory.getModel().getId())
+                .load(mCategory.getModel().getImagePath())
                 .placeholder(R.drawable.category_cell_placeholder)
                 .transform(PaletteTransform.instance())
                 //.transform(new BlurTransform(mContext, 10))

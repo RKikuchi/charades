@@ -2,8 +2,8 @@ package com.pongo.charades.activities;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.graphics.drawable.TransitionDrawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -184,7 +184,7 @@ public class ManageCategoryActivity
     private void loadImage() {
         Picasso
                 .with(this)
-                .load("http://lorempixel.com/400/200/?rnd=" + mCategory.id)
+                .load(mCategory.imagePath)
                 .placeholder(R.drawable.category_cell_placeholder)
                 //.transform(new BlurTransform(mContext, 10))
                 //.transform(new ContrastTransform(mContext, 0.33f, 1))
@@ -310,9 +310,11 @@ public class ManageCategoryActivity
         switch (requestCode) {
             case REQUEST_PICK_IMAGE:
                 if (resultCode == RESULT_OK) {
-                    Bitmap bitmap = mPicturePicker.getResult(data, REQUEST_IMG_PICKER_PERMISSION);
-                    if (bitmap != null)
-                        mImage.setImageBitmap(bitmap);
+                    Uri imageUri = mPicturePicker.getResult(data, REQUEST_IMG_PICKER_PERMISSION);
+                    if (imageUri != null) {
+                        mCategory.imagePath = imageUri.toString();
+                        loadImage();
+                    }
                 }
                 break;
         }
@@ -335,9 +337,11 @@ public class ManageCategoryActivity
                 if (!success)
                     break;
 
-                Bitmap bitmap = mPicturePicker.getResultAfterPermission();
-                if (bitmap != null)
-                    mImage.setImageBitmap(bitmap);
+                Uri imageUri = mPicturePicker.getResultAfterPermission();
+                if (imageUri != null) {
+                    mCategory.imagePath = imageUri.toString();
+                    loadImage();
+                }
                 break;
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
