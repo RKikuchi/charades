@@ -1,9 +1,12 @@
 package com.pongo.charades.activities;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,6 +28,7 @@ import com.pongo.charades.models.CategoryDto;
 import com.pongo.charades.models.CategoryItemDto;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.modules.FontAwesomeProvider;
+import com.pongo.charades.services.PicturePickerService;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -40,6 +44,8 @@ public class ManageCategoryActivity
     public static final String EXTRA_IS_NEW = "IS_NEW";
     public static final String EXTRA_ITEM_ID = "ITEM_ID";
     public static final String EXTRA_ITEM_TITLE = "ITEM_TITLE";
+    private static final int REQUEST_PICK_IMAGE = 1;
+    private static final int REQUEST_IMG_PICKER_PERMISSION = 2;
     private static final int ALPHA_ANIMATIONS_DURATION = 250;
 
     @Inject
@@ -59,6 +65,7 @@ public class ManageCategoryActivity
     private boolean mIsNew;
     private TextView mCategoryName;
     private ImageView mImage;
+    private PicturePickerService mPicturePicker;
 
     private boolean mIsTheTitleVisible = false;
     private boolean mIsTheTitleContainerVisible = true;
@@ -68,6 +75,7 @@ public class ManageCategoryActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_category);
 
+        mPicturePicker = new PicturePickerService(this);
         mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
         mAppBarLayout.addOnOffsetChangedListener(this);
 
@@ -120,6 +128,14 @@ public class ManageCategoryActivity
 
         mFab = (FloatingActionButton) findViewById(R.id.fab);
         mFab.hide();
+        mFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = mPicturePicker.GetIntent();
+                startActivityForResult(intent, REQUEST_PICK_IMAGE);
+            }
+        });
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Transition enterTransition = getWindow().getSharedElementEnterTransition();
             enterTransition.addListener(new Transition.TransitionListener() {
@@ -287,5 +303,43 @@ public class ManageCategoryActivity
                 mIsTheTitleContainerVisible = true;
             }
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case REQUEST_PICK_IMAGE:
+                if (resultCode == RESULT_OK) {
+                    Bitmap bitmap = mPicturePicker.getResult(data, REQUEST_IMG_PICKER_PERMISSION);
+                    if (bitmap != null)
+                        mImage.setImageBitmap(bitmap);
+                }
+                break;
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_IMG_PICKER_PERMISSION:
+                boolean success = true;
+                for (int result : grantResults) {
+                    if (result != PackageManager.PERMISSION_GRANTED) {
+                        success = false;
+                        break;
+                    }
+                }
+                if (!success)
+                    break;
+
+                Bitmap bitmap = mPicturePicker.getResultAfterPermission();
+                if (bitmap != null)
+                    mImage.setImageBitmap(bitmap);
+                break;
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }
