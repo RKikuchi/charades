@@ -16,6 +16,17 @@
         android:scaleType="centerCrop"
         />
 
+    <Button
+        android:id="@+id/top_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+        style="?android:borderlessButtonStyle"
+        android:drawableLeft="@drawable/ic_keyboard_arrow_left_white_24dp"
+        android:text="@string/back"
+        android:textColor="@color/colorWhite"
+        />
+
     <TextView
         android:id="@+id/countdown_text"
         android:layout_width="wrap_content"
@@ -36,10 +47,10 @@
             android:id="@+id/top_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="@string/timer"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textColor="@android:color/white"
             />
 
@@ -50,7 +61,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="30dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
             card_view:cardCornerRadius="10dp"

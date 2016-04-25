@@ -15,6 +15,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewAnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -60,6 +61,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private CardView mCard;
     private View mCardLayout;
     private ImageView mImage;
+    private Button mTopBackButton;
     private TextView mMainText;
     private TextView mCountdownText;
     private TextView mTopText;
@@ -100,6 +102,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         mCard = (CardView) findViewById(R.id.card);
         mCardLayout = findViewById(R.id.card_layout);
         mImage = (ImageView) findViewById(R.id.category_image);
+        mTopBackButton = (Button) findViewById(R.id.top_back_button);
         mMainText = (TextView) findViewById(R.id.main_text);
         mCountdownText = (TextView) findViewById(R.id.countdown_text);
         mTopText = (TextView) findViewById(R.id.top_text);
@@ -119,6 +122,13 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         ((TextView)findViewById(R.id.replay_icon)).setTypeface(mFontAwesome.getTypeface());
 
         loadAnimators();
+
+        mTopBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         mMainText.setOnClickListener(new View.OnClickListener() {
             @Override
