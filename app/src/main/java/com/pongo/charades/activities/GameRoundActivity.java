@@ -355,7 +355,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         mReplayButton.setVisibility(View.INVISIBLE);
         mRecyclerView.setVisibility(View.GONE);
         mCountdownText.setVisibility(View.VISIBLE);
-        new CountDownTimer(5500, 1000) {
+        mTimer = new CountDownTimer(5500, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 mCountdownText.setText(String.valueOf(millisUntilFinished / 1000));
