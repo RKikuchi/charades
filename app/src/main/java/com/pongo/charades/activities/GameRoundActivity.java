@@ -54,6 +54,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     private CategoryItemModel mCurrentItem;
     private State mState;
     private int mTotalRoundTime;
+    private CountDownTimer mTimer;
 
     private View mLayout;
     private CardView mCard;
@@ -201,6 +202,10 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     protected void onPause() {
         super.onPause();
         mTiltSensor.pause();
+        if (mTimer != null) {
+            mTimer.cancel();
+            mTimer = null;
+        }
     }
 
     @Override
@@ -274,7 +279,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     }
 
     private void setupRoundTimer() {
-        new CountDownTimer(mTotalRoundTime * 1000 + 500, 1000) {
+        mTimer = new CountDownTimer(mTotalRoundTime * 1000 + 500, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 long secondsLeft = millisUntilFinished / 1000;
@@ -283,6 +288,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
 
             @Override
             public void onFinish() {
+                mTimer = null;
                 if (mTiltSensor.getState() == TiltSensorService.State.NEUTRAL)
                     mScoreTrack.add(mCurrentItem.getValue(), false);
                 mState = State.GAME_OVER;
