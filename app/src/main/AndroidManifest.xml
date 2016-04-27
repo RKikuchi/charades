@@ -39,7 +39,8 @@
         <activity
             android:name=".activities.ManageCategoryActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".activities.HowToPlayActivity"></activity>
     </application>
 
 </manifest>
