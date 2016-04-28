@@ -140,13 +140,18 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
         int id = item.getItemId();
         switch (id) {
             case R.id.action_show_all_items:
                 mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_SHOW_ALL);
                 return true;
+            case R.id.action_how_to_play:
+                intent = new Intent(this, HowToPlayActivity.class);
+                startActivity(intent);
+                return true;
             case R.id.action_settings:
-                Intent intent = new Intent(this, SettingsActivity.class);
+                intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
                 return true;
             case R.id.action_sync_online_categories:

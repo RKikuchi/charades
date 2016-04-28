@@ -19,6 +19,7 @@
     <string name="category_name">Category Name</string>
     <string name="item_name">Item Name</string>
     <string name="select_picture">Select Picture</string>
+    <string name="how_to_play">How to Play</string>
 
     <string name="syncing_online_categories">Syncing online categories...</string>
     <string name="online_categories_not_available">Online categories not available.</string>
