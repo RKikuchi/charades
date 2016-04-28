@@ -21,6 +21,10 @@
     <string name="select_picture">Select Picture</string>
     <string name="how_to_play">How to Play</string>
 
+    <string name="how_to_play_1">Choose a category and place the phone on your forehead.</string>
+    <string name="how_to_play_2">Guess what\'s written based on what your friends are doing.</string>
+    <string name="how_to_play_3">Tilt up if you get it right, tilt down to skip.</string>
+
     <string name="syncing_online_categories">Syncing online categories...</string>
     <string name="online_categories_not_available">Online categories not available.</string>
     <string name="error_loading_online_data">Error while loading online data.</string>
