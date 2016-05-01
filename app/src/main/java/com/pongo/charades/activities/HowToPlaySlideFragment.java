@@ -1,51 +1,30 @@
 package com.pongo.charades.activities;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.pongo.charades.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link HowToPlaySlideFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link HowToPlaySlideFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class HowToPlaySlideFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_SLIDE_NUMBER = "SLIDE_NUMBER";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private int mSlideNumber;
+    private ImageView mImage;
+    private TextView mText;
 
-    public HowToPlaySlideFragment() {
-        // Required empty public constructor
-    }
+    public HowToPlaySlideFragment() {}
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HowToPlaySlideFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static HowToPlaySlideFragment newInstance(String param1, String param2) {
+    public static HowToPlaySlideFragment newInstance(int number) {
         HowToPlaySlideFragment fragment = new HowToPlaySlideFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putInt(ARG_SLIDE_NUMBER, number);
         fragment.setArguments(args);
         return fragment;
     }
@@ -54,8 +33,7 @@ public class HowToPlaySlideFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            mSlideNumber = getArguments().getInt(ARG_SLIDE_NUMBER);
         }
     }
 
@@ -63,5 +41,45 @@ public class HowToPlaySlideFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_how_to_play_slide, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        setViews(view);
+        setSlideContent();
+    }
+
+    private void setViews(View view) {
+        mImage = (ImageView) view.findViewById(R.id.image);
+        mText = (TextView) view.findViewById(R.id.text);
+    }
+
+    private void setSlideContent() {
+        switch (mSlideNumber) {
+            case 0:
+                setImage(R.drawable.placeholder_instruction_image);
+                setText(R.string.how_to_play);
+                break;
+            case 1:
+                setImage(R.drawable.placeholder_instruction_image);
+                setText(R.string.how_to_play_1);
+                break;
+            case 2:
+                setImage(R.drawable.placeholder_instruction_image);
+                setText(R.string.how_to_play_2);
+                break;
+            case 3:
+                setImage(R.drawable.placeholder_instruction_image);
+                setText(R.string.how_to_play_3);
+                break;
+        }
+    }
+
+    private void setImage(int drawableId) {
+        mImage.setImageDrawable(ContextCompat.getDrawable(getContext(), drawableId));
+    }
+
+    private void setText(int stringId) {
+        mText.setText(stringId);
     }
 }

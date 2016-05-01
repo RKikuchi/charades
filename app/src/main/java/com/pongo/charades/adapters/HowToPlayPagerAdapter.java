@@ -16,7 +16,7 @@ public class HowToPlayPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return new HowToPlaySlideFragment();
+        return HowToPlaySlideFragment.newInstance(position);
     }
 
     @Override
