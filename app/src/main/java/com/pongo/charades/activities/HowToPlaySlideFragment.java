@@ -61,11 +61,11 @@ public class HowToPlaySlideFragment extends Fragment {
                 setText(R.string.how_to_play);
                 break;
             case 1:
-                setImage(R.drawable.placeholder_instruction_image);
+                setImage(R.drawable.how_to_play_1);
                 setText(R.string.how_to_play_1);
                 break;
             case 2:
-                setImage(R.drawable.placeholder_instruction_image);
+                setImage(R.drawable.how_to_play_2);
                 setText(R.string.how_to_play_2);
                 break;
             case 3:
