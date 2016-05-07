@@ -15,6 +15,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,8 +44,12 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
     public static final String EXTRA_CATEGORY_POSITION = "CATEGORY_POSITION";
 
     private Realm mRealm;
+
+    // Views
     private FloatingActionButton mFab;
     private CoordinatorLayout mLayout;
+    private Toolbar mToolbar;
+
     private RecyclerView mRecyclerView;
     private CharadesRecyclerViewAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -52,10 +57,9 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mRealm = Realm.getInstance(this);
 
-        mLayout = (CoordinatorLayout) findViewById(R.id.main_coordinator_layout);
-        mRecyclerView = (RecyclerView) findViewById(R.id.charades_recycler_view);
+        mRealm = Realm.getInstance(this);
+        setViews();
 
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -82,11 +86,9 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
                 });
         touchHelper.attachToRecyclerView(mRecyclerView);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("");
 
-        mFab = (FloatingActionButton) findViewById(R.id.fab);
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,6 +97,13 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         });
 
         setup();
+    }
+
+    private void setViews() {
+        mLayout = (CoordinatorLayout) findViewById(R.id.main_coordinator_layout);
+        mRecyclerView = (RecyclerView) findViewById(R.id.charades_recycler_view);
+        mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        mFab = (FloatingActionButton) findViewById(R.id.create_fab);
     }
 
     @Override
