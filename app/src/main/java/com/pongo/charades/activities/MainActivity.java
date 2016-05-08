@@ -149,9 +149,11 @@ public class MainActivity
                 switch (item.getItemId()) {
                     case R.id.item_main_categories:
                         Toast.makeText(activity, "Main categories, yo", Toast.LENGTH_SHORT).show();
+                        mDrawerLayout.closeDrawers();
                         return true;
                     case R.id.item_favorites:
                         Toast.makeText(activity, "Favorites, yo", Toast.LENGTH_SHORT).show();
+                        mDrawerLayout.closeDrawers();
                         return true;
                     case R.id.item_settings:
                         Intent intent = new Intent(activity, SettingsActivity.class);
