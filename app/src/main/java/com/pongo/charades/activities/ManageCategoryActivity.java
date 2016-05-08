@@ -37,16 +37,13 @@ import javax.inject.Inject;
 
 import io.realm.Realm;
 
-public class ManageCategoryActivity
-        extends BaseActivity
-        implements AppBarLayout.OnOffsetChangedListener {
+public class ManageCategoryActivity extends BaseActivity {
     public static final String CATEGORY_ID = "CATEGORY_ID";
     public static final String EXTRA_IS_NEW = "IS_NEW";
     public static final String EXTRA_ITEM_ID = "ITEM_ID";
     public static final String EXTRA_ITEM_TITLE = "ITEM_TITLE";
     private static final int REQUEST_PICK_IMAGE = 1;
     private static final int REQUEST_IMG_PICKER_PERMISSION = 2;
-    private static final int ALPHA_ANIMATIONS_DURATION = 250;
 
     @Inject
     FontAwesomeProvider mFontAwesome;
@@ -68,8 +65,6 @@ public class ManageCategoryActivity
     private PicturePickerService mPicturePicker;
 
     private boolean mIsNew;
-    private boolean mIsTheTitleVisible = false;
-    private boolean mIsTheTitleContainerVisible = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,13 +72,12 @@ public class ManageCategoryActivity
         setContentView(R.layout.activity_manage_category);
         setViews();
 
-        mPicturePicker = new PicturePickerService(this);
-        mAppBarLayout.addOnOffsetChangedListener(this);
-
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setToolbarAnimator(mAppBarLayout, mTitle, mToolbar, mTitleContainer);
 
+        mPicturePicker = new PicturePickerService(this);
         mIsNew = !loadCategory();
         loadImage();
 
@@ -150,8 +144,6 @@ public class ManageCategoryActivity
                 public void onTransitionResume(Transition transition) {}
             });
         }
-
-        startAlphaAnimation(mTitle, 0, View.INVISIBLE);
     }
 
     private void setViews() {
@@ -165,24 +157,6 @@ public class ManageCategoryActivity
         mNameEditText = (EditText) findViewById(R.id.manage_category_name);
         mNewItemButton = findViewById(R.id.manage_category_new_item_button);
         mFab = (FloatingActionButton) findViewById(R.id.fab);
-    }
-
-    private void startAlphaAnimation(View v, long duration, int visibility) {
-        AlphaAnimation alphaAnimation = (visibility == View.VISIBLE)
-                ? new AlphaAnimation(0f, 1f)
-                : new AlphaAnimation(1f, 0f);
-
-        alphaAnimation.setDuration(duration);
-        alphaAnimation.setFillAfter(true);
-        v.startAnimation(alphaAnimation);
-    }
-
-    private void startBackgroundAnimation(View v, int duration, int visibility) {
-        TransitionDrawable transition = (TransitionDrawable) v.getBackground();
-        if (visibility == View.VISIBLE)
-            transition.startTransition(duration);
-        else
-            transition.reverseTransition(duration);
     }
 
     private void loadImage() {
@@ -268,45 +242,6 @@ public class ManageCategoryActivity
             intent.putExtra(MainActivity.EXTRA_CATEGORY_POSITION, adapterPosition);
         }
         return intent;
-    }
-
-    @Override
-    public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-        int maxScroll = appBarLayout.getTotalScrollRange();
-        float percentage = (float) Math.abs(verticalOffset) / (float) maxScroll;
-
-        handleAlphaOnTitle(percentage);
-        handleToolbarTitleVisibility(percentage);
-    }
-
-    private void handleToolbarTitleVisibility(float percentage) {
-        if (percentage >= 0.6f) {
-            if (!mIsTheTitleVisible) {
-                startAlphaAnimation(mTitle, ALPHA_ANIMATIONS_DURATION, View.VISIBLE);
-                startBackgroundAnimation(mToolbar, ALPHA_ANIMATIONS_DURATION, View.VISIBLE);
-                mIsTheTitleVisible = true;
-            }
-        } else {
-            if (mIsTheTitleVisible) {
-                startAlphaAnimation(mTitle, ALPHA_ANIMATIONS_DURATION, View.INVISIBLE);
-                startBackgroundAnimation(mToolbar, ALPHA_ANIMATIONS_DURATION, View.INVISIBLE);
-                mIsTheTitleVisible = false;
-            }
-        }
-    }
-
-    private void handleAlphaOnTitle(float percentage) {
-        if (percentage >= 0.3f) {
-            if (mIsTheTitleContainerVisible) {
-                startAlphaAnimation(mTitleContainer, ALPHA_ANIMATIONS_DURATION, View.INVISIBLE);
-                mIsTheTitleContainerVisible = false;
-            }
-        } else {
-            if (!mIsTheTitleContainerVisible) {
-                startAlphaAnimation(mTitleContainer, ALPHA_ANIMATIONS_DURATION, View.VISIBLE);
-                mIsTheTitleContainerVisible = true;
-            }
-        }
     }
 
     @Override
