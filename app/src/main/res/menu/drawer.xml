@@ -18,6 +18,13 @@
             android:title="@string/favorites"
             />
 
+        <item
+            android:id="@+id/item_hidden"
+            android:checked="false"
+            android:icon="@drawable/ic_visibility_off_black_24dp"
+            android:title="@string/hidden"
+            />
+
     </group>
 
     <group android:id="@+id/group_secondary">
@@ -26,6 +33,12 @@
             android:id="@+id/item_settings"
             android:icon="@drawable/ic_settings_black_24dp"
             android:title="@string/action_settings"
+            />
+
+        <item
+            android:id="@+id/item_how_to_play"
+            android:icon="@drawable/ic_help_black_24dp"
+            android:title="@string/how_to_play"
             />
 
     </group>

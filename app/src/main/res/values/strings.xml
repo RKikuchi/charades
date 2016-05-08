@@ -8,6 +8,7 @@
     <string name="close_menu">Close menu</string>
     <string name="main_categories">Main Categories</string>
     <string name="favorites">Favorites</string>
+    <string name="hidden">Hidden</string>
 
     <string name="title_activity_game_round">GameRoundActivity</string>
     <string name="get_ready">Get ready</string>
