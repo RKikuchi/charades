@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +20,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -48,7 +51,10 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
     // Views
     private FloatingActionButton mFab;
     private CoordinatorLayout mLayout;
+    private AppBarLayout mAppBarLayout;
     private Toolbar mToolbar;
+    private TextView mTitle;
+    private LinearLayout mTitleContainer;
 
     private RecyclerView mRecyclerView;
     private CharadesRecyclerViewAdapter mAdapter;
@@ -60,6 +66,10 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
 
         mRealm = Realm.getInstance(this);
         setViews();
+
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("");
+        setToolbarAnimator(mAppBarLayout, mTitle, mToolbar, mTitleContainer);
 
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -86,9 +96,6 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
                 });
         touchHelper.attachToRecyclerView(mRecyclerView);
 
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("");
-
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,8 +108,11 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
 
     private void setViews() {
         mLayout = (CoordinatorLayout) findViewById(R.id.main_coordinator_layout);
-        mRecyclerView = (RecyclerView) findViewById(R.id.charades_recycler_view);
+        mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
         mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        mTitle = (TextView) findViewById(R.id.title);
+        mTitleContainer = (LinearLayout) findViewById(R.id.title_container);
+        mRecyclerView = (RecyclerView) findViewById(R.id.charades_recycler_view);
         mFab = (FloatingActionButton) findViewById(R.id.create_fab);
     }
 
