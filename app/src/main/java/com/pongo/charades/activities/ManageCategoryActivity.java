@@ -62,11 +62,12 @@ public class ManageCategoryActivity
     private RecyclerView.LayoutManager mLayoutManager;
     private CategoryDto mCategory;
     private EditText mNameEditText;
-    private boolean mIsNew;
+    private View mNewItemButton;
     private TextView mCategoryName;
     private ImageView mImage;
     private PicturePickerService mPicturePicker;
 
+    private boolean mIsNew;
     private boolean mIsTheTitleVisible = false;
     private boolean mIsTheTitleContainerVisible = true;
 
@@ -74,34 +75,26 @@ public class ManageCategoryActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_category);
+        setViews();
 
         mPicturePicker = new PicturePickerService(this);
-        mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
         mAppBarLayout.addOnOffsetChangedListener(this);
 
-        mTitle = (TextView) findViewById(R.id.title);
-        mTitleContainer = (LinearLayout) findViewById(R.id.title_container);
-
-        mToolbar = (Toolbar) findViewById(R.id.manage_category_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mCategoryName = (TextView) findViewById(R.id.category_name);
-        mImage = (ImageView) findViewById(R.id.category_image);
         mIsNew = !loadCategory();
         loadImage();
 
         mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView = (RecyclerView) findViewById(R.id.manage_category_recycler_view);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         mAdapter = new CategoryItemsRecyclerViewAdapter(this,
                 mFontAwesome, mRecyclerView, mCategory);
         mRecyclerView.setAdapter(mAdapter);
 
-        View newItemButton = findViewById(R.id.manage_category_new_item_button);
-        newItemButton.setOnClickListener(new View.OnClickListener() {
+        mNewItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final int lastPos = mCategory.items.size();
@@ -119,14 +112,12 @@ public class ManageCategoryActivity
             }
         });
 
-        mNameEditText = (EditText) findViewById(R.id.manage_category_name);
         if (mIsNew) {
             mNameEditText.requestFocus();
         } else {
             mNameEditText.setText(mCategory.title);
         }
 
-        mFab = (FloatingActionButton) findViewById(R.id.fab);
         mFab.hide();
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,6 +152,19 @@ public class ManageCategoryActivity
         }
 
         startAlphaAnimation(mTitle, 0, View.INVISIBLE);
+    }
+
+    private void setViews() {
+        mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
+        mTitle = (TextView) findViewById(R.id.title);
+        mTitleContainer = (LinearLayout) findViewById(R.id.title_container);
+        mToolbar = (Toolbar) findViewById(R.id.manage_category_toolbar);
+        mCategoryName = (TextView) findViewById(R.id.category_name);
+        mImage = (ImageView) findViewById(R.id.category_image);
+        mRecyclerView = (RecyclerView) findViewById(R.id.manage_category_recycler_view);
+        mNameEditText = (EditText) findViewById(R.id.manage_category_name);
+        mNewItemButton = findViewById(R.id.manage_category_new_item_button);
+        mFab = (FloatingActionButton) findViewById(R.id.fab);
     }
 
     private void startAlphaAnimation(View v, long duration, int visibility) {
