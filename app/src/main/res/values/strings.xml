@@ -4,6 +4,9 @@
     <string name="action_sync_online_categories">Sync online categories</string>
     <string name="action_settings">Settings</string>
 
+    <string name="open_menu">Open menu</string>
+    <string name="close_menu">Close menu</string>
+
     <string name="title_activity_game_round">GameRoundActivity</string>
     <string name="get_ready">Get ready</string>
     <string name="play_again">Play again</string>

@@ -1,9 +1,11 @@
 package com.pongo.charades.activities;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PersistableBundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -12,11 +14,12 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.util.Pair;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -51,6 +54,7 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
     // Views
     private FloatingActionButton mFab;
     private CoordinatorLayout mLayout;
+    private DrawerLayout mDrawerLayout;
     private AppBarLayout mAppBarLayout;
     private Toolbar mToolbar;
     private TextView mTitle;
@@ -59,6 +63,7 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
     private RecyclerView mRecyclerView;
     private CharadesRecyclerViewAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +75,7 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("");
         setToolbarAnimator(mAppBarLayout, mTitle, mToolbar, mTitleContainer);
+        setActionBarDrawerToggle();
 
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -106,8 +112,34 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         setup();
     }
 
+    @Override
+    public void onPostCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+        super.onPostCreate(savedInstanceState, persistentState);
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    private void setActionBarDrawerToggle() {
+        mDrawerToggle = new ActionBarDrawerToggle(
+                this,
+                mDrawerLayout,
+                mToolbar,
+                R.string.open_menu,
+                R.string.close_menu);
+        mDrawerLayout.addDrawerListener(mDrawerToggle);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        mDrawerToggle.syncState();
+    }
+
     private void setViews() {
         mLayout = (CoordinatorLayout) findViewById(R.id.main_coordinator_layout);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
         mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         mTitle = (TextView) findViewById(R.id.title);
