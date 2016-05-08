@@ -9,6 +9,7 @@ import android.os.PersistableBundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -25,6 +26,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -45,7 +47,9 @@ import java.util.List;
 
 import io.realm.Realm;
 
-public class MainActivity extends BaseActivity implements OnlineCategoriesLoader.OnlineCategoriesLoaderCallback {
+public class MainActivity
+        extends BaseActivity
+        implements OnlineCategoriesLoader.OnlineCategoriesLoaderCallback {
     private static final int REQUEST_CODE_MANAGE_CATEGORY = 1;
     public static final String EXTRA_CATEGORY_POSITION = "CATEGORY_POSITION";
 
@@ -55,6 +59,7 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
     private FloatingActionButton mFab;
     private CoordinatorLayout mLayout;
     private DrawerLayout mDrawerLayout;
+    private NavigationView mDrawerNavigation;
     private AppBarLayout mAppBarLayout;
     private Toolbar mToolbar;
     private TextView mTitle;
@@ -135,11 +140,30 @@ public class MainActivity extends BaseActivity implements OnlineCategoriesLoader
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         mDrawerToggle.syncState();
+
+        final MainActivity activity = this;
+        mDrawerNavigation.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.item_main_categories:
+                        Toast.makeText(activity, "Main categories, yo", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.item_settings:
+                        Intent intent = new Intent(activity, SettingsActivity.class);
+                        startActivity(intent);
+                        return false;
+                }
+                return false;
+            }
+        });
     }
 
     private void setViews() {
         mLayout = (CoordinatorLayout) findViewById(R.id.main_coordinator_layout);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerNavigation = (NavigationView) findViewById(R.id.drawer_navigation);
         mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
         mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         mTitle = (TextView) findViewById(R.id.title);

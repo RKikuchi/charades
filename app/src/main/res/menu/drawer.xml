@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/group_categories"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/item_main_categories"
+            android:checked="false"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="@string/main_categories"
+            />
+
+    </group>
+
+    <group android:id="@+id/group_secondary">
+
+        <item
+            android:id="@+id/item_settings"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="@string/action_settings"
+            />
+
+    </group>
+</menu>
