@@ -7,8 +7,15 @@
         <item
             android:id="@+id/item_main_categories"
             android:checked="false"
-            android:icon="@drawable/ic_info_black_24dp"
+            android:icon="@drawable/ic_class_black_24dp"
             android:title="@string/main_categories"
+            />
+
+        <item
+            android:id="@+id/item_favorites"
+            android:checked="false"
+            android:icon="@drawable/ic_favorite_black_24dp"
+            android:title="@string/favorites"
             />
 
     </group>
@@ -17,7 +24,7 @@
 
         <item
             android:id="@+id/item_settings"
-            android:icon="@drawable/ic_info_black_24dp"
+            android:icon="@drawable/ic_settings_black_24dp"
             android:title="@string/action_settings"
             />
 

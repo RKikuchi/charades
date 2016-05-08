@@ -150,6 +150,9 @@ public class MainActivity
                     case R.id.item_main_categories:
                         Toast.makeText(activity, "Main categories, yo", Toast.LENGTH_SHORT).show();
                         return true;
+                    case R.id.item_favorites:
+                        Toast.makeText(activity, "Favorites, yo", Toast.LENGTH_SHORT).show();
+                        return true;
                     case R.id.item_settings:
                         Intent intent = new Intent(activity, SettingsActivity.class);
                         startActivity(intent);
