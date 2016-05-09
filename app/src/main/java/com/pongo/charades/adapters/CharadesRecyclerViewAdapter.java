@@ -23,6 +23,7 @@ import io.realm.RealmResults;
 public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
     public static final int MODE_DEFAULT = 0;
     public static final int MODE_SHOW_ALL = 1;
+    public static final int MODE_FAVORITES = 2;
 
     final private MainActivity mContext;
     final private Realm mRealm;

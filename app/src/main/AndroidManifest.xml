@@ -40,7 +40,10 @@
             android:name=".activities.ManageCategoryActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".activities.HowToPlayActivity"></activity>
+        <activity
+            android:name=".activities.HowToPlayActivity"
+            android:label="@string/how_to_play"
+            />
     </application>
 
 </manifest>

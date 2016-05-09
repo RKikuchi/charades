@@ -6,7 +6,7 @@
 
         <item
             android:id="@+id/item_main_categories"
-            android:checked="false"
+            android:checked="true"
             android:icon="@drawable/ic_class_black_24dp"
             android:title="@string/main_categories"
             />
