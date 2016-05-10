@@ -8,4 +8,12 @@
         android:title="@string/pref_title_select_round_time"
         android:icon="@drawable/ic_timer_black_24dp" />
 
+    <ListPreference
+        android:defaultValue="en_US"
+        android:entries="@array/pref_language_list_titles"
+        android:entryValues="@array/pref_language_list_values"
+        android:key="@string/pref_key_language"
+        android:title="@string/pref_title_select_language"
+        android:icon="@drawable/ic_language_black_24dp" />
+
 </PreferenceScreen>

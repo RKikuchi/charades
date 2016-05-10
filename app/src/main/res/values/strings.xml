@@ -43,9 +43,6 @@
     <!-- Strings related to Settings -->
     <string name="pref_title_select_round_time">Round time</string>
     <string name="pref_key_round_time">pref_round_time</string>
-    <string name="transition_manage_category">TRANSITION_MANAGE_CATEGORY</string>
-    <string name="transition_category_name">TRANSITION_CATEGORY_NAME</string>
-    <string name="transition_category_image">TRANSITION_CATEGORY_IMAGE</string>
     <string-array name="pref_round_time_list_titles">
         <item>00:10</item>
         <item>00:30</item>
@@ -60,4 +57,19 @@
         <item>90</item>
         <item>120</item>
     </string-array>
+    <string name="pref_title_select_language">Language</string>
+    <string name="pref_key_language">pref_language</string>
+    <string-array name="pref_language_list_titles">
+        <item>English</item>
+        <item>Português (Brasil)</item>
+    </string-array>
+    <string-array name="pref_language_list_values">
+        <item>en_US</item>
+        <item>pt_BR</item>
+    </string-array>
+
+    <!-- Transitions -->
+    <string name="transition_manage_category">TRANSITION_MANAGE_CATEGORY</string>
+    <string name="transition_category_name">TRANSITION_CATEGORY_NAME</string>
+    <string name="transition_category_image">TRANSITION_CATEGORY_IMAGE</string>
 </resources>
