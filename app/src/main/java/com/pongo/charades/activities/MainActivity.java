@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.PersistableBundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -26,7 +27,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -44,6 +44,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
 
 import io.realm.Realm;
 
@@ -257,8 +259,27 @@ public class MainActivity
     private void setup() {
         if (mRealm.where(CategoryModel.class).count() == 0) {
             loadHardcodedCategories();
+            setDefaultLanguage();
             //syncOnlineCategories();
         }
+    }
+
+    private void setDefaultLanguage() {
+        String systemLanguage = Locale.getDefault().toString();
+        String[] languages = getResources().getStringArray(R.array.pref_language_list_values);
+        String language = languages[0];
+        for (String availableLanguage : languages) {
+            if (Objects.equals(availableLanguage, systemLanguage)) {
+                language = systemLanguage;
+                break;
+            }
+        }
+
+        PreferenceManager
+                .getDefaultSharedPreferences(this)
+                .edit()
+                .putString(getString(R.string.pref_key_language), language)
+                .commit();
     }
 
     private void syncOnlineCategories() {
