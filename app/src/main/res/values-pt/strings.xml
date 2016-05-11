@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Charades</string>
+    <string name="action_show_all_items">Mostrar todos os itens</string>
+    <string name="action_sync_online_categories">Sincronizar conteúdo online</string>
+    <string name="action_settings">Configurações</string>
+
+    <string name="open_menu">Abrir menu</string>
+    <string name="close_menu">Fechar menu</string>
+    <string name="main_categories">Categorias Principais</string>
+    <string name="favorites">Favoritos</string>
+    <string name="hidden">Ocultos</string>
+
+    <string name="title_activity_game_round">Rodada</string>
+    <string name="get_ready">Prepare-se</string>
+    <string name="play_again">Jogar novamente</string>
+    <string name="skip">Pular</string>
+    <string name="back">Voltar</string>
+    <string name="play">Jogar</string>
+    <string name="edit">Editar</string>
+    <string name="unhide">Mostrar</string>
+    <string name="hide">Esconder</string>
+    <string name="remove">Remover</string>
+    <string name="timer">Timer</string>
+    <string name="name">Nome</string>
+    <string name="category_name">Nome da Categoria</string>
+    <string name="item_name">Nome do Item</string>
+    <string name="select_picture">Selecione uma Imagem</string>
+    <string name="how_to_play">Como Jogar</string>
+
+    <string name="how_to_play_1">Escolha uma categoria e coloque o dispositivo sobre sua testa.</string>
+    <string name="how_to_play_2">Adivinhe o que está escrito pelo o que seus amigos estão fazendo.</string>
+    <string name="how_to_play_3">Gire para cima se acertar ou gire para baixo para pular.</string>
+
+    <string name="syncing_online_categories">Sincronizando conteúdo online...</string>
+    <string name="online_categories_not_available">Conteúdo online não disponível.</string>
+    <string name="error_loading_online_data">Erro ao carregar conteúdo online.</string>
+    <string name="title_activity_settings">Configurações</string>
+
+    <string name="title_activity_manage_category">Categoria</string>
+    <string name="action_save">Salvar</string>
+    <string name="add_new_item">+ Novo Item</string>
+
+    <!-- Strings related to Settings -->
+    <string name="pref_title_select_round_time">Tempo de Rodada</string>
+    <string name="pref_title_select_language">Idioma</string>
+</resources>
