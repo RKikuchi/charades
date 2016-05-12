@@ -41,7 +41,7 @@ public class BaseActivity extends AppCompatActivity {
         }
 
         private void handleToolbarTitleVisibility(float percentage) {
-            if (percentage >= 0.6f) {
+            if (percentage >= 0.9f) {
                 if (!mIsTheTitleVisible) {
                     startAlphaAnimation(mTitle, ALPHA_ANIMATIONS_DURATION, View.VISIBLE);
                     startBackgroundAnimation(mToolbar, ALPHA_ANIMATIONS_DURATION, View.VISIBLE);

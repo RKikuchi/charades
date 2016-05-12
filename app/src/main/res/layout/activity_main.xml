@@ -14,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        android:background="@color/colorGhostGray"
         tools:context=".activities.MainActivity">
 
         <android.support.design.widget.AppBarLayout
@@ -36,7 +35,7 @@
                     android:layout_margin="20dp"
                     android:fitsSystemWindows="true"
                     app:layout_collapseMode="parallax"
-                    app:layout_collapseParallaxMultiplier="1.3"
+                    app:layout_collapseParallaxMultiplier="0.5"
                     android:adjustViewBounds="true"
                     android:scaleType="fitCenter"
                     android:src="@drawable/title"
