@@ -25,6 +25,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -58,6 +59,7 @@ public class MainActivity
     private Realm mRealm;
 
     // Views
+    private Button mHowToPlayButton;
     private FloatingActionButton mFab;
     private CoordinatorLayout mLayout;
     private DrawerLayout mDrawerLayout;
@@ -109,6 +111,12 @@ public class MainActivity
                 });
         touchHelper.attachToRecyclerView(mRecyclerView);
 
+        mHowToPlayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openHowToPlayActivity();
+            }
+        });
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -170,8 +178,7 @@ public class MainActivity
                         startActivity(intent);
                         return false;
                     case R.id.item_how_to_play:
-                        intent = new Intent(activity, HowToPlayActivity.class);
-                        startActivity(intent);
+                        openHowToPlayActivity();
                         return false;
                 }
                 return false;
@@ -188,6 +195,7 @@ public class MainActivity
         mTitle = (TextView) findViewById(R.id.title);
         mTitleContainer = (LinearLayout) findViewById(R.id.title_container);
         mRecyclerView = (RecyclerView) findViewById(R.id.charades_recycler_view);
+        mHowToPlayButton = (Button) findViewById(R.id.how_to_play_button);
         mFab = (FloatingActionButton) findViewById(R.id.create_fab);
     }
 
@@ -241,8 +249,7 @@ public class MainActivity
                 mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_SHOW_ALL);
                 return true;
             case R.id.action_how_to_play:
-                intent = new Intent(this, HowToPlayActivity.class);
-                startActivity(intent);
+                openHowToPlayActivity();
                 return true;
             case R.id.action_settings:
                 intent = new Intent(this, SettingsActivity.class);
@@ -280,6 +287,11 @@ public class MainActivity
                 .edit()
                 .putString(getString(R.string.pref_key_language), language)
                 .commit();
+    }
+
+    private void openHowToPlayActivity() {
+        Intent intent = new Intent(this, HowToPlayActivity.class);
+        startActivity(intent);
     }
 
     private void syncOnlineCategories() {
