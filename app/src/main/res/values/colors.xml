@@ -15,6 +15,5 @@
     <color name="colorGhostGray">#F0F0F0</color>
     <color name="colorLightGray">#C0C0C0</color>
     <color name="colorDarkGray">#808080</color>
-    <color name="colorSoftOverlay">#44000000</color>
-    <color name="black_overlay">#66000000</color>
+    <color name="black_overlay">#33000000</color>
 </resources>
