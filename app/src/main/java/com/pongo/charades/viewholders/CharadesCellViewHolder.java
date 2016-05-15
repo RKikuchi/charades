@@ -1,5 +1,6 @@
 package com.pongo.charades.viewholders;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.content.ContextCompat;
@@ -11,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pongo.charades.R;
-import com.pongo.charades.activities.MainActivity;
+import com.pongo.charades.activities.CategoryCatalogFragment;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.models.CategoryModelHolder;
 import com.pongo.charades.transforms.PaletteTransform;
@@ -29,12 +30,12 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
     private final Button mPlayButton;
     private final Button mEditButton;
     private final Button mUnhideButton;
-    private final MainActivity mContext;
+    private final Context mContext;
     private CategoryModelHolder mCategory;
 
-    public CharadesCellViewHolder(MainActivity context, View itemView) {
+    public CharadesCellViewHolder(CategoryCatalogFragment parent, View itemView) {
         super(itemView);
-        mContext = context;
+        mContext = parent.getContext();
         mCard = itemView.findViewById(R.id.card);
         mImage = (ImageView) itemView.findViewById(R.id.card_image);
         mTitleLabel = (TextView) itemView.findViewById(R.id.cell_charades_title_label);

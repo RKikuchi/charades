@@ -65,9 +65,8 @@
                             style="?android:borderlessButtonStyle"
                             android:textColor="@color/colorWhite"
                             android:text="@string/how_to_play"
-                            android:drawableLeft="@drawable/ic_help_black_24dp"
+                            android:drawableLeft="@drawable/ic_help_white_24dp"
                             android:drawablePadding="10dp"
-                            android:drawableTint="@color/colorWhite"
                             />
 
                     </LinearLayout>
@@ -109,6 +108,14 @@
 
             </android.support.design.widget.CollapsingToolbarLayout>
 
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                app:tabMode="fixed"
+                app:tabGravity="fill"/>
+
         </android.support.design.widget.AppBarLayout>
 
         <android.support.design.widget.FloatingActionButton
@@ -121,7 +128,11 @@
             app:layout_behavior="com.pongo.charades.behaviors.ShrinkOnScrollBehavior"
             android:src="@drawable/ic_plus_white" />
 
-        <include layout="@layout/content_main" />
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     </android.support.design.widget.CoordinatorLayout>
 

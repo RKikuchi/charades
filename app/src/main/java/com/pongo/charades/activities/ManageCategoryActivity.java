@@ -42,6 +42,7 @@ public class ManageCategoryActivity extends BaseActivity {
     public static final String EXTRA_IS_NEW = "IS_NEW";
     public static final String EXTRA_ITEM_ID = "ITEM_ID";
     public static final String EXTRA_ITEM_TITLE = "ITEM_TITLE";
+    public static final String EXTRA_ORIGINAL_FILTER = "ORIGINAL_FILTER";
     private static final int REQUEST_PICK_IMAGE = 1;
     private static final int REQUEST_IMG_PICKER_PERMISSION = 2;
 

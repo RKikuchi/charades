@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.pongo.charades.R;
-import com.pongo.charades.activities.MainActivity;
+import com.pongo.charades.activities.CategoryCatalogFragment;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.models.CategoryModelHolder;
 import com.pongo.charades.viewholders.CharadesCellViewHolder;
@@ -25,27 +25,27 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
     public static final int MODE_SHOW_ALL = 1;
     public static final int MODE_FAVORITES = 2;
 
-    final private MainActivity mContext;
+    final private CategoryCatalogFragment mParent;
     final private Realm mRealm;
     final private LayoutInflater mLayoutInflater;
     private ArrayList<CategoryModelHolder> mItems;
     private int mMode = MODE_DEFAULT;
 
-    public CharadesRecyclerViewAdapter(MainActivity context) {
-        mContext = context;
-        mRealm = Realm.getInstance(context);
+    public CharadesRecyclerViewAdapter(CategoryCatalogFragment parent) {
+        mParent = parent;
+        mRealm = Realm.getInstance(parent.getContext());
         reload();
-        mLayoutInflater = LayoutInflater.from(context);
+        mLayoutInflater = LayoutInflater.from(parent.getContext());
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View cell = mLayoutInflater.inflate(R.layout.cell_charades, parent, false);
-        final CharadesCellViewHolder holder = new CharadesCellViewHolder(mContext, cell);
+        final CharadesCellViewHolder holder = new CharadesCellViewHolder(mParent, cell);
         View.OnClickListener playListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mContext.playCategory(holder);
+                mParent.playCategory(holder);
             }
         };
         holder.getImage().setOnClickListener(playListener);
@@ -53,13 +53,13 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
         holder.getEditButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mContext.manageCategory(holder);
+                mParent.manageCategory(holder);
             }
         });
         holder.getUnhideButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mContext.unhideCategory(holder);
+                mParent.unhideCategory(holder);
             }
         });
         return holder;

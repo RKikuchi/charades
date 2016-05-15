@@ -2,9 +2,7 @@ package com.pongo.charades.activities;
 
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.AppBarLayout;
@@ -12,16 +10,12 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
+import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.util.Pair;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,11 +26,10 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.pongo.charades.R;
-import com.pongo.charades.adapters.CharadesRecyclerViewAdapter;
+import com.pongo.charades.adapters.CategoryCatalogPagerAdapter;
 import com.pongo.charades.async.OnlineCategoriesLoader;
 import com.pongo.charades.models.CategoryDto;
 import com.pongo.charades.models.CategoryModel;
-import com.pongo.charades.models.CategoryModelHolder;
 import com.pongo.charades.viewholders.CharadesCellViewHolder;
 
 import java.io.BufferedReader;
@@ -52,8 +45,10 @@ import io.realm.Realm;
 
 public class MainActivity
         extends BaseActivity
-        implements OnlineCategoriesLoader.OnlineCategoriesLoaderCallback {
-    private static final int REQUEST_CODE_MANAGE_CATEGORY = 1;
+        implements
+        CategoryCatalogFragment.CategoryCatalogListener,
+        OnlineCategoriesLoader.OnlineCategoriesLoaderCallback {
+    public static final int REQUEST_CODE_MANAGE_CATEGORY = 1;
     public static final String EXTRA_CATEGORY_POSITION = "CATEGORY_POSITION";
 
     private Realm mRealm;
@@ -68,11 +63,11 @@ public class MainActivity
     private Toolbar mToolbar;
     private TextView mTitle;
     private LinearLayout mTitleContainer;
+    private TabLayout mTabLayout;
+    private ViewPager mViewPager;
 
-    private RecyclerView mRecyclerView;
-    private CharadesRecyclerViewAdapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
     private ActionBarDrawerToggle mDrawerToggle;
+    private CategoryCatalogPagerAdapter mAdapter;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,31 +80,6 @@ public class MainActivity
         getSupportActionBar().setTitle("");
         setToolbarAnimator(mAppBarLayout, mTitle, mToolbar, mTitleContainer);
         setActionBarDrawerToggle();
-
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setHasFixedSize(true);
-
-        mAdapter = new CharadesRecyclerViewAdapter(this);
-        mRecyclerView.setAdapter(mAdapter);
-
-        ItemTouchHelper touchHelper = new ItemTouchHelper(
-                new ItemTouchHelper.SimpleCallback(
-                        0, ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
-                    @Override
-                    public boolean onMove(RecyclerView recyclerView,
-                                          RecyclerView.ViewHolder viewHolder,
-                                          RecyclerView.ViewHolder target) {
-                        return false;
-                    }
-
-                    @Override
-                    public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                        CharadesCellViewHolder charadesHolder = (CharadesCellViewHolder) viewHolder;
-                        hideCategory(charadesHolder);
-                    }
-                });
-        touchHelper.attachToRecyclerView(mRecyclerView);
 
         mHowToPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,7 +94,22 @@ public class MainActivity
             }
         });
 
+        setupTabs();
         setup();
+    }
+
+    private void setupTabs() {
+        mAdapter = new CategoryCatalogPagerAdapter(getSupportFragmentManager());
+        mAdapter.addFragment(CategoryCatalogFragment.FILTER_MAIN);
+        mAdapter.addFragment(CategoryCatalogFragment.FILTER_FAVORITES);
+        mAdapter.addFragment(CategoryCatalogFragment.FILTER_FAMILY);
+        mViewPager.setAdapter(mAdapter);
+
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setSelectedTabIndicatorColor(ContextCompat.getColor(this, R.color.colorWhite));
+        mTabLayout.getTabAt(0).setText(R.string.main_categories);
+        mTabLayout.getTabAt(1).setText(R.string.favorites);
+        mTabLayout.getTabAt(2).setText(R.string.hidden);
     }
 
     @Override
@@ -159,17 +144,17 @@ public class MainActivity
                 Intent intent;
                 switch (item.getItemId()) {
                     case R.id.item_main_categories:
-                        mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_DEFAULT);
+                        //TODO mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_DEFAULT);
                         mTitle.setText(R.string.main_categories);
                         mDrawerLayout.closeDrawers();
                         return true;
                     case R.id.item_favorites:
-                        mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_FAVORITES);
+                        //TODO mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_FAVORITES);
                         mTitle.setText(R.string.favorites);
                         mDrawerLayout.closeDrawers();
                         return true;
                     case R.id.item_hidden:
-                        mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_SHOW_ALL);
+                        //TODO mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_SHOW_ALL);
                         mTitle.setText(R.string.favorites);
                         mDrawerLayout.closeDrawers();
                         return true;
@@ -194,7 +179,8 @@ public class MainActivity
         mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         mTitle = (TextView) findViewById(R.id.title);
         mTitleContainer = (LinearLayout) findViewById(R.id.title_container);
-        mRecyclerView = (RecyclerView) findViewById(R.id.charades_recycler_view);
+        mTabLayout = (TabLayout) findViewById(R.id.tabs);
+        mViewPager = (ViewPager) findViewById(R.id.viewpager);
         mHowToPlayButton = (Button) findViewById(R.id.how_to_play_button);
         mFab = (FloatingActionButton) findViewById(R.id.create_fab);
     }
@@ -206,25 +192,12 @@ public class MainActivity
                 if (resultCode != RESULT_OK) break;
 
                 String title = data.getStringExtra(ManageCategoryActivity.EXTRA_ITEM_TITLE);
+                int filter = data.getIntExtra(ManageCategoryActivity.EXTRA_ORIGINAL_FILTER, 0);
                 if (data.getBooleanExtra(ManageCategoryActivity.EXTRA_IS_NEW, true)) {
-                    final int lastPos = mAdapter.getItemCount();
-                    Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            mAdapter.reload();
-                            mAdapter.notifyItemInserted(lastPos);
-                            mRecyclerView.smoothScrollToPosition(lastPos);
-                        }
-                    }, 500);
+                    mAdapter.newItemAdded(filter);
                 } else {
                     int pos = data.getIntExtra(EXTRA_CATEGORY_POSITION, -1);
-                    if (pos != -1 && pos < mAdapter.getItemCount()) {
-                        mAdapter.notifyItemChanged(pos);
-                    } else {
-                        mAdapter.reload();
-                        mAdapter.notifyDataSetChanged();
-                    }
+                    mAdapter.itemChanged(filter, pos);
                     String msg = "Category \"" + title + "\" saved.";
                     Snackbar.make(mLayout, msg, Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
@@ -246,7 +219,7 @@ public class MainActivity
         int id = item.getItemId();
         switch (id) {
             case R.id.action_show_all_items:
-                mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_SHOW_ALL);
+                //TODO mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_SHOW_ALL);
                 return true;
             case R.id.action_how_to_play:
                 openHowToPlayActivity();
@@ -359,110 +332,25 @@ public class MainActivity
         startActivityForResult(intent, REQUEST_CODE_MANAGE_CATEGORY);
     }
 
-    public void manageCategory(CharadesCellViewHolder holder) {
-        int position = holder.getAdapterPosition();
-        CategoryModel category = holder.getCategory();
-
-        Intent intent = new Intent(getBaseContext(), ManageCategoryActivity.class);
-        intent.putExtra(MainActivity.EXTRA_CATEGORY_POSITION, position);
-        intent.putExtra(ManageCategoryActivity.CATEGORY_ID, category.getId());
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            String titleTransitionName = getString(R.string.transition_category_name);
-            String imageTransitionName = getString(R.string.transition_category_image);
-            Pair<View, String> p1 = Pair.create(holder.getTitleLabel(), titleTransitionName);
-            Pair<View, String> p2 = Pair.create(holder.getImage(), imageTransitionName);
-
-            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
-                    this, p1, p2);
-
-            ActivityCompat.startActivityForResult(this, intent,
-                    REQUEST_CODE_MANAGE_CATEGORY, options.toBundle());
-        } else {
-            startActivityForResult(intent, REQUEST_CODE_MANAGE_CATEGORY);
-        }
+    @Override
+    public void onCategorySelected(String categoryName) {
+        //TODO
     }
 
-    public void hideCategory(final CharadesCellViewHolder holder) {
-        final CategoryModel category = holder.getCategory();
-        final int position = holder.getAdapterPosition();
-        String title = category.getTitle();
-
-        mRealm.beginTransaction();
-        category.setIsHidden(true);
-        mRealm.copyToRealmOrUpdate(category);
-        mRealm.commitTransaction();
-
-        mAdapter.remove(position);
+    @Override
+    public void onCategoryHidden(final CategoryCatalogFragment fragment,
+                                 final int position,
+                                 final CharadesCellViewHolder holder) {
+        String title = holder.getCategory().getTitle();
 
         Snackbar.make(mLayout, "Category \"" + title + "\" hidden.", Snackbar.LENGTH_LONG)
                 .setAction("Undo", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        unhideCategory(position, holder.getModelHolder());
+                        fragment.unhideCategory(position, holder.getModelHolder());
                     }
                 })
                 .setActionTextColor(ContextCompat.getColor(this, R.color.colorWarning))
                 .show();
-    }
-
-    private void unhideCategory(int position, CategoryModelHolder categoryHolder) {
-        CategoryModel category = categoryHolder.getModel();
-        mRealm.beginTransaction();
-        category.setIsHidden(false);
-        mRealm.copyToRealmOrUpdate(category);
-        mRealm.commitTransaction();
-
-        mAdapter.add(position, categoryHolder);
-        if (position == mAdapter.getItemCount() - 1) {
-            mRecyclerView.smoothScrollToPosition(position);
-        }
-    }
-
-    public void unhideCategory(final CharadesCellViewHolder holder) {
-        final CategoryModel category = holder.getCategory();
-        final int position = holder.getAdapterPosition();
-
-        mRealm.beginTransaction();
-        category.setIsHidden(false);
-        mRealm.copyToRealmOrUpdate(category);
-        mRealm.commitTransaction();
-
-        mAdapter.notifyItemChanged(position);
-    }
-
-    public void deleteCategory(CategoryModel category) {
-        mRealm.beginTransaction();
-        mRealm.where(CategoryModel.class)
-                .equalTo("id", category.getId())
-                .findAll()
-                .clear();
-        mRealm.commitTransaction();
-    }
-
-    public void playCategory(CharadesCellViewHolder holder) {
-        Intent intent = new Intent(this, GameRoundActivity.class);
-        intent.putExtra(GameRoundActivity.CATEGORY_ID, holder.getCategory().getId());
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            String imageTransitionName = getString(R.string.transition_category_image);
-            Pair<View, String> p2 = Pair.create(holder.getImage(), imageTransitionName);
-
-            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
-                    this, p2);
-
-            //Explode explode = new Explode();
-            //explode.setDuration(1000);
-            //TransitionSet ts = new TransitionSet();
-            //ts.setOrdering(TransitionSet.ORDERING_SEQUENTIAL);
-            //ts.addTransition(explode);
-            //TransitionManager.go(getContentScene(), ts);
-            //getWindow().setExitTransition(ts);
-
-            //ActivityCompat.startActivity(this, intent, options.toBundle());
-            startActivity(intent);
-        } else {
-            startActivity(intent);
-        }
     }
 }
