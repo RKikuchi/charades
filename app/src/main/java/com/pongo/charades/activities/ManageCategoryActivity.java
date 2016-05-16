@@ -2,7 +2,6 @@ package com.pongo.charades.activities;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,7 +15,6 @@ import android.transition.Transition;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -66,6 +64,7 @@ public class ManageCategoryActivity extends BaseActivity {
     private PicturePickerService mPicturePicker;
 
     private boolean mIsNew;
+    private int mOriginalFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,6 +173,7 @@ public class ManageCategoryActivity extends BaseActivity {
 
     private boolean loadCategory() {
         Intent intent = getIntent();
+        mOriginalFilter = intent.getIntExtra(EXTRA_ORIGINAL_FILTER, 0);
         int categoryId = intent.getIntExtra(CATEGORY_ID, -1);
         if (categoryId == -1) {
             mCategory = new CategoryDto();
@@ -238,6 +238,7 @@ public class ManageCategoryActivity extends BaseActivity {
         intent.putExtra(EXTRA_IS_NEW, mIsNew);
         intent.putExtra(EXTRA_ITEM_ID, mCategory.id);
         intent.putExtra(EXTRA_ITEM_TITLE, mCategory.title);
+        intent.putExtra(EXTRA_ORIGINAL_FILTER, mOriginalFilter);
         int adapterPosition = getIntent().getIntExtra(MainActivity.EXTRA_CATEGORY_POSITION, -1);
         if (adapterPosition != -1) {
             intent.putExtra(MainActivity.EXTRA_CATEGORY_POSITION, adapterPosition);

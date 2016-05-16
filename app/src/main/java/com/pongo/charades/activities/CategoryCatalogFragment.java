@@ -185,6 +185,7 @@ public class CategoryCatalogFragment extends Fragment {
 
         Intent intent = new Intent(getContext(), ManageCategoryActivity.class);
         intent.putExtra(MainActivity.EXTRA_CATEGORY_POSITION, position);
+        intent.putExtra(ManageCategoryActivity.EXTRA_ORIGINAL_FILTER, mFilterType);
         intent.putExtra(ManageCategoryActivity.CATEGORY_ID, category.getId());
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
