@@ -102,7 +102,7 @@ public class MainActivity
         mAdapter = new CategoryCatalogPagerAdapter(getSupportFragmentManager());
         mAdapter.addFragment(CategoryCatalogFragment.FILTER_MAIN);
         mAdapter.addFragment(CategoryCatalogFragment.FILTER_FAVORITES);
-        mAdapter.addFragment(CategoryCatalogFragment.FILTER_FAMILY);
+        mAdapter.addFragment(CategoryCatalogFragment.FILTER_HIDDEN);
         mViewPager.setAdapter(mAdapter);
 
         mTabLayout.setupWithViewPager(mViewPager);

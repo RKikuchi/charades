@@ -30,6 +30,7 @@ public class CategoryCatalogFragment extends Fragment {
     public static final int FILTER_MAIN = 1;
     public static final int FILTER_FAVORITES = 2;
     public static final int FILTER_FAMILY = 3;
+    public static final int FILTER_HIDDEN = 4;
 
     private int mFilterType;
 
@@ -57,6 +58,8 @@ public class CategoryCatalogFragment extends Fragment {
         mRealm = Realm.getInstance(getContext());
         if (getArguments() != null) {
             mFilterType = getArguments().getInt(ARG_FILTER_TYPE);
+            if (mAdapter != null)
+                mAdapter.setFilter(mFilterType);
         }
     }
 
@@ -70,6 +73,7 @@ public class CategoryCatalogFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
 
         mAdapter = new CharadesRecyclerViewAdapter(this);
+        mAdapter.setFilter(mFilterType);
         mRecyclerView.setAdapter(mAdapter);
 
         setupTouchHelper();

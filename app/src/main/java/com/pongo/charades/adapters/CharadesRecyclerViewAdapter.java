@@ -21,15 +21,11 @@ import io.realm.RealmResults;
  * Created by rsaki on 1/3/2016.
  */
 public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
-    public static final int MODE_DEFAULT = 0;
-    public static final int MODE_SHOW_ALL = 1;
-    public static final int MODE_FAVORITES = 2;
-
     final private CategoryCatalogFragment mParent;
     final private Realm mRealm;
     final private LayoutInflater mLayoutInflater;
     private ArrayList<CategoryModelHolder> mItems;
-    private int mMode = MODE_DEFAULT;
+    private int mFilter = CategoryCatalogFragment.FILTER_MAIN;
 
     public CharadesRecyclerViewAdapter(CategoryCatalogFragment parent) {
         mParent = parent;
@@ -77,8 +73,8 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
         return mItems.size();
     }
 
-    public void setMode(int mode) {
-        mMode = mode;
+    public void setFilter(int filter) {
+        mFilter = filter;
         reload();
         notifyDataSetChanged();
     }
@@ -86,11 +82,13 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
     public void reload() {
         mItems = new ArrayList<>();
         RealmQuery<CategoryModel> query = mRealm.where(CategoryModel.class);
-        switch (mMode) {
-            case MODE_DEFAULT:
+        switch (mFilter) {
+            case CategoryCatalogFragment.FILTER_MAIN:
                 query = query.equalTo("isHidden", false);
                 break;
-            case MODE_SHOW_ALL:
+            case CategoryCatalogFragment.FILTER_HIDDEN:
+            case CategoryCatalogFragment.FILTER_FAMILY:
+                query = query.equalTo("isHidden", true);
                 break;
         }
 
