@@ -144,18 +144,15 @@ public class MainActivity
                 Intent intent;
                 switch (item.getItemId()) {
                     case R.id.item_main_categories:
-                        //TODO mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_DEFAULT);
-                        mTitle.setText(R.string.main_categories);
+                        mTabLayout.getTabAt(0).select();
                         mDrawerLayout.closeDrawers();
                         return true;
                     case R.id.item_favorites:
-                        //TODO mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_FAVORITES);
-                        mTitle.setText(R.string.favorites);
+                        mTabLayout.getTabAt(1).select();
                         mDrawerLayout.closeDrawers();
                         return true;
                     case R.id.item_hidden:
-                        //TODO mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_SHOW_ALL);
-                        mTitle.setText(R.string.favorites);
+                        mTabLayout.getTabAt(2).select();
                         mDrawerLayout.closeDrawers();
                         return true;
                     case R.id.item_settings:
