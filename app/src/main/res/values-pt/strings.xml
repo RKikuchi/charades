@@ -17,6 +17,7 @@
     <string name="back">Voltar</string>
     <string name="play">Jogar</string>
     <string name="edit">Editar</string>
+    <string name="favorite">Favoritar</string>
     <string name="unhide">Mostrar</string>
     <string name="hide">Esconder</string>
     <string name="remove">Remover</string>

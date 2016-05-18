@@ -17,6 +17,7 @@
     <string name="back">Back</string>
     <string name="play">Play</string>
     <string name="edit">Edit</string>
+    <string name="favorite">Favorite</string>
     <string name="unhide">Unhide</string>
     <string name="hide">Hide</string>
     <string name="remove">Remove</string>

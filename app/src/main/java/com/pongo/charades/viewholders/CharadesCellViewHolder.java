@@ -7,7 +7,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,25 +24,25 @@ import com.squareup.picasso.Picasso;
  */
 public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
     private final ImageView mImage;
-    private final View mCard;
     private final TextView mTitleLabel;
     private final View mActionGroup;
-    private final Button mPlayButton;
-    private final Button mEditButton;
-    private final Button mUnhideButton;
+    private final ImageButton mPlayButton;
+    private final ImageButton mEditButton;
+    private final ImageButton mFavoriteButton;
+    private final ImageButton mUnhideButton;
     private final Context mContext;
     private CategoryModelHolder mCategory;
 
     public CharadesCellViewHolder(CategoryCatalogFragment parent, View itemView) {
         super(itemView);
         mContext = parent.getContext();
-        mCard = itemView.findViewById(R.id.card);
         mImage = (ImageView) itemView.findViewById(R.id.card_image);
         mTitleLabel = (TextView) itemView.findViewById(R.id.cell_charades_title_label);
         mActionGroup = itemView.findViewById(R.id.cell_action_group);
-        mPlayButton = (Button) itemView.findViewById(R.id.play_button);
-        mEditButton = (Button) itemView.findViewById(R.id.edit_button);
-        mUnhideButton = (Button) itemView.findViewById(R.id.unhide_button);
+        mPlayButton = (ImageButton) itemView.findViewById(R.id.play_button);
+        mEditButton = (ImageButton) itemView.findViewById(R.id.edit_button);
+        mFavoriteButton = (ImageButton) itemView.findViewById(R.id.favorite_button);
+        mUnhideButton = (ImageButton) itemView.findViewById(R.id.unhide_button);
     }
 
     private void loadImage() {
@@ -68,9 +68,10 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
 
                         if (swatch != null) {
                             mActionGroup.setBackgroundColor(swatch.getRgb());
-                            mPlayButton.setTextColor(swatch.getTitleTextColor());
-                            mEditButton.setTextColor(swatch.getBodyTextColor());
-                            mUnhideButton.setTextColor(swatch.getBodyTextColor());
+                            mPlayButton.setColorFilter(swatch.getTitleTextColor());
+                            mEditButton.setColorFilter(swatch.getBodyTextColor());
+                            mFavoriteButton.setColorFilter(swatch.getBodyTextColor());
+                            mUnhideButton.setColorFilter(swatch.getBodyTextColor());
                         }
                     }
 
@@ -98,11 +99,13 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
         }
         mActionGroup.setBackgroundColor(
                 ContextCompat.getColor(mContext, R.color.colorWhite));
-        mPlayButton.setTextColor(
+        mPlayButton.setColorFilter(
                 ContextCompat.getColor(mContext, R.color.colorAccent));
-        mEditButton.setTextColor(
+        mEditButton.setColorFilter(
                 ContextCompat.getColor(mContext, R.color.colorDarkGray));
-        mUnhideButton.setTextColor(
+        mFavoriteButton.setColorFilter(
+                ContextCompat.getColor(mContext, R.color.colorDarkGray));
+        mUnhideButton.setColorFilter(
                 ContextCompat.getColor(mContext, R.color.colorDarkGray));
         loadImage();
     }

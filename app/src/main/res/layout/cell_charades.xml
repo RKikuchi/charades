@@ -5,25 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clipToPadding="false"
-    android:padding="10dp">
+    android:padding="1dp">
 
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card"
         android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         card_view:cardCornerRadius="2dp"
         card_view:cardElevation="2dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <FrameLayout
+                android:id="@+id/card_title"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/cell_action_group">
+                android:layout_height="180dp"
+                android:layout_alignParentTop="true">
 
                 <ImageView
                     android:id="@+id/card_image"
@@ -42,9 +43,14 @@
                     android:transitionName="@string/transition_category_name"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     android:padding="16dp"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@color/colorWhite"
+                    android:shadowColor="@color/text_shadow"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    />
 
             </FrameLayout>
 
@@ -52,38 +58,54 @@
                 android:id="@+id/cell_action_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
+                android:weightSum="4"
+                android:layout_below="@+id/card_title"
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <Button
+                <ImageButton
                     android:id="@+id/unhide_button"
                     style="?android:borderlessButtonStyle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:minWidth="0dp"
-                    android:text="@string/unhide"
-                    android:textColor="@color/colorDarkGray" />
+                    android:src="@drawable/ic_visibility_off_black_24dp"
+                    android:hint="@string/unhide"
+                    android:tint="@color/colorDarkGray" />
 
-                <Button
+                <ImageButton
+                    android:id="@+id/favorite_button"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minWidth="0dp"
+                    android:src="@drawable/ic_favorite_black_24dp"
+                    android:hint="@string/favorite"
+                    android:tint="@color/colorDarkGray" />
+
+                <ImageButton
                     android:id="@+id/edit_button"
                     style="?android:borderlessButtonStyle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:minWidth="0dp"
-                    android:text="@string/edit"
-                    android:textColor="@color/colorDarkGray" />
+                    android:src="@drawable/ic_mode_edit_black_24dp"
+                    android:hint="@string/edit"
+                    android:tint="@color/colorDarkGray" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/play_button"
                     style="?android:borderlessButtonStyle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:minWidth="0dp"
-                    android:layout_marginRight="8dp"
-                    android:text="@string/play"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorAccent" />
+                    android:src="@drawable/ic_play_circle_filled_black_24dp"
+                    android:hint="@string/play"
+                    android:tint="@color/colorAccent" />
 
             </LinearLayout>
 
