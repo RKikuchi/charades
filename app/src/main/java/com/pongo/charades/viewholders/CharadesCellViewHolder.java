@@ -60,9 +60,9 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
                         Palette palette = PaletteTransform.getPalette(bitmap);
                         Palette.Swatch swatch = palette.getLightMutedSwatch();
                         if (swatch == null)
-                            swatch = palette.getMutedSwatch();
+                            swatch = palette.getVibrantSwatch();
                         if (swatch == null)
-                            swatch = palette.getLightVibrantSwatch();
+                            swatch = palette.getDarkVibrantSwatch();
                         if (swatch == null && palette.getSwatches().size() > 0)
                             swatch = palette.getSwatches().get(0);
 
