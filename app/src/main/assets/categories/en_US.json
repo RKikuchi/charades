@@ -2,6 +2,7 @@
     {
         "language": "en_US",
         "title": "Popular characters and people",
+        "imagePath": "file:///android_asset/images/category_popular_characters_and_people.jpg",
         "items": [
             {
                 "value": "Gandhi",
@@ -268,6 +269,7 @@
     {
         "language": "en_US",
         "title": "Movies",
+        "imagePath": "file:///android_asset/images/movies.jpg",
         "items": [
             {
                 "value": "Spiderman",

@@ -2,6 +2,7 @@
     {
         "language": "pt_BR",
         "title": "Animais",
+        "imagePath": "file:///android_asset/images/animals.jpg",
         "items": [
             {
                 "value": "Tartaruga",
@@ -312,6 +313,7 @@
     {
         "language": "pt_BR",
         "title": "Expressões Idiomáticas (Brasil)",
+        "imagePath": "file:///android_asset/images/idiomatic_expressions.jpg",
         "items": [
             {
                 "value": "Abandonar o barco",
