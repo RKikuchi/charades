@@ -211,6 +211,7 @@ public class CategoryCatalogFragment extends Fragment {
     public void reload() {
         if (mAdapter == null) return;
         mAdapter.reload();
+        mAdapter.notifyDataSetChanged();
     }
 
     public void newItemAdded(int filter) {
@@ -218,6 +219,7 @@ public class CategoryCatalogFragment extends Fragment {
 
         if (mFilterType != filter) {
             mAdapter.reload();
+            mAdapter.notifyDataSetChanged();
             return;
         }
 
@@ -238,6 +240,7 @@ public class CategoryCatalogFragment extends Fragment {
 
         if (mFilterType != filter) {
             mAdapter.reload();
+            mAdapter.notifyDataSetChanged();
             return;
         }
 
