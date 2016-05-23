@@ -3,16 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activities.MainActivity">
     <item
-        android:id="@+id/action_show_all_items"
-        android:orderInCategory="1"
-        android:title="@string/action_show_all_items"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_how_to_play"
-        android:orderInCategory="5"
-        android:title="@string/how_to_play"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/action_sync_online_categories"
         android:orderInCategory="10"
         android:title="@string/action_sync_online_categories"

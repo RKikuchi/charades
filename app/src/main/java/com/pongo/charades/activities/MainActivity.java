@@ -215,12 +215,6 @@ public class MainActivity
         Intent intent;
         int id = item.getItemId();
         switch (id) {
-            case R.id.action_show_all_items:
-                //TODO mAdapter.setMode(CharadesRecyclerViewAdapter.MODE_SHOW_ALL);
-                return true;
-            case R.id.action_how_to_play:
-                openHowToPlayActivity();
-                return true;
             case R.id.action_settings:
                 intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
