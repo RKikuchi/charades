@@ -57,20 +57,20 @@ public class HowToPlaySlideFragment extends Fragment {
     private void setSlideContent() {
         switch (mSlideNumber) {
             case 0:
-                setImage(R.drawable.placeholder_instruction_image);
-                setText(R.string.how_to_play);
-                break;
-            case 1:
                 setImage(R.drawable.how_to_play_1);
                 setText(R.string.how_to_play_1);
                 break;
-            case 2:
+            case 1:
                 setImage(R.drawable.how_to_play_2);
                 setText(R.string.how_to_play_2);
                 break;
-            case 3:
+            case 2:
                 setImage(R.drawable.how_to_play_3);
                 setText(R.string.how_to_play_3);
+                break;
+            case 3:
+                setImage(R.drawable.placeholder_instruction_image);
+                setText(R.string.how_to_play_4);
                 break;
         }
     }
