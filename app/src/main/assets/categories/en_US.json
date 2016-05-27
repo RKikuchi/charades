@@ -2200,5 +2200,467 @@
                 "definition": null
             }
         ]
+    },
+    {
+        "language": "en_US",
+        "title": "Christmas",
+        "imagePath": "file:///android_asset/images/christmas.jpg",
+        "items": [
+            {
+                "value": "Comet the Reindeer",
+                "definition": null
+            },
+            {
+                "value": "Mistletoe",
+                "definition": null
+            },
+            {
+                "value": "Egg Nog",
+                "definition": null
+            },
+            {
+                "value": "Ebenezer Scrooge",
+                "definition": null
+            },
+            {
+                "value": "Building a Snowman",
+                "definition": null
+            },
+            {
+                "value": "The First Noel",
+                "definition": null
+            },
+            {
+                "value": "It’s a Wonderful Life",
+                "definition": null
+            },
+            {
+                "value": "The Star of Bethlehem",
+                "definition": null
+            },
+            {
+                "value": "Pumpkin Pie",
+                "definition": null
+            },
+            {
+                "value": "Chestnuts roasting on an open fire",
+                "definition": null
+            },
+            {
+                "value": "Jack Frost",
+                "definition": null
+            },
+            {
+                "value": "The North Pole",
+                "definition": null
+            },
+            {
+                "value": "Santa’s Elves",
+                "definition": null
+            },
+            {
+                "value": "Silver Bells",
+                "definition": null
+            },
+            {
+                "value": "Santa Claus is Coming to Town",
+                "definition": null
+            },
+            {
+                "value": "The Night Before Christmas",
+                "definition": null
+            },
+            {
+                "value": "Festival of Light",
+                "definition": null
+            },
+            {
+                "value": "You’ll Shoot Your Eye Out",
+                "definition": null
+            },
+            {
+                "value": "Little Drummer Boy",
+                "definition": null
+            },
+            {
+                "value": "How the Grinch Stole Christmas",
+                "definition": null
+            },
+            {
+                "value": "Sugar Plums",
+                "definition": null
+            },
+            {
+                "value": "Festivus",
+                "definition": null
+            },
+            {
+                "value": "Christmas Pig",
+                "definition": null
+            },
+            {
+                "value": "Star of Bethlehem",
+                "definition": null
+            },
+            {
+                "value": "Decorating the Tree",
+                "definition": null
+            },
+            {
+                "value": "A Christmas Miracle",
+                "definition": null
+            },
+            {
+                "value": "Singing Carols",
+                "definition": null
+            },
+            {
+                "value": "Silent Night",
+                "definition": null
+            },
+            {
+                "value": "Three Wise Men",
+                "definition": null
+            },
+            {
+                "value": "The Naughty and Nice List",
+                "definition": null
+            },
+            {
+                "value": "Chris Kringle",
+                "definition": null
+            },
+            {
+                "value": "Saint Nicholas",
+                "definition": null
+            },
+            {
+                "value": "Chess Nuts Roasting on an Open Fire",
+                "definition": null
+            },
+            {
+                "value": "Jack Frost Nipping At Your Nose",
+                "definition": null
+            },
+            {
+                "value": "Oh Christmas Tree",
+                "definition": null
+            },
+            {
+                "value": "Elves",
+                "definition": null
+            },
+            {
+                "value": "Christmas Tree",
+                "definition": null
+            },
+            {
+                "value": "Ornaments",
+                "definition": null
+            },
+            {
+                "value": "Angels",
+                "definition": null
+            },
+            {
+                "value": "Snow",
+                "definition": null
+            },
+            {
+                "value": "Scarves",
+                "definition": null
+            },
+            {
+                "value": "Ear muffs",
+                "definition": null
+            },
+            {
+                "value": "Mittens",
+                "definition": null
+            },
+            {
+                "value": "Snowflakes",
+                "definition": null
+            },
+            {
+                "value": "Star",
+                "definition": null
+            },
+            {
+                "value": "Christmas Cards",
+                "definition": null
+            },
+            {
+                "value": "Decorations",
+                "definition": null
+            },
+            {
+                "value": "Wrapping Paper",
+                "definition": null
+            },
+            {
+                "value": "Snow Globe",
+                "definition": null
+            },
+            {
+                "value": "Candles",
+                "definition": null
+            },
+            {
+                "value": "Gingerbread Man",
+                "definition": null
+            },
+            {
+                "value": "Gingerbread House",
+                "definition": null
+            },
+            {
+                "value": "Plate of Cookies",
+                "definition": null
+            },
+            {
+                "value": "12 Days of Christmas",
+                "definition": null
+            },
+            {
+                "value": "Frosty the Snowman",
+                "definition": null
+            },
+            {
+                "value": "Candy Cane",
+                "definition": null
+            },
+            {
+                "value": "Hot Chocolate",
+                "definition": null
+            },
+            {
+                "value": "Stockings",
+                "definition": null
+            },
+            {
+                "value": "Reindeer",
+                "definition": null
+            },
+            {
+                "value": "Christmas Carols",
+                "definition": null
+            },
+            {
+                "value": "Nutcracker",
+                "definition": null
+            },
+            {
+                "value": "Wreath",
+                "definition": null
+            },
+            {
+                "value": "Gifts",
+                "definition": null
+            },
+            {
+                "value": "Santa Claus",
+                "definition": null
+            },
+            {
+                "value": "Rudolph the Red Nose Reindeer",
+                "definition": null
+            },
+            {
+                "value": "Jingle Bells",
+                "definition": null
+            },
+            {
+                "value": "Mrs. Claus",
+                "definition": null
+            },
+            {
+                "value": "Joy to the World",
+                "definition": null
+            },
+            {
+                "value": "Santa Claus is Coming To Town",
+                "definition": null
+            },
+            {
+                "value": "I'm Dreaming of a White Christmas",
+                "definition": null
+            },
+            {
+                "value": "Winter Wonderland",
+                "definition": null
+            },
+            {
+                "value": "Away in a Manger",
+                "definition": null
+            },
+            {
+                "value": "Carol of the Bells",
+                "definition": null
+            },
+            {
+                "value": "Christmas Lights",
+                "definition": null
+            },
+            {
+                "value": "Deck the Halls",
+                "definition": null
+            },
+            {
+                "value": "Grandma Got Run Over by a Reindeer",
+                "definition": null
+            },
+            {
+                "value": "Hark the Herald Angels Sing",
+                "definition": null
+            },
+            {
+                "value": "I Saw Mommy Kissing Santa Claus",
+                "definition": null
+            },
+            {
+                "value": "Jingle Bell Rock",
+                "definition": null
+            },
+            {
+                "value": "It's Beginning to Feel a Lot Like Christmas",
+                "definition": null
+            },
+            {
+                "value": "Let it Snow",
+                "definition": null
+            },
+            {
+                "value": "I'll be Home For Christmas",
+                "definition": null
+            },
+            {
+                "value": "It's the Most Wonderful Time of the Year",
+                "definition": null
+            },
+            {
+                "value": "All I Want for Christmas is my Two Front Teeth",
+                "definition": null
+            },
+            {
+                "value": "Sleigh Ride",
+                "definition": null
+            },
+            {
+                "value": "Snowman",
+                "definition": null
+            },
+            {
+                "value": "Up On the Housetop",
+                "definition": null
+            },
+            {
+                "value": "Blue Christmas",
+                "definition": null
+            },
+            {
+                "value": "Charlie Brown",
+                "definition": null
+            },
+            {
+                "value": "Santa's Workshop",
+                "definition": null
+            },
+            {
+                "value": "Chimney",
+                "definition": null
+            },
+            {
+                "value": "Pine Cones",
+                "definition": null
+            },
+            {
+                "value": "Snowball",
+                "definition": null
+            }
+        ]
+    },
+    {
+        "language": "en_US",
+        "title": "Easter",
+        "imagePath": "file:///android_asset/images/easter.jpg",
+        "items": [
+            {
+                "value": "Bunny",
+                "definition": null
+            },
+            {
+                "value": "Eggs",
+                "definition": null
+            },
+            {
+                "value": "Candy",
+                "definition": null
+            },
+            {
+                "value": "Easter",
+                "definition": null
+            },
+            {
+                "value": "Baskets",
+                "definition": null
+            },
+            {
+                "value": "Chocolate",
+                "definition": null
+            },
+            {
+                "value": "Hunt",
+                "definition": null
+            },
+            {
+                "value": "Chicks",
+                "definition": null
+            },
+            {
+                "value": "Sunday",
+                "definition": null
+            },
+            {
+                "value": "Dye",
+                "definition": null
+            },
+            {
+                "value": "Hidden",
+                "definition": null
+            },
+            {
+                "value": "Jelly Beans",
+                "definition": null
+            },
+            {
+                "value": "Bonnet",
+                "definition": null
+            },
+            {
+                "value": "Dinner",
+                "definition": null
+            },
+            {
+                "value": "Equinox",
+                "definition": null
+            },
+            {
+                "value": "Spring",
+                "definition": null
+            },
+            {
+                "value": "Grass",
+                "definition": null
+            },
+            {
+                "value": "Lent",
+                "definition": null
+            },
+            {
+                "value": "Lilly",
+                "definition": null
+            }
+        ]
     }
 ]
