@@ -268,6 +268,253 @@
     },
     {
         "language": "en_US",
+        "title": "Animals",
+        "imagePath": "file:///android_asset/images/animals.jpg",
+        "items": [
+            {
+                "value": "Turtle",
+                "definition": null
+            },
+            {
+                "value": "Elephant",
+                "definition": null
+            },
+            {
+                "value": "Giraffe",
+                "definition": null
+            },
+            {
+                "value": "Horse",
+                "definition": null
+            },
+            {
+                "value": "Lion",
+                "definition": null
+            },
+            {
+                "value": "Mouse",
+                "definition": null
+            },
+            {
+                "value": "Deer",
+                "definition": null
+            },
+            {
+                "value": "Eagle",
+                "definition": null
+            },
+            {
+                "value": "Rooster",
+                "definition": null
+            },
+            {
+                "value": "Snake",
+                "definition": null
+            },
+            {
+                "value": "Cow",
+                "definition": null
+            },
+            {
+                "value": "Fox",
+                "definition": null
+            },
+            {
+                "value": "Toucan",
+                "definition": null
+            },
+            {
+                "value": "Emu",
+                "definition": null
+            },
+            {
+                "value": "Panda",
+                "definition": null
+            },
+            {
+                "value": "Ostrich",
+                "definition": null
+            },
+            {
+                "value": "Zebra",
+                "definition": null
+            },
+            {
+                "value": "Wolf",
+                "definition": null
+            },
+            {
+                "value": "Polar Bear",
+                "definition": null
+            },
+            {
+                "value": "Hedgehog",
+                "definition": null
+            },
+            {
+                "value": "Porcupine",
+                "definition": null
+            },
+            {
+                "value": "Goose",
+                "definition": null
+            },
+            {
+                "value": "Cheetah",
+                "definition": null
+            },
+            {
+                "value": "Warthog",
+                "definition": null
+            },
+            {
+                "value": "Meerkat",
+                "definition": null
+            },
+            {
+                "value": "Parrot",
+                "definition": null
+            },
+            {
+                "value": "Pelican",
+                "definition": null
+            },
+            {
+                "value": "Tiger",
+                "definition": null
+            },
+            {
+                "value": "Crocodile",
+                "definition": null
+            },
+            {
+                "value": "Seal",
+                "definition": null
+            },
+            {
+                "value": "Penguin",
+                "definition": null
+            },
+            {
+                "value": "Blue Whale",
+                "definition": null
+            },
+            {
+                "value": "Squirrel",
+                "definition": null
+            },
+            {
+                "value": "Camel",
+                "definition": null
+            },
+            {
+                "value": "Donkey",
+                "definition": null
+            },
+            {
+                "value": "Bull",
+                "definition": null
+            },
+            {
+                "value": "Stork",
+                "definition": null
+            },
+            {
+                "value": "Vulture",
+                "definition": null
+            },
+            {
+                "value": "Rhino",
+                "definition": null
+            },
+            {
+                "value": "Leopard",
+                "definition": null
+            },
+            {
+                "value": "Dodo",
+                "definition": null
+            },
+            {
+                "value": "Gorilla",
+                "definition": null
+            },
+            {
+                "value": "Dolphin",
+                "definition": null
+            },
+            {
+                "value": "Sheep",
+                "definition": null
+            },
+            {
+                "value": "Monkey",
+                "definition": null
+            },
+            {
+                "value": "Pig",
+                "definition": null
+            },
+            {
+                "value": "Dog",
+                "definition": null
+            },
+            {
+                "value": "Bird",
+                "definition": null
+            },
+            {
+                "value": "Cat",
+                "definition": null
+            },
+            {
+                "value": "Chimpanzee",
+                "definition": null
+            },
+            {
+                "value": "Duck",
+                "definition": null
+            },
+            {
+                "value": "Fish",
+                "definition": null
+            },
+            {
+                "value": "Frog",
+                "definition": null
+            },
+            {
+                "value": "Grizzly Bear",
+                "definition": null
+            },
+            {
+                "value": "Kangaroo",
+                "definition": null
+            },
+            {
+                "value": "Rabbit",
+                "definition": null
+            },
+            {
+                "value": "Butterfly",
+                "definition": null
+            },
+            {
+                "value": "Owl",
+                "definition": null
+            },
+            {
+                "value": "Seagull",
+                "definition": null
+            },
+            {
+                "value": "Shark",
+                "definition": null
+            }
+        ]
+    },
+    {
+        "language": "en_US",
         "title": "Movies",
         "imagePath": "file:///android_asset/images/movies.jpg",
         "items": [
