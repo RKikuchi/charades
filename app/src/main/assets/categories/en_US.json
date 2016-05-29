@@ -2909,5 +2909,364 @@
                 "definition": null
             }
         ]
+    },
+    {
+        "language": "en_US",
+        "title": "Act it out",
+        "imagePath": "file:///android_asset/images/act-it-out.jpg",
+        "items": [
+            {
+                "value": "Stubbing a toe",
+                "definition": null
+            },
+            {
+                "value": "Eating something gross",
+                "definition": null
+            },
+            {
+                "value": "Having a spider crawling up your leg",
+                "definition": null
+            },
+            {
+                "value": "Winning a race",
+                "definition": null
+            },
+            {
+                "value": "Driving a race car",
+                "definition": null
+            },
+            {
+                "value": "Picking flowers to make a bouquet",
+                "definition": null
+            },
+            {
+                "value": "Rowing a boat in stormy seas",
+                "definition": null
+            },
+            {
+                "value": "Performing surgery on a patient",
+                "definition": null
+            },
+            {
+                "value": "Sculpting a statue",
+                "definition": null
+            },
+            {
+                "value": "Watching a scary movie",
+                "definition": null
+            },
+            {
+                "value": "Having a pleasant picnic",
+                "definition": null
+            },
+            {
+                "value": "Playing a competitive game of chess",
+                "definition": null
+            },
+            {
+                "value": "Chasing a mouse",
+                "definition": null
+            },
+            {
+                "value": "Playing fetch with your dog",
+                "definition": null
+            },
+            {
+                "value": "Trying to feed baby food to a fussy baby",
+                "definition": null
+            },
+            {
+                "value": "Getting a haircut",
+                "definition": null
+            },
+            {
+                "value": "Looking for clues to solve a mystery",
+                "definition": null
+            },
+            {
+                "value": "Looking at fish in the ocean",
+                "definition": null
+            },
+            {
+                "value": "Jumping on a trampoline",
+                "definition": null
+            },
+            {
+                "value": "Dancing a ballet",
+                "definition": null
+            },
+            {
+                "value": "Washing an elephant",
+                "definition": null
+            },
+            {
+                "value": "Rock climbing",
+                "definition": null
+            },
+            {
+                "value": "Shopping at the mall",
+                "definition": null
+            },
+            {
+                "value": "Playing soccer",
+                "definition": null
+            },
+            {
+                "value": "Flying a kite",
+                "definition": null
+            },
+            {
+                "value": "Going bowling",
+                "definition": null
+            },
+            {
+                "value": "Scuba diving",
+                "definition": null
+            },
+            {
+                "value": "Chasing a tornado",
+                "definition": null
+            },
+            {
+                "value": "Building a campfire",
+                "definition": null
+            },
+            {
+                "value": "Sewing a dress",
+                "definition": null
+            },
+            {
+                "value": "Playing four square",
+                "definition": null
+            },
+            {
+                "value": "Filming a movie",
+                "definition": null
+            },
+            {
+                "value": "Riding a carousel",
+                "definition": null
+            },
+            {
+                "value": "Playing chess",
+                "definition": null
+            },
+            {
+                "value": "Finger painting",
+                "definition": null
+            },
+            {
+                "value": "Visiting the zoo",
+                "definition": null
+            },
+            {
+                "value": "Sewing on a button",
+                "definition": null
+            },
+            {
+                "value": "Ironing a shirt",
+                "definition": null
+            },
+            {
+                "value": "Baking bread",
+                "definition": null
+            },
+            {
+                "value": "Making a pizza",
+                "definition": null
+            },
+            {
+                "value": "Having a food fight",
+                "definition": null
+            },
+            {
+                "value": "Paddling in a canoe",
+                "definition": null
+            },
+            {
+                "value": "Delivering mail",
+                "definition": null
+            },
+            {
+                "value": "Riding a motorcycle",
+                "definition": null
+            },
+            {
+                "value": "Flipping pancakes",
+                "definition": null
+            },
+            {
+                "value": "Sorting laundry",
+                "definition": null
+            },
+            {
+                "value": "Playing hopscotch",
+                "definition": null
+            },
+            {
+                "value": "Hailing a taxi",
+                "definition": null
+            },
+            {
+                "value": "Landing an airplane",
+                "definition": null
+            },
+            {
+                "value": "Watering a garden",
+                "definition": null
+            },
+            {
+                "value": "Mowing a lawn",
+                "definition": null
+            },
+            {
+                "value": "Raking leaves",
+                "definition": null
+            },
+            {
+                "value": "Feeding the ducks",
+                "definition": null
+            },
+            {
+                "value": "Building a sandcastle",
+                "definition": null
+            },
+            {
+                "value": "Playing baseball",
+                "definition": null
+            },
+            {
+                "value": "Milking a cow",
+                "definition": null
+            },
+            {
+                "value": "Setting up a tent",
+                "definition": null
+            },
+            {
+                "value": "Whale watching",
+                "definition": null
+            },
+            {
+                "value": "Decorating for a party",
+                "definition": null
+            },
+            {
+                "value": "Trick-or-treating",
+                "definition": null
+            },
+            {
+                "value": "Walking with crutches",
+                "definition": null
+            },
+            {
+                "value": "Riding in a chairlift",
+                "definition": null
+            },
+            {
+                "value": "Sumo wrestling",
+                "definition": null
+            },
+            {
+                "value": "Digging a hole",
+                "definition": null
+            },
+            {
+                "value": "Riding bumper cars",
+                "definition": null
+            },
+            {
+                "value": "Practicing karate",
+                "definition": null
+            },
+            {
+                "value": "Hang-gliding",
+                "definition": null
+            },
+            {
+                "value": "Cutting someone's hair",
+                "definition": null
+            },
+            {
+                "value": "Swimming with dolphins",
+                "definition": null
+            },
+            {
+                "value": "Playing with play dough",
+                "definition": null
+            },
+            {
+                "value": "Going through airport security",
+                "definition": null
+            },
+            {
+                "value": "Filling up a car with gas",
+                "definition": null
+            },
+            {
+                "value": "Ordering food at a restaurant",
+                "definition": null
+            },
+            {
+                "value": "Operating a jackhammer",
+                "definition": null
+            },
+            {
+                "value": "Picking apples from a tree",
+                "definition": null
+            },
+            {
+                "value": "Gathering eggs from a hen house",
+                "definition": null
+            },
+            {
+                "value": "Watching a movie at the theater",
+                "definition": null
+            },
+            {
+                "value": "Climbing Mount Everest",
+                "definition": null
+            },
+            {
+                "value": "Going on an African safari",
+                "definition": null
+            },
+            {
+                "value": "Performing at a rock concert",
+                "definition": null
+            },
+            {
+                "value": "Playing at a piano recital",
+                "definition": null
+            },
+            {
+                "value": "Asking for an autograph",
+                "definition": null
+            },
+            {
+                "value": "Walking through a haunted house",
+                "definition": null
+            },
+            {
+                "value": "Opening birthday presents",
+                "definition": null
+            },
+            {
+                "value": "Body surfing at the beach",
+                "definition": null
+            },
+            {
+                "value": "Painting the walls in a room",
+                "definition": null
+            },
+            {
+                "value": "Being a flight attendant",
+                "definition": null
+            },
+            {
+                "value": "Washing windows on a building",
+                "definition": null
+            }
+        ]
     }
 ]
