@@ -1,6 +1,277 @@
 [
     {
         "language": "pt_BR",
+        "title": "Personagens e pessoas famosas",
+        "imagePath": "file:///android_asset/images/category_popular_characters_and_people.jpg",
+        "items": [
+            {
+                "value": "Gandhi",
+                "definition": "null"
+            },
+            {
+                "value": "Super-Homem",
+                "definition": "null"
+            },
+            {
+                "value": "Mozart",
+                "definition": "null"
+            },
+            {
+                "value": "Gato de Botas",
+                "definition": "null"
+            },
+            {
+                "value": "Papai Smurf",
+                "definition": "null"
+            },
+            {
+                "value": "Houdini",
+                "definition": "null"
+            },
+            {
+                "value": "Hulk",
+                "definition": "null"
+            },
+            {
+                "value": "Thomas Jefferson",
+                "definition": "null"
+            },
+            {
+                "value": "Jô Soares",
+                "definition": "null"
+            },
+            {
+                "value": "Silvio Santos",
+                "definition": "null"
+            },
+            {
+                "value": "Papai Noel",
+                "definition": "null"
+            },
+            {
+                "value": "Santos Dumont",
+                "definition": "null"
+            },
+            {
+                "value": "Vincent Van Gogh",
+                "definition": "null"
+            },
+            {
+                "value": "Iron Man",
+                "definition": "null"
+            },
+            {
+                "value": "Barbie",
+                "definition": "null"
+            },
+            {
+                "value": "Darth Vader",
+                "definition": "null"
+            },
+            {
+                "value": "Pablo Picasso",
+                "definition": "null"
+            },
+            {
+                "value": "Fofão",
+                "definition": "null"
+            },
+            {
+                "value": "Aquiles",
+                "definition": "null"
+            },
+            {
+                "value": "Elvis Presley",
+                "definition": "null"
+            },
+            {
+                "value": "Sigmund Freud",
+                "definition": "null"
+            },
+            {
+                "value": "Rei Arthur",
+                "definition": "null"
+            },
+            {
+                "value": "Voldemort",
+                "definition": "null"
+            },
+            {
+                "value": "Scooby Doo",
+                "definition": "null"
+            },
+            {
+                "value": "Isaac Newton",
+                "definition": "null"
+            },
+            {
+                "value": "The Beatles",
+                "definition": "null"
+            },
+            {
+                "value": "Abraham Lincoln",
+                "definition": "null"
+            },
+            {
+                "value": "Cristóvão Colombo",
+                "definition": "null"
+            },
+            {
+                "value": "Cebolinha",
+                "definition": "null"
+            },
+            {
+                "value": "Mônica",
+                "definition": "null"
+            },
+            {
+                "value": "Cascão",
+                "definition": "null"
+            },
+            {
+                "value": "Magali",
+                "definition": "null"
+            },
+            {
+                "value": "Snoopy",
+                "definition": "null"
+            },
+            {
+                "value": "Shakespeare",
+                "definition": "null"
+            },
+            {
+                "value": "Ursinho Pooh",
+                "definition": "null"
+            },
+            {
+                "value": "Albert Einstein",
+                "definition": "null"
+            },
+            {
+                "value": "Sherlock Holmes",
+                "definition": "null"
+            },
+            {
+                "value": "Homem-Aranha",
+                "definition": "null"
+            },
+            {
+                "value": "Indiana Jones",
+                "definition": "null"
+            },
+            {
+                "value": "Neil Armstrong",
+                "definition": "null"
+            },
+            {
+                "value": "Satan",
+                "definition": "null"
+            },
+            {
+                "value": "Socrates",
+                "definition": "null"
+            },
+            {
+                "value": "Leonardo DiCaprio",
+                "definition": "null"
+            },
+            {
+                "value": "Thomas Edison",
+                "definition": "null"
+            },
+            {
+                "value": "Yoda",
+                "definition": "null"
+            },
+            {
+                "value": "Stephen Hawking",
+                "definition": "null"
+            },
+            {
+                "value": "Popeye",
+                "definition": "null"
+            },
+            {
+                "value": "Bart Simpson",
+                "definition": "null"
+            },
+            {
+                "value": "Coelhinho da Páscoa",
+                "definition": "null"
+            },
+            {
+                "value": "Robin Williams",
+                "definition": "null"
+            },
+            {
+                "value": "Mohammad Ali",
+                "definition": "null"
+            },
+            {
+                "value": "Jack Sparrow",
+                "definition": "null"
+            },
+            {
+                "value": "Michael Jackson",
+                "definition": "null"
+            },
+            {
+                "value": "Bill Gates",
+                "definition": "null"
+            },
+            {
+                "value": "Mulher-Gato",
+                "definition": "null"
+            },
+            {
+                "value": "Britney Spears",
+                "definition": "null"
+            },
+            {
+                "value": "Curupira",
+                "definition": "null"
+            },
+            {
+                "value": "Mulher-Maravilha",
+                "definition": "null"
+            },
+            {
+                "value": "Paris Hilton",
+                "definition": "null"
+            },
+            {
+                "value": "Zé Pequeno",
+                "definition": "null"
+            },
+            {
+                "value": "Rebecca Black",
+                "definition": "null"
+            },
+            {
+                "value": "Justin Bieber",
+                "definition": "null"
+            },
+            {
+                "value": "George Washington",
+                "definition": "null"
+            },
+            {
+                "value": "Homer Simpson",
+                "definition": "null"
+            },
+            {
+                "value": "Chandler Bing",
+                "definition": "null"
+            },
+            {
+                "value": "Frankenstein",
+                "definition": "null"
+            },
+        ]
+    },
+    {
+        "language": "pt_BR",
         "title": "Animais",
         "imagePath": "file:///android_asset/images/animals.jpg",
         "items": [
