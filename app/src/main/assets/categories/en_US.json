@@ -3,6 +3,7 @@
         "language": "en_US",
         "title": "Popular characters and people",
         "imagePath": "file:///android_asset/images/category_popular_characters_and_people.jpg",
+        "tags": ["family"],
         "items": [
             {
                 "value": "Gandhi",
@@ -262,6 +263,7 @@
         "language": "en_US",
         "title": "Animals",
         "imagePath": "file:///android_asset/images/animals.jpg",
+        "tags": ["family"],
         "items": [
             {
                 "value": "Turtle",
@@ -509,6 +511,7 @@
         "language": "en_US",
         "title": "Movies",
         "imagePath": "file:///android_asset/images/movies.jpg",
+        "tags": ["family"],
         "items": [
             {
                 "value": "Spiderman",
@@ -1000,6 +1003,7 @@
         "language": "en_US",
         "title": "Idioms",
         "imagePath": "file:///android_asset/images/idiomatic_expressions.jpg",
+        "tags": ["family"],
         "items": [
             {
                 "value": "A bitter pill",
@@ -1355,6 +1359,7 @@
         "language": "en_US",
         "title": "Countries",
         "imagePath": "file:///android_asset/images/map.jpg",
+        "tags": ["family", "geography"],
         "items": [
             {
                 "value": "Abkhazia",
@@ -2222,6 +2227,7 @@
         "language": "en_US",
         "title": "Summer Olympic Sports",
         "imagePath": "file:///android_asset/images/summer-olympics.jpg",
+        "tags": ["family", "sports"],
         "items": [
             {
                 "value": "Diving",
@@ -2377,6 +2383,7 @@
         "language": "en_US",
         "title": "Winter Olympic Sports",
         "imagePath": "file:///android_asset/images/winter-olympics.jpg",
+        "tags": ["family", "sports"],
         "items": [
             {
                 "value": "Figure skating",
@@ -2444,6 +2451,7 @@
         "language": "en_US",
         "title": "Christmas",
         "imagePath": "file:///android_asset/images/christmas.jpg",
+        "tags": ["family", "holiday"],
         "items": [
             {
                 "value": "Comet the Reindeer",
@@ -2823,6 +2831,7 @@
         "language": "en_US",
         "title": "Easter",
         "imagePath": "file:///android_asset/images/easter.jpg",
+        "tags": ["family", "holiday"],
         "items": [
             {
                 "value": "Bunny",
@@ -2906,6 +2915,7 @@
         "language": "en_US",
         "title": "Act it out",
         "imagePath": "file:///android_asset/images/act-it-out.jpg",
+        "tags": ["family"],
         "items": [
             {
                 "value": "Stubbing a toe",

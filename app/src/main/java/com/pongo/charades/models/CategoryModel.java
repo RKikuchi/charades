@@ -18,6 +18,7 @@ public class CategoryModel extends RealmObject {
     private Boolean isCustom;
     @Required
     private Boolean isHidden;
+    private RealmList<CategoryTagModel> tags;
     private String icon;
     private String imagePath;
     private RealmList<CategoryItemModel> items = new RealmList<>();
@@ -51,6 +52,14 @@ public class CategoryModel extends RealmObject {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public RealmList<CategoryTagModel> getTags() {
+        return tags;
+    }
+
+    public void setTags(RealmList<CategoryTagModel> tags) {
+        this.tags = tags;
     }
 
     public RealmList<CategoryItemModel> getItems() {

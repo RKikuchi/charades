@@ -3,6 +3,7 @@
         "language": "pt_BR",
         "title": "Personagens e pessoas famosas",
         "imagePath": "file:///android_asset/images/category_popular_characters_and_people.jpg",
+        "tags": ["familia"],
         "items": [
             {
                 "value": "Gandhi",
@@ -274,6 +275,7 @@
         "language": "pt_BR",
         "title": "Animais",
         "imagePath": "file:///android_asset/images/animals.jpg",
+        "tags": ["familia"],
         "items": [
             {
                 "value": "Tartaruga",
@@ -585,6 +587,7 @@
         "language": "pt_BR",
         "title": "Expressões Idiomáticas (Brasil)",
         "imagePath": "file:///android_asset/images/idiomatic_expressions.jpg",
+        "tags": ["familia"],
         "items": [
             {
                 "value": "Abandonar o barco",

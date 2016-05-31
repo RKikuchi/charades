@@ -3,6 +3,7 @@
         "language": null,
         "title": "Friends",
         "imagePath": "file:///android_asset/images/friends.jpg",
+        "tags": ["tv"],
         "items": [
             {
                 "value": "Alice Knight Buffay",
@@ -294,6 +295,7 @@
         "language": null,
         "title": "Game of Thrones",
         "imagePath": "file:///android_asset/images/game-of-thrones.jpg",
+        "tags": ["tv"],
         "items": [
             {
                 "value": "Tyrion Lannister",

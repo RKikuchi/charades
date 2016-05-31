@@ -12,10 +12,12 @@ public class CategoryDto {
     public String language;
     public String title;
     public String imagePath;
+    public List<String> tags;
     public List<CategoryItemDto> items;
 
     public static CategoryDto fromModel(CategoryModel model) {
         CategoryDto dto = new CategoryDto();
+        ArrayList<String> tags = new ArrayList<>();
         ArrayList<CategoryItemDto> items = new ArrayList<>();
 
         dto.id = model.getId();
@@ -23,8 +25,12 @@ public class CategoryDto {
         dto.language = model.getLanguage();
         dto.imagePath = model.getImagePath();
         dto.title = model.getTitle();
+        dto.tags = tags;
         dto.items = items;
 
+        for (CategoryTagModel tag : model.getTags()) {
+            dto.tags.add(tag.getValue());
+        }
         for (CategoryItemModel itemModel : model.getItems()) {
             dto.items.add(CategoryItemDto.fromModel(itemModel));
         }
