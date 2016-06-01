@@ -49,27 +49,33 @@
                     app:layout_collapseMode="parallax"
                     app:layout_collapseParallaxMultiplier="0.5">
 
-                    <LinearLayout
-                        android:id="@+id/title_container"
+                    <Button
+                        android:id="@+id/language_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:layout_margin="5dp"
+                        android:padding="10dp"
+                        style="?android:borderlessButtonStyle"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/language_title"
+                        android:drawableLeft="@drawable/ic_language_white_24dp"
+                        android:drawablePadding="10dp"
+                        />
+
+                    <Button
+                        android:id="@+id/how_to_play_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|right"
-                        android:orientation="vertical">
-
-                        <Button
-                            android:id="@+id/how_to_play_button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:padding="10dp"
-                            style="?android:borderlessButtonStyle"
-                            android:textColor="@color/colorWhite"
-                            android:text="@string/how_to_play"
-                            android:drawableLeft="@drawable/ic_help_white_24dp"
-                            android:drawablePadding="10dp"
-                            />
-
-                    </LinearLayout>
+                        android:layout_margin="5dp"
+                        android:padding="10dp"
+                        style="?android:borderlessButtonStyle"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/how_to_play"
+                        android:drawableLeft="@drawable/ic_help_white_24dp"
+                        android:drawablePadding="10dp"
+                        />
 
                 </FrameLayout>
 

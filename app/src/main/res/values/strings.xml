@@ -3,6 +3,7 @@
     <string name="action_show_all_items">Show all items</string>
     <string name="action_sync_online_categories">Sync online categories</string>
     <string name="action_settings">Settings</string>
+    <string name="language_title">English</string>
 
     <string name="open_menu">Open menu</string>
     <string name="close_menu">Close menu</string>
