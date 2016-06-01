@@ -20,7 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -53,7 +53,8 @@ public class MainActivity
 
     private Realm mRealm;
 
-    // Views
+    // Viewsf
+    private Button mLanguageButton;
     private Button mHowToPlayButton;
     private FloatingActionButton mFab;
     private CoordinatorLayout mLayout;
@@ -62,7 +63,7 @@ public class MainActivity
     private AppBarLayout mAppBarLayout;
     private Toolbar mToolbar;
     private TextView mTitle;
-    private LinearLayout mTitleContainer;
+    private FrameLayout mTitleContainer;
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
 
@@ -81,6 +82,13 @@ public class MainActivity
         setToolbarAnimator(mAppBarLayout, mTitle, mToolbar, mTitleContainer);
         setActionBarDrawerToggle();
 
+        mLanguageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
         mHowToPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -175,9 +183,10 @@ public class MainActivity
         mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
         mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         mTitle = (TextView) findViewById(R.id.title);
-        mTitleContainer = (LinearLayout) findViewById(R.id.title_container);
+        mTitleContainer = (FrameLayout) findViewById(R.id.layout_title);
         mTabLayout = (TabLayout) findViewById(R.id.tabs);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        mLanguageButton = (Button) findViewById(R.id.language_button);
         mHowToPlayButton = (Button) findViewById(R.id.how_to_play_button);
         mFab = (FloatingActionButton) findViewById(R.id.create_fab);
     }
