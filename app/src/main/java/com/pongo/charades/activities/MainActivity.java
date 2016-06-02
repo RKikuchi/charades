@@ -30,6 +30,7 @@ import com.pongo.charades.adapters.CategoryCatalogPagerAdapter;
 import com.pongo.charades.async.OnlineCategoriesLoader;
 import com.pongo.charades.models.CategoryDto;
 import com.pongo.charades.models.CategoryModel;
+import com.pongo.charades.models.CategoryTagModel;
 import com.pongo.charades.viewholders.CharadesCellViewHolder;
 
 import java.io.BufferedReader;
@@ -37,11 +38,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class MainActivity
         extends BaseActivity
@@ -52,8 +55,9 @@ public class MainActivity
     public static final String EXTRA_CATEGORY_POSITION = "CATEGORY_POSITION";
 
     private Realm mRealm;
+    private HashSet<String> mTags;
 
-    // Viewsf
+    // Views
     private Button mLanguageButton;
     private Button mHowToPlayButton;
     private FloatingActionButton mFab;
@@ -75,6 +79,7 @@ public class MainActivity
         setContentView(R.layout.activity_main);
 
         mRealm = Realm.getInstance(this);
+        mTags = new HashSet<>();
         setViews();
 
         setSupportActionBar(mToolbar);
@@ -237,6 +242,12 @@ public class MainActivity
     }
 
     private void setup() {
+        RealmResults<CategoryTagModel> tags = mRealm.where(CategoryTagModel.class).findAll();
+        mTags.clear();
+        for (CategoryTagModel tag : tags) {
+            mTags.add(tag.getValue());
+        }
+
         if (mRealm.where(CategoryModel.class).count() == 0) {
             loadHardcodedCategories();
             setDefaultLanguage();
@@ -319,9 +330,7 @@ public class MainActivity
                 .equalTo("isCustom", false)
                 .findAll()
                 .clear();
-        for (CategoryModel category : categories) {
-            mRealm.copyToRealm(category);
-        }
+        mRealm.copyToRealmOrUpdate(categories);
         mRealm.commitTransaction();
         mAdapter.reload();
         mAdapter.notifyDataSetChanged();
