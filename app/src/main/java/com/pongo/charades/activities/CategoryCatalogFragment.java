@@ -23,16 +23,20 @@ import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.models.CategoryModelHolder;
 import com.pongo.charades.viewholders.CharadesCellViewHolder;
 
+import java.util.ArrayList;
+
 import io.realm.Realm;
 
 public class CategoryCatalogFragment extends Fragment {
     private static final String ARG_FILTER_TYPE = "ARG_FILTER_TYPE";
+    private static final String ARG_TAGS = "ARG_TAGS";
     public static final int FILTER_MAIN = 1;
     public static final int FILTER_FAVORITES = 2;
     public static final int FILTER_FAMILY = 3;
     public static final int FILTER_HIDDEN = 4;
 
     private int mFilterType;
+    private ArrayList<String> mTags;
 
     private Realm mRealm;
     private CategoryCatalogListener mListener;
@@ -44,10 +48,11 @@ public class CategoryCatalogFragment extends Fragment {
 
     public CategoryCatalogFragment() {}
 
-    public static CategoryCatalogFragment newInstance(int filterType) {
+    public static CategoryCatalogFragment newInstance(int filterType, ArrayList<String> tags) {
         CategoryCatalogFragment fragment = new CategoryCatalogFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_FILTER_TYPE, filterType);
+        args.putStringArrayList(ARG_TAGS, tags);
         fragment.setArguments(args);
         return fragment;
     }
@@ -60,6 +65,7 @@ public class CategoryCatalogFragment extends Fragment {
             mFilterType = getArguments().getInt(ARG_FILTER_TYPE);
             if (mAdapter != null)
                 mAdapter.setFilter(mFilterType);
+            mTags = getArguments().getStringArrayList(ARG_TAGS);
         }
     }
 
@@ -250,6 +256,10 @@ public class CategoryCatalogFragment extends Fragment {
             mAdapter.reload();
             mAdapter.notifyDataSetChanged();
         }
+    }
+
+    public ArrayList<String> getTags() {
+        return mTags;
     }
 
     public interface CategoryCatalogListener {
