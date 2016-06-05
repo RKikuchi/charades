@@ -1,5 +1,6 @@
 package com.pongo.charades.adapters;
 
+import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,7 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
     final private LayoutInflater mLayoutInflater;
     private ArrayList<CategoryModelHolder> mItems;
     private int mFilter = CategoryCatalogFragment.FILTER_MAIN;
+    private String mLanguage;
 
     public CharadesRecyclerViewAdapter(CategoryCatalogFragment parent) {
         mParent = parent;
@@ -80,8 +82,19 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
     }
 
     public void reload() {
+        mLanguage = PreferenceManager
+                .getDefaultSharedPreferences(mParent.getContext())
+                .getString(mParent.getString(R.string.pref_key_language), null);
         mItems = new ArrayList<>();
+
         RealmQuery<CategoryModel> query = mRealm.where(CategoryModel.class);
+        if (mLanguage != null) {
+            query.beginGroup()
+                    .isNull("language")
+                    .or()
+                    .equalTo("language", mLanguage);
+            query.endGroup();
+        }
         switch (mFilter) {
             case CategoryCatalogFragment.FILTER_MAIN:
                 query = query.equalTo("isHidden", false);
