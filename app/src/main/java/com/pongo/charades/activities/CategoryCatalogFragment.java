@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -37,6 +38,7 @@ public class CategoryCatalogFragment extends Fragment {
 
     private int mFilterType;
     private ArrayList<String> mTags;
+    private String mLanguage;
 
     private Realm mRealm;
     private CategoryCatalogListener mListener;
@@ -66,6 +68,19 @@ public class CategoryCatalogFragment extends Fragment {
             if (mAdapter != null)
                 mAdapter.setFilter(mFilterType);
             mTags = getArguments().getStringArrayList(ARG_TAGS);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        String lastLanguage = mLanguage;
+        mLanguage = PreferenceManager
+                .getDefaultSharedPreferences(getContext())
+                .getString(getString(R.string.pref_key_language), null);
+        if (lastLanguage != null && mLanguage != lastLanguage) {
+            mAdapter.reload();
+            mAdapter.notifyDataSetChanged();
         }
     }
 
