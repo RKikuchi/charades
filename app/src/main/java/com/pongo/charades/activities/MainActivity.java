@@ -137,6 +137,22 @@ public class MainActivity
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String language = PreferenceManager
+                .getDefaultSharedPreferences(this)
+                .getString(getString(R.string.pref_key_language), null);
+        if (language != null) {
+            String[] parts = language.split("_");
+            String lang = parts.length > 0 ? parts[0] : "";
+            String country = parts.length > 1 ? parts[1] : "";
+            String variant = parts.length > 2 ? parts[2] : "";
+            Locale locale = new Locale(lang, country, variant);
+            mLanguageButton.setText(locale.getDisplayLanguage(locale));
+        }
+    }
+
     private void setActionBarDrawerToggle() {
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,
