@@ -378,4 +378,14 @@ public class MainActivity
                 .setActionTextColor(ContextCompat.getColor(this, R.color.colorWarning))
                 .show();
     }
+
+    @Override
+    public void onCategoryFavorited(CategoryCatalogFragment fragment, int position) {
+        mAdapter.itemFavorited(fragment, position);
+    }
+
+    @Override
+    public void onCategoryUnfavorited(CategoryCatalogFragment fragment, int position) {
+        mAdapter.itemUnfavorited(fragment, position);
+    }
 }

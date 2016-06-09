@@ -198,6 +198,23 @@ public class CategoryCatalogFragment extends Fragment {
         mRealm.commitTransaction();
     }
 
+    public void favoriteCategory(final CharadesCellViewHolder holder) {
+        final CategoryModel category = holder.getCategory();
+        final int position = holder.getAdapterPosition();
+
+        mRealm.beginTransaction();
+        category.setIsFavorite(!category.getIsFavorite());
+        mRealm.copyToRealmOrUpdate(category);
+        mRealm.commitTransaction();
+
+        if (mListener != null) {
+            if (category.getIsFavorite())
+                mListener.onCategoryFavorited(this, position);
+            else
+                mListener.onCategoryUnfavorited(this, position);
+        }
+    }
+
     public void playCategory(CharadesCellViewHolder holder) {
         Intent intent = new Intent(getContext(), GameRoundActivity.class);
         intent.putExtra(GameRoundActivity.CATEGORY_ID, holder.getCategory().getId());
@@ -273,6 +290,27 @@ public class CategoryCatalogFragment extends Fragment {
         }
     }
 
+    public void itemFavorited(int pos, boolean isSourceFragment) {
+        if (mAdapter == null) return;
+
+        if (mFilterType == FILTER_FAVORITES)
+            reload();
+        else if (isSourceFragment)
+            mAdapter.notifyItemChanged(pos);
+    }
+
+    public void itemUnfavorited(int pos, boolean isSourceFragment){
+        if (mAdapter == null) return;
+
+        if (mFilterType == FILTER_FAVORITES) {
+            if (isSourceFragment)
+                mAdapter.remove(pos);
+            else
+                reload();
+        } else if (isSourceFragment)
+            mAdapter.notifyItemChanged(pos);
+    }
+
     public ArrayList<String> getTags() {
         return mTags;
     }
@@ -282,5 +320,9 @@ public class CategoryCatalogFragment extends Fragment {
         void onCategoryHidden(final CategoryCatalogFragment fragment,
                               final int position,
                               final CharadesCellViewHolder holder);
+        void onCategoryFavorited(final CategoryCatalogFragment fragment,
+                                 final int position);
+        void onCategoryUnfavorited(final CategoryCatalogFragment fragment,
+                                   final int position);
     }
 }

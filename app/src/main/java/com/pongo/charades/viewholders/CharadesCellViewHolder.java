@@ -126,6 +126,10 @@ public class CharadesCellViewHolder extends RecyclerView.ViewHolder {
         return mEditButton;
     }
 
+    public View getFavoriteButton() {
+        return mFavoriteButton;
+    }
+
     public View getUnhideButton() {
         return mUnhideButton;
     }

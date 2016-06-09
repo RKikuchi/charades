@@ -18,6 +18,8 @@ public class CategoryModel extends RealmObject {
     private Boolean isCustom;
     @Required
     private Boolean isHidden;
+    @Required
+    private Boolean isFavorite;
     private String icon;
     private String imagePath;
     private RealmList<CategoryTagModel> tags = new RealmList<>();
@@ -27,6 +29,7 @@ public class CategoryModel extends RealmObject {
         CategoryModel model = new CategoryModel();
         model.setIsCustom(false);
         model.setIsHidden(false);
+        model.setIsFavorite(false);
         model.setId(dto.id);
         model.setTitle(dto.title);
         model.setLanguage(dto.language);
@@ -88,6 +91,14 @@ public class CategoryModel extends RealmObject {
 
     public void setIsHidden(Boolean hidden) {
         isHidden = hidden;
+    }
+
+    public Boolean getIsFavorite() {
+        return isFavorite;
+    }
+
+    public void setIsFavorite(Boolean favorite) {
+        isFavorite = favorite;
     }
 
     public String getIcon() {

@@ -49,4 +49,16 @@ public class CategoryCatalogPagerAdapter extends FragmentPagerAdapter {
             f.reload();
         }
     }
+
+    public void itemFavorited(CategoryCatalogFragment fragment, int position) {
+        for (CategoryCatalogFragment f : mFragments) {
+            f.itemFavorited(position, f == fragment);
+        }
+    }
+
+    public void itemUnfavorited(CategoryCatalogFragment fragment, int position) {
+        for (CategoryCatalogFragment f : mFragments) {
+            f.itemUnfavorited(position, f == fragment);
+        }
+    }
 }

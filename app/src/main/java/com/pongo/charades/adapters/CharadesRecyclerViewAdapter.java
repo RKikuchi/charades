@@ -54,6 +54,12 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
                 mParent.manageCategory(holder);
             }
         });
+        holder.getFavoriteButton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mParent.favoriteCategory(holder);
+            }
+        });
         holder.getUnhideButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +105,9 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
             case CategoryCatalogFragment.FILTER_MAIN:
                 query = query.equalTo("isHidden", false);
                 break;
+            case CategoryCatalogFragment.FILTER_FAVORITES:
+                query = query.equalTo("isFavorite", true);
+                break;
             case CategoryCatalogFragment.FILTER_HIDDEN:
             case CategoryCatalogFragment.FILTER_FAMILY:
                 query = query.equalTo("isHidden", true);
@@ -128,5 +137,13 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
     public void remove(int position) {
         mItems.remove(position);
         notifyItemRemoved(position);
+    }
+
+    public void notifyItemFavorited(int position, CharadesCellViewHolder holder) {
+        
+    }
+
+    public void notifyItemUnfavorited(int position, CharadesCellViewHolder holder) {
+
     }
 }
