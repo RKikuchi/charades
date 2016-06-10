@@ -138,12 +138,4 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
         mItems.remove(position);
         notifyItemRemoved(position);
     }
-
-    public void notifyItemFavorited(int position, CharadesCellViewHolder holder) {
-        
-    }
-
-    public void notifyItemUnfavorited(int position, CharadesCellViewHolder holder) {
-
-    }
 }

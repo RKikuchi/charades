@@ -115,14 +115,12 @@ public class MainActivity
         mAdapter = new CategoryCatalogPagerAdapter(getSupportFragmentManager());
         mAdapter.addFragment(CategoryCatalogFragment.FILTER_MAIN);
         mAdapter.addFragment(CategoryCatalogFragment.FILTER_FAVORITES);
-        mAdapter.addFragment(CategoryCatalogFragment.FILTER_HIDDEN);
         mViewPager.setAdapter(mAdapter);
 
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setSelectedTabIndicatorColor(ContextCompat.getColor(this, R.color.colorWhite));
         mTabLayout.getTabAt(0).setText(R.string.main_categories);
         mTabLayout.getTabAt(1).setText(R.string.favorites);
-        mTabLayout.getTabAt(2).setText(R.string.hidden);
     }
 
     @Override
