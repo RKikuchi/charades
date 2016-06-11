@@ -59,6 +59,12 @@ public class CategoryCatalogFragment extends Fragment {
         return fragment;
     }
 
+    public void setup(int filterType, ArrayList<String> tags) {
+        mFilterType = filterType;
+        mTags = tags;
+        onResume();
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

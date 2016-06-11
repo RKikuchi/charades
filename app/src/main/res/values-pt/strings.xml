@@ -4,6 +4,7 @@
     <string name="action_sync_online_categories">Sincronizar conteúdo online</string>
     <string name="action_settings">Configurações</string>
     <string name="language_title">Português</string>
+    <string name="categories">Categorias</string>
 
     <string name="open_menu">Abrir menu</string>
     <string name="close_menu">Fechar menu</string>

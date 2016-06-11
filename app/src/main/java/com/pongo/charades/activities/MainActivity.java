@@ -179,9 +179,9 @@ public class MainActivity
                         mDrawerLayout.closeDrawers();
                         return true;
                     case R.id.item_hidden:
-                        mTabLayout.getTabAt(2).select();
-                        mDrawerLayout.closeDrawers();
-                        return true;
+                        intent = new Intent(activity, CategoryListActivity.class);
+                        startActivity(intent);
+                        return false;
                     case R.id.item_settings:
                         intent = new Intent(activity, SettingsActivity.class);
                         startActivity(intent);
