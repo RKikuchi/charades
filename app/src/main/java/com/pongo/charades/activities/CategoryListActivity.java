@@ -11,6 +11,10 @@ public class CategoryListActivity
         extends AppCompatActivity
         implements CategoryCatalogFragment.CategoryCatalogListener {
 
+    public static final String LIST_NAME = "LIST_NAME";
+    public static final String FILTER = "FILTER";
+    public static final String TAGS = "TAGS";
+
     private CategoryCatalogFragment mFragment;
 
     @Override
@@ -21,7 +25,16 @@ public class CategoryListActivity
 
         mFragment = (CategoryCatalogFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.catalog_fragment);
-        mFragment.setup(CategoryCatalogFragment.FILTER_MAIN, null);
+
+        setupList();
+    }
+
+    private void setupList() {
+        Bundle extras = getIntent().getExtras();
+        getSupportActionBar().setTitle(extras.getString(LIST_NAME));
+        mFragment.setup(
+                extras.getInt(FILTER),
+                extras.getStringArrayList(TAGS));
     }
 
     @Override

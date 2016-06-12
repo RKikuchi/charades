@@ -180,6 +180,8 @@ public class MainActivity
                         return true;
                     case R.id.item_hidden:
                         intent = new Intent(activity, CategoryListActivity.class);
+                        intent.putExtra(CategoryListActivity.LIST_NAME, getString(R.string.hidden));
+                        intent.putExtra(CategoryListActivity.FILTER, CategoryCatalogFragment.FILTER_HIDDEN);
                         startActivity(intent);
                         return false;
                     case R.id.item_settings:
