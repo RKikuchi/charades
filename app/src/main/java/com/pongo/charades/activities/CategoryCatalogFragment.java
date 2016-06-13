@@ -215,9 +215,9 @@ public class CategoryCatalogFragment extends Fragment {
 
         if (mListener != null) {
             if (category.getIsFavorite())
-                mListener.onCategoryFavorited(this, position);
+                mListener.onCategoryFavorited(this, position, holder);
             else
-                mListener.onCategoryUnfavorited(this, position);
+                mListener.onCategoryUnfavorited(this, position, holder);
         }
     }
 
@@ -313,8 +313,9 @@ public class CategoryCatalogFragment extends Fragment {
                 mAdapter.remove(pos);
             else
                 reload();
-        } else if (isSourceFragment)
+        } else if (isSourceFragment) {
             mAdapter.notifyItemChanged(pos);
+        }
     }
 
     public ArrayList<String> getTags() {
@@ -327,8 +328,10 @@ public class CategoryCatalogFragment extends Fragment {
                               final int position,
                               final CharadesCellViewHolder holder);
         void onCategoryFavorited(final CategoryCatalogFragment fragment,
-                                 final int position);
+                                 final int position,
+                                 final CharadesCellViewHolder holder);
         void onCategoryUnfavorited(final CategoryCatalogFragment fragment,
-                                   final int position);
+                                   final int position,
+                                   final CharadesCellViewHolder holder);
     }
 }

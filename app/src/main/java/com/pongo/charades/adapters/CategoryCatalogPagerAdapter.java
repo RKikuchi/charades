@@ -52,13 +52,13 @@ public class CategoryCatalogPagerAdapter extends FragmentPagerAdapter {
 
     public void itemFavorited(CategoryCatalogFragment fragment, int position) {
         for (CategoryCatalogFragment f : mFragments) {
-            f.itemFavorited(position, f == fragment);
+            f.itemFavorited(position, f.equals(fragment));
         }
     }
 
     public void itemUnfavorited(CategoryCatalogFragment fragment, int position) {
         for (CategoryCatalogFragment f : mFragments) {
-            f.itemUnfavorited(position, f == fragment);
+            f.itemUnfavorited(position, f.equals(fragment));
         }
     }
 }

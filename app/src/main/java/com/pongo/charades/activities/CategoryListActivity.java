@@ -58,12 +58,12 @@ public class CategoryListActivity
     }
 
     @Override
-    public void onCategoryFavorited(CategoryCatalogFragment fragment, int position) {
+    public void onCategoryFavorited(CategoryCatalogFragment fragment, int position, CharadesCellViewHolder holder) {
         // TODO
     }
 
     @Override
-    public void onCategoryUnfavorited(CategoryCatalogFragment fragment, int position) {
+    public void onCategoryUnfavorited(CategoryCatalogFragment fragment, int position, CharadesCellViewHolder holder) {
         // TODO
     }
 }

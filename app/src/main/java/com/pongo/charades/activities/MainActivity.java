@@ -380,12 +380,36 @@ public class MainActivity
     }
 
     @Override
-    public void onCategoryFavorited(CategoryCatalogFragment fragment, int position) {
+    public void onCategoryFavorited(final CategoryCatalogFragment fragment,
+                                    final int position,
+                                    final CharadesCellViewHolder holder) {
+        String title = holder.getCategory().getTitle();
         mAdapter.itemFavorited(fragment, position);
+        Snackbar.make(mLayout, "Category \"" + title + "\" favorited.", Snackbar.LENGTH_LONG)
+                .setAction("Undo", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        fragment.favoriteCategory(holder);
+                    }
+                })
+                .setActionTextColor(ContextCompat.getColor(this, R.color.colorWarning))
+                .show();
     }
 
     @Override
-    public void onCategoryUnfavorited(CategoryCatalogFragment fragment, int position) {
+    public void onCategoryUnfavorited(final CategoryCatalogFragment fragment,
+                                      final int position,
+                                      final CharadesCellViewHolder holder) {
+        String title = holder.getCategory().getTitle();
         mAdapter.itemUnfavorited(fragment, position);
+        Snackbar.make(mLayout, "Category \"" + title + "\" unfavorited.", Snackbar.LENGTH_LONG)
+                .setAction("Undo", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        fragment.favoriteCategory(holder);
+                    }
+                })
+                .setActionTextColor(ContextCompat.getColor(this, R.color.colorWarning))
+                .show();
     }
 }
