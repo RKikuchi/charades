@@ -62,7 +62,9 @@ public class CategoryCatalogFragment extends Fragment {
     public void setup(int filterType, ArrayList<String> tags) {
         mFilterType = filterType;
         mTags = tags;
-        onResume();
+        mAdapter.setFilter(mFilterType);
+        mAdapter.reload();
+        mAdapter.notifyDataSetChanged();
     }
 
     @Override
