@@ -53,6 +53,16 @@ public class CategoryListActivity
     }
 
     @Override
+    public void onCategoryAttached(CategoryCatalogFragment fragment) {
+        // TODO
+    }
+
+    @Override
+    public void onCategoryDetached(CategoryCatalogFragment fragment) {
+        // TODO
+    }
+
+    @Override
     public void onCategoryHidden(CategoryCatalogFragment fragment, int position, CharadesCellViewHolder holder) {
         // TODO
     }

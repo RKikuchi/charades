@@ -145,6 +145,7 @@ public class CategoryCatalogFragment extends Fragment {
         super.onAttach(context);
         if (context instanceof CategoryCatalogListener) {
             mListener = (CategoryCatalogListener) context;
+            mListener.onCategoryAttached(this);
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement CategoryCatalogListener");
@@ -154,6 +155,8 @@ public class CategoryCatalogFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
+        if (mListener != null)
+            mListener.onCategoryDetached(this);
         mListener = null;
     }
 
@@ -324,8 +327,27 @@ public class CategoryCatalogFragment extends Fragment {
         return mTags;
     }
 
+    public boolean isSameAs(CategoryCatalogFragment o) {
+        return mFilterType == o.mFilterType &&
+                mLanguage == o.mLanguage &&
+                areTagsEqual(mTags, o.mTags);
+    }
+
+    private boolean areTagsEqual(ArrayList<String> a, ArrayList<String> b) {
+        if (a == null) return b == null;
+        if (b == null) return false;
+        if (a.size() != b.size()) return false;
+        for (int i = 0; i < a.size(); i++) {
+            if (a.get(i) != b.get(i)) return false;
+        }
+        return true;
+    }
+
+
     public interface CategoryCatalogListener {
         void onCategorySelected(String categoryName);
+        void onCategoryAttached(final CategoryCatalogFragment fragment);
+        void onCategoryDetached(final CategoryCatalogFragment fragment);
         void onCategoryHidden(final CategoryCatalogFragment fragment,
                               final int position,
                               final CharadesCellViewHolder holder);
