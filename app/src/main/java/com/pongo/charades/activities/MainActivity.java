@@ -16,6 +16,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -360,6 +361,18 @@ public class MainActivity
     @Override
     public void onCategorySelected(String categoryName) {
         //TODO
+    }
+
+    @Override
+    public void onCategoryAttached(CategoryCatalogFragment fragment) {
+        Log.d("test", "Attaching " + fragment.getId());
+        //mAdapter.addFragment(fragment);
+    }
+
+    @Override
+    public void onCategoryDetached(CategoryCatalogFragment fragment) {
+        Log.d("test", "Detaching " + fragment.getId());
+        //mAdapter.addFragment(fragment);
     }
 
     @Override
