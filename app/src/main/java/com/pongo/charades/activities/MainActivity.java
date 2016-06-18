@@ -16,7 +16,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -57,6 +56,7 @@ public class MainActivity
 
     private Realm mRealm;
     private HashSet<String> mTags;
+    private HashSet<CategoryCatalogFragment> mFragments = new HashSet<>();
 
     // Views
     private Button mLanguageButton;
@@ -365,14 +365,12 @@ public class MainActivity
 
     @Override
     public void onCategoryAttached(CategoryCatalogFragment fragment) {
-        Log.d("test", "Attaching " + fragment.getId());
-        //mAdapter.addFragment(fragment);
+        mFragments.add(fragment);
     }
 
     @Override
     public void onCategoryDetached(CategoryCatalogFragment fragment) {
-        Log.d("test", "Detaching " + fragment.getId());
-        //mAdapter.addFragment(fragment);
+        mFragments.remove(fragment);
     }
 
     @Override
@@ -396,8 +394,11 @@ public class MainActivity
     public void onCategoryFavorited(final CategoryCatalogFragment fragment,
                                     final int position,
                                     final CharadesCellViewHolder holder) {
+        for (CategoryCatalogFragment f : mFragments) {
+            f.itemFavorited(position, f.isSameAs(fragment));
+        }
+
         String title = holder.getCategory().getTitle();
-        mAdapter.itemFavorited(fragment, position);
         Snackbar.make(mLayout, "Category \"" + title + "\" favorited.", Snackbar.LENGTH_LONG)
                 .setAction("Undo", new View.OnClickListener() {
                     @Override
@@ -413,8 +414,11 @@ public class MainActivity
     public void onCategoryUnfavorited(final CategoryCatalogFragment fragment,
                                       final int position,
                                       final CharadesCellViewHolder holder) {
+        for (CategoryCatalogFragment f : mFragments) {
+            f.itemUnfavorited(position, f.isSameAs(fragment));
+        }
+
         String title = holder.getCategory().getTitle();
-        mAdapter.itemUnfavorited(fragment, position);
         Snackbar.make(mLayout, "Category \"" + title + "\" unfavorited.", Snackbar.LENGTH_LONG)
                 .setAction("Undo", new View.OnClickListener() {
                     @Override
