@@ -359,11 +359,6 @@ public class MainActivity
     }
 
     @Override
-    public void onCategorySelected(String categoryName) {
-        //TODO
-    }
-
-    @Override
     public void onCategoryAttached(CategoryCatalogFragment fragment) {
         mFragments.add(fragment);
     }

@@ -134,12 +134,6 @@ public class CategoryCatalogFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_category_catalog, container, false);
     }
 
-    public void onCategorySelected(String categoryName) {
-        if (mListener != null) {
-            mListener.onCategorySelected(categoryName);
-        }
-    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -343,9 +337,7 @@ public class CategoryCatalogFragment extends Fragment {
         return true;
     }
 
-
     public interface CategoryCatalogListener {
-        void onCategorySelected(String categoryName);
         void onCategoryAttached(final CategoryCatalogFragment fragment);
         void onCategoryDetached(final CategoryCatalogFragment fragment);
         void onCategoryHidden(final CategoryCatalogFragment fragment,
