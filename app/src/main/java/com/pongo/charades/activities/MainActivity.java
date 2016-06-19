@@ -390,7 +390,7 @@ public class MainActivity
                                     final int position,
                                     final CharadesCellViewHolder holder) {
         for (CategoryCatalogFragment f : mFragments) {
-            f.itemFavorited(position, f.isSameAs(fragment));
+            f.itemFavorited(position, f == fragment);
         }
 
         String title = holder.getCategory().getTitle();
@@ -410,7 +410,7 @@ public class MainActivity
                                       final int position,
                                       final CharadesCellViewHolder holder) {
         for (CategoryCatalogFragment f : mFragments) {
-            f.itemUnfavorited(position, f.isSameAs(fragment));
+            f.itemUnfavorited(position, f == fragment);
         }
 
         String title = holder.getCategory().getTitle();

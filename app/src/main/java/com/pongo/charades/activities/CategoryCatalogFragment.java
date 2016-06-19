@@ -321,22 +321,6 @@ public class CategoryCatalogFragment extends Fragment {
         return mTags;
     }
 
-    public boolean isSameAs(CategoryCatalogFragment o) {
-        return mFilterType == o.mFilterType &&
-                mLanguage == o.mLanguage &&
-                areTagsEqual(mTags, o.mTags);
-    }
-
-    private boolean areTagsEqual(ArrayList<String> a, ArrayList<String> b) {
-        if (a == null) return b == null;
-        if (b == null) return false;
-        if (a.size() != b.size()) return false;
-        for (int i = 0; i < a.size(); i++) {
-            if (a.get(i) != b.get(i)) return false;
-        }
-        return true;
-    }
-
     public interface CategoryCatalogListener {
         void onCategoryAttached(final CategoryCatalogFragment fragment);
         void onCategoryDetached(final CategoryCatalogFragment fragment);
