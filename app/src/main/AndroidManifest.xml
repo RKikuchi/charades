@@ -48,6 +48,11 @@
             android:name=".activities.HowToPlayActivity"
             android:label="@string/how_to_play"
             />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="c4cf0a717aad7741ed91ec60f7cd885f9916bf63"
+            />
     </application>
 
 </manifest>
