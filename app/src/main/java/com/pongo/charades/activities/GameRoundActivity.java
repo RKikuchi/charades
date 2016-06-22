@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -127,6 +127,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
         mTopBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                confirmFinish();
             }
         });
 
@@ -276,6 +277,7 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
     }
 
     private void hideUi() {
+        getSupportActionBar().hide();
         mLayout.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
                 | View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -384,5 +386,25 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
                 mSoundService.playStart();
             }
         }.start();
+    }
+
+    private void confirmFinish() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Closing Activity")
+                .setMessage("Are you sure you want to close this activity?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        hideUi();
+                    }
+                })
+                .show();
     }
 }
