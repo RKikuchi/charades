@@ -5,6 +5,10 @@
     <string name="action_settings">Configurações</string>
     <string name="language_title">Português</string>
     <string name="categories">Categorias</string>
+    <string name="closing_activity">Fechar Atividade</string>
+    <string name="close_activity_confirmation">Tem certeza que deseja fechar esta atividade?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
 
     <string name="open_menu">Abrir menu</string>
     <string name="close_menu">Fechar menu</string>
