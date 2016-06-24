@@ -2,6 +2,7 @@ package com.pongo.charades.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -97,7 +98,11 @@ public class CategoryCatalogFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mRecyclerView = (RecyclerView) getView().findViewById(R.id.charades_recycler_view);
 
-        mLayoutManager = new GridLayoutManager(getContext(), 2);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            mLayoutManager = new GridLayoutManager(getContext(), 3);
+        } else {
+            mLayoutManager = new GridLayoutManager(getContext(), 2);
+        }
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setHasFixedSize(true);
 
