@@ -34,8 +34,12 @@
             android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".activities.CategoryListActivity"
-            android:label="@string/categories"
-            />
+            android:label="@string/categories">
+            <action android:name="android.intent.action.SEARCH" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
         <activity
             android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -46,13 +50,12 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activities.HowToPlayActivity"
-            android:label="@string/how_to_play"
-            />
+            android:label="@string/how_to_play" />
 
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="c4cf0a717aad7741ed91ec60f7cd885f9916bf63"
-            />
+            android:value="c4cf0a717aad7741ed91ec60f7cd885f9916bf63" />
+
     </application>
 
 </manifest>

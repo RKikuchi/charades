@@ -36,6 +36,7 @@ public class CategoryCatalogFragment extends Fragment {
     public static final int FILTER_FAVORITES = 2;
     public static final int FILTER_FAMILY = 3;
     public static final int FILTER_HIDDEN = 4;
+    public static final int FILTER_SEARCH = 5;
 
     private int mFilterType;
     private ArrayList<String> mTags;

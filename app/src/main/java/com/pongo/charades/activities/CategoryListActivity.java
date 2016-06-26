@@ -1,11 +1,16 @@
 package com.pongo.charades.activities;
 
+import android.app.SearchManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.pongo.charades.R;
 import com.pongo.charades.viewholders.CharadesCellViewHolder;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CategoryListActivity
         extends AppCompatActivity
@@ -30,11 +35,19 @@ public class CategoryListActivity
     }
 
     private void setupList() {
-        Bundle extras = getIntent().getExtras();
-        getSupportActionBar().setTitle(extras.getString(LIST_NAME));
-        mFragment.setup(
-                extras.getInt(FILTER),
-                extras.getStringArrayList(TAGS));
+        Intent intent = getIntent();
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            mFragment.setup(
+                    CategoryCatalogFragment.FILTER_SEARCH,
+                    new ArrayList<>(Arrays.asList(query)));
+        } else {
+            Bundle extras = intent.getExtras();
+            getSupportActionBar().setTitle(extras.getString(LIST_NAME));
+            mFragment.setup(
+                    extras.getInt(FILTER),
+                    extras.getStringArrayList(TAGS));
+        }
     }
 
     @Override

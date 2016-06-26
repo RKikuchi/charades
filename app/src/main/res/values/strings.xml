@@ -10,6 +10,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="search">Search</string>
+    <string name="search_hint">Search categories</string>
 
     <string name="open_menu">Open menu</string>
     <string name="close_menu">Close menu</string>
