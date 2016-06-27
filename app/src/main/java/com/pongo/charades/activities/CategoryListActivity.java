@@ -31,11 +31,16 @@ public class CategoryListActivity
         mFragment = (CategoryCatalogFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.catalog_fragment);
 
-        setupList();
+        setupList(getIntent());
     }
 
-    private void setupList() {
-        Intent intent = getIntent();
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setupList(intent);
+    }
+
+    private void setupList(Intent intent) {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
             mFragment.setup(
