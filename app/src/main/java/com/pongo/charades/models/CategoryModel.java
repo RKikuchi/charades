@@ -38,9 +38,9 @@ public class CategoryModel extends RealmObject {
             if (tag == null || tag.trim() == "") continue;
             model.getTags().add(new CategoryTagModel(tag));
         }
-        for (CategoryItemDto itemDto : dto.items) {
-            if (itemDto.value == null || itemDto.value.trim() == "") continue;
-            model.getItems().add(new CategoryItemModel(itemDto.value, itemDto.definition));
+        for (String item : dto.items) {
+            if (item == null || item.trim() == "") continue;
+            model.getItems().add(new CategoryItemModel(item));
         }
         return model;
     }

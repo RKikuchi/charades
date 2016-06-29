@@ -23,7 +23,6 @@ import android.widget.TextView;
 import com.pongo.charades.R;
 import com.pongo.charades.adapters.CategoryItemsRecyclerViewAdapter;
 import com.pongo.charades.models.CategoryDto;
-import com.pongo.charades.models.CategoryItemDto;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.modules.FontAwesomeProvider;
 import com.pongo.charades.services.PicturePickerService;
@@ -92,8 +91,7 @@ public class ManageCategoryActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 final int lastPos = mCategory.items.size();
-                CategoryItemDto newItem = new CategoryItemDto();
-                mCategory.items.add(newItem);
+                mCategory.items.add("");
                 mAdapter.notifyItemInserted(lastPos);
 
                 mRecyclerView.post(new Runnable() {
@@ -178,7 +176,7 @@ public class ManageCategoryActivity extends BaseActivity {
         if (categoryId == -1) {
             mCategory = new CategoryDto();
             mCategory.items = new ArrayList<>();
-            mCategory.items.add(new CategoryItemDto());
+            mCategory.items.add("");
             return false;
         }
 

@@ -13,12 +13,12 @@ public class CategoryDto {
     public String title;
     public String imagePath;
     public List<String> tags;
-    public List<CategoryItemDto> items;
+    public List<String> items;
 
     public static CategoryDto fromModel(CategoryModel model) {
         CategoryDto dto = new CategoryDto();
         ArrayList<String> tags = new ArrayList<>();
-        ArrayList<CategoryItemDto> items = new ArrayList<>();
+        ArrayList<String> items = new ArrayList<>();
 
         dto.id = model.getId();
         dto.icon = model.getIcon();
@@ -32,7 +32,7 @@ public class CategoryDto {
             dto.tags.add(tag.getValue());
         }
         for (CategoryItemModel itemModel : model.getItems()) {
-            dto.items.add(CategoryItemDto.fromModel(itemModel));
+            dto.items.add(itemModel.getValue());
         }
         return dto;
     }

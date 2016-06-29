@@ -9,13 +9,11 @@ import io.realm.annotations.Required;
 public class CategoryItemModel extends RealmObject {
     @Required
     private String value;
-    private String definition;
 
     public CategoryItemModel() {}
 
-    public CategoryItemModel(String value, String definition) {
+    public CategoryItemModel(String value) {
         this.value = value;
-        this.definition = definition;
     }
 
     public String getValue() {
@@ -24,13 +22,5 @@ public class CategoryItemModel extends RealmObject {
 
     public void setValue(String value) {
         this.value = value;
-    }
-
-    public String getDefinition() {
-        return definition;
-    }
-
-    public void setDefinition(String definition) {
-        this.definition = definition;
     }
 }

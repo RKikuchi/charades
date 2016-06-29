@@ -8,7 +8,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.pongo.charades.R;
-import com.pongo.charades.models.CategoryItemDto;
 import com.pongo.charades.modules.FontAwesomeProvider;
 
 /**
@@ -17,7 +16,7 @@ import com.pongo.charades.modules.FontAwesomeProvider;
 public class CategoryItemViewHolder extends RecyclerView.ViewHolder  {
     private final FontAwesomeProvider mFontAwesome;
     private final EditText mLabel;
-    private CategoryItemDto mItem;
+    private String mItem;
 
     public CategoryItemViewHolder(FontAwesomeProvider fontAwesome, View itemView) {
         super(itemView);
@@ -29,7 +28,7 @@ public class CategoryItemViewHolder extends RecyclerView.ViewHolder  {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mItem.value = s.toString();
+                mItem = s.toString();
             }
 
             @Override
@@ -39,9 +38,9 @@ public class CategoryItemViewHolder extends RecyclerView.ViewHolder  {
         xButton.setTypeface(mFontAwesome.getTypeface());
     }
 
-    public void setData(CategoryItemDto value) {
+    public void setData(String value) {
         mItem = value;
-        mLabel.setText(mItem.value == null ? "" : mItem.value);
+        mLabel.setText(mItem == null ? "" : mItem);
     }
 
     public void focus() {

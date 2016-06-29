@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 
 import com.pongo.charades.R;
 import com.pongo.charades.models.CategoryDto;
-import com.pongo.charades.models.CategoryItemDto;
 import com.pongo.charades.modules.FontAwesomeProvider;
 import com.pongo.charades.viewholders.CategoryItemViewHolder;
 
@@ -23,7 +22,7 @@ public class CategoryItemsRecyclerViewAdapter extends RecyclerView.Adapter {
     final private Context mContext;
     final private FontAwesomeProvider mFontAwesome;
     final private LayoutInflater mLayoutInflater;
-    final private List<CategoryItemDto> mItems;
+    final private List<String> mItems;
     final private RecyclerView mRecyclerView;
     private int mFocusPosition;
 

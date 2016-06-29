@@ -5,290 +5,77 @@
         "imagePath": "file:///android_asset/images/friends.jpg",
         "tags": ["tv"],
         "items": [
-            {
-                "value": "Alice Knight Buffay",
-                "definition": null
-            },
-            {
-                "value": "Amy Green",
-                "definition": null
-            },
-            {
-                "value": "Barry",
-                "definition": null
-            },
-            {
-                "value": "Ben",
-                "definition": null
-            },
-            {
-                "value": "Bonnie",
-                "definition": null
-            },
-            {
-                "value": "Carol",
-                "definition": null
-            },
-            {
-                "value": "Chandler Bing",
-                "definition": null
-            },
-            {
-                "value": "Chandler Buffay",
-                "definition": null
-            },
-            {
-                "value": "Charlie",
-                "definition": null
-            },
-            {
-                "value": "David",
-                "definition": null
-            },
-            {
-                "value": "Dr. Ledbetter",
-                "definition": null
-            },
-            {
-                "value": "Dr. Long",
-                "definition": null
-            },
-            {
-                "value": "Elizabeth",
-                "definition": null
-            },
-            {
-                "value": "Emily",
-                "definition": null
-            },
-            {
-                "value": "Emma",
-                "definition": null
-            },
-            {
-                "value": "Erica",
-                "definition": null
-            },
-            {
-                "value": "Estelle",
-                "definition": null
-            },
-            {
-                "value": "Frank Buffay Jr.",
-                "definition": null
-            },
-            {
-                "value": "Frank Jr. Jr.",
-                "definition": null
-            },
-            {
-                "value": "Gary",
-                "definition": null
-            },
-            {
-                "value": "Gunther",
-                "definition": null
-            },
-            {
-                "value": "Jack Geller",
-                "definition": null
-            },
-            {
-                "value": "Janice",
-                "definition": null
-            },
-            {
-                "value": "Janine",
-                "definition": null
-            },
-            {
-                "value": "Jasmine",
-                "definition": null
-            },
-            {
-                "value": "Jill Green",
-                "definition": null
-            },
-            {
-                "value": "Joey Tribbiani",
-                "definition": null
-            },
-            {
-                "value": "Joey Tribbiani Sr.",
-                "definition": null
-            },
-            {
-                "value": "Joshua Burgin",
-                "definition": null
-            },
-            {
-                "value": "Judy Geller",
-                "definition": null
-            },
-            {
-                "value": "Julie",
-                "definition": null
-            },
-            {
-                "value": "Kathy",
-                "definition": null
-            },
-            {
-                "value": "Leonard Green",
-                "definition": null
-            },
-            {
-                "value": "Marcel",
-                "definition": null
-            },
-            {
-                "value": "Mark Robinson",
-                "definition": null
-            },
-            {
-                "value": "Mike Hannigan",
-                "definition": null
-            },
-            {
-                "value": "Mona",
-                "definition": null
-            },
-            {
-                "value": "Monica Geller",
-                "definition": null
-            },
-            {
-                "value": "Mr. Heckles",
-                "definition": null
-            },
-            {
-                "value": "Mr. Treeger",
-                "definition": null
-            },
-            {
-                "value": "Mr. Zelner",
-                "definition": null
-            },
-            {
-                "value": "Nora Tyler Bing",
-                "definition": null
-            },
-            {
-                "value": "Paolo",
-                "definition": null
-            },
-            {
-                "value": "Pete Becker",
-                "definition": null
-            },
-            {
-                "value": "Phoebe Abbott",
-                "definition": null
-            },
-            {
-                "value": "Phoebe Buffay",
-                "definition": null
-            },
-            {
-                "value": "Rachel Green",
-                "definition": null
-            },
-            {
-                "value": "Richard",
-                "definition": null
-            },
-            {
-                "value": "Ross Geller",
-                "definition": null
-            },
-            {
-                "value": "Sandra Green",
-                "definition": null
-            },
-            {
-                "value": "Sophie",
-                "definition": null
-            },
-            {
-                "value": "Susan",
-                "definition": null
-            },
-            {
-                "value": "Tag Jones",
-                "definition": null
-            },
-            {
-                "value": "The Chick and The Duck",
-                "definition": null
-            },
-            {
-                "value": "The Triplets",
-                "definition": null
-            },
-            {
-                "value": "Tribbiani Sisters",
-                "definition": null
-            },
-            {
-                "value": "Ugly Naked Guy",
-                "definition": null
-            },
-            {
-                "value": "Ursula Buffay",
-                "definition": null
-            },
-            {
-                "value": "Monica's Apartment",
-                "definition": null
-            },
-            {
-                "value": "Central Perk",
-                "definition": null
-            },
-            {
-                "value": "Chandler and Joey's apartment",
-                "definition": null
-            },
-            {
-                "value": "Phoebe's Apartment",
-                "definition": null
-            },
-            {
-                "value": "Javu",
-                "definition": null
-            },
-            {
-                "value": "Ross' Third Apartment",
-                "definition": null
-            },
-            {
-                "value": "Monica & Chandler's House",
-                "definition": null
-            },
-            {
-                "value": "Moondance Diner",
-                "definition": null
-            },
-            {
-                "value": "Allesandro's",
-                "definition": null
-            },
-            {
-                "value": "Ross' First Apartment",
-                "definition": null
-            },
-            {
-                "value": "Ross' Second Apartment",
-                "definition": null
-            },
-            {
-                "value": "Bloomingdale's",
-                "definition": null
-            },
-            {
-                "value": "I'll Be There For You",
-                "definition": null
-            }
+            "Alice Knight Buffay",
+            "Amy Green",
+            "Barry",
+            "Ben",
+            "Bonnie",
+            "Carol",
+            "Chandler Bing",
+            "Chandler Buffay",
+            "Charlie",
+            "David",
+            "Dr. Ledbetter",
+            "Dr. Long",
+            "Elizabeth",
+            "Emily",
+            "Emma",
+            "Erica",
+            "Estelle",
+            "Frank Buffay Jr.",
+            "Frank Jr. Jr.",
+            "Gary",
+            "Gunther",
+            "Jack Geller",
+            "Janice",
+            "Janine",
+            "Jasmine",
+            "Jill Green",
+            "Joey Tribbiani",
+            "Joey Tribbiani Sr.",
+            "Joshua Burgin",
+            "Judy Geller",
+            "Julie",
+            "Kathy",
+            "Leonard Green",
+            "Marcel",
+            "Mark Robinson",
+            "Mike Hannigan",
+            "Mona",
+            "Monica Geller",
+            "Mr. Heckles",
+            "Mr. Treeger",
+            "Mr. Zelner",
+            "Nora Tyler Bing",
+            "Paolo",
+            "Pete Becker",
+            "Phoebe Abbott",
+            "Phoebe Buffay",
+            "Rachel Green",
+            "Richard",
+            "Ross Geller",
+            "Sandra Green",
+            "Sophie",
+            "Susan",
+            "Tag Jones",
+            "The Chick and The Duck",
+            "The Triplets",
+            "Tribbiani Sisters",
+            "Ugly Naked Guy",
+            "Ursula Buffay",
+            "Monica's Apartment",
+            "Central Perk",
+            "Chandler and Joey's apartment",
+            "Phoebe's Apartment",
+            "Javu",
+            "Ross' Third Apartment",
+            "Monica & Chandler's House",
+            "Moondance Diner",
+            "Allesandro's",
+            "Ross' First Apartment",
+            "Ross' Second Apartment",
+            "Bloomingdale's",
+            "I'll Be There For You"
         ]
     },
     {
@@ -297,446 +84,116 @@
         "imagePath": "file:///android_asset/images/game-of-thrones.jpg",
         "tags": ["tv"],
         "items": [
-            {
-                "value": "Tyrion Lannister",
-                "definition": null
-            },
-            {
-                "value": "Jaime Lannister",
-                "definition": null
-            },
-            {
-                "value": "Cersei Lannister",
-                "definition": null
-            },
-            {
-                "value": "Daenerys Targaryen",
-                "definition": null
-            },
-            {
-                "value": "Jon Snow",
-                "definition": null
-            },
-            {
-                "value": "Petyr Baelish",
-                "definition": null
-            },
-            {
-                "value": "Jorah Mormont",
-                "definition": null
-            },
-            {
-                "value": "Sansa Stark",
-                "definition": null
-            },
-            {
-                "value": "Arya Stark",
-                "definition": null
-            },
-            {
-                "value": "Theon Greyjoy",
-                "definition": null
-            },
-            {
-                "value": "Bran Stark",
-                "definition": null
-            },
-            {
-                "value": "Sandor Clegane",
-                "definition": null
-            },
-            {
-                "value": "Joffrey Baratheon",
-                "definition": null
-            },
-            {
-                "value": "Catelyn Stark",
-                "definition": null
-            },
-            {
-                "value": "Robb Stark",
-                "definition": null
-            },
-            {
-                "value": "Ned Stark",
-                "definition": null
-            },
-            {
-                "value": "Robert Baratheon",
-                "definition": null
-            },
-            {
-                "value": "Viserys Targaryen",
-                "definition": null
-            },
-            {
-                "value": "Varys",
-                "definition": null
-            },
-            {
-                "value": "Samwell Tarly",
-                "definition": null
-            },
-            {
-                "value": "Bronn",
-                "definition": null
-            },
-            {
-                "value": "Tywin Lannister",
-                "definition": null
-            },
-            {
-                "value": "Shae",
-                "definition": null
-            },
-            {
-                "value": "Jeor Mormont",
-                "definition": null
-            },
-            {
-                "value": "Gendry",
-                "definition": null
-            },
-            {
-                "value": "Tommen Baratheon",
-                "definition": null
-            },
-            {
-                "value": "Jaqen H'ghar",
-                "definition": null
-            },
-            {
-                "value": "Khal Drogo",
-                "definition": null
-            },
-            {
-                "value": "Davos Seaworth",
-                "definition": null
-            },
-            {
-                "value": "Melisandre",
-                "definition": null
-            },
-            {
-                "value": "Margaery Tyrell",
-                "definition": null
-            },
-            {
-                "value": "Stannis Baratheon",
-                "definition": null
-            },
-            {
-                "value": "Ygritte",
-                "definition": null
-            },
-            {
-                "value": "Talisa Stark",
-                "definition": null
-            },
-            {
-                "value": "Brienne of Tarth",
-                "definition": null
-            },
-            {
-                "value": "Gilly",
-                "definition": null
-            },
-            {
-                "value": "Roose Bolton",
-                "definition": null
-            },
-            {
-                "value": "Tormund Giantsbane",
-                "definition": null
-            },
-            {
-                "value": "Ramsay Bolton",
-                "definition": null
-            },
-            {
-                "value": "Daario Naharis",
-                "definition": null
-            },
-            {
-                "value": "Missandei",
-                "definition": null
-            },
-            {
-                "value": "Ellaria Sand",
-                "definition": null
-            },
-            {
-                "value": "The High Sparrow",
-                "definition": null
-            },
-            {
-                "value": "Grand Maester Pycelle",
-                "definition": null
-            },
-            {
-                "value": "Loras Tyrell",
-                "definition": null
-            },
-            {
-                "value": "Hodor",
-                "definition": null
-            },
-            {
-                "value": "Gregor Clegane",
-                "definition": null
-            },
-            {
-                "value": "Meryn Trant",
-                "definition": null
-            },
-            {
-                "value": "Alliser Thorne",
-                "definition": null
-            },
-            {
-                "value": "Othell Yarwyck",
-                "definition": null
-            },
-            {
-                "value": "Lancel Lannister",
-                "definition": null
-            },
-            {
-                "value": "Myrcella Baratheon",
-                "definition": null
-            },
-            {
-                "value": "Osha",
-                "definition": null
-            },
-            {
-                "value": "Rickon Stark",
-                "definition": null
-            },
-            {
-                "value": "Janos Slynt",
-                "definition": null
-            },
-            {
-                "value": "Barristan Selmy",
-                "definition": null
-            },
-            {
-                "value": "Maester Aemon",
-                "definition": null
-            },
-            {
-                "value": "Grenn",
-                "definition": null
-            },
-            {
-                "value": "Hot Pie",
-                "definition": null
-            },
-            {
-                "value": "Pypar",
-                "definition": null
-            },
-            {
-                "value": "Rast",
-                "definition": null
-            },
-            {
-                "value": "Ros",
-                "definition": null
-            },
-            {
-                "value": "Maester Luwin",
-                "definition": null
-            },
-            {
-                "value": "Irri",
-                "definition": null
-            },
-            {
-                "value": "Rodrik Cassel",
-                "definition": null
-            },
-            {
-                "value": "Doreah",
-                "definition": null
-            },
-            {
-                "value": "Eddison Tollett",
-                "definition": null
-            },
-            {
-                "value": "Podrick Payne",
-                "definition": null
-            },
-            {
-                "value": "Selyse Baratheon",
-                "definition": null
-            },
-            {
-                "value": "Olenna Tyrell",
-                "definition": null
-            },
-            {
-                "value": "Qyburn",
-                "definition": null
-            },
-            {
-                "value": "Grey Worm",
-                "definition": null
-            },
-            {
-                "value": "Meera Reed",
-                "definition": null
-            },
-            {
-                "value": "Shireen Baratheon",
-                "definition": null
-            },
-            {
-                "value": "Jojen Reed",
-                "definition": null
-            },
-            {
-                "value": "Olly",
-                "definition": null
-            },
-            {
-                "value": "Mace Tyrell",
-                "definition": null
-            },
-            {
-                "value": "Bowen Marsh",
-                "definition": null
-            },
-            {
-                "value": "The Vale of Arryn",
-                "definition": null
-            },
-            {
-                "value": "The Eyrie",
-                "definition": null
-            },
-            {
-                "value": "Dorne",
-                "definition": null
-            },
-            {
-                "value": "Harrenhal",
-                "definition": null
-            },
-            {
-                "value": "Winterfell",
-                "definition": null
-            },
-            {
-                "value": "Dragonstone",
-                "definition": null
-            },
-            {
-                "value": "The North",
-                "definition": null
-            },
-            {
-                "value": "The Wall",
-                "definition": null
-            },
-            {
-                "value": "Vaes Dothrak",
-                "definition": null
-            },
-            {
-                "value": "Braavos",
-                "definition": null
-            },
-            {
-                "value": "Asshai",
-                "definition": null
-            },
-            {
-                "value": "Volantis",
-                "definition": null
-            },
-            {
-                "value": "Old Valyria",
-                "definition": null
-            },
-            {
-                "value": "Casterly Rock",
-                "definition": null
-            },
-            {
-                "value": "King's Landing",
-                "definition": null
-            },
-            {
-                "value": "Iron Islands",
-                "definition": null
-            },
-            {
-                "value": "Free Cities",
-                "definition": null
-            },
-            {
-                "value": "Meereen",
-                "definition": null
-            },
-            {
-                "value": "The Dreadfort",
-                "definition": null
-            },
-            {
-                "value": "Qarth",
-                "definition": null
-            },
-            {
-                "value": "Castle Black",
-                "definition": null
-            },
-            {
-                "value": "The Riverlands",
-                "definition": null
-            },
-            {
-                "value": "The Reach",
-                "definition": null
-            },
-            {
-                "value": "Riverrun",
-                "definition": null
-            },
-            {
-                "value": "Slaver's Bay",
-                "definition": null
-            },
-            {
-                "value": "House of Black and White",
-                "definition": null
-            },
-            {
-                "value": "Storm's End",
-                "definition": null
-            },
-            {
-                "value": "Beyond the Wall",
-                "definition": null
-            },
-            {
-                "value": "Moat Cailin",
-                "definition": null
-            },
-            {
-                "value": "Highgarden",
-                "definition": null
-            },
-            {
-                "value": "The Nightfort",
-                "definition": null
-            },
-            {
-                "value": "Lands of Always Winter",
-                "definition": null
-            }
+            "Tyrion Lannister",
+            "Jaime Lannister",
+            "Cersei Lannister",
+            "Daenerys Targaryen",
+            "Jon Snow",
+            "Petyr Baelish",
+            "Jorah Mormont",
+            "Sansa Stark",
+            "Arya Stark",
+            "Theon Greyjoy",
+            "Bran Stark",
+            "Sandor Clegane",
+            "Joffrey Baratheon",
+            "Catelyn Stark",
+            "Robb Stark",
+            "Ned Stark",
+            "Robert Baratheon",
+            "Viserys Targaryen",
+            "Varys",
+            "Samwell Tarly",
+            "Bronn",
+            "Tywin Lannister",
+            "Shae",
+            "Jeor Mormont",
+            "Gendry",
+            "Tommen Baratheon",
+            "Jaqen H'ghar",
+            "Khal Drogo",
+            "Davos Seaworth",
+            "Melisandre",
+            "Margaery Tyrell",
+            "Stannis Baratheon",
+            "Ygritte",
+            "Talisa Stark",
+            "Brienne of Tarth",
+            "Gilly",
+            "Roose Bolton",
+            "Tormund Giantsbane",
+            "Ramsay Bolton",
+            "Daario Naharis",
+            "Missandei",
+            "Ellaria Sand",
+            "The High Sparrow",
+            "Grand Maester Pycelle",
+            "Loras Tyrell",
+            "Hodor",
+            "Gregor Clegane",
+            "Meryn Trant",
+            "Alliser Thorne",
+            "Othell Yarwyck",
+            "Lancel Lannister",
+            "Myrcella Baratheon",
+            "Osha",
+            "Rickon Stark",
+            "Janos Slynt",
+            "Barristan Selmy",
+            "Maester Aemon",
+            "Grenn",
+            "Hot Pie",
+            "Pypar",
+            "Rast",
+            "Ros",
+            "Maester Luwin",
+            "Irri",
+            "Rodrik Cassel",
+            "Doreah",
+            "Eddison Tollett",
+            "Podrick Payne",
+            "Selyse Baratheon",
+            "Olenna Tyrell",
+            "Qyburn",
+            "Grey Worm",
+            "Meera Reed",
+            "Shireen Baratheon",
+            "Jojen Reed",
+            "Olly",
+            "Mace Tyrell",
+            "Bowen Marsh",
+            "The Vale of Arryn",
+            "The Eyrie",
+            "Dorne",
+            "Harrenhal",
+            "Winterfell",
+            "Dragonstone",
+            "The North",
+            "The Wall",
+            "Vaes Dothrak",
+            "Braavos",
+            "Asshai",
+            "Volantis",
+            "Old Valyria",
+            "Casterly Rock",
+            "King's Landing",
+            "Iron Islands",
+            "Free Cities",
+            "Meereen",
+            "The Dreadfort",
+            "Qarth",
+            "Castle Black",
+            "The Riverlands",
+            "The Reach",
+            "Riverrun",
+            "Slaver's Bay",
+            "House of Black and White",
+            "Storm's End",
+            "Beyond the Wall",
+            "Moat Cailin",
+            "Highgarden",
+            "The Nightfort",
+            "Lands of Always Winter"
         ]
     }
 ]

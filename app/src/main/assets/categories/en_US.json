@@ -5,258 +5,69 @@
         "imagePath": "file:///android_asset/images/category_popular_characters_and_people.jpg",
         "tags": ["family"],
         "items": [
-            {
-                "value": "Gandhi",
-                "definition": "null"
-            },
-            {
-                "value": "Superman",
-                "definition": "null"
-            },
-            {
-                "value": "Mozart",
-                "definition": "null"
-            },
-            {
-                "value": "Puss in Boots",
-                "definition": "null"
-            },
-            {
-                "value": "Papa Smurf",
-                "definition": "null"
-            },
-            {
-                "value": "Harry Houdini",
-                "definition": "null"
-            },
-            {
-                "value": "Thomas Jefferson",
-                "definition": "null"
-            },
-            {
-                "value": "Andy Griffith",
-                "definition": "null"
-            },
-            {
-                "value": "Billy the Kid",
-                "definition": "null"
-            },
-            {
-                "value": "Santa Claus",
-                "definition": "null"
-            },
-            {
-                "value": "Henry Ford",
-                "definition": "null"
-            },
-            {
-                "value": "Vincent Van Gogh",
-                "definition": "null"
-            },
-            {
-                "value": "Iron Man",
-                "definition": "null"
-            },
-            {
-                "value": "Barbie",
-                "definition": "null"
-            },
-            {
-                "value": "Darth Vader",
-                "definition": "null"
-            },
-            {
-                "value": "Pablo Picasso",
-                "definition": "null"
-            },
-            {
-                "value": "Dr. Seuss",
-                "definition": "null"
-            },
-            {
-                "value": "Achilles",
-                "definition": "null"
-            },
-            {
-                "value": "Elvis Presley",
-                "definition": "null"
-            },
-            {
-                "value": "Sigmund Freud",
-                "definition": "null"
-            },
-            {
-                "value": "King Arthur",
-                "definition": "null"
-            },
-            {
-                "value": "Voldemort",
-                "definition": "null"
-            },
-            {
-                "value": "Scooby Doo",
-                "definition": "null"
-            },
-            {
-                "value": "Isaac Newton",
-                "definition": "null"
-            },
-            {
-                "value": "The Beatles",
-                "definition": "null"
-            },
-            {
-                "value": "Abraham Lincoln",
-                "definition": "null"
-            },
-            {
-                "value": "Christopher Columbus ",
-                "definition": "null"
-            },
-            {
-                "value": "Kermit the Frog",
-                "definition": "null"
-            },
-            {
-                "value": "Snoopy",
-                "definition": "null"
-            },
-            {
-                "value": "Shakespeare",
-                "definition": "null"
-            },
-            {
-                "value": "Winnie the Pooh",
-                "definition": "null"
-            },
-            {
-                "value": "Albert Einstein",
-                "definition": "null"
-            },
-            {
-                "value": "Sherlock Holmes",
-                "definition": "null"
-            },
-            {
-                "value": "Spider Man",
-                "definition": "null"
-            },
-            {
-                "value": "Indiana Jones",
-                "definition": "null"
-            },
-            {
-                "value": "Neil Armstrong",
-                "definition": "null"
-            },
-            {
-                "value": "Satan",
-                "definition": "null"
-            },
-            {
-                "value": "Socrates",
-                "definition": "null"
-            },
-            {
-                "value": "Leonardo DiCaprio",
-                "definition": "null"
-            },
-            {
-                "value": "Thomas Edison",
-                "definition": "null"
-            },
-            {
-                "value": "Yoda",
-                "definition": "null"
-            },
-            {
-                "value": "Stephen Hawking",
-                "definition": "null"
-            },
-            {
-                "value": "Popeye",
-                "definition": "null"
-            },
-            {
-                "value": "Stewie Griffin",
-                "definition": "null"
-            },
-            {
-                "value": "Easter Bunny",
-                "definition": "null"
-            },
-            {
-                "value": "Robin Williams",
-                "definition": "null"
-            },
-            {
-                "value": "Mohammad Ali",
-                "definition": "null"
-            },
-            {
-                "value": "Captain Jack Sparrow",
-                "definition": "null"
-            },
-            {
-                "value": "Michael Jackson",
-                "definition": "null"
-            },
-            {
-                "value": "Bill Gates",
-                "definition": "null"
-            },
-            {
-                "value": "Catwoman",
-                "definition": "null"
-            },
-            {
-                "value": "Britney Spears",
-                "definition": "null"
-            },
-            {
-                "value": "Nancy Drew",
-                "definition": "null"
-            },
-            {
-                "value": "Wonder Woman",
-                "definition": "null"
-            },
-            {
-                "value": "Paris Hilton",
-                "definition": "null"
-            },
-            {
-                "value": "Peter Rabbit",
-                "definition": "null"
-            },
-            {
-                "value": "Rebecca Black",
-                "definition": "null"
-            },
-            {
-                "value": "Justin Bieber",
-                "definition": "null"
-            },
-            {
-                "value": "George Washington",
-                "definition": "null"
-            },
-            {
-                "value": "The Incredible Hulk",
-                "definition": "null"
-            },
-            {
-                "value": "Homer Simpson",
-                "definition": "null"
-            },
-            {
-                "value": "Chandler Bing",
-                "definition": "null"
-            },
-            {
-                "value": "Frankenstein",
-                "definition": "null"
-            }
+            "Gandhi",
+            "Superman",
+            "Mozart",
+            "Puss in Boots",
+            "Papa Smurf",
+            "Harry Houdini",
+            "Thomas Jefferson",
+            "Andy Griffith",
+            "Billy the Kid",
+            "Santa Claus",
+            "Henry Ford",
+            "Vincent Van Gogh",
+            "Iron Man",
+            "Barbie",
+            "Darth Vader",
+            "Pablo Picasso",
+            "Dr. Seuss",
+            "Achilles",
+            "Elvis Presley",
+            "Sigmund Freud",
+            "King Arthur",
+            "Voldemort",
+            "Scooby Doo",
+            "Isaac Newton",
+            "The Beatles",
+            "Abraham Lincoln",
+            "Christopher Columbus ",
+            "Kermit the Frog",
+            "Snoopy",
+            "Shakespeare",
+            "Winnie the Pooh",
+            "Albert Einstein",
+            "Sherlock Holmes",
+            "Spider Man",
+            "Indiana Jones",
+            "Neil Armstrong",
+            "Satan",
+            "Socrates",
+            "Leonardo DiCaprio",
+            "Thomas Edison",
+            "Yoda",
+            "Stephen Hawking",
+            "Popeye",
+            "Stewie Griffin",
+            "Easter Bunny",
+            "Robin Williams",
+            "Mohammad Ali",
+            "Captain Jack Sparrow",
+            "Michael Jackson",
+            "Bill Gates",
+            "Catwoman",
+            "Britney Spears",
+            "Nancy Drew",
+            "Wonder Woman",
+            "Paris Hilton",
+            "Peter Rabbit",
+            "Rebecca Black",
+            "Justin Bieber",
+            "George Washington",
+            "The Incredible Hulk",
+            "Homer Simpson",
+            "Chandler Bing",
+            "Frankenstein"
         ]
     },
     {
@@ -265,246 +76,66 @@
         "imagePath": "file:///android_asset/images/animals.jpg",
         "tags": ["family"],
         "items": [
-            {
-                "value": "Turtle",
-                "definition": null
-            },
-            {
-                "value": "Elephant",
-                "definition": null
-            },
-            {
-                "value": "Giraffe",
-                "definition": null
-            },
-            {
-                "value": "Horse",
-                "definition": null
-            },
-            {
-                "value": "Lion",
-                "definition": null
-            },
-            {
-                "value": "Mouse",
-                "definition": null
-            },
-            {
-                "value": "Deer",
-                "definition": null
-            },
-            {
-                "value": "Eagle",
-                "definition": null
-            },
-            {
-                "value": "Rooster",
-                "definition": null
-            },
-            {
-                "value": "Snake",
-                "definition": null
-            },
-            {
-                "value": "Cow",
-                "definition": null
-            },
-            {
-                "value": "Fox",
-                "definition": null
-            },
-            {
-                "value": "Toucan",
-                "definition": null
-            },
-            {
-                "value": "Emu",
-                "definition": null
-            },
-            {
-                "value": "Panda",
-                "definition": null
-            },
-            {
-                "value": "Ostrich",
-                "definition": null
-            },
-            {
-                "value": "Zebra",
-                "definition": null
-            },
-            {
-                "value": "Wolf",
-                "definition": null
-            },
-            {
-                "value": "Polar Bear",
-                "definition": null
-            },
-            {
-                "value": "Hedgehog",
-                "definition": null
-            },
-            {
-                "value": "Porcupine",
-                "definition": null
-            },
-            {
-                "value": "Goose",
-                "definition": null
-            },
-            {
-                "value": "Cheetah",
-                "definition": null
-            },
-            {
-                "value": "Warthog",
-                "definition": null
-            },
-            {
-                "value": "Meerkat",
-                "definition": null
-            },
-            {
-                "value": "Parrot",
-                "definition": null
-            },
-            {
-                "value": "Pelican",
-                "definition": null
-            },
-            {
-                "value": "Tiger",
-                "definition": null
-            },
-            {
-                "value": "Crocodile",
-                "definition": null
-            },
-            {
-                "value": "Seal",
-                "definition": null
-            },
-            {
-                "value": "Penguin",
-                "definition": null
-            },
-            {
-                "value": "Blue Whale",
-                "definition": null
-            },
-            {
-                "value": "Squirrel",
-                "definition": null
-            },
-            {
-                "value": "Camel",
-                "definition": null
-            },
-            {
-                "value": "Donkey",
-                "definition": null
-            },
-            {
-                "value": "Bull",
-                "definition": null
-            },
-            {
-                "value": "Stork",
-                "definition": null
-            },
-            {
-                "value": "Vulture",
-                "definition": null
-            },
-            {
-                "value": "Rhino",
-                "definition": null
-            },
-            {
-                "value": "Leopard",
-                "definition": null
-            },
-            {
-                "value": "Dodo",
-                "definition": null
-            },
-            {
-                "value": "Gorilla",
-                "definition": null
-            },
-            {
-                "value": "Dolphin",
-                "definition": null
-            },
-            {
-                "value": "Sheep",
-                "definition": null
-            },
-            {
-                "value": "Monkey",
-                "definition": null
-            },
-            {
-                "value": "Pig",
-                "definition": null
-            },
-            {
-                "value": "Dog",
-                "definition": null
-            },
-            {
-                "value": "Bird",
-                "definition": null
-            },
-            {
-                "value": "Cat",
-                "definition": null
-            },
-            {
-                "value": "Chimpanzee",
-                "definition": null
-            },
-            {
-                "value": "Duck",
-                "definition": null
-            },
-            {
-                "value": "Fish",
-                "definition": null
-            },
-            {
-                "value": "Frog",
-                "definition": null
-            },
-            {
-                "value": "Grizzly Bear",
-                "definition": null
-            },
-            {
-                "value": "Kangaroo",
-                "definition": null
-            },
-            {
-                "value": "Rabbit",
-                "definition": null
-            },
-            {
-                "value": "Butterfly",
-                "definition": null
-            },
-            {
-                "value": "Owl",
-                "definition": null
-            },
-            {
-                "value": "Seagull",
-                "definition": null
-            },
-            {
-                "value": "Shark",
-                "definition": null
-            }
+            "Turtle",
+            "Elephant",
+            "Giraffe",
+            "Horse",
+            "Lion",
+            "Mouse",
+            "Deer",
+            "Eagle",
+            "Rooster",
+            "Snake",
+            "Cow",
+            "Fox",
+            "Toucan",
+            "Emu",
+            "Panda",
+            "Ostrich",
+            "Zebra",
+            "Wolf",
+            "Polar Bear",
+            "Hedgehog",
+            "Porcupine",
+            "Goose",
+            "Cheetah",
+            "Warthog",
+            "Meerkat",
+            "Parrot",
+            "Pelican",
+            "Tiger",
+            "Crocodile",
+            "Seal",
+            "Penguin",
+            "Blue Whale",
+            "Squirrel",
+            "Camel",
+            "Donkey",
+            "Bull",
+            "Stork",
+            "Vulture",
+            "Rhino",
+            "Leopard",
+            "Dodo",
+            "Gorilla",
+            "Dolphin",
+            "Sheep",
+            "Monkey",
+            "Pig",
+            "Dog",
+            "Bird",
+            "Cat",
+            "Chimpanzee",
+            "Duck",
+            "Fish",
+            "Frog",
+            "Grizzly Bear",
+            "Kangaroo",
+            "Rabbit",
+            "Butterfly",
+            "Owl",
+            "Seagull",
+            "Shark"
         ]
     },
     {
@@ -513,490 +144,127 @@
         "imagePath": "file:///android_asset/images/movies.jpg",
         "tags": ["family"],
         "items": [
-            {
-                "value": "Spiderman",
-                "definition": "null"
-            },
-            {
-                "value": "Valentine's Day",
-                "definition": "null"
-            },
-            {
-                "value": "Batman and Robin",
-                "definition": "null"
-            },
-            {
-                "value": "The Shawshank Redemption",
-                "definition": "null"
-            },
-            {
-                "value": "Little Miss Sunshine",
-                "definition": "null"
-            },
-            {
-                "value": "Forrest Gump",
-                "definition": "null"
-            },
-            {
-                "value": "Amelie",
-                "definition": "null"
-            },
-            {
-                "value": "Black Hawk Down",
-                "definition": "null"
-            },
-            {
-                "value": "The Sixth Sense",
-                "definition": "null"
-            },
-            {
-                "value": "Pulp Fiction",
-                "definition": "null"
-            },
-            {
-                "value": "Sweeney Todd",
-                "definition": "null"
-            },
-            {
-                "value": "Kick-Ass",
-                "definition": "null"
-            },
-            {
-                "value": "Schindler's List",
-                "definition": "null"
-            },
-            {
-                "value": "Howl's Moving Castle",
-                "definition": "null"
-            },
-            {
-                "value": "Batman Begins",
-                "definition": "null"
-            },
-            {
-                "value": "Slumdog Millionaire",
-                "definition": "null"
-            },
-            {
-                "value": "The Hangover",
-                "definition": "null"
-            },
-            {
-                "value": "Shrek",
-                "definition": "null"
-            },
-            {
-                "value": "The Exorcist",
-                "definition": "null"
-            },
-            {
-                "value": "Monster's, Inc.",
-                "definition": "null"
-            },
-            {
-                "value": "The Bourne Identity",
-                "definition": "null"
-            },
-            {
-                "value": "War of the Worlds",
-                "definition": "null"
-            },
-            {
-                "value": "The Departed",
-                "definition": "null"
-            },
-            {
-                "value": "Anastasia",
-                "definition": "null"
-            },
-            {
-                "value": "American Pie",
-                "definition": "null"
-            },
-            {
-                "value": "A Beautiful Mind",
-                "definition": "null"
-            },
-            {
-                "value": "The Usual Suspects",
-                "definition": "null"
-            },
-            {
-                "value": "The Matrix",
-                "definition": "null"
-            },
-            {
-                "value": "American Beauty",
-                "definition": "null"
-            },
-            {
-                "value": "Mr. and Mrs. Smith",
-                "definition": "null"
-            },
-            {
-                "value": "Rosemary's Baby",
-                "definition": "null"
-            },
-            {
-                "value": "The Dark Knight",
-                "definition": "null"
-            },
-            {
-                "value": "Ice Age",
-                "definition": "null"
-            },
-            {
-                "value": "Star Wars Episode V: The Empire Strikes Back",
-                "definition": "null"
-            },
-            {
-                "value": "Castaway",
-                "definition": "null"
-            },
-            {
-                "value": "The Hunger Games",
-                "definition": "null"
-            },
-            {
-                "value": "Inception",
-                "definition": "null"
-            },
-            {
-                "value": "Apocalypse Now",
-                "definition": "null"
-            },
-            {
-                "value": "Back to the Future",
-                "definition": "null"
-            },
-            {
-                "value": "Ted",
-                "definition": "null"
-            },
-            {
-                "value": "Black Swan",
-                "definition": "null"
-            },
-            {
-                "value": "The Apartment",
-                "definition": "null"
-            },
-            {
-                "value": "The Lion King",
-                "definition": "null"
-            },
-            {
-                "value": "Saw",
-                "definition": "null"
-            },
-            {
-                "value": "Taxi Driver",
-                "definition": "null"
-            },
-            {
-                "value": "Gone With the Wind",
-                "definition": "null"
-            },
-            {
-                "value": "Psycho",
-                "definition": "null"
-            },
-            {
-                "value": "Chicago",
-                "definition": "null"
-            },
-            {
-                "value": "Catwoman",
-                "definition": "null"
-            },
-            {
-                "value": "Superbad",
-                "definition": "null"
-            },
-            {
-                "value": "The Pianist",
-                "definition": "null"
-            },
-            {
-                "value": "The Incredibles",
-                "definition": "null"
-            },
-            {
-                "value": "The Boy in the Striped Pajamas",
-                "definition": "null"
-            },
-            {
-                "value": "Mamma Mia",
-                "definition": "null"
-            },
-            {
-                "value": "Scary Movie",
-                "definition": "null"
-            },
-            {
-                "value": "Interview With the Vampire",
-                "definition": "null"
-            },
-            {
-                "value": "Ben-Hur",
-                "definition": "null"
-            },
-            {
-                "value": "The Dark Knight",
-                "definition": "null"
-            },
-            {
-                "value": "Citizen Kane",
-                "definition": "null"
-            },
-            {
-                "value": "The Shining",
-                "definition": "null"
-            },
-            {
-                "value": "Die Hard",
-                "definition": "null"
-            },
-            {
-                "value": "King Kong",
-                "definition": "null"
-            },
-            {
-                "value": "Star Wars Episode V: The Empire Strikes Back",
-                "definition": "null"
-            },
-            {
-                "value": "The Curious Case of Benjamin Button",
-                "definition": "null"
-            },
-            {
-                "value": "50/50",
-                "definition": "null"
-            },
-            {
-                "value": "Hancock",
-                "definition": "null"
-            },
-            {
-                "value": "The Blair Witch Project",
-                "definition": "null"
-            },
-            {
-                "value": "Edward Scissorhands",
-                "definition": "null"
-            },
-            {
-                "value": "Sin City",
-                "definition": "null"
-            },
-            {
-                "value": "Troy",
-                "definition": "null"
-            },
-            {
-                "value": "The Hurt Locker",
-                "definition": "null"
-            },
-            {
-                "value": "Casablanca",
-                "definition": "null"
-            },
-            {
-                "value": "Memoirs of a Geisha",
-                "definition": "null"
-            },
-            {
-                "value": "Carrie",
-                "definition": "null"
-            },
-            {
-                "value": "Alien",
-                "definition": "null"
-            },
-            {
-                "value": "City of God",
-                "definition": "null"
-            },
-            {
-                "value": "Se7en",
-                "definition": "null"
-            },
-            {
-                "value": "Saving Private Ryan",
-                "definition": "null"
-            },
-            {
-                "value": "Donnie Darko",
-                "definition": "null"
-            },
-            {
-                "value": "Beauty and the Beast",
-                "definition": "null"
-            },
-            {
-                "value": "Despicable Me",
-                "definition": "null"
-            },
-            {
-                "value": "Catch Me If You Can",
-                "definition": "null"
-            },
-            {
-                "value": "The Godfather",
-                "definition": "null"
-            },
-            {
-                "value": "P.S. I Love You",
-                "definition": "null"
-            },
-            {
-                "value": "Fargo",
-                "definition": "null"
-            },
-            {
-                "value": "Juno",
-                "definition": "null"
-            },
-            {
-                "value": "The Time Traveler's Wife",
-                "definition": "null"
-            },
-            {
-                "value": "Memento",
-                "definition": "null"
-            },
-            {
-                "value": "Pitch Perfect",
-                "definition": "null"
-            },
-            {
-                "value": "The Devil Wears Prada",
-                "definition": "null"
-            },
-            {
-                "value": "Love Actually",
-                "definition": "null"
-            },
-            {
-                "value": "Skyfall",
-                "definition": "null"
-            },
-            {
-                "value": "Mean Girls",
-                "definition": "null"
-            },
-            {
-                "value": "The Grinch",
-                "definition": "null"
-            },
-            {
-                "value": "Leon: The Professional",
-                "definition": "null"
-            },
-            {
-                "value": "Freaky Friday",
-                "definition": "null"
-            },
-            {
-                "value": "Life of Pi",
-                "definition": "null"
-            },
-            {
-                "value": "Up",
-                "definition": "null"
-            },
-            {
-                "value": "The Da Vinci Code",
-                "definition": "null"
-            },
-            {
-                "value": "The Amityville Horror",
-                "definition": "null"
-            },
-            {
-                "value": "Jaws",
-                "definition": "null"
-            },
-            {
-                "value": "District 9",
-                "definition": "null"
-            },
-            {
-                "value": "The Truman Show",
-                "definition": "null"
-            },
-            {
-                "value": "Toy Story",
-                "definition": "null"
-            },
-            {
-                "value": "Titanic",
-                "definition": "null"
-            },
-            {
-                "value": "Goodfellas",
-                "definition": "null"
-            },
-            {
-                "value": "Inglorious Bastards",
-                "definition": "null"
-            },
-            {
-                "value": "Finding Nemo",
-                "definition": "null"
-            },
-            {
-                "value": "Madagascar",
-                "definition": "null"
-            },
-            {
-                "value": "Star Trek",
-                "definition": "null"
-            },
-            {
-                "value": "Chocolat",
-                "definition": "null"
-            },
-            {
-                "value": "Daredevil",
-                "definition": "null"
-            },
-            {
-                "value": "Bridesmaids",
-                "definition": "null"
-            },
-            {
-                "value": "I Know What You Did Last Summer",
-                "definition": "null"
-            },
-            {
-                "value": "Thank you for Smoking",
-                "definition": "null"
-            },
-            {
-                "value": "Gladiator",
-                "definition": "null"
-            },
-            {
-                "value": "Buffy the Vampire Slayer",
-                "definition": "null"
-            },
-            {
-                "value": "Avatar",
-                "definition": "null"
-            },
-            {
-                "value": "Shutter Island",
-                "definition": "null"
-            },
-            {
-                "value": "The Silence of the Lambs",
-                "definition": "null"
-            },
-            {
-                "value": "Zombieland",
-                "definition": "null"
-            }
+            "Spiderman",
+            "Valentine's Day",
+            "Batman and Robin",
+            "The Shawshank Redemption",
+            "Little Miss Sunshine",
+            "Forrest Gump",
+            "Amelie",
+            "Black Hawk Down",
+            "The Sixth Sense",
+            "Pulp Fiction",
+            "Sweeney Todd",
+            "Kick-Ass",
+            "Schindler's List",
+            "Howl's Moving Castle",
+            "Batman Begins",
+            "Slumdog Millionaire",
+            "The Hangover",
+            "Shrek",
+            "The Exorcist",
+            "Monster's, Inc.",
+            "The Bourne Identity",
+            "War of the Worlds",
+            "The Departed",
+            "Anastasia",
+            "American Pie",
+            "A Beautiful Mind",
+            "The Usual Suspects",
+            "The Matrix",
+            "American Beauty",
+            "Mr. and Mrs. Smith",
+            "Rosemary's Baby",
+            "The Dark Knight",
+            "Ice Age",
+            "Star Wars Episode V: The Empire Strikes Back",
+            "Castaway",
+            "The Hunger Games",
+            "Inception",
+            "Apocalypse Now",
+            "Back to the Future",
+            "Ted",
+            "Black Swan",
+            "The Apartment",
+            "The Lion King",
+            "Saw",
+            "Taxi Driver",
+            "Gone With the Wind",
+            "Psycho",
+            "Chicago",
+            "Catwoman",
+            "Superbad",
+            "The Pianist",
+            "The Incredibles",
+            "The Boy in the Striped Pajamas",
+            "Mamma Mia",
+            "Scary Movie",
+            "Interview With the Vampire",
+            "Ben-Hur",
+            "The Dark Knight",
+            "Citizen Kane",
+            "The Shining",
+            "Die Hard",
+            "King Kong",
+            "Star Wars Episode V: The Empire Strikes Back",
+            "The Curious Case of Benjamin Button",
+            "50/50",
+            "Hancock",
+            "The Blair Witch Project",
+            "Edward Scissorhands",
+            "Sin City",
+            "Troy",
+            "The Hurt Locker",
+            "Casablanca",
+            "Memoirs of a Geisha",
+            "Carrie",
+            "Alien",
+            "City of God",
+            "Se7en",
+            "Saving Private Ryan",
+            "Donnie Darko",
+            "Beauty and the Beast",
+            "Despicable Me",
+            "Catch Me If You Can",
+            "The Godfather",
+            "P.S. I Love You",
+            "Fargo",
+            "Juno",
+            "The Time Traveler's Wife",
+            "Memento",
+            "Pitch Perfect",
+            "The Devil Wears Prada",
+            "Love Actually",
+            "Skyfall",
+            "Mean Girls",
+            "The Grinch",
+            "Leon: The Professional",
+            "Freaky Friday",
+            "Life of Pi",
+            "Up",
+            "The Da Vinci Code",
+            "The Amityville Horror",
+            "Jaws",
+            "District 9",
+            "The Truman Show",
+            "Toy Story",
+            "Titanic",
+            "Goodfellas",
+            "Inglorious Bastards",
+            "Finding Nemo",
+            "Madagascar",
+            "Star Trek",
+            "Chocolat",
+            "Daredevil",
+            "Bridesmaids",
+            "I Know What You Did Last Summer",
+            "Thank you for Smoking",
+            "Gladiator",
+            "Buffy the Vampire Slayer",
+            "Avatar",
+            "Shutter Island",
+            "The Silence of the Lambs",
+            "Zombieland"
         ]
     },
     {
@@ -1005,354 +273,93 @@
         "imagePath": "file:///android_asset/images/idiomatic_expressions.jpg",
         "tags": ["family"],
         "items": [
-            {
-                "value": "A bitter pill",
-                "definition": "A situation or information that is unpleasant but must be accepted."
-            },
-            {
-                "value": "A dime a dozen",
-                "definition": "Anything that is common, inexpensive, and easy to get or available any where."
-            },
-            {
-                "value": "Ace in the hole",
-                "definition": "A hidden or secret strength, or unrevealed advantage."
-            },
-            {
-                "value": "Achilles' heel",
-                "definition": "A metaphor for a fatal weakness in spite of overall strength."
-            },
-            {
-                "value": "Actions speak louder than words",
-                "definition": "People's intentions can be judged better by what they do than by what they say."
-            },
-            {
-                "value": "Add insult to injury",
-                "definition": "To further a loss with mockery or indignity; to worsen an unfavorable situation."
-            },
-            {
-                "value": "All ears",
-                "definition": "Listening intently; fully focused or awaiting an explanation."
-            },
-            {
-                "value": "All thumbs",
-                "definition": "Clumsy, awkward."
-            },
-            {
-                "value": "An arm and a leg",
-                "definition": "Very expensive or costly. A large amount of money."
-            },
-            {
-                "value": "Apple of discord",
-                "definition": "Anything causing trouble, discord, or jealousy."
-            },
-            {
-                "value": "At the drop of a hat",
-                "definition": "Without any hesitation; instantly."
-            },
-            {
-                "value": "Back to the drawing board",
-                "definition": "When an attempt fails, and it's time to start planning all over again."
-            },
-            {
-                "value": "Ball is in your court",
-                "definition": "It is up to you to make the next decision or step."
-            },
-            {
-                "value": "Barking up the wrong tree",
-                "definition": "Looking in the wrong place."
-            },
-            {
-                "value": "Basket case",
-                "definition": "One made powerless or ineffective, as by nerves, panic, or stress."
-            },
-            {
-                "value": "Beat around the bush",
-                "definition": "To treat a topic, but omit its main points, often intentionally or to delay or avoid talking about something difficult or unpleasant."
-            },
-            {
-                "value": "Beat a dead horse",
-                "definition": "To uselessly dwell on a subject far beyond its point of resolution."
-            },
-            {
-                "value": "Bed of roses",
-                "definition": "A rich person. A very rich family."
-            },
-            {
-                "value": "Best of both worlds",
-                "definition": "A situation wherein someone has the privilege of enjoying two different opportunities."
-            },
-            {
-                "value": "Bite off more than one can chew",
-                "definition": "To take on more responsibility than one can manage."
-            },
-            {
-                "value": "Bite the bullet",
-                "definition": "To endure a painful or unpleasant situation that is unavoidable."
-            },
-            {
-                "value": "Bite the dust",
-                "definition": "Euphemism for dying or death."
-            },
-            {
-                "value": "Break a leg",
-                "definition": "A saying from the theatre that means \"good luck\"."
-            },
-            {
-                "value": "Burn the midnight oil",
-                "definition": "To work late into the night, alluding to the time before electric lighting."
-            },
-            {
-                "value": "Bust one's chops",
-                "definition": "To say things intended to harass."
-            },
-            {
-                "value": "By the seat of one's pants",
-                "definition": "To achieve through instinct or do something without advance preparation."
-            },
-            {
-                "value": "By the skin of one's teeth",
-                "definition": "Narrowly; barely. Usually used in regard to a narrow escape from a disaster."
-            },
-            {
-                "value": "Call it a day",
-                "definition": "To declare the end of a task."
-            },
-            {
-                "value": "Cat nap",
-                "definition": "A nap."
-            },
-            {
-                "value": "Chalk up",
-                "definition": "To attribute something to a particular cause."
-            },
-            {
-                "value": "Champ / chomp at the bit",
-                "definition": "To show impatience or frustration when delayed."
-            },
-            {
-                "value": "Chew the fat",
-                "definition": "To chat idly or generally waste time talking."
-            },
-            {
-                "value": "Chink in one's armor",
-                "definition": "An area of vulnerability"
-            },
-            {
-                "value": "Clam up",
-                "definition": "To become silent; to stop talking."
-            },
-            {
-                "value": "Cold shoulder",
-                "definition": "To display aloofness and disdain."
-            },
-            {
-                "value": "Couch potato",
-                "definition": "A lazy person."
-            },
-            {
-                "value": "Crocodile tears",
-                "definition": "Fake tears or drama tears.(fake cry)"
-            },
-            {
-                "value": "Cut a rug",
-                "definition": "To dance"
-            },
-            {
-                "value": "Cut the cheese",
-                "definition": "To fart. Also cut the mustard"
-            },
-            {
-                "value": "Cut the mustard",
-                "definition": "To perform well; to meet expectations."
-            },
-            {
-                "value": "Don't have a cow",
-                "definition": "Don't overreact."
-            },
-            {
-                "value": "Drop a dime",
-                "definition": "Make a telephone call; to be an informant."
-            },
-            {
-                "value": "Elephant in the room",
-                "definition": "An obvious, pressing issue left unaddressed due to its sensitive nature."
-            },
-            {
-                "value": "Fit as a fiddle",
-                "definition": "In good physical health."
-            },
-            {
-                "value": "For a song",
-                "definition": "Almost free. Very cheap."
-            },
-            {
-                "value": "From A to Z",
-                "definition": "Covering a complete range; comprehensively."
-            },
-            {
-                "value": "From scratch / to make from scratch",
-                "definition": "Make from original ingredients; start from the beginning with no prior preparation"
-            },
-            {
-                "value": "Get bent out of shape",
-                "definition": "To take offense; to get worked up, aggravated, or annoyed"
-            },
-            {
-                "value": "Grasp the nettle",
-                "definition": "To tackle a difficulty boldly."
-            },
-            {
-                "value": "Have a blast",
-                "definition": "To have a good time or to enjoy oneself."
-            },
-            {
-                "value": "Have eyes in the back of one's head",
-                "definition": "Someone can perceive things and events that are outside of their field of vision."
-            },
-            {
-                "value": "Hit the road",
-                "definition": "To leave."
-            },
-            {
-                "value": "Hit the sack/sheets/hay",
-                "definition": "To go to bed to sleep."
-            },
-            {
-                "value": "Ignorance is bliss",
-                "definition": "Life is good when you're naive to the hardships happening all around"
-            },
-            {
-                "value": "Let the cat out of the bag",
-                "definition": "To reveal a secret."
-            },
-            {
-                "value": "Kick the bucket",
-                "definition": "Euphemism for dying or death."
-            },
-            {
-                "value": "No horse in this race",
-                "definition": "No vested interest in the outcome of a particular contest or debate"
-            },
-            {
-                "value": "Off one's trolley/rocker",
-                "definition": "Crazy, demented, out of one's mind, in a confused or befuddled state of mind, senile."
-            },
-            {
-                "value": "Off the hook",
-                "definition": "To escape a situation of responsibility, obligation, or (less frequently) danger."
-            },
-            {
-                "value": "Piss in one's cornflakes",
-                "definition": "To annoy, upset, or disappoint through spiteful or irresponsible behavior."
-            },
-            {
-                "value": "Piece of cake",
-                "definition": "A job, task or other activity that is pleasant – or, by extension, easy or simple."
-            },
-            {
-                "value": "Pull somebody's leg",
-                "definition": "To tease or to joke by telling a lie."
-            },
-            {
-                "value": "Pushing up daisies",
-                "definition": "Euphemism for dying or death."
-            },
-            {
-                "value": "Put the cat among the pigeons",
-                "definition": "To create a disturbance and cause trouble."
-            },
-            {
-                "value": "Raining cats and dogs",
-                "definition": "Raining really strong or hard."
-            },
-            {
-                "value": "Right as rain",
-                "definition": "Needed, appropriate, essential, or hoped-for and has come to mean perfect, well, absolutely right."
-            },
-            {
-                "value": "screw the pooch",
-                "definition": "To screw up; to fail in dramatic and ignominious fashion."
-            },
-            {
-                "value": "Shoot the breeze",
-                "definition": "To chat idly or generally waste time talking."
-            },
-            {
-                "value": "Shooting fish in a barrel",
-                "definition": "Frivolously performing a simple task."
-            },
-            {
-                "value": "Sleep with the fishes",
-                "definition": "Euphemism for dying or death."
-            },
-            {
-                "value": "Spill the beans",
-                "definition": "Reveal someone's secret."
-            },
-            {
-                "value": "Spin one's wheels",
-                "definition": "Expel much effort for little or no gain."
-            },
-            {
-                "value": "Split the whistle",
-                "definition": "To arrive just on time."
-            },
-            {
-                "value": "Sunny smile",
-                "definition": "Very happy."
-            },
-            {
-                "value": "Take the biscuit",
-                "definition": "To be particularly bad, objectionable, or egregious."
-            },
-            {
-                "value": "Take the cake",
-                "definition": "To be especially good or outstanding."
-            },
-            {
-                "value": "Throw under the bus",
-                "definition": "To betray or sacrifice someone for selfish reasons."
-            },
-            {
-                "value": "Through thick and thin",
-                "definition": "In both good and bad times."
-            },
-            {
-                "value": "Thumb one's nose",
-                "definition": "To express scorn or to disregard."
-            },
-            {
-                "value": "Tie one on",
-                "definition": "To get drunk."
-            },
-            {
-                "value": "To steal someone's thunder",
-                "definition": "To take credit for something someone else did"
-            },
-            {
-                "value": "Trip the light fantastic",
-                "definition": "To dance"
-            },
-            {
-                "value": "Under the weather",
-                "definition": "Feel sick or poorly"
-            },
-            {
-                "value": "Whole nine yards",
-                "definition": "Everything. All of it."
-            },
-            {
-                "value": "Wild goose chase",
-                "definition": "A frustrating or lengthy undertaking that accomplishes little."
-            },
-            {
-                "value": "X Marks the spot",
-                "definition": "When someone finds something they have been looking for."
-            },
-            {
-                "value": "You can say that again",
-                "definition": "That is very true; expression of wholehearted agreement"
-            }
+            "A bitter pill",
+            "A dime a dozen",
+            "Ace in the hole",
+            "Achilles' heel",
+            "Actions speak louder than words",
+            "Add insult to injury",
+            "All ears",
+            "All thumbs",
+            "An arm and a leg",
+            "Apple of discord",
+            "At the drop of a hat",
+            "Back to the drawing board",
+            "Ball is in your court",
+            "Barking up the wrong tree",
+            "Basket case",
+            "Beat around the bush",
+            "Beat a dead horse",
+            "Bed of roses",
+            "Best of both worlds",
+            "Bite off more than one can chew",
+            "Bite the bullet",
+            "Bite the dust",
+            "Break a leg",
+            "Burn the midnight oil",
+            "Bust one's chops",
+            "By the seat of one's pants",
+            "By the skin of one's teeth",
+            "Call it a day",
+            "Cat nap",
+            "Chalk up",
+            "Champ / chomp at the bit",
+            "Chew the fat",
+            "Chink in one's armor",
+            "Clam up",
+            "Cold shoulder",
+            "Couch potato",
+            "Crocodile tears",
+            "Cut a rug",
+            "Cut the cheese",
+            "Cut the mustard",
+            "Don't have a cow",
+            "Drop a dime",
+            "Elephant in the room",
+            "Fit as a fiddle",
+            "For a song",
+            "From A to Z",
+            "From scratch / to make from scratch",
+            "Get bent out of shape",
+            "Grasp the nettle",
+            "Have a blast",
+            "Have eyes in the back of one's head",
+            "Hit the road",
+            "Hit the sack/sheets/hay",
+            "Ignorance is bliss",
+            "Let the cat out of the bag",
+            "Kick the bucket",
+            "No horse in this race",
+            "Off one's trolley/rocker",
+            "Off the hook",
+            "Piss in one's cornflakes",
+            "Piece of cake",
+            "Pull somebody's leg",
+            "Pushing up daisies",
+            "Put the cat among the pigeons",
+            "Raining cats and dogs",
+            "Right as rain",
+            "screw the pooch",
+            "Shoot the breeze",
+            "Shooting fish in a barrel",
+            "Sleep with the fishes",
+            "Spill the beans",
+            "Spin one's wheels",
+            "Split the whistle",
+            "Sunny smile",
+            "Take the biscuit",
+            "Take the cake",
+            "Throw under the bus",
+            "Through thick and thin",
+            "Thumb one's nose",
+            "Tie one on",
+            "To steal someone's thunder",
+            "Trip the light fantastic",
+            "Under the weather",
+            "Whole nine yards",
+            "Wild goose chase",
+            "X Marks the spot",
+            "You can say that again"
         ]
     },
     {
@@ -1361,866 +368,221 @@
         "imagePath": "file:///android_asset/images/map.jpg",
         "tags": ["family", "geography"],
         "items": [
-            {
-                "value": "Abkhazia",
-                "definition": null
-            },
-            {
-                "value": "Afghanistan",
-                "definition": null
-            },
-            {
-                "value": "Albania",
-                "definition": null
-            },
-            {
-                "value": "Algeria",
-                "definition": null
-            },
-            {
-                "value": "Andorra",
-                "definition": null
-            },
-            {
-                "value": "Angola",
-                "definition": null
-            },
-            {
-                "value": "Antigua and Barbuda",
-                "definition": null
-            },
-            {
-                "value": "Argentina",
-                "definition": null
-            },
-            {
-                "value": "Armenia",
-                "definition": null
-            },
-            {
-                "value": "Australia",
-                "definition": null
-            },
-            {
-                "value": "Austria",
-                "definition": null
-            },
-            {
-                "value": "Azerbaijan",
-                "definition": null
-            },
-            {
-                "value": "Bahamas, The",
-                "definition": null
-            },
-            {
-                "value": "Bahrain",
-                "definition": null
-            },
-            {
-                "value": "Bangladesh",
-                "definition": null
-            },
-            {
-                "value": "Barbados",
-                "definition": null
-            },
-            {
-                "value": "Belarus",
-                "definition": null
-            },
-            {
-                "value": "Belgium",
-                "definition": null
-            },
-            {
-                "value": "Belize",
-                "definition": null
-            },
-            {
-                "value": "Benin",
-                "definition": null
-            },
-            {
-                "value": "Bhutan",
-                "definition": null
-            },
-            {
-                "value": "Bolivia",
-                "definition": null
-            },
-            {
-                "value": "Bosnia and Herzegovina",
-                "definition": null
-            },
-            {
-                "value": "Botswana",
-                "definition": null
-            },
-            {
-                "value": "Brazil",
-                "definition": null
-            },
-            {
-                "value": "Brunei",
-                "definition": null
-            },
-            {
-                "value": "Bulgaria",
-                "definition": null
-            },
-            {
-                "value": "Burkina Faso",
-                "definition": null
-            },
-            {
-                "value": "Burma",
-                "definition": null
-            },
-            {
-                "value": "Burundi",
-                "definition": null
-            },
-            {
-                "value": "Cambodia",
-                "definition": null
-            },
-            {
-                "value": "Cameroon",
-                "definition": null
-            },
-            {
-                "value": "Canada",
-                "definition": null
-            },
-            {
-                "value": "Cape Verde",
-                "definition": null
-            },
-            {
-                "value": "Central African Republic",
-                "definition": null
-            },
-            {
-                "value": "Chad",
-                "definition": null
-            },
-            {
-                "value": "Chile",
-                "definition": null
-            },
-            {
-                "value": "China",
-                "definition": null
-            },
-            {
-                "value": "Colombia",
-                "definition": null
-            },
-            {
-                "value": "Comoros",
-                "definition": null
-            },
-            {
-                "value": "Congo",
-                "definition": null
-            },
-            {
-                "value": "Cook Islands",
-                "definition": null
-            },
-            {
-                "value": "Costa Rica",
-                "definition": null
-            },
-            {
-                "value": "Côte d'Ivoire / Ivory Coast",
-                "definition": null
-            },
-            {
-                "value": "Croatia",
-                "definition": null
-            },
-            {
-                "value": "Cuba",
-                "definition": null
-            },
-            {
-                "value": "Cyprus",
-                "definition": null
-            },
-            {
-                "value": "Czech Republic",
-                "definition": null
-            },
-            {
-                "value": "North Korea",
-                "definition": null
-            },
-            {
-                "value": "Denmark",
-                "definition": null
-            },
-            {
-                "value": "Djibouti",
-                "definition": null
-            },
-            {
-                "value": "Dominica",
-                "definition": null
-            },
-            {
-                "value": "Dominican Republic",
-                "definition": null
-            },
-            {
-                "value": "East Timor",
-                "definition": null
-            },
-            {
-                "value": "Ecuador",
-                "definition": null
-            },
-            {
-                "value": "Egypt",
-                "definition": null
-            },
-            {
-                "value": "El Salvador",
-                "definition": null
-            },
-            {
-                "value": "Equatorial Guinea",
-                "definition": null
-            },
-            {
-                "value": "Eritrea",
-                "definition": null
-            },
-            {
-                "value": "Estonia",
-                "definition": null
-            },
-            {
-                "value": "Ethiopia",
-                "definition": null
-            },
-            {
-                "value": "Federated States of Micronesia",
-                "definition": null
-            },
-            {
-                "value": "Fiji",
-                "definition": null
-            },
-            {
-                "value": "Finland",
-                "definition": null
-            },
-            {
-                "value": "France",
-                "definition": null
-            },
-            {
-                "value": "Gabon",
-                "definition": null
-            },
-            {
-                "value": "Gambia",
-                "definition": null
-            },
-            {
-                "value": "Georgia",
-                "definition": null
-            },
-            {
-                "value": "Germany",
-                "definition": null
-            },
-            {
-                "value": "Ghana",
-                "definition": null
-            },
-            {
-                "value": "Greece",
-                "definition": null
-            },
-            {
-                "value": "Grenada",
-                "definition": null
-            },
-            {
-                "value": "Guatemala",
-                "definition": null
-            },
-            {
-                "value": "Guinea",
-                "definition": null
-            },
-            {
-                "value": "Guinea-Bissau",
-                "definition": null
-            },
-            {
-                "value": "Guyana",
-                "definition": null
-            },
-            {
-                "value": "Haiti",
-                "definition": null
-            },
-            {
-                "value": "Holy See",
-                "definition": null
-            },
-            {
-                "value": "Honduras",
-                "definition": null
-            },
-            {
-                "value": "Hungary",
-                "definition": null
-            },
-            {
-                "value": "Iceland",
-                "definition": null
-            },
-            {
-                "value": "India",
-                "definition": null
-            },
-            {
-                "value": "Indonesia",
-                "definition": null
-            },
-            {
-                "value": "Iran",
-                "definition": null
-            },
-            {
-                "value": "Iraq",
-                "definition": null
-            },
-            {
-                "value": "Ireland",
-                "definition": null
-            },
-            {
-                "value": "Israel",
-                "definition": null
-            },
-            {
-                "value": "Italy",
-                "definition": null
-            },
-            {
-                "value": "Ivory Coast",
-                "definition": null
-            },
-            {
-                "value": "Jamaica",
-                "definition": null
-            },
-            {
-                "value": "Japan",
-                "definition": null
-            },
-            {
-                "value": "Jordan",
-                "definition": null
-            },
-            {
-                "value": "Kazakhstan",
-                "definition": null
-            },
-            {
-                "value": "Kenya",
-                "definition": null
-            },
-            {
-                "value": "Kiribati",
-                "definition": null
-            },
-            {
-                "value": "South Korea",
-                "definition": null
-            },
-            {
-                "value": "Kosovo",
-                "definition": null
-            },
-            {
-                "value": "Kuwait",
-                "definition": null
-            },
-            {
-                "value": "Kyrgyzstan",
-                "definition": null
-            },
-            {
-                "value": "Laos",
-                "definition": null
-            },
-            {
-                "value": "Latvia",
-                "definition": null
-            },
-            {
-                "value": "Lebanon",
-                "definition": null
-            },
-            {
-                "value": "Lesotho",
-                "definition": null
-            },
-            {
-                "value": "Liberia",
-                "definition": null
-            },
-            {
-                "value": "Libya",
-                "definition": null
-            },
-            {
-                "value": "Liechtenstein",
-                "definition": null
-            },
-            {
-                "value": "Lithuania",
-                "definition": null
-            },
-            {
-                "value": "Luxembourg",
-                "definition": null
-            },
-            {
-                "value": "Macedonia",
-                "definition": null
-            },
-            {
-                "value": "Madagascar",
-                "definition": null
-            },
-            {
-                "value": "Malawi",
-                "definition": null
-            },
-            {
-                "value": "Malaysia",
-                "definition": null
-            },
-            {
-                "value": "Maldives",
-                "definition": null
-            },
-            {
-                "value": "Mali",
-                "definition": null
-            },
-            {
-                "value": "Malta",
-                "definition": null
-            },
-            {
-                "value": "Marshall Islands",
-                "definition": null
-            },
-            {
-                "value": "Mauritania",
-                "definition": null
-            },
-            {
-                "value": "Mauritius",
-                "definition": null
-            },
-            {
-                "value": "Mexico",
-                "definition": null
-            },
-            {
-                "value": "Moldova",
-                "definition": null
-            },
-            {
-                "value": "Monaco",
-                "definition": null
-            },
-            {
-                "value": "Mongolia",
-                "definition": null
-            },
-            {
-                "value": "Montenegro",
-                "definition": null
-            },
-            {
-                "value": "Morocco",
-                "definition": null
-            },
-            {
-                "value": "Mozambique",
-                "definition": null
-            },
-            {
-                "value": "Myanmar",
-                "definition": null
-            },
-            {
-                "value": "Nagorno-Karabakh",
-                "definition": null
-            },
-            {
-                "value": "Namibia",
-                "definition": null
-            },
-            {
-                "value": "Nauru",
-                "definition": null
-            },
-            {
-                "value": "Nepal",
-                "definition": null
-            },
-            {
-                "value": "Netherlands",
-                "definition": null
-            },
-            {
-                "value": "New Zealand",
-                "definition": null
-            },
-            {
-                "value": "Nicaragua",
-                "definition": null
-            },
-            {
-                "value": "Niger",
-                "definition": null
-            },
-            {
-                "value": "Nigeria",
-                "definition": null
-            },
-            {
-                "value": "Niue",
-                "definition": null
-            },
-            {
-                "value": "Northern Cyprus",
-                "definition": null
-            },
-            {
-                "value": "North Korea",
-                "definition": null
-            },
-            {
-                "value": "Norway",
-                "definition": null
-            },
-            {
-                "value": "Oman",
-                "definition": null
-            },
-            {
-                "value": "Pakistan",
-                "definition": null
-            },
-            {
-                "value": "Palau",
-                "definition": null
-            },
-            {
-                "value": "Palestine",
-                "definition": null
-            },
-            {
-                "value": "Panama",
-                "definition": null
-            },
-            {
-                "value": "Papua New Guinea",
-                "definition": null
-            },
-            {
-                "value": "Paraguay",
-                "definition": null
-            },
-            {
-                "value": "Peru",
-                "definition": null
-            },
-            {
-                "value": "Philippines",
-                "definition": null
-            },
-            {
-                "value": "Poland",
-                "definition": null
-            },
-            {
-                "value": "Portugal",
-                "definition": null
-            },
-            {
-                "value": "Pridnestrovie",
-                "definition": null
-            },
-            {
-                "value": "Qatar",
-                "definition": null
-            },
-            {
-                "value": "Republic of Korea",
-                "definition": null
-            },
-            {
-                "value": "Republic of the Congo",
-                "definition": null
-            },
-            {
-                "value": "Romania",
-                "definition": null
-            },
-            {
-                "value": "Russia",
-                "definition": null
-            },
-            {
-                "value": "Rwanda",
-                "definition": null
-            },
-            {
-                "value": "Sahrawi Arab Democratic Republic",
-                "definition": null
-            },
-            {
-                "value": "Saint Kitts and Nevis",
-                "definition": null
-            },
-            {
-                "value": "Saint Lucia",
-                "definition": null
-            },
-            {
-                "value": "Saint Vincent and the Grenadines",
-                "definition": null
-            },
-            {
-                "value": "Samoa",
-                "definition": null
-            },
-            {
-                "value": "San Marino",
-                "definition": null
-            },
-            {
-                "value": "São Tomé and Príncipe",
-                "definition": null
-            },
-            {
-                "value": "Saudi Arabia",
-                "definition": null
-            },
-            {
-                "value": "Senegal",
-                "definition": null
-            },
-            {
-                "value": "Serbia",
-                "definition": null
-            },
-            {
-                "value": "Seychelles",
-                "definition": null
-            },
-            {
-                "value": "Sierra Leone",
-                "definition": null
-            },
-            {
-                "value": "Singapore",
-                "definition": null
-            },
-            {
-                "value": "Slovakia",
-                "definition": null
-            },
-            {
-                "value": "Slovenia",
-                "definition": null
-            },
-            {
-                "value": "Solomon Islands",
-                "definition": null
-            },
-            {
-                "value": "Somalia",
-                "definition": null
-            },
-            {
-                "value": "Somaliland",
-                "definition": null
-            },
-            {
-                "value": "South Africa",
-                "definition": null
-            },
-            {
-                "value": "South Korea",
-                "definition": null
-            },
-            {
-                "value": "South Ossetia",
-                "definition": null
-            },
-            {
-                "value": "South Sudan",
-                "definition": null
-            },
-            {
-                "value": "Spain",
-                "definition": null
-            },
-            {
-                "value": "Sri Lanka",
-                "definition": null
-            },
-            {
-                "value": "Sudan",
-                "definition": null
-            },
-            {
-                "value": "Sudan, South",
-                "definition": null
-            },
-            {
-                "value": "Suriname",
-                "definition": null
-            },
-            {
-                "value": "Swaziland",
-                "definition": null
-            },
-            {
-                "value": "Sweden",
-                "definition": null
-            },
-            {
-                "value": "Switzerland",
-                "definition": null
-            },
-            {
-                "value": "Syria",
-                "definition": null
-            },
-            {
-                "value": "Taiwan",
-                "definition": null
-            },
-            {
-                "value": "Tajikistan",
-                "definition": null
-            },
-            {
-                "value": "Tanzania",
-                "definition": null
-            },
-            {
-                "value": "Thailand",
-                "definition": null
-            },
-            {
-                "value": "Timor-Leste",
-                "definition": null
-            },
-            {
-                "value": "Togo",
-                "definition": null
-            },
-            {
-                "value": "Tonga",
-                "definition": null
-            },
-            {
-                "value": "Transnistria",
-                "definition": null
-            },
-            {
-                "value": "Trinidad and Tobago",
-                "definition": null
-            },
-            {
-                "value": "Tunisia",
-                "definition": null
-            },
-            {
-                "value": "Turkey",
-                "definition": null
-            },
-            {
-                "value": "Turkmenistan",
-                "definition": null
-            },
-            {
-                "value": "Tuvalu",
-                "definition": null
-            },
-            {
-                "value": "Uganda",
-                "definition": null
-            },
-            {
-                "value": "Ukraine",
-                "definition": null
-            },
-            {
-                "value": "United Arab Emirates",
-                "definition": null
-            },
-            {
-                "value": "United Kingdom",
-                "definition": null
-            },
-            {
-                "value": "United States",
-                "definition": null
-            },
-            {
-                "value": "Uruguay",
-                "definition": null
-            },
-            {
-                "value": "Uzbekistan",
-                "definition": null
-            },
-            {
-                "value": "Vanuatu",
-                "definition": null
-            },
-            {
-                "value": "Vatican City",
-                "definition": null
-            },
-            {
-                "value": "Venezuela",
-                "definition": null
-            },
-            {
-                "value": "Vietnam",
-                "definition": null
-            },
-            {
-                "value": "Yemen",
-                "definition": null
-            },
-            {
-                "value": "Zambia",
-                "definition": null
-            },
-            {
-                "value": "Zimbabwe",
-                "definition": null
-            }
+            "Abkhazia",
+            "Afghanistan",
+            "Albania",
+            "Algeria",
+            "Andorra",
+            "Angola",
+            "Antigua and Barbuda",
+            "Argentina",
+            "Armenia",
+            "Australia",
+            "Austria",
+            "Azerbaijan",
+            "Bahamas, The",
+            "Bahrain",
+            "Bangladesh",
+            "Barbados",
+            "Belarus",
+            "Belgium",
+            "Belize",
+            "Benin",
+            "Bhutan",
+            "Bolivia",
+            "Bosnia and Herzegovina",
+            "Botswana",
+            "Brazil",
+            "Brunei",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burma",
+            "Burundi",
+            "Cambodia",
+            "Cameroon",
+            "Canada",
+            "Cape Verde",
+            "Central African Republic",
+            "Chad",
+            "Chile",
+            "China",
+            "Colombia",
+            "Comoros",
+            "Congo",
+            "Cook Islands",
+            "Costa Rica",
+            "Côte d'Ivoire / Ivory Coast",
+            "Croatia",
+            "Cuba",
+            "Cyprus",
+            "Czech Republic",
+            "North Korea",
+            "Denmark",
+            "Djibouti",
+            "Dominica",
+            "Dominican Republic",
+            "East Timor",
+            "Ecuador",
+            "Egypt",
+            "El Salvador",
+            "Equatorial Guinea",
+            "Eritrea",
+            "Estonia",
+            "Ethiopia",
+            "Federated States of Micronesia",
+            "Fiji",
+            "Finland",
+            "France",
+            "Gabon",
+            "Gambia",
+            "Georgia",
+            "Germany",
+            "Ghana",
+            "Greece",
+            "Grenada",
+            "Guatemala",
+            "Guinea",
+            "Guinea-Bissau",
+            "Guyana",
+            "Haiti",
+            "Holy See",
+            "Honduras",
+            "Hungary",
+            "Iceland",
+            "India",
+            "Indonesia",
+            "Iran",
+            "Iraq",
+            "Ireland",
+            "Israel",
+            "Italy",
+            "Ivory Coast",
+            "Jamaica",
+            "Japan",
+            "Jordan",
+            "Kazakhstan",
+            "Kenya",
+            "Kiribati",
+            "South Korea",
+            "Kosovo",
+            "Kuwait",
+            "Kyrgyzstan",
+            "Laos",
+            "Latvia",
+            "Lebanon",
+            "Lesotho",
+            "Liberia",
+            "Libya",
+            "Liechtenstein",
+            "Lithuania",
+            "Luxembourg",
+            "Macedonia",
+            "Madagascar",
+            "Malawi",
+            "Malaysia",
+            "Maldives",
+            "Mali",
+            "Malta",
+            "Marshall Islands",
+            "Mauritania",
+            "Mauritius",
+            "Mexico",
+            "Moldova",
+            "Monaco",
+            "Mongolia",
+            "Montenegro",
+            "Morocco",
+            "Mozambique",
+            "Myanmar",
+            "Nagorno-Karabakh",
+            "Namibia",
+            "Nauru",
+            "Nepal",
+            "Netherlands",
+            "New Zealand",
+            "Nicaragua",
+            "Niger",
+            "Nigeria",
+            "Niue",
+            "Northern Cyprus",
+            "North Korea",
+            "Norway",
+            "Oman",
+            "Pakistan",
+            "Palau",
+            "Palestine",
+            "Panama",
+            "Papua New Guinea",
+            "Paraguay",
+            "Peru",
+            "Philippines",
+            "Poland",
+            "Portugal",
+            "Pridnestrovie",
+            "Qatar",
+            "Republic of Korea",
+            "Republic of the Congo",
+            "Romania",
+            "Russia",
+            "Rwanda",
+            "Sahrawi Arab Democratic Republic",
+            "Saint Kitts and Nevis",
+            "Saint Lucia",
+            "Saint Vincent and the Grenadines",
+            "Samoa",
+            "San Marino",
+            "São Tomé and Príncipe",
+            "Saudi Arabia",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leone",
+            "Singapore",
+            "Slovakia",
+            "Slovenia",
+            "Solomon Islands",
+            "Somalia",
+            "Somaliland",
+            "South Africa",
+            "South Korea",
+            "South Ossetia",
+            "South Sudan",
+            "Spain",
+            "Sri Lanka",
+            "Sudan",
+            "Sudan, South",
+            "Suriname",
+            "Swaziland",
+            "Sweden",
+            "Switzerland",
+            "Syria",
+            "Taiwan",
+            "Tajikistan",
+            "Tanzania",
+            "Thailand",
+            "Timor-Leste",
+            "Togo",
+            "Tonga",
+            "Transnistria",
+            "Trinidad and Tobago",
+            "Tunisia",
+            "Turkey",
+            "Turkmenistan",
+            "Tuvalu",
+            "Uganda",
+            "Ukraine",
+            "United Arab Emirates",
+            "United Kingdom",
+            "United States",
+            "Uruguay",
+            "Uzbekistan",
+            "Vanuatu",
+            "Vatican City",
+            "Venezuela",
+            "Vietnam",
+            "Yemen",
+            "Zambia",
+            "Zimbabwe"
         ]
     },
     {
@@ -2229,154 +591,43 @@
         "imagePath": "file:///android_asset/images/summer-olympics.jpg",
         "tags": ["family", "sports"],
         "items": [
-            {
-                "value": "Diving",
-                "definition": null
-            },
-            {
-                "value": "Swimming",
-                "definition": null
-            },
-            {
-                "value": "Synchronized swimming",
-                "definition": null
-            },
-            {
-                "value": "Water polo",
-                "definition": null
-            },
-            {
-                "value": "Canoe/kayak",
-                "definition": null
-            },
-            {
-                "value": "BMX",
-                "definition": null
-            },
-            {
-                "value": "Mountain biking",
-                "definition": null
-            },
-            {
-                "value": "Road cycling",
-                "definition": null
-            },
-            {
-                "value": "Track cycling",
-                "definition": null
-            },
-            {
-                "value": "Artistic",
-                "definition": null
-            },
-            {
-                "value": "Rhythmic",
-                "definition": null
-            },
-            {
-                "value": "Trampoline",
-                "definition": null
-            },
-            {
-                "value": "Volleyball (beach)",
-                "definition": null
-            },
-            {
-                "value": "Volleyball (indoor)",
-                "definition": null
-            },
-            {
-                "value": "Equestrian",
-                "definition": null
-            },
-            {
-                "value": "Wrestling",
-                "definition": null
-            },
-            {
-                "value": "Archery",
-                "definition": null
-            },
-            {
-                "value": "Athletics",
-                "definition": null
-            },
-            {
-                "value": "Badminton",
-                "definition": null
-            },
-            {
-                "value": "Basketball",
-                "definition": null
-            },
-            {
-                "value": "Boxing",
-                "definition": null
-            },
-            {
-                "value": "Fencing",
-                "definition": null
-            },
-            {
-                "value": "Field hockey",
-                "definition": null
-            },
-            {
-                "value": "Football",
-                "definition": null
-            },
-            {
-                "value": "Golf",
-                "definition": null
-            },
-            {
-                "value": "Handball",
-                "definition": null
-            },
-            {
-                "value": "Judo",
-                "definition": null
-            },
-            {
-                "value": "Modern pentathlon",
-                "definition": null
-            },
-            {
-                "value": "Rowing",
-                "definition": null
-            },
-            {
-                "value": "Rugby sevens",
-                "definition": null
-            },
-            {
-                "value": "Sailing",
-                "definition": null
-            },
-            {
-                "value": "Shooting",
-                "definition": null
-            },
-            {
-                "value": "Table tennis",
-                "definition": null
-            },
-            {
-                "value": "Taekwondo",
-                "definition": null
-            },
-            {
-                "value": "Tennis",
-                "definition": null
-            },
-            {
-                "value": "Triathlon",
-                "definition": null
-            },
-            {
-                "value": "Weightlifting",
-                "definition": null
-            }
+            "Diving",
+            "Swimming",
+            "Synchronized swimming",
+            "Water polo",
+            "Canoe/kayak",
+            "BMX",
+            "Mountain biking",
+            "Road cycling",
+            "Track cycling",
+            "Artistic",
+            "Rhythmic",
+            "Trampoline",
+            "Volleyball (beach)",
+            "Volleyball (indoor)",
+            "Equestrian",
+            "Wrestling",
+            "Archery",
+            "Athletics",
+            "Badminton",
+            "Basketball",
+            "Boxing",
+            "Fencing",
+            "Field hockey",
+            "Football",
+            "Golf",
+            "Handball",
+            "Judo",
+            "Modern pentathlon",
+            "Rowing",
+            "Rugby sevens",
+            "Sailing",
+            "Shooting",
+            "Table tennis",
+            "Taekwondo",
+            "Tennis",
+            "Triathlon",
+            "Weightlifting"
         ]
     },
     {
@@ -2385,66 +636,21 @@
         "imagePath": "file:///android_asset/images/winter-olympics.jpg",
         "tags": ["family", "sports"],
         "items": [
-            {
-                "value": "Figure skating",
-                "definition": null
-            },
-            {
-                "value": "Speed skating",
-                "definition": null
-            },
-            {
-                "value": "Short track speed skating",
-                "definition": null
-            },
-            {
-                "value": "Ice hockey",
-                "definition": null
-            },
-            {
-                "value": "Curling",
-                "definition": null
-            },
-            {
-                "value": "Cross-country skiing",
-                "definition": null
-            },
-            {
-                "value": "Alpine skiing",
-                "definition": null
-            },
-            {
-                "value": "Ski jumping",
-                "definition": null
-            },
-            {
-                "value": "Nordic combined",
-                "definition": null
-            },
-            {
-                "value": "Freestyle skiing",
-                "definition": null
-            },
-            {
-                "value": "Snowboarding",
-                "definition": null
-            },
-            {
-                "value": "Biathlon",
-                "definition": null
-            },
-            {
-                "value": "Luge",
-                "definition": null
-            },
-            {
-                "value": "Bobsleigh",
-                "definition": null
-            },
-            {
-                "value": "Skeleton",
-                "definition": null
-            }
+            "Figure skating",
+            "Speed skating",
+            "Short track speed skating",
+            "Ice hockey",
+            "Curling",
+            "Cross-country skiing",
+            "Alpine skiing",
+            "Ski jumping",
+            "Nordic combined",
+            "Freestyle skiing",
+            "Snowboarding",
+            "Biathlon",
+            "Luge",
+            "Bobsleigh",
+            "Skeleton"
         ]
     },
     {
@@ -2453,378 +659,99 @@
         "imagePath": "file:///android_asset/images/christmas.jpg",
         "tags": ["family", "holiday"],
         "items": [
-            {
-                "value": "Comet the Reindeer",
-                "definition": null
-            },
-            {
-                "value": "Mistletoe",
-                "definition": null
-            },
-            {
-                "value": "Egg Nog",
-                "definition": null
-            },
-            {
-                "value": "Ebenezer Scrooge",
-                "definition": null
-            },
-            {
-                "value": "Building a Snowman",
-                "definition": null
-            },
-            {
-                "value": "The First Noel",
-                "definition": null
-            },
-            {
-                "value": "It’s a Wonderful Life",
-                "definition": null
-            },
-            {
-                "value": "The Star of Bethlehem",
-                "definition": null
-            },
-            {
-                "value": "Pumpkin Pie",
-                "definition": null
-            },
-            {
-                "value": "Chestnuts roasting on an open fire",
-                "definition": null
-            },
-            {
-                "value": "Jack Frost",
-                "definition": null
-            },
-            {
-                "value": "The North Pole",
-                "definition": null
-            },
-            {
-                "value": "Santa’s Elves",
-                "definition": null
-            },
-            {
-                "value": "Silver Bells",
-                "definition": null
-            },
-            {
-                "value": "Santa Claus is Coming to Town",
-                "definition": null
-            },
-            {
-                "value": "The Night Before Christmas",
-                "definition": null
-            },
-            {
-                "value": "Festival of Light",
-                "definition": null
-            },
-            {
-                "value": "You’ll Shoot Your Eye Out",
-                "definition": null
-            },
-            {
-                "value": "Little Drummer Boy",
-                "definition": null
-            },
-            {
-                "value": "How the Grinch Stole Christmas",
-                "definition": null
-            },
-            {
-                "value": "Sugar Plums",
-                "definition": null
-            },
-            {
-                "value": "Festivus",
-                "definition": null
-            },
-            {
-                "value": "Christmas Pig",
-                "definition": null
-            },
-            {
-                "value": "Star of Bethlehem",
-                "definition": null
-            },
-            {
-                "value": "Decorating the Tree",
-                "definition": null
-            },
-            {
-                "value": "A Christmas Miracle",
-                "definition": null
-            },
-            {
-                "value": "Singing Carols",
-                "definition": null
-            },
-            {
-                "value": "Silent Night",
-                "definition": null
-            },
-            {
-                "value": "Three Wise Men",
-                "definition": null
-            },
-            {
-                "value": "The Naughty and Nice List",
-                "definition": null
-            },
-            {
-                "value": "Chris Kringle",
-                "definition": null
-            },
-            {
-                "value": "Saint Nicholas",
-                "definition": null
-            },
-            {
-                "value": "Chess Nuts Roasting on an Open Fire",
-                "definition": null
-            },
-            {
-                "value": "Jack Frost Nipping At Your Nose",
-                "definition": null
-            },
-            {
-                "value": "Oh Christmas Tree",
-                "definition": null
-            },
-            {
-                "value": "Elves",
-                "definition": null
-            },
-            {
-                "value": "Christmas Tree",
-                "definition": null
-            },
-            {
-                "value": "Ornaments",
-                "definition": null
-            },
-            {
-                "value": "Angels",
-                "definition": null
-            },
-            {
-                "value": "Snow",
-                "definition": null
-            },
-            {
-                "value": "Scarves",
-                "definition": null
-            },
-            {
-                "value": "Ear muffs",
-                "definition": null
-            },
-            {
-                "value": "Mittens",
-                "definition": null
-            },
-            {
-                "value": "Snowflakes",
-                "definition": null
-            },
-            {
-                "value": "Star",
-                "definition": null
-            },
-            {
-                "value": "Christmas Cards",
-                "definition": null
-            },
-            {
-                "value": "Decorations",
-                "definition": null
-            },
-            {
-                "value": "Wrapping Paper",
-                "definition": null
-            },
-            {
-                "value": "Snow Globe",
-                "definition": null
-            },
-            {
-                "value": "Candles",
-                "definition": null
-            },
-            {
-                "value": "Gingerbread Man",
-                "definition": null
-            },
-            {
-                "value": "Gingerbread House",
-                "definition": null
-            },
-            {
-                "value": "Plate of Cookies",
-                "definition": null
-            },
-            {
-                "value": "12 Days of Christmas",
-                "definition": null
-            },
-            {
-                "value": "Frosty the Snowman",
-                "definition": null
-            },
-            {
-                "value": "Candy Cane",
-                "definition": null
-            },
-            {
-                "value": "Hot Chocolate",
-                "definition": null
-            },
-            {
-                "value": "Stockings",
-                "definition": null
-            },
-            {
-                "value": "Reindeer",
-                "definition": null
-            },
-            {
-                "value": "Christmas Carols",
-                "definition": null
-            },
-            {
-                "value": "Nutcracker",
-                "definition": null
-            },
-            {
-                "value": "Wreath",
-                "definition": null
-            },
-            {
-                "value": "Gifts",
-                "definition": null
-            },
-            {
-                "value": "Santa Claus",
-                "definition": null
-            },
-            {
-                "value": "Rudolph the Red Nose Reindeer",
-                "definition": null
-            },
-            {
-                "value": "Jingle Bells",
-                "definition": null
-            },
-            {
-                "value": "Mrs. Claus",
-                "definition": null
-            },
-            {
-                "value": "Joy to the World",
-                "definition": null
-            },
-            {
-                "value": "Santa Claus is Coming To Town",
-                "definition": null
-            },
-            {
-                "value": "I'm Dreaming of a White Christmas",
-                "definition": null
-            },
-            {
-                "value": "Winter Wonderland",
-                "definition": null
-            },
-            {
-                "value": "Away in a Manger",
-                "definition": null
-            },
-            {
-                "value": "Carol of the Bells",
-                "definition": null
-            },
-            {
-                "value": "Christmas Lights",
-                "definition": null
-            },
-            {
-                "value": "Deck the Halls",
-                "definition": null
-            },
-            {
-                "value": "Grandma Got Run Over by a Reindeer",
-                "definition": null
-            },
-            {
-                "value": "Hark the Herald Angels Sing",
-                "definition": null
-            },
-            {
-                "value": "I Saw Mommy Kissing Santa Claus",
-                "definition": null
-            },
-            {
-                "value": "Jingle Bell Rock",
-                "definition": null
-            },
-            {
-                "value": "It's Beginning to Feel a Lot Like Christmas",
-                "definition": null
-            },
-            {
-                "value": "Let it Snow",
-                "definition": null
-            },
-            {
-                "value": "I'll be Home For Christmas",
-                "definition": null
-            },
-            {
-                "value": "It's the Most Wonderful Time of the Year",
-                "definition": null
-            },
-            {
-                "value": "All I Want for Christmas is my Two Front Teeth",
-                "definition": null
-            },
-            {
-                "value": "Sleigh Ride",
-                "definition": null
-            },
-            {
-                "value": "Snowman",
-                "definition": null
-            },
-            {
-                "value": "Up On the Housetop",
-                "definition": null
-            },
-            {
-                "value": "Blue Christmas",
-                "definition": null
-            },
-            {
-                "value": "Charlie Brown",
-                "definition": null
-            },
-            {
-                "value": "Santa's Workshop",
-                "definition": null
-            },
-            {
-                "value": "Chimney",
-                "definition": null
-            },
-            {
-                "value": "Pine Cones",
-                "definition": null
-            },
-            {
-                "value": "Snowball",
-                "definition": null
-            }
+            "Comet the Reindeer",
+            "Mistletoe",
+            "Egg Nog",
+            "Ebenezer Scrooge",
+            "Building a Snowman",
+            "The First Noel",
+            "It’s a Wonderful Life",
+            "The Star of Bethlehem",
+            "Pumpkin Pie",
+            "Chestnuts roasting on an open fire",
+            "Jack Frost",
+            "The North Pole",
+            "Santa’s Elves",
+            "Silver Bells",
+            "Santa Claus is Coming to Town",
+            "The Night Before Christmas",
+            "Festival of Light",
+            "You’ll Shoot Your Eye Out",
+            "Little Drummer Boy",
+            "How the Grinch Stole Christmas",
+            "Sugar Plums",
+            "Festivus",
+            "Christmas Pig",
+            "Star of Bethlehem",
+            "Decorating the Tree",
+            "A Christmas Miracle",
+            "Singing Carols",
+            "Silent Night",
+            "Three Wise Men",
+            "The Naughty and Nice List",
+            "Chris Kringle",
+            "Saint Nicholas",
+            "Chess Nuts Roasting on an Open Fire",
+            "Jack Frost Nipping At Your Nose",
+            "Oh Christmas Tree",
+            "Elves",
+            "Christmas Tree",
+            "Ornaments",
+            "Angels",
+            "Snow",
+            "Scarves",
+            "Ear muffs",
+            "Mittens",
+            "Snowflakes",
+            "Star",
+            "Christmas Cards",
+            "Decorations",
+            "Wrapping Paper",
+            "Snow Globe",
+            "Candles",
+            "Gingerbread Man",
+            "Gingerbread House",
+            "Plate of Cookies",
+            "12 Days of Christmas",
+            "Frosty the Snowman",
+            "Candy Cane",
+            "Hot Chocolate",
+            "Stockings",
+            "Reindeer",
+            "Christmas Carols",
+            "Nutcracker",
+            "Wreath",
+            "Gifts",
+            "Santa Claus",
+            "Rudolph the Red Nose Reindeer",
+            "Jingle Bells",
+            "Mrs. Claus",
+            "Joy to the World",
+            "Santa Claus is Coming To Town",
+            "I'm Dreaming of a White Christmas",
+            "Winter Wonderland",
+            "Away in a Manger",
+            "Carol of the Bells",
+            "Christmas Lights",
+            "Deck the Halls",
+            "Grandma Got Run Over by a Reindeer",
+            "Hark the Herald Angels Sing",
+            "I Saw Mommy Kissing Santa Claus",
+            "Jingle Bell Rock",
+            "It's Beginning to Feel a Lot Like Christmas",
+            "Let it Snow",
+            "I'll be Home For Christmas",
+            "It's the Most Wonderful Time of the Year",
+            "All I Want for Christmas is my Two Front Teeth",
+            "Sleigh Ride",
+            "Snowman",
+            "Up On the Housetop",
+            "Blue Christmas",
+            "Charlie Brown",
+            "Santa's Workshop",
+            "Chimney",
+            "Pine Cones",
+            "Snowball"
         ]
     },
     {
@@ -2833,82 +760,25 @@
         "imagePath": "file:///android_asset/images/easter.jpg",
         "tags": ["family", "holiday"],
         "items": [
-            {
-                "value": "Bunny",
-                "definition": null
-            },
-            {
-                "value": "Eggs",
-                "definition": null
-            },
-            {
-                "value": "Candy",
-                "definition": null
-            },
-            {
-                "value": "Easter",
-                "definition": null
-            },
-            {
-                "value": "Baskets",
-                "definition": null
-            },
-            {
-                "value": "Chocolate",
-                "definition": null
-            },
-            {
-                "value": "Hunt",
-                "definition": null
-            },
-            {
-                "value": "Chicks",
-                "definition": null
-            },
-            {
-                "value": "Sunday",
-                "definition": null
-            },
-            {
-                "value": "Dye",
-                "definition": null
-            },
-            {
-                "value": "Hidden",
-                "definition": null
-            },
-            {
-                "value": "Jelly Beans",
-                "definition": null
-            },
-            {
-                "value": "Bonnet",
-                "definition": null
-            },
-            {
-                "value": "Dinner",
-                "definition": null
-            },
-            {
-                "value": "Equinox",
-                "definition": null
-            },
-            {
-                "value": "Spring",
-                "definition": null
-            },
-            {
-                "value": "Grass",
-                "definition": null
-            },
-            {
-                "value": "Lent",
-                "definition": null
-            },
-            {
-                "value": "Lilly",
-                "definition": null
-            }
+            "Bunny",
+            "Eggs",
+            "Candy",
+            "Easter",
+            "Baskets",
+            "Chocolate",
+            "Hunt",
+            "Chicks",
+            "Sunday",
+            "Dye",
+            "Hidden",
+            "Jelly Beans",
+            "Bonnet",
+            "Dinner",
+            "Equinox",
+            "Spring",
+            "Grass",
+            "Lent",
+            "Lilly"
         ]
     },
     {
@@ -2917,358 +787,94 @@
         "imagePath": "file:///android_asset/images/act-it-out.jpg",
         "tags": ["family"],
         "items": [
-            {
-                "value": "Stubbing a toe",
-                "definition": null
-            },
-            {
-                "value": "Eating something gross",
-                "definition": null
-            },
-            {
-                "value": "Having a spider crawling up your leg",
-                "definition": null
-            },
-            {
-                "value": "Winning a race",
-                "definition": null
-            },
-            {
-                "value": "Driving a race car",
-                "definition": null
-            },
-            {
-                "value": "Picking flowers to make a bouquet",
-                "definition": null
-            },
-            {
-                "value": "Rowing a boat in stormy seas",
-                "definition": null
-            },
-            {
-                "value": "Performing surgery on a patient",
-                "definition": null
-            },
-            {
-                "value": "Sculpting a statue",
-                "definition": null
-            },
-            {
-                "value": "Watching a scary movie",
-                "definition": null
-            },
-            {
-                "value": "Having a pleasant picnic",
-                "definition": null
-            },
-            {
-                "value": "Playing a competitive game of chess",
-                "definition": null
-            },
-            {
-                "value": "Chasing a mouse",
-                "definition": null
-            },
-            {
-                "value": "Playing fetch with your dog",
-                "definition": null
-            },
-            {
-                "value": "Trying to feed baby food to a fussy baby",
-                "definition": null
-            },
-            {
-                "value": "Getting a haircut",
-                "definition": null
-            },
-            {
-                "value": "Looking for clues to solve a mystery",
-                "definition": null
-            },
-            {
-                "value": "Looking at fish in the ocean",
-                "definition": null
-            },
-            {
-                "value": "Jumping on a trampoline",
-                "definition": null
-            },
-            {
-                "value": "Dancing a ballet",
-                "definition": null
-            },
-            {
-                "value": "Washing an elephant",
-                "definition": null
-            },
-            {
-                "value": "Rock climbing",
-                "definition": null
-            },
-            {
-                "value": "Shopping at the mall",
-                "definition": null
-            },
-            {
-                "value": "Playing soccer",
-                "definition": null
-            },
-            {
-                "value": "Flying a kite",
-                "definition": null
-            },
-            {
-                "value": "Going bowling",
-                "definition": null
-            },
-            {
-                "value": "Scuba diving",
-                "definition": null
-            },
-            {
-                "value": "Chasing a tornado",
-                "definition": null
-            },
-            {
-                "value": "Building a campfire",
-                "definition": null
-            },
-            {
-                "value": "Sewing a dress",
-                "definition": null
-            },
-            {
-                "value": "Playing four square",
-                "definition": null
-            },
-            {
-                "value": "Filming a movie",
-                "definition": null
-            },
-            {
-                "value": "Riding a carousel",
-                "definition": null
-            },
-            {
-                "value": "Playing chess",
-                "definition": null
-            },
-            {
-                "value": "Finger painting",
-                "definition": null
-            },
-            {
-                "value": "Visiting the zoo",
-                "definition": null
-            },
-            {
-                "value": "Sewing on a button",
-                "definition": null
-            },
-            {
-                "value": "Ironing a shirt",
-                "definition": null
-            },
-            {
-                "value": "Baking bread",
-                "definition": null
-            },
-            {
-                "value": "Making a pizza",
-                "definition": null
-            },
-            {
-                "value": "Having a food fight",
-                "definition": null
-            },
-            {
-                "value": "Paddling in a canoe",
-                "definition": null
-            },
-            {
-                "value": "Delivering mail",
-                "definition": null
-            },
-            {
-                "value": "Riding a motorcycle",
-                "definition": null
-            },
-            {
-                "value": "Flipping pancakes",
-                "definition": null
-            },
-            {
-                "value": "Sorting laundry",
-                "definition": null
-            },
-            {
-                "value": "Playing hopscotch",
-                "definition": null
-            },
-            {
-                "value": "Hailing a taxi",
-                "definition": null
-            },
-            {
-                "value": "Landing an airplane",
-                "definition": null
-            },
-            {
-                "value": "Watering a garden",
-                "definition": null
-            },
-            {
-                "value": "Mowing a lawn",
-                "definition": null
-            },
-            {
-                "value": "Raking leaves",
-                "definition": null
-            },
-            {
-                "value": "Feeding the ducks",
-                "definition": null
-            },
-            {
-                "value": "Building a sandcastle",
-                "definition": null
-            },
-            {
-                "value": "Playing baseball",
-                "definition": null
-            },
-            {
-                "value": "Milking a cow",
-                "definition": null
-            },
-            {
-                "value": "Setting up a tent",
-                "definition": null
-            },
-            {
-                "value": "Whale watching",
-                "definition": null
-            },
-            {
-                "value": "Decorating for a party",
-                "definition": null
-            },
-            {
-                "value": "Trick-or-treating",
-                "definition": null
-            },
-            {
-                "value": "Walking with crutches",
-                "definition": null
-            },
-            {
-                "value": "Riding in a chairlift",
-                "definition": null
-            },
-            {
-                "value": "Sumo wrestling",
-                "definition": null
-            },
-            {
-                "value": "Digging a hole",
-                "definition": null
-            },
-            {
-                "value": "Riding bumper cars",
-                "definition": null
-            },
-            {
-                "value": "Practicing karate",
-                "definition": null
-            },
-            {
-                "value": "Hang-gliding",
-                "definition": null
-            },
-            {
-                "value": "Cutting someone's hair",
-                "definition": null
-            },
-            {
-                "value": "Swimming with dolphins",
-                "definition": null
-            },
-            {
-                "value": "Playing with play dough",
-                "definition": null
-            },
-            {
-                "value": "Going through airport security",
-                "definition": null
-            },
-            {
-                "value": "Filling up a car with gas",
-                "definition": null
-            },
-            {
-                "value": "Ordering food at a restaurant",
-                "definition": null
-            },
-            {
-                "value": "Operating a jackhammer",
-                "definition": null
-            },
-            {
-                "value": "Picking apples from a tree",
-                "definition": null
-            },
-            {
-                "value": "Gathering eggs from a hen house",
-                "definition": null
-            },
-            {
-                "value": "Watching a movie at the theater",
-                "definition": null
-            },
-            {
-                "value": "Climbing Mount Everest",
-                "definition": null
-            },
-            {
-                "value": "Going on an African safari",
-                "definition": null
-            },
-            {
-                "value": "Performing at a rock concert",
-                "definition": null
-            },
-            {
-                "value": "Playing at a piano recital",
-                "definition": null
-            },
-            {
-                "value": "Asking for an autograph",
-                "definition": null
-            },
-            {
-                "value": "Walking through a haunted house",
-                "definition": null
-            },
-            {
-                "value": "Opening birthday presents",
-                "definition": null
-            },
-            {
-                "value": "Body surfing at the beach",
-                "definition": null
-            },
-            {
-                "value": "Painting the walls in a room",
-                "definition": null
-            },
-            {
-                "value": "Being a flight attendant",
-                "definition": null
-            },
-            {
-                "value": "Washing windows on a building",
-                "definition": null
-            }
+            "Stubbing a toe",
+            "Eating something gross",
+            "Having a spider crawling up your leg",
+            "Winning a race",
+            "Driving a race car",
+            "Picking flowers to make a bouquet",
+            "Rowing a boat in stormy seas",
+            "Performing surgery on a patient",
+            "Sculpting a statue",
+            "Watching a scary movie",
+            "Having a pleasant picnic",
+            "Playing a competitive game of chess",
+            "Chasing a mouse",
+            "Playing fetch with your dog",
+            "Trying to feed baby food to a fussy baby",
+            "Getting a haircut",
+            "Looking for clues to solve a mystery",
+            "Looking at fish in the ocean",
+            "Jumping on a trampoline",
+            "Dancing a ballet",
+            "Washing an elephant",
+            "Rock climbing",
+            "Shopping at the mall",
+            "Playing soccer",
+            "Flying a kite",
+            "Going bowling",
+            "Scuba diving",
+            "Chasing a tornado",
+            "Building a campfire",
+            "Sewing a dress",
+            "Playing four square",
+            "Filming a movie",
+            "Riding a carousel",
+            "Playing chess",
+            "Finger painting",
+            "Visiting the zoo",
+            "Sewing on a button",
+            "Ironing a shirt",
+            "Baking bread",
+            "Making a pizza",
+            "Having a food fight",
+            "Paddling in a canoe",
+            "Delivering mail",
+            "Riding a motorcycle",
+            "Flipping pancakes",
+            "Sorting laundry",
+            "Playing hopscotch",
+            "Hailing a taxi",
+            "Landing an airplane",
+            "Watering a garden",
+            "Mowing a lawn",
+            "Raking leaves",
+            "Feeding the ducks",
+            "Building a sandcastle",
+            "Playing baseball",
+            "Milking a cow",
+            "Setting up a tent",
+            "Whale watching",
+            "Decorating for a party",
+            "Trick-or-treating",
+            "Walking with crutches",
+            "Riding in a chairlift",
+            "Sumo wrestling",
+            "Digging a hole",
+            "Riding bumper cars",
+            "Practicing karate",
+            "Hang-gliding",
+            "Cutting someone's hair",
+            "Swimming with dolphins",
+            "Playing with play dough",
+            "Going through airport security",
+            "Filling up a car with gas",
+            "Ordering food at a restaurant",
+            "Operating a jackhammer",
+            "Picking apples from a tree",
+            "Gathering eggs from a hen house",
+            "Watching a movie at the theater",
+            "Climbing Mount Everest",
+            "Going on an African safari",
+            "Performing at a rock concert",
+            "Playing at a piano recital",
+            "Asking for an autograph",
+            "Walking through a haunted house",
+            "Opening birthday presents",
+            "Body surfing at the beach",
+            "Painting the walls in a room",
+            "Being a flight attendant",
+            "Washing windows on a building"
         ]
     }
 ]
