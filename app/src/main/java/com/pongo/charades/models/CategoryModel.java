@@ -1,5 +1,7 @@
 package com.pongo.charades.models;
 
+import java.util.HashSet;
+
 import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
@@ -34,8 +36,16 @@ public class CategoryModel extends RealmObject {
         model.setTitle(dto.title);
         model.setLanguage(dto.language);
         model.setImagePath(dto.imagePath);
+        HashSet<String> tags = new HashSet<>();
         for (String tag : dto.tags) {
             if (tag == null || tag.trim() == "") continue;
+            tags.add(tag);
+        }
+        for (String word : dto.title.split(" ")) {
+            if (word == null || word.trim() == "") continue;
+            tags.add(word);
+        }
+        for (String tag : tags) {
             model.getTags().add(new CategoryTagModel(tag));
         }
         for (String item : dto.items) {

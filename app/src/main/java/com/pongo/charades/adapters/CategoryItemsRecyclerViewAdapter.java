@@ -19,7 +19,6 @@ import java.util.List;
 public class CategoryItemsRecyclerViewAdapter extends RecyclerView.Adapter {
     private static final int NO_FOCUS = -1;
 
-    final private Context mContext;
     final private FontAwesomeProvider mFontAwesome;
     final private LayoutInflater mLayoutInflater;
     final private List<String> mItems;
@@ -30,7 +29,6 @@ public class CategoryItemsRecyclerViewAdapter extends RecyclerView.Adapter {
                                             FontAwesomeProvider fontAwesome,
                                             RecyclerView recyclerView,
                                             CategoryDto category) {
-        mContext = context;
         mFontAwesome = fontAwesome;
         mRecyclerView = recyclerView;
         mItems = category.items;
