@@ -14,6 +14,7 @@ import com.pongo.charades.viewholders.CharadesCellViewHolder;
 
 import java.util.ArrayList;
 
+import io.realm.Case;
 import io.realm.Realm;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
@@ -118,7 +119,7 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
         {
             query.beginGroup();
             for (String tag : tags) {
-                 query.equalTo("tags.value", tag);
+                 query.equalTo("tags.value", tag, Case.INSENSITIVE);
             }
             query.endGroup();
         }
