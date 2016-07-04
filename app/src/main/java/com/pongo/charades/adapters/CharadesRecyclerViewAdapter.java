@@ -115,10 +115,10 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
                 break;
         }
         ArrayList<String> tags = mParent.getTags();
-        if (tags != null && tags.size() > 0)
-        {
+        if (tags != null && tags.size() > 0) {
             query.beginGroup();
             for (String tag : tags) {
+                if (tag == null) continue;
                  query.equalTo("tags.value", tag, Case.INSENSITIVE);
             }
             query.endGroup();

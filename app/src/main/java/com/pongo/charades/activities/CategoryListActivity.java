@@ -2,6 +2,7 @@ package com.pongo.charades.activities;
 
 import android.app.SearchManager;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -43,6 +44,12 @@ public class CategoryListActivity
     private void setupList(Intent intent) {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
+            mFragment.setup(
+                    CategoryCatalogFragment.FILTER_SEARCH,
+                    new ArrayList<>(Arrays.asList(query)));
+        } else if (Intent.ACTION_VIEW.equals(intent.getAction())) {
+            String query = intent.getDataString();
+            Uri query2 = intent.getData();
             mFragment.setup(
                     CategoryCatalogFragment.FILTER_SEARCH,
                     new ArrayList<>(Arrays.asList(query)));

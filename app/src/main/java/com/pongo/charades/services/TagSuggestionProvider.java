@@ -28,7 +28,7 @@ public class TagSuggestionProvider extends ContentProvider {
     public boolean onCreate() {
         mRealm = Realm.getInstance(getContext());
         loadTags();
-        return true;
+        return mTags.size() > 0;
     }
 
     private void loadTags() {
@@ -42,11 +42,14 @@ public class TagSuggestionProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
+        if (mTags.isEmpty())
+            loadTags();
+
         MatrixCursor cursor = new MatrixCursor(
                 new String[] {
                         BaseColumns._ID,
                         SearchManager.SUGGEST_COLUMN_TEXT_1,
-                        SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID
+                        SearchManager.SUGGEST_COLUMN_INTENT_DATA
                 }
         );
 
@@ -57,7 +60,7 @@ public class TagSuggestionProvider extends ContentProvider {
         for (int i = 0; i < length && cursor.getCount() < limit; i++) {
             String tag = mTags.get(i);
             if (tag.toUpperCase().contains(query)){
-                cursor.addRow(new Object[]{ i, tag, i });
+                cursor.addRow(new Object[]{ i, tag, tag });
             }
         }
 

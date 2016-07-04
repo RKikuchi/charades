@@ -58,6 +58,10 @@
             android:name=".activities.HowToPlayActivity"
             android:label="@string/how_to_play" />
 
+        <provider
+            android:authorities="com.pongo.charades.categorytagsuggestion"
+            android:name=".services.TagSuggestionProvider" />
+        
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="c4cf0a717aad7741ed91ec60f7cd885f9916bf63" />
