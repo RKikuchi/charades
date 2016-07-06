@@ -41,8 +41,9 @@ public class CategoryModel extends RealmObject {
             if (tag == null || tag.trim() == "") continue;
             tags.add(tag);
         }
-        for (String word : dto.title.split(" ")) {
-            if (word == null || word.trim() == "") continue;
+        String[] words = dto.title.replaceAll("[^a-zA-Z ]", "").toLowerCase().split("\\s+");
+        for (String word : words) {
+            if (word == null || word.length() <= 2) continue;
             tags.add(word);
         }
         for (String tag : tags) {

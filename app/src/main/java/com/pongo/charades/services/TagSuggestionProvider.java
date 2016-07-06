@@ -21,21 +21,21 @@ import io.realm.Realm;
  */
 public class TagSuggestionProvider extends ContentProvider {
 
-    Realm mRealm;
     List<String> mTags = new ArrayList<>();
 
     @Override
     public boolean onCreate() {
-        mRealm = Realm.getInstance(getContext());
         loadTags();
         return mTags.size() > 0;
     }
 
     private void loadTags() {
         mTags.clear();
-        for (CategoryTagModel tag : mRealm.where(CategoryTagModel.class).findAll()) {
+        Realm realm = Realm.getInstance(getContext());
+        for (CategoryTagModel tag : realm.where(CategoryTagModel.class).findAll()) {
             mTags.add(tag.getValue());
         }
+        realm.close();
     }
 
     @Nullable
