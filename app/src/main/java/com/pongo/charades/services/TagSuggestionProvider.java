@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 import android.support.annotation.Nullable;
 
+import com.pongo.charades.R;
 import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.models.CategoryTagModel;
 
@@ -53,6 +54,7 @@ public class TagSuggestionProvider extends ContentProvider {
         MatrixCursor cursor = new MatrixCursor(
                 new String[] {
                         BaseColumns._ID,
+                        SearchManager.SUGGEST_COLUMN_ICON_1,
                         SearchManager.SUGGEST_COLUMN_TEXT_1,
                         SearchManager.SUGGEST_COLUMN_INTENT_DATA
                 }
@@ -66,7 +68,7 @@ public class TagSuggestionProvider extends ContentProvider {
         while (i < numTags && cursor.getCount() < limit) {
             String tag = mTags.get(i);
             if (tag.toUpperCase().contains(query)){
-                cursor.addRow(new Object[]{ i, tag, "tag:" + tag });
+                cursor.addRow(new Object[]{ i, R.drawable.ic_label_white_24dp, tag, "tag:" + tag });
             }
             i++;
         }
@@ -74,7 +76,7 @@ public class TagSuggestionProvider extends ContentProvider {
         while (i < numTags + numTitles && cursor.getCount() < limit) {
             String title = mTitles.get(i - numTags);
             if (title.toUpperCase().contains(query)){
-                cursor.addRow(new Object[]{ i, title, "title:" + title });
+                cursor.addRow(new Object[]{ i, R.drawable.ic_play_arrow_white_24dp, title, "title:" + title });
             }
             i++;
         }
