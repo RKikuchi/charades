@@ -19,7 +19,7 @@ public class CategoryCatalogPagerAdapter extends FragmentPagerAdapter {
     }
 
     public void addFragment(int filterType) {
-        mFragments.add(CategoryCatalogFragment.newInstance(filterType, null));
+        mFragments.add(CategoryCatalogFragment.newInstance(filterType));
     }
 
     @Override

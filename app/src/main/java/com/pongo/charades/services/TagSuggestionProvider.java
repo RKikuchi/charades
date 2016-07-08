@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 import android.support.annotation.Nullable;
 
+import com.pongo.charades.models.CategoryModel;
 import com.pongo.charades.models.CategoryTagModel;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ import io.realm.Realm;
 public class TagSuggestionProvider extends ContentProvider {
 
     List<String> mTags = new ArrayList<>();
+    List<String> mTitles = new ArrayList<>();
 
     @Override
     public boolean onCreate() {
@@ -34,6 +36,9 @@ public class TagSuggestionProvider extends ContentProvider {
         Realm realm = Realm.getInstance(getContext());
         for (CategoryTagModel tag : realm.where(CategoryTagModel.class).findAll()) {
             mTags.add(tag.getValue());
+        }
+        for (CategoryModel category : realm.where(CategoryModel.class).findAll()) {
+            mTitles.add(category.getTitle());
         }
         realm.close();
     }
@@ -56,12 +61,22 @@ public class TagSuggestionProvider extends ContentProvider {
         String query = uri.getLastPathSegment().toUpperCase();
         int limit = Integer.parseInt(uri.getQueryParameter(SearchManager.SUGGEST_PARAMETER_LIMIT));
 
-        int length = mTags.size();
-        for (int i = 0; i < length && cursor.getCount() < limit; i++) {
+        int i = 0;
+        int numTags = mTags.size();
+        while (i < numTags && cursor.getCount() < limit) {
             String tag = mTags.get(i);
             if (tag.toUpperCase().contains(query)){
-                cursor.addRow(new Object[]{ i, tag, tag });
+                cursor.addRow(new Object[]{ i, tag, "tag:" + tag });
             }
+            i++;
+        }
+        int numTitles = mTitles.size();
+        while (i < numTags + numTitles && cursor.getCount() < limit) {
+            String title = mTitles.get(i - numTags);
+            if (title.toUpperCase().contains(query)){
+                cursor.addRow(new Object[]{ i, title, "title:" + title });
+            }
+            i++;
         }
 
         return cursor;

@@ -123,6 +123,9 @@ public class CharadesRecyclerViewAdapter extends RecyclerView.Adapter {
             }
             query.endGroup();
         }
+        if (mParent.getTitle() != null) {
+            query.equalTo("title", mParent.getTitle(), Case.INSENSITIVE);
+        }
 
         RealmResults<CategoryModel> categories = query.findAll();
         for (CategoryModel model : categories) {

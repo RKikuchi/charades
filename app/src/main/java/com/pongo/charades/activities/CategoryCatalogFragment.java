@@ -40,6 +40,7 @@ public class CategoryCatalogFragment extends Fragment {
 
     private int mFilterType;
     private ArrayList<String> mTags;
+    private String mTitle;
     private String mLanguage;
 
     private Realm mRealm;
@@ -52,11 +53,11 @@ public class CategoryCatalogFragment extends Fragment {
 
     public CategoryCatalogFragment() {}
 
-    public static CategoryCatalogFragment newInstance(int filterType, ArrayList<String> tags) {
+    public static CategoryCatalogFragment newInstance(int filterType) {
         CategoryCatalogFragment fragment = new CategoryCatalogFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_FILTER_TYPE, filterType);
-        args.putStringArrayList(ARG_TAGS, tags);
+        args.putStringArrayList(ARG_TAGS, null);
         fragment.setArguments(args);
         return fragment;
     }
@@ -64,6 +65,15 @@ public class CategoryCatalogFragment extends Fragment {
     public void setup(int filterType, ArrayList<String> tags) {
         mFilterType = filterType;
         mTags = tags;
+        mAdapter.setFilter(mFilterType);
+        mAdapter.reload();
+        mAdapter.notifyDataSetChanged();
+    }
+
+    public void setup(String title) {
+        mFilterType = FILTER_SEARCH;
+        mTags = null;
+        mTitle = title;
         mAdapter.setFilter(mFilterType);
         mAdapter.reload();
         mAdapter.notifyDataSetChanged();
@@ -326,6 +336,8 @@ public class CategoryCatalogFragment extends Fragment {
     public ArrayList<String> getTags() {
         return mTags;
     }
+
+    public String getTitle() { return mTitle; }
 
     public interface CategoryCatalogListener {
         void onCategoryAttached(final CategoryCatalogFragment fragment);

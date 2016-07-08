@@ -2,7 +2,6 @@ package com.pongo.charades.activities;
 
 import android.app.SearchManager;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -12,6 +11,7 @@ import com.pongo.charades.viewholders.CharadesCellViewHolder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class CategoryListActivity
         extends AppCompatActivity
@@ -48,11 +48,14 @@ public class CategoryListActivity
                     CategoryCatalogFragment.FILTER_SEARCH,
                     new ArrayList<>(Arrays.asList(query)));
         } else if (Intent.ACTION_VIEW.equals(intent.getAction())) {
-            String query = intent.getDataString();
-            Uri query2 = intent.getData();
-            mFragment.setup(
-                    CategoryCatalogFragment.FILTER_SEARCH,
-                    new ArrayList<>(Arrays.asList(query)));
+            String[] queryArgs = intent.getDataString().split(":", 2);
+            if (Objects.equals(queryArgs[0], "tag")) {
+                mFragment.setup(
+                        CategoryCatalogFragment.FILTER_SEARCH,
+                        new ArrayList<>(Arrays.asList(queryArgs[1])));
+            } else if (Objects.equals(queryArgs[0], "title")) {
+                mFragment.setup(queryArgs[1]);
+            }
         } else {
             Bundle extras = intent.getExtras();
             getSupportActionBar().setTitle(extras.getString(LIST_NAME));
