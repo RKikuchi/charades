@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.provider.BaseColumns;
 import android.support.annotation.Nullable;
 
@@ -23,6 +24,7 @@ import io.realm.Realm;
  */
 public class TagSuggestionProvider extends ContentProvider {
 
+    private String mLanguage;
     List<String> mTags = new ArrayList<>();
     List<String> mTitles = new ArrayList<>();
 
@@ -33,6 +35,14 @@ public class TagSuggestionProvider extends ContentProvider {
     }
 
     private void loadTags() {
+        String lastLanguage = mLanguage;
+        mLanguage = PreferenceManager
+                .getDefaultSharedPreferences(getContext())
+                .getString(getContext().getString(R.string.pref_key_language), null);
+
+        if (!mTags.isEmpty() && mLanguage == lastLanguage)
+            return;
+
         mTags.clear();
         Realm realm = Realm.getInstance(getContext());
         for (CategoryTagModel tag : realm.where(CategoryTagModel.class).findAll()) {
@@ -48,8 +58,7 @@ public class TagSuggestionProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
-        if (mTags.isEmpty())
-            loadTags();
+        loadTags();
 
         MatrixCursor cursor = new MatrixCursor(
                 new String[] {
