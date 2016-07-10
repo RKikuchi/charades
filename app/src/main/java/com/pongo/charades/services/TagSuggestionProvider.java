@@ -18,6 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.realm.Realm;
+import io.realm.RealmObject;
+import io.realm.RealmQuery;
+import io.realm.RealmResults;
 
 /**
  * Created by rsaki on 7/3/2016.
@@ -40,18 +43,31 @@ public class TagSuggestionProvider extends ContentProvider {
                 .getDefaultSharedPreferences(getContext())
                 .getString(getContext().getString(R.string.pref_key_language), null);
 
-        if (!mTags.isEmpty() && mLanguage == lastLanguage)
+        if (!mTags.isEmpty() && !mTitles.isEmpty() && mLanguage == lastLanguage)
             return;
 
-        mTags.clear();
         Realm realm = Realm.getInstance(getContext());
-        for (CategoryTagModel tag : realm.where(CategoryTagModel.class).findAll()) {
+        mTags.clear();
+        for (CategoryTagModel tag : findAll(realm, CategoryTagModel.class)) {
             mTags.add(tag.getValue());
         }
-        for (CategoryModel category : realm.where(CategoryModel.class).findAll()) {
+        mTitles.clear();
+        for (CategoryModel category : findAll(realm, CategoryModel.class)) {
             mTitles.add(category.getTitle());
         }
         realm.close();
+    }
+
+    private <E extends RealmObject> RealmResults<E> findAll(Realm realm, Class<E> clazz) {
+        RealmQuery<E> query = realm.where(clazz);
+        if (mLanguage != null) {
+            query.beginGroup()
+                    .isNull("language")
+                    .or()
+                    .equalTo("language", mLanguage);
+            query.endGroup();
+        }
+        return query.findAll();
     }
 
     @Nullable

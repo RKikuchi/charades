@@ -42,7 +42,7 @@ public class CategoryModel extends RealmObject {
             tags.add(tag);
         }
         for (String tag : tags) {
-            model.getTags().add(new CategoryTagModel(tag));
+            model.getTags().add(new CategoryTagModel(tag, dto.language));
         }
         for (String item : dto.items) {
             if (item == null || item.trim() == "") continue;

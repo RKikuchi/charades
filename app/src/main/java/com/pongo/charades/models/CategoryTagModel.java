@@ -10,10 +10,13 @@ public class CategoryTagModel extends RealmObject {
     @PrimaryKey
     private String value;
 
+    private String language;
+
     public CategoryTagModel() {}
 
-    public CategoryTagModel(String value) {
+    public CategoryTagModel(String value, String language) {
         this.value = value;
+        this.language = language;
     }
 
     public String getValue() {
@@ -22,5 +25,13 @@ public class CategoryTagModel extends RealmObject {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 }
