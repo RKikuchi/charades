@@ -34,7 +34,6 @@ import com.pongo.charades.adapters.CategoryCatalogPagerAdapter;
 import com.pongo.charades.async.OnlineCategoriesLoader;
 import com.pongo.charades.models.CategoryDto;
 import com.pongo.charades.models.CategoryModel;
-import com.pongo.charades.models.CategoryTagModel;
 import com.pongo.charades.viewholders.CharadesCellViewHolder;
 
 import java.io.BufferedReader;
@@ -49,7 +48,6 @@ import java.util.Objects;
 
 import io.fabric.sdk.android.Fabric;
 import io.realm.Realm;
-import io.realm.RealmResults;
 
 public class MainActivity
         extends BaseActivity
@@ -60,7 +58,6 @@ public class MainActivity
     public static final String EXTRA_CATEGORY_POSITION = "CATEGORY_POSITION";
 
     private Realm mRealm;
-    private HashSet<String> mTags;
     private HashSet<CategoryCatalogFragment> mFragments = new HashSet<>();
 
     // Views
@@ -86,7 +83,6 @@ public class MainActivity
         setContentView(R.layout.activity_main);
 
         mRealm = Realm.getInstance(this);
-        mTags = new HashSet<>();
         setViews();
 
         setSupportActionBar(mToolbar);
@@ -264,12 +260,6 @@ public class MainActivity
     }
 
     private void setup() {
-        RealmResults<CategoryTagModel> tags = mRealm.where(CategoryTagModel.class).findAll();
-        mTags.clear();
-        for (CategoryTagModel tag : tags) {
-            mTags.add(tag.getValue());
-        }
-
         if (mRealm.where(CategoryModel.class).count() == 0) {
             loadHardcodedCategories();
             setDefaultLanguage();
