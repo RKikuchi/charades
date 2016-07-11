@@ -47,6 +47,7 @@ public class CategoryListActivity
             mFragment.setup(
                     CategoryCatalogFragment.FILTER_SEARCH,
                     new ArrayList<>(Arrays.asList(query)));
+            setTitle(query);
         } else if (Intent.ACTION_VIEW.equals(intent.getAction())) {
             String[] queryArgs = intent.getDataString().split(":", 2);
             if (Objects.equals(queryArgs[0], "tag")) {
@@ -56,13 +57,18 @@ public class CategoryListActivity
             } else if (Objects.equals(queryArgs[0], "title")) {
                 mFragment.setup(queryArgs[1]);
             }
+            setTitle(queryArgs[1]);
         } else {
             Bundle extras = intent.getExtras();
-            getSupportActionBar().setTitle(extras.getString(LIST_NAME));
+            setTitle(extras.getString(LIST_NAME));
             mFragment.setup(
                     extras.getInt(FILTER),
                     extras.getStringArrayList(TAGS));
         }
+    }
+
+    private void setTitle(String title) {
+        getSupportActionBar().setTitle(title);
     }
 
     @Override
