@@ -3,6 +3,7 @@ package com.pongo.charades.activities;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
@@ -254,6 +255,11 @@ public class MainActivity
                     Snackbar.make(mLayout, msg, Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
+
+                // Refresh search suggestions
+                getContentResolver().delete(
+                        Uri.parse("content://com.pongo.charades.categorytagsuggestion"),
+                        null, null);
                 break;
         }
         super.onActivityResult(requestCode, resultCode, data);

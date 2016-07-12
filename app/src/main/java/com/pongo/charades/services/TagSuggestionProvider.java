@@ -123,7 +123,10 @@ public class TagSuggestionProvider extends ContentProvider {
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-        return 0;
+        int count = mTags.size() + mTitles.size();
+        mTags.clear();
+        mTitles.clear();
+        return count;
     }
 
     @Override
