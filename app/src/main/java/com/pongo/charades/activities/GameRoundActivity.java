@@ -390,7 +390,6 @@ public class GameRoundActivity extends BaseActivity implements TiltSensorService
 
     private void confirmFinish() {
         new AlertDialog.Builder(this)
-                .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle(R.string.closing_activity)
                 .setMessage(R.string.close_activity_confirmation)
                 .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {

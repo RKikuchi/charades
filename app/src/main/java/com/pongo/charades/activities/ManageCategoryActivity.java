@@ -1,5 +1,6 @@
 package com.pongo.charades.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -205,7 +207,7 @@ public class ManageCategoryActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                onBackPressed();
+                confirmBack();
                 return true;
             case R.id.action_menu_save:
                 save();
@@ -284,5 +286,20 @@ public class ManageCategoryActivity extends BaseActivity {
                 break;
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    private void confirmBack() {
+        // TODO: if has changed stuff, show dialog, else return right away
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.closing_activity)
+                .setMessage(R.string.close_activity_confirmation)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        onBackPressed();
+                    }
+                })
+                .setNegativeButton(R.string.no, null)
+                .show();
     }
 }
