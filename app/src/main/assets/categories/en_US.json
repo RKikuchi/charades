@@ -936,7 +936,7 @@
         ]
     },
     {
-        "language": null,
+        "language": "en_US",
         "title": "Pixar",
         "imagePath": "file:///android_asset/images/pixar.jpg",
         "tags": ["movies"],
