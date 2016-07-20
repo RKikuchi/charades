@@ -440,5 +440,51 @@
             "Os Souza",
             "Rubão e Mariazinha"
         ]
-  }
+    },
+    {
+        "language": "pt_BR",
+        "title": "Presidentes (Brasil)",
+        "imagePath": "file:///android_asset/images/faixa_presidencial.jpg",
+        "tags": ["geografia", "política"],
+        "items": [
+            "Deodoro da Fonseca",
+            "Floriano Peixoto",
+            "Prudente de Morais",
+            "Campos Sales",
+            "Rodrigues Alves",
+            "Afonso Pena",
+            "Nilo Peçanha",
+            "Hermes da Fonseca",
+            "Venceslau Brás",
+            "Rodrigues Alves",
+            "Delfim Moreira",
+            "Epitácio Pessoa",
+            "Artur Bernardes",
+            "Washington Luís",
+            "Júlio Prestes",
+            "Getúlio Vargas",
+            "José Linhares",
+            "Eurico Gaspar Dutra",
+            "Café Filho",
+            "Carlos Luz",
+            "Nereu Ramos",
+            "Juscelino Kubitschek",
+            "Jânio Quadros",
+            "Ranieri Mazzilli",
+            "João Goulart",
+            "Humberto Castelo Branco",
+            "Artur da Costa e Silva",
+            "Emílio Garrastazu Médici",
+            "Ernesto Geisel",
+            "João Figueiredo",
+            "Tancredo Neves",
+            "José Sarney",
+            "Fernando Collor",
+            "Itamar Franco",
+            "Fernando Henrique Cardoso",
+            "Luiz Inácio Lula da Silva",
+            "Dilma Rousseff",
+            "Michel Temer"
+        ]
+    }
 ]
