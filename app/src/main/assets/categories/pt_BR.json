@@ -486,5 +486,32 @@
             "Dilma Rousseff",
             "Michel Temer"
         ]
+    },
+    {
+        "language": "pt_BR",
+        "title": "Chaves",
+        "imagePath": "file:///android_asset/images/chavo_del_ocho.png",
+        "tags": ["tv"],
+        "items": [
+            "Chaves",
+            "Chiquinha",
+            "Quico",
+            "Seu Madruga",
+            "Dona Florinda",
+            "Professor Girafales",
+            "Dona Clotilde",
+            "Senhor Barriga",
+            "Jaiminho, o Carteiro",
+            "Dona Neves",
+            "Nhonho",
+            "Pópis",
+            "Godinez",
+            "Paty",
+            "Casa do Seu Madruga",
+            "Restaurante da Dona Florinda",
+            "Tangamandápio",
+            "Barril do Chaves",
+            "Acapulco"
+        ]
     }
 ]
