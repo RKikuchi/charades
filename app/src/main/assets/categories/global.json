@@ -481,5 +481,31 @@
             "Treebeard",
             "Witch-king of Angmar"
         ]
+    },
+    {
+        "language": null,
+        "title": "Breaking Bad",
+        "imagePath": "file:///android_asset/images/breaking_bad.jpg",
+        "tags": ["tv", "netflix"],
+        "items": [
+            "Walter White",
+            "Skyler White",
+            "Jesse Pinkman",
+            "Hank Schrader",
+            "Marie Schrader",
+            "Walter White, Jr",
+            "Saul Goodman",
+            "Gustavo Fring",
+            "Mike Ehrmantraut",
+            "Lydia Rodarte-Quayle",
+            "Todd Alquist",
+            "Los Pollos Hermanos",
+            "Albuquerque",
+            "Chemistry",
+            "Methamphetamine",
+            "Heisenberg",
+            "DEA",
+            "Tuco Salamanca"
+        ]
     }
 ]
