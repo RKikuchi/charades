@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".activities.SettingsActivity">
+    tools:context="br.com.kiks.charades.activities.SettingsActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/fragment_settings"
-        class="com.pongo.charades.activities.SettingsActivity$PrefsFragment"
+        class="br.com.kiks.charades.activities.SettingsActivity$PrefsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />

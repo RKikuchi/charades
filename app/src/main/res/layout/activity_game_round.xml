@@ -4,7 +4,7 @@
     android:id="@+id/game_round_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.GameRoundActivity">
+    tools:context="br.com.kiks.charades.activities.GameRoundActivity">
 
     <ImageView
         android:id="@+id/category_image"
@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorNeutralBg"
-                tools:context="com.pongo.charades.activities.GameRoundActivity">
+                tools:context="br.com.kiks.charades.activities.GameRoundActivity">
 
                 <FrameLayout
                     android:id="@+id/round_controls"

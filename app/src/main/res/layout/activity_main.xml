@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".activities.MainActivity">
+        tools:context="br.com.kiks.charades.activities.MainActivity">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/app_bar_layout"
@@ -131,7 +131,7 @@
             android:layout_gravity="bottom|left"
             android:layout_margin="@dimen/fab_margin"
             app:backgroundTint="@color/colorPrimary"
-            app:layout_behavior="com.pongo.charades.behaviors.ShrinkOnScrollBehavior"
+            app:layout_behavior="br.com.kiks.charades.behaviors.ShrinkOnScrollBehavior"
             android:src="@drawable/ic_plus_white" />
 
         <android.support.v4.view.ViewPager

@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.pongo.charades.activities.ManageCategoryActivity"
+    tools:context="br.com.kiks.charades.activities.ManageCategoryActivity"
     tools:showIn="@layout/activity_manage_category"
     android:transitionName="@string/transition_manage_category"
     android:background="@color/colorGhostGray"
